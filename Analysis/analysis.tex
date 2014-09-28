@@ -1,3 +1,4 @@
+
 \chapter{Analysis}
 
 \section{Introduction}
@@ -6,7 +7,7 @@
 My client, Shahida Rahman, is an Author, and the Director and Secretary of Perfect Publishers Ltd, which has been a publishing company since 2005. She published her first book through Perfect Publishers Ltd, and this was when the company was born. She is 42 years old and is a mother of 4 children. Shahida uses computers to deal with online enquiries and to publish books from all over the world. Furthermore, she also produces the royalty statements for each book twice yearly. Aside from this, she has little experience with computers. Shahida generally uses a computer for research, social networking and reading the news. Every book is outsourced to an Editor and a Cover Designer. When the book is fully edited and formatted to the right specifications, they return the ready to print files to Shahida, who sends the books off to print. They track the books and their details manually using a database on an Excel Spreadsheet. Currently, it is difficult to keep all the data up to date and it is rather disorganised. Shahida would like to be able to look up a book/number of books in the system by using the details, such as the Author/Title/Date etc. She would also like the new system to link this database with information about the royalties of each book, and when they are needed to be paid every six months. The system could send an email to her, updating her about these. Shahida also wants the system to be able calculate the royalties by using the details given by the user.
 
 \subsection{Define the current system}
-The system that is currently being used consists of Shahida entering the book and its details into the spreadsheet. These details are taken from the enquiries that she receives via email, and include; author, book title, size, number of pages, hardback/paperback, mat or gloss, crème or white paper, font and font size. She also records their details in a separate spreadsheet, which includes their email, phone number, and address. Subsequently, Shahida waits for full payment and then sends the customer an invoice. She then contacts her editor and her illustrator to start work on the book. Shahida refers to her readily calculated prices for books in order to correctly price the book, in accordance to the book’s details. Once the book is finished, the book is sent off to print, and the author receives 25 copies.
+The system that is currently being used consists of Shahida entering the book and its details into the spreadsheet. These details are taken from the enquiries that she receives via email, and include; author, book title, size, number of pages, hardback/paperback, mat or gloss, crème or white paper, font and font size. She also records their details in a separate spreadsheet, which includes their email, phone number, and address. Subsequently, Shahida waits for full payment and then sends the customer an invoice. She then contacts her editor and her illustrator to start work on the book. Shahida refers to her company's website, where the calculated prices are ready for books, in order to correctly price the book, in accordance to the book’s details. Once the book is finished, the book is sent off to print, and the author receives 25 copies.
 
 \subsection{Describe the problems}
 There are numerous problems with the current system. First of all, the usage of the spreadsheet makes it harder to find a customer and their details, and their book’s details. This is because the spreadsheet is much disorganised. Furthermore, it is harder to keep track of the details of each book, meaning it is difficult to update the details of the book when necessary. Also, if the same author makes an enquiry about another book, her details must be entered into the spreadsheet again, which could cause inconsistencies in the data, because for instance, the customer may move house, meaning their address would need changing, and it would be difficult to find and update all entries where their address is recorded.
@@ -18,10 +19,58 @@ There are numerous problems with the current system. First of all, the usage of 
 \subsection{The current system}
 
 \subsubsection{Data sources and destinations}
-In the current system there are three main data sources that used - the client, the Supply Company and visiting the customers address, this data is often repeated on multiple documents. When a customer needs help with the heating/ boiler they will either ring Colin’s mobile/ house phone and leave a message if he is busy or speak to him directly (occasionally Colin will receive emails but this is not very often compared to phone calls). The required data is then recorded into Colin’s appointment book. Once the parts required for the job are known they are noted down in Colin’s book, this data is then passed to the supply company over the phone who gives back a total price for everything needed. Now the first output of the system is created – the quote. This data is then seen by the customer and agreed upon. The work is now undertaken and completed, prompting the second output of the system – the invoice which is then also transferred to the customer who then uses that data to pay Colin. Finally the copy of the invoice is stored.
+In the current system there are three key data sources that are used. These are the client, the customer and the spreadsheets. The Customer sends the enquiry, which holds all the necessary information, and this is sent via email. The details of the book are stored in one spreadsheet, and the person details of the customer are stored in a seperate spreadsheet, linked to the details of the book. Details such as the book size, page number, hardback/softback and paper type are used to calculate the cost for the customer, which is used to create an invoice which is sent to the customer. This is the first output of the system. A copy of every invoice is stored on Shahida's computer. Once Shahida receives full payment, the work is conducted and completed. If the customer wishes to publish another book, they send another enquiry, and their personal data is duplicated because of the details of the new book which are added.
+
+
+\begin{center}
+\begin{tabular}{|l|p{4cm}|p{4cm}|l|}
+    \hline
+    \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+    \pythoninline{Customer's Enquiry} & \pythoninline{First name, Last name, Address, City, Postcode, Phone number, Email, Book Title, Size, Number of Pages, Hardback/PaperBack, Mat/Gloss, Creme/White Paper, Font, Font size} & \pythoninline{Peter Parker, 1 Example Road, Cambridge, 01223 456789, mail@example.com, BookTitle, Large, 300, Hardback, Mat, White, Times New Roman, 12} & \pythoninline{Client}  \\ \hline
+    \pythoninline{range(start,stop)} & \pythoninline{range(2,7)} & \pythoninline{[2,3,4,5,6]} \\ \hline
+    \pythoninline{range(start,stop,step)} & \pythoninline{range(0,10,3)} & \pythoninline{[0,3,6,9]} \\ \hline
+    \pythoninline{range(start,stop,-step)} & \pythoninline{range(5,0,-1)} & \pythoninline{[5,4,3,2,1]} \\ \hline
+    \hline
+\end{tabular}
+\label{tab:range_examples}
+\end{center}
+
+begin{center}
+\begin{tabular}{c c c c}
+\hline
+Source & Data & Example Data & Destination \\ \hline
+\hline
+Customer's Enquiry & First name, Last name, Address, City, Postcode, Phone number, Email, Book Title, Size, Number of Pages, Hardback/PaperBack, Mat/Gloss, Crème/White Paper, Font, Font size & Peter Parker, 1 Example Road, Cambridge, 01223 456789, mail@example.com, BookTitle, Large, 300, Hardback, Mat, White, Times New Roman, 12 & Client \\ \hline
+Client & Author and Book Details, & - & Spreadsheets \\ \hline
+Spreadsheets & Author and Book Details & - & Client's Cover Designer & Editor \\ \hline
+Client & Cost & £1000 & Customer \\ \hline
+Client & Invoice & - & Customer \\ \hline 
+\hline
+\end{tabular}
+\end{center}
 
 \subsubsection{Algorithms}
+In the current system this is only three simple Algorithms being used. One is checking whether the Client has 
+accepted the amount on the quote. Another is checking whether the work is fully completed and then creating/ 
+sending an invoice, and lastly checking if the Client has paid.
+Checking whether the Client is happy with the quoted amount.
 
+\begin{algorithm}[H]
+    \caption{While Loop Representation}
+\begin{algorithmic}[1]
+\SET{$total$}{$0$}
+\SET{$finished$}{$false$}
+\State
+\While{$not finished$}
+    \SEND{$"Please\ enter\ a\ number\ (0 to finish)"$}
+    \RECEIVE{$number$}
+    \SET{$total$}{$total + number$}
+    \If{$number = 0$}
+        \SET{$finished$}{$true$}
+    \EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
 
 \subsubsection{Data flow diagram}
 
