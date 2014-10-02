@@ -30,18 +30,33 @@ There are numerous problems with the current system. First of all, the usage of 
 In the current system there are three key data sources that are used. These are Shahida herself, the customer and the spreadsheets. The Customer sends the enquiry, which holds all the necessary information, and this is sent via email. The details of the book are stored in one spreadsheet, and the person details of the customer are stored in a seperate spreadsheet, linked to the details of the book. These details are agreed seperately from the enquiry, between Shahida and the customer. Details such as the book size, page number, hardback/softback and paper type are used to calculate the cost for the customer, which is used to create an invoice which is sent to the customer. This is the first output of the system. A copy of every invoice is stored on Shahida's computer. Once Shahida receives full payment, the work is conducted and completed. If the customer wishes to publish another book, they send another enquiry, and their personal data is duplicated because of the details of the new book which are added. Every six months after the book has been published, the royalties must be paid to the author. The royalties are the profit that the author makes from sales of her book frm bookshops.
 
 
+
 \begin{center}
 \begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|}
     \hline
     \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
-    \pythoninline{Customer's Enquiry} & \pythoninline{First name, Last name, Address, Postcode, Phone number, Email, Book Title, Size, Number of Pages, Hardback/PaperBack, Mat/Gloss, Creme/White Paper, Font, Font size} & \pythoninline{Peter Parker, 1 Example Road, Cambridge, 01223 456789, mail@example.com, BookTitle, Large, 300, Hardback, Mat, White, Times New Roman, 12} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Author and Book Details} & \pythoninline{-} & \pythoninline{Spreadsheets}\\ \hline
-    \pythoninline{Spreadsheets} & \pythoninline{Author and Book Details} & \pythoninline{-} & \pythoninline{Client's Cover Designer and Editor} \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Cost} & \pythoninline{1000} & \pythoninline{Customer} \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Invoice} & \pythoninline{-} & \pythoninline{Customer} \\ \hline
+    \pythoninline{Customer Enquiry} & \pythoninline{Forename} & \pythoninline{Peter} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Customer Enquiry} & \pythoninline{Surname} & \pythoninline{Parker} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Customer Enquiry} & \pythoninline{Email} & \pythoninline{mail@example.com} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Customer} & \pythoninline{Address} & \pythoninline{1 Example Road} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Customer} & \pythoninline{Postcode} & \pythoninline{AB1 2CD} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Customer} & \pythoninline{Phone Number} & \pythoninline{07123456789} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Shahida} & \pythoninline{Forename} & \pythoninline{Peter} & \pythoninline{Database}  \\ \hline
+    \pythoninline{Shahida} & \pythoninline{Surname} & \pythoninline{Parker} & \pythoninline{Database}  \\ \hline
+    \pythoninline{Shahida} & \pythoninline{Email} & \pythoninline{mail@example.com} & \pythoninline{Database}  \\ \hline
+    \pythoninline{Shahida} & \pythoninline{Address} & \pythoninline{1 Example Road} & \pythoninline{Database}  \\ \hline
+    \pythoninline{Shahida} & \pythoninline{Postcode} & \pythoninline{AB1 2CD} & \pythoninline{Database}  \\ \hline
+    \pythoninline{Shahida} & \pythoninline{PhoneNumber} & \pythoninline{07123456789} & \pythoninline{Database}  \\ \hline
+    \pythoninline{Shahida} & \pythoninline{Invoice} & \pythoninline{-} & \pythoninline{Customer}  \\ \hline
+    \pythoninline{Customer} & \pythoninline{Payment} & \pythoninline{£1000} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Shahida} & \pythoninline{Cover Preferences} & \pythoninline{-} & \pythoninline{Cover Designer}\\ \hline
+    \pythoninline{Shahida} & \pythoninline{Book} & \pythoninline{-} & \pythoninline{Editor}  \\ \hline
+    \pythoninline{Editor} & \pythoninline{Completed Book} & \pythoninline{-} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Cover Designer} & \pythoninline{Completed Cover} & \pythoninline{-} & \pythoninline{Shahida} \\ \hline
     \hline
 \end{tabular}
 \end{center}
+
 
 \subsubsection{Algorithms}
 In the current system there are four Algorithms which are being used. The first sends an invoice to the customer and checks whether Shahida has recieved full payment. Once Shahida has received full payment, she, her cover designer and her editor can begin working on the book. The second algorithm checks whether the work has been completed, so that the completed book can then be sent off for printing. The third calculates the royalties which are paid every six months to the author.
@@ -309,7 +324,14 @@ Calculating royalties:
 \section{Object Analysis}
 
 \subsection{Object Listing}
-%
+
+\begin{itemize}
+    \item Customer
+    \item Book
+    \item Enquiry
+    \item Shahida
+\end{itemize}
+
 \subsection{Relationship diagrams}
 %
 \subsection{Class definitions}
@@ -354,9 +376,26 @@ Shahida will be the only person who will have full access to all the data in the
 \subsection{Areas which will not be included in computerisation}
 Generally, all actions require the use of a computer in the company. However, rarely, a customer does call Shahida about an enquiry, as this customer may not be so computer literate. In this case, Shahida will note down the details of the enquiry, and will enter it into the database.
 \subsection{Areas considered for future computerisation}
-%
+
+The database could be used online, so that the authors can use their Author ID to log in and see just their details on the database. This would mean that the customers would not have to contact Shahida to receive the data held about them, as they can see the data by theirselves.
+
 \section{Solutions}
 
 \subsection{Alternative solutions}
-%
+\begin{center}
+\begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|}
+    \hline
+    \textbf{Solution} & \textbf{Advantages} & \textbf{Disadvantages} \\ \hline
+    \pythoninline{Re-organisation of the current spreadsheet} & \pythoninline{No changes to current operating system and software} & \pythoninline{Current problems will still occur, Difficult to keep organised} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Python Desktop Application with GUI} & \pythoninline{User Friendly, Clear and easy to interpret} & \pythoninline{Takes up more memory, Takes longer to create the application} & \pythoninline{Shahida}  \\ \hline
+    \pythoninline{Filing system} & \pythoninline{No electronics needed} & \pythoninline{More problems may be encountered than the current system, Lots of physical space is required} & \pythoninline{Shahida}  \\ \hline
+    \hline
+\end{tabular}
 \subsection{Justification of chosen solution}
+I have chosen to use the Python Desktop Application with GUI as my solution. This is because:
+
+\begin{itemize}
+    \item I am already familiar with the Python Programming Language.
+    \item This will keep the system using computers and software, meaning there will not be a drastic change.
+    \item Using the application will take less time than manually entering everything into a spreadsheet, and less time than writing details down on paper.
+\end{itemize}
