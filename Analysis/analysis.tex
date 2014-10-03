@@ -35,24 +35,24 @@ In the current system there are three key data sources that are used. These are 
 \begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|}
     \hline
     \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
-    \pythoninline{Customer Enquiry} & \pythoninline{Forename} & \pythoninline{Peter} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer Enquiry} & \pythoninline{Surname} & \pythoninline{Parker} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer Enquiry} & \pythoninline{Email} & \pythoninline{mail@example.com} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer} & \pythoninline{Address} & \pythoninline{1 Example Road} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer} & \pythoninline{Postcode} & \pythoninline{AB1 2CD} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer} & \pythoninline{Phone Number} & \pythoninline{07123456789} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Forename} & \pythoninline{Peter} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Surname} & \pythoninline{Parker} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Email} & \pythoninline{mail@example.com} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Address} & \pythoninline{1 Example Road} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Postcode} & \pythoninline{AB1 2CD} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{PhoneNumber} & \pythoninline{07123456789} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Invoice} & \pythoninline{-} & \pythoninline{Customer}  \\ \hline
-    \pythoninline{Customer} & \pythoninline{Payment} & \pythoninline{£1000} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Cover Preferences} & \pythoninline{-} & \pythoninline{Cover Designer}\\ \hline
-    \pythoninline{Shahida} & \pythoninline{Book} & \pythoninline{-} & \pythoninline{Editor}  \\ \hline
-    \pythoninline{Editor} & \pythoninline{Completed Book} & \pythoninline{-} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Cover Designer} & \pythoninline{Completed Cover} & \pythoninline{-} & \pythoninline{Shahida} \\ \hline
+    Customer Enquiry & Forename & Peter & Shahida  \\ \hline
+    Customer Enquiry & Surname & Parker & Shahida  \\ \hline
+    Customer Enquiry & Email & mail@example.com & Shahida  \\ \hline
+    Customer & Address & 1 Example Road & Shahida  \\ \hline
+    Customer & Postcode & AB1 2CD & Shahida  \\ \hline
+    Customer & Phone Number & 07123456789 & Shahida  \\ \hline
+    Shahida & Forename & Peter & Database  \\ \hline
+    Shahida & Surname & Parker & Database  \\ \hline
+    Shahida & Email & mail@example.com & Database  \\ \hline
+    Shahida & Address & 1 Example Road & Database  \\ \hline
+    Shahida & Postcode & AB1 2CD & Database  \\ \hline
+    Shahida & PhoneNumber & 07123456789 & Database  \\ \hline
+    Shahida & Invoice & - & Customer  \\ \hline
+    Customer & Payment & 1000 & Shahida  \\ \hline
+    Shahida & Cover Preferences & - & Cover Designer\\ \hline
+    Shahida & Book & - & Editor  \\ \hline
+    Editor & Completed Book & - & Shahida  \\ \hline
+    Cover Designer & Completed Cover & - & Shahida \\ \hline
     \hline
 \end{tabular}
 \end{center}
@@ -171,6 +171,7 @@ The following image is an example of the second output form, a Royalty Statement
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{./Analysis/Royalty Statement Example.pdf}
+    \caption{s}
 \end{figure}
 
 \subsection{The proposed system}
@@ -182,25 +183,25 @@ In the proposed system the Customer's information will still be received through
 \begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|}
     \hline
     \textbf{Source} & \textbf{Data} & \textbf{Data Type} & \textbf{Destination} \\ \hline
-    \pythoninline{Customer Enquiry} & \pythoninline{Forename} & \pythoninline{String} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer Enquiry} & \pythoninline{Surname} & \pythoninline{String} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer Enquiry} & \pythoninline{Email} & \pythoninline{String} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer} & \pythoninline{Address} & \pythoninline{String} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer} & \pythoninline{Postcode} & \pythoninline{String} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Customer} & \pythoninline{Phone Number} & \pythoninline{String} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Forename} & \pythoninline{String} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Surname} & \pythoninline{String} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Email} & \pythoninline{String} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Address} & \pythoninline{String} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Postcode} & \pythoninline{String} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{PhoneNumber} & \pythoninline{String} & \pythoninline{Database}  \\ \hline
-    \pythoninline{Database} & \pythoninline{Author ID} & \pythoninline{Integer} & \pythoninline{Shahida, Database}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Invoice} & \pythoninline{String} & \pythoninline{Customer}  \\ \hline
-    \pythoninline{Customer} & \pythoninline{Payment} & \pythoninline{-} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Shahida} & \pythoninline{Cover Details} & \pythoninline{String} & \pythoninline{Cover Designer}\\ \hline
-    \pythoninline{Shahida} & \pythoninline{Book} & \pythoninline{String} & \pythoninline{Editor}  \\ \hline
-    \pythoninline{Editor} & \pythoninline{Completed Book} & \pythoninline{String} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Cover Designer} & \pythoninline{Completed Cover} & \pythoninline{-} & \pythoninline{Shahida} \\ \hline
+    Customer Enquiry & Forename & String & Shahida  \\ \hline
+    Customer Enquiry & Surname & String & Shahida  \\ \hline
+    Customer Enquiry & Email & String & Shahida  \\ \hline
+    Customer & Address & String & Shahida  \\ \hline
+    Customer & Postcode & String & Shahida  \\ \hline
+    Customer & Phone Number & String & Shahida  \\ \hline
+    Shahida & Forename & String & Database  \\ \hline
+    Shahida & Surname & String & Database  \\ \hline
+    Shahida & Email & String & Database  \\ \hline
+    Shahida & Address & String & Database  \\ \hline
+    Shahida & Postcode & String & Database  \\ \hline
+    Shahida & PhoneNumber & String & Database  \\ \hline
+    Database & Author ID & Integer & Shahida  \\ \hline
+    Shahida & Invoice & String & Customer  \\ \hline
+    Customer & Payment & - & Shahida  \\ \hline
+    Shahida & Cover Details & String & Cover Designer\\ \hline
+    Shahida & Book & String & Editor  \\ \hline
+    Editor & Completed Book & String & Shahida  \\ \hline
+    Cover Designer & Completed Cover & - & Shahida \\ \hline
     \hline
 \end{tabular}
 \end{center}
@@ -214,28 +215,28 @@ In the proposed system the Customer's information will still be received through
 \subsubsection{Data dictionary}
 
 \begin{center}
-\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{3cm}|}
     \hline
     \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} \\ \hline
-    \pythoninline{FirstName} & \pythoninline{String} & \pythoninline{2-20 Characters} & \pythoninline{Length} & \pythoninline{Jo}  \\ \hline
-    \pythoninline{LastName} & \pythoninline{String} & \pythoninline{2-20 Characters} & \pythoninline{Length} & \pythoninline{Williamson}  \\ \hline
-    \pythoninline{Email} & \pythoninline{String} & \pythoninline{7-30 Characters} & \pythoninline{Length} & \pythoninline{mail@example.com}  \\ \hline
-    \pythoninline{PhoneNumber} & \pythoninline{String} & \pythoninline{9-15 Characters} & \pythoninline{Format} & \pythoninline{07123456789}  \\ \hline
-    \pythoninline{Address} & \pythoninline{String} & \pythoninline{5-30 Characters} & \pythoninline{Length} & \pythoninline{Example Road}  \\ \hline
-    \pythoninline{Postcode} & \pythoninline{String} & \pythoninline{7 Characters} & \pythoninline{Format} & \pythoninline{AB1 2CD}  \\ \hline
-    \pythoninline{Author ID} & \pythoninline{Integer} & \pythoninline{1-255} & \pythoninline{Range} & \pythoninline{17}  \\ \hline
-    \pythoninline{BookTitle} & \pythoninline{String} & \pythoninline{1-60 Characters} & \pythoninline{Length} & \pythoninline{The Hobbit}  \\ \hline
-    \pythoninline{NoOfPages} & \pythoninline{Integer} & \pythoninline{1-1027} & \pythoninline{Range} & \pythoninline{395}  \\ \hline
-    \pythoninline{SizeLarge} & \pythoninline{Boolean} & \pythoninline{-} & \pythoninline{Existence} & \pythoninline{False}  \\ \hline
-    \pythoninline{SizeSmall} & \pythoninline{Boolean} & \pythoninline{-} & \pythoninline{Existence} & \pythoninline{True}  \\ \hline
-    \pythoninline{Hardback} & \pythoninline{Boolean} & \pythoninline{-} & \pythoninline{Existence} & \pythoninline{False}  \\ \hline
-    \pythoninline{Paperback} & \pythoninline{Boolean} & \pythoninline{-} & \pythoninline{Existence} & \pythoninline{True}\\ \hline
-    \pythoninline{Mat} & \pythoninline{Boolean} & \pythoninline{-} & \pythoninline{Existence} & \pythoninline{False}  \\ \hline
-    \pythoninline{Gloss} & \pythoninline{Boolean} & \pythoninline{-} & \pythoninline{Existence} & \pythoninline{True}  \\ \hline
-    \pythoninline{CremePaper} & \pythoninline{Boolean} & \pythoninline{-} & \pythoninline{Existence} & \pythoninline{False}  \\ \hline
-    \pythoninline{WhitePaper} & \pythoninline{Boolean} & \pythoninline{-} & \pythoninline{Existence} & \pythoninline{True}\\ \hline
-    \pythoninline{Font} & \pythoninline{String} & \pythoninline{-} & \pythoninline{Existence} & \pythoninline{Arial}  \\ \hline
-    \pythoninline{FontSize} & \pythoninline{Floating point} & \pythoninline{1-5 Characters} & \pythoninline{} & \pythoninline{12.5}  \\ \hline
+    FirstName & String & 2-20 Characters & Length & Jo  \\ \hline
+    LastName & String & 2-20 Characters & Length & Williamson  \\ \hline
+    Email & String & 7-30 Characters & Length & mail@example.com  \\ \hline
+    PhoneNumber & String & 9-15 Characters & Format & 07123456789  \\ \hline
+    Address & String & 5-30 Characters & Length & Example Road  \\ \hline
+    Postcode & String & 7 Characters & Format & AB1 2CD  \\ \hline
+    Author ID & Integer & 1-255 & Range & 17  \\ \hline
+    BookTitle & String & 1-60 Characters & Length & The Hobbit  \\ \hline
+    NoOfPages & Integer & 1-1027 & Range & 395  \\ \hline
+    SizeLarge & Boolean & - & Existence & False  \\ \hline
+    SizeSmall & Boolean & - & Existence & True  \\ \hline
+    Hardback & Boolean & - & Existence & False  \\ \hline
+    Paperback & Boolean & - & Existence & True \\ \hline
+    Mat & Boolean & - & Existence & False  \\ \hline
+    Gloss & Boolean & - & Existence & True  \\ \hline
+    CremePaper & Boolean & - & Existence & False  \\ \hline
+    WhitePaper & Boolean & - & Existence & True\\ \hline
+    Font & String & - & Existence & Arial  \\ \hline
+    FontSize & Floating point & 1-5 Characters & Numbers only & 12.5  \\ \hline
     \hline
 \end{tabular}
 \end{center}
@@ -326,10 +327,9 @@ Calculating royalties:
 \subsection{Object Listing}
 
 \begin{itemize}
-    \item Customer
-    \item Book
-    \item Enquiry
     \item Shahida
+    \item Customer
+    \item Database
 \end{itemize}
 
 \subsection{Relationship diagrams}
@@ -375,6 +375,7 @@ Shahida will be the only person who will have full access to all the data in the
 
 \subsection{Areas which will not be included in computerisation}
 Generally, all actions require the use of a computer in the company. However, rarely, a customer does call Shahida about an enquiry, as this customer may not be so computer literate. In this case, Shahida will note down the details of the enquiry, and will enter it into the database.
+
 \subsection{Areas considered for future computerisation}
 
 The database could be used online, so that the authors can use their Author ID to log in and see just their details on the database. This would mean that the customers would not have to contact Shahida to receive the data held about them, as they can see the data by theirselves.
@@ -386,11 +387,12 @@ The database could be used online, so that the authors can use their Author ID t
 \begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|}
     \hline
     \textbf{Solution} & \textbf{Advantages} & \textbf{Disadvantages} \\ \hline
-    \pythoninline{Re-organisation of the current spreadsheet} & \pythoninline{No changes to current operating system and software} & \pythoninline{Current problems will still occur, Difficult to keep organised} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Python Desktop Application with GUI} & \pythoninline{User Friendly, Clear and easy to interpret} & \pythoninline{Takes up more memory, Takes longer to create the application} & \pythoninline{Shahida}  \\ \hline
-    \pythoninline{Filing system} & \pythoninline{No electronics needed} & \pythoninline{More problems may be encountered than the current system, Lots of physical space is required} & \pythoninline{Shahida}  \\ \hline
+    Re-organisation of the current spreadsheet & No changes to current operating system and software & Current problems will still occur, Difficult to keep organised \\ \hline
+    Python Desktop Application with GUI & User Friendly, Clear and easy to interpret & Takes up more memory, Takes longer to create the application  \\ \hline
+    Filing system & No electronics needed & More problems may be encountered than the current system, Lots of physical space is required \\ \hline
     \hline
 \end{tabular}
+\end{center}
 \subsection{Justification of chosen solution}
 I have chosen to use the Python Desktop Application with GUI as my solution. This is because:
 
