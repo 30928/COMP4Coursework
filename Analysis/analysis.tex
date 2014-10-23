@@ -4,22 +4,23 @@
 \section{Introduction}
 
 \subsection{Client Identification}
-My client, Shahida Rahman, is an Author, and the Director and Secretary of Perfect Publishers Ltd, which has been a self publishing company since 2005. This means that the author pays Perfect Publishers to publish their book.
- She published her first book through Perfect Publishers Ltd, and this was when the company was born. She is 42 years old and is a mother of 4 children. Shahida uses computers to deal with online enquiries and to publish books from all over the world. Furthermore, she also produces the royalty statements for each book twice yearly. Aside from this, she has little experience with computers. Shahida generally uses a computer for research, social networking and reading the news. Every book is outsourced to an Editor and a Cover Designer. When the book is fully edited and formatted to the right specifications, they return the ready to print files to Shahida, who sends the books off to print. They track the books and their details manually using a database on an Excel Spreadsheet. Currently, it is difficult to keep all the data up to date and it is rather disorganised. Shahida would like to be able to look up a book/number of books in the system by using the details, such as the Author/Title/Date etc. She would also like the new system to link this database with information about the royalties of each book, and when they are needed to be paid every six months. The system could send an email to her, updating her about these. Shahida also wants the system to be able calculate the royalties by using the details given by the user.
+My client, Shahida Rahman, is an Author, and the Director and Secretary of Perfect Publishers Ltd, which has been a self publishing company since 2005. This means that the author pays Perfect Publishers to publish their book. She published her first book through Perfect Publishers Ltd, and this was when the company was born. She is 42 years old and is a mother of 4 children. Shahida uses computers to deal with online enquiries and to publish books from all over the world. Furthermore, she also produces the royalty statements for each book twice yearly. Aside from this, she has little experience with computers. Shahida generally uses a computer for research, social networking and reading the news. Every book is outsourced to an Editor and a Cover Designer. When the book is fully edited and formatted to the right specifications, they return the ready to print files to Shahida, who sends the books off to print. They track the books and their details manually using a database on an Excel Spreadsheet. Currently, it is difficult to keep all the data up to date and it is rather disorganised. Shahida would like to be able to look up a book/number of books in the system by using the details, such as the Author/Title/Date etc. She would also like the new system to link this database with information about the royalties of each book, and when they are needed to be paid every six months. The system could send an email to her, updating her about these.
 
 \subsection{Define the current system}
 The system that is currently being used consists of Shahida entering the book and its details into the spreadsheet. These details are taken from the enquiries that she receives via email, and include; first name, last name, email, and vague details of the book. Then, the more accurate details such as; book title, size, number of pages, hardback/paperback, mat or gloss, crème or white paper, font and font size are discussed between Shahida and the customer. She also records their details in a separate spreadsheet, which includes their email, phone number, and address, upon the customer's consent. The spreadsheets are used to track current and previous customers and their books, as the details about the book and themselves are recorded in these. Subsequently, Shahida informs the customer of the price details, waits for full payment and  then sends the customer an invoice. She then contacts her editor and her illustrator to start work on the book. Shahida refers to her company's website, where the calculated prices are ready for books, in order to correctly price the book, in accordance to the book’s details. Once the book is finished, the book is sent off to print, and the author receives 25 copies.
 
 \subsection{Describe the problems}
-There are numerous problems with the current system. First of all, the usage of the spreadsheet makes it harder to find a customer and their details, and their book’s details. This is because the spreadsheet is much disorganised. Furthermore, it is harder to keep track of the details of each book, meaning it is difficult to update the details of the book when necessary. Because there are a large number of books in the system, it is harder to find each book and then seperately find the customer that the book was written by, as they are in seperate spreadsheets, meaning that Shahida must manually search for them in both spreadsheets. Also, if the same author makes an enquiry about another book, their details must be entered into the spreadsheet again, because it is difficult to find where the customers details currently are due to there being many customers in the spreadsheet, having incorrectly entered their data from a given enquiry, or they might have been removed after having been there for a long time This could cause inconsistencies in the data, because for instance, the customer may move house, meaning their address would need changing, and it would be difficult to find and update all entries where their address is recorded. Shahida also has to calculate the royalties by herself, which could cause more errors as she may enter an incorrect value, causing the royalties to be wrongly calculated. Also, if there is a change in some of the details of the book, the royalties must be recalculated by herself.
-
+There are numerous problems with the current system. First of all, the usage of the spreadsheet makes it harder to find a customer and their details, and their book’s details. This is because the spreadsheet is much disorganised. Furthermore, it is harder to keep track of the details of each book, meaning it is difficult to update the details of the book when necessary. Because there are a large number of books in the system, it is harder to find each book and then seperately find the customer that the book was written by, as they are in seperate spreadsheets, meaning that Shahida must manually search for them in both spreadsheets. Also, if the same author makes an enquiry about another book, their details must be entered into the spreadsheet again, because it is difficult to find where the customers details currently are due to there being many customers in the spreadsheet, having incorrectly entered their data from a given enquiry, or they might have been removed after having been there for a long time This could cause inconsistencies in the data, because for instance, the customer may move house, meaning their address would need changing, and it would be difficult to find and update all entries where their address is recorded. 
 \subsection{Section appendix}
+
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Analysis/Interview Questions 1.jpg}
+    \includegraphics[width= 10cm]{./Analysis/Interview_Questions_1.jpg}
+    \caption{Interview Questions: Page 1} \label{Interview_Questions_1.jpg}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Analysis/Interview Questions 2.jpg}
+    \includegraphics[width=\textwidth]{./Analysis/Interview_Questions_2.jpg}
+    \caption{Interview Questions: Page 2} \label{Interview_Questions_2.jpg}
 \end{figure}
 
 \section{Investigation}
@@ -27,12 +28,12 @@ There are numerous problems with the current system. First of all, the usage of 
 \subsection{The current system}
 
 \subsubsection{Data sources and destinations}
-In the current system there are three key data sources that are used. These are Shahida herself, the customer and the spreadsheets. The Customer sends the enquiry which is sent via email. After the details about the book have been discussed, they are stored in one spreadsheet, and the details of the customer are stored in a seperate spreadsheet, linked to the details of the book. These details are agreed seperately from the enquiry, between Shahida and the customer. Details such as the book size, page number, hardback/softback and paper type are used to calculate the cost for the customer, which is used to create an invoice which is sent to the customer. This is the first output of the system. A copy of every invoice is stored on Shahida's computer. Once Shahida receives full payment, the work is conducted and completed. If the customer wishes to publish another book, they send another enquiry, and their personal data is duplicated because of the details of the new book which are added. Every six months after the book has been published, the royalties must be paid to the author. The royalties are the profit that the author makes from sales of her book frm bookshops.
+In the current system there are three key data sources that are used. These are Shahida herself, the customer and the spreadsheets. The Customer sends the enquiry which is sent via email. After the details about the book have been discussed, they are stored in one spreadsheet, and the details of the customer are stored in a seperate spreadsheet, linked to the details of the book. These details are agreed seperately from the enquiry, between Shahida and the customer. Details such as the book size, page number, hardback/softback and paper type are used to calculate the cost for the customer, which is used to create an invoice which is sent to the customer. This is the first output of the system. A copy of every invoice is stored on Shahida's computer in a special folder just for invoices. Once Shahida receives full payment, the work is conducted and completed. If the customer wishes to publish another book, they send another enquiry, and their personal data is duplicated because of the details of the new book which are added. Every six months after the book has been published, the royalties must be paid to the author. The royalties are the profit that the author makes from sales of her book from bookshops. A royalty statement is created and stored in a special folder just for royalties.
 
 
 
 \begin{center}
-\begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|}
+\begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3cm}|p{3cm}|}
     \hline
     \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
     Customer Enquiry & Forename & Peter & Shahida  \\ \hline
@@ -64,19 +65,23 @@ In the current system there are three key data sources that are used. These are 
     Shahida & Address & 1 Example Road & Author Database  \\ \hline
     Shahida & Postcode & AB1 2CD & Author Database  \\ \hline
     Shahida & PhoneNumber & 07123456789 & Author Database  \\ \hline
+    Shahida & Invoice & - & Invoice Folder \\ \hline
     Shahida & Invoice & - & Customer  \\ \hline
     Customer & Payment & 1000 & Shahida  \\ \hline
     Shahida & Cover Preferences & - & Cover Designer\\ \hline
     Shahida & Book & - & Editor  \\ \hline
     Editor & Completed Book & - & Shahida  \\ \hline
     Cover Designer & Completed Cover & - & Shahida \\ \hline
+    Shahida & Royalty Statement & - & Royalty Statement Folder \\ \hline
+    Shahida & Royalty Statement & - & Customer \\ \hline
+    Shahida & Royalties & £211.20 & Customer \\ \hline 
     \hline
 \end{tabular}
 \end{center}
 
 
 \subsubsection{Algorithms}
-In the current system there are four Algorithms which are being used. The first sends an invoice to the customer and checks whether Shahida has recieved full payment. Once Shahida has received full payment, she, her cover designer and her editor can begin working on the book. The second algorithm checks whether the work has been completed, so that the completed book can then be sent off for printing. The third calculates the royalties which are paid every six months to the author.
+In the current system there are two Algorithms which are being used. The first sends an invoice to the customer and checks whether Shahida has recieved full payment. Once Shahida has received full payment, she, her cover designer and her editor can begin working on the book. The second algorithm checks whether the work has been completed, so that the completed book can then be sent off for printing. 
 
 \begin{algorithm}[H]
     \caption{First Algorithm - Sending an invoice and Checking for Payment}
@@ -132,25 +137,11 @@ Send Invoice
 \end{algorithmic}
 \end{algorithm}
 
-\begin{algorithm}[H]
-    \caption{Third Algorithm - Calculating the Royalties}
-\begin{algorithmic}[1]
-\SEND{$"Enter\ the\ wholesale\ price."$}
-\RECEIVE{$wholesaleprice$}
-\SEND{$"Enter\ the\ quantity."$}
-\RECEIVE{$quantity$}
-\SEND{$"Enter\ the\ print\ cost."$}
-\RECEIVE{$printcost$}
-
-\GET{$royalties$}{$(quantity\ *\ wholesale)\ -\ printcost$} 
-
-\end{algorithmic}
-\end{algorithm}
-
 \subsubsection{Data flow diagrams}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Analysis/Data Flow Diagrams 1.pdf}
+    \includegraphics[width=\textwidth]{./Analysis/Data_Flow_Diagrams_1.pdf}
+    \caption{Data Flow Diagrams} \label{Data_Flow_Diagrams_1.pdf}
 \end{figure}
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
@@ -174,14 +165,16 @@ Question/Comment:
 The following image is an example of the first output form, an Invoice.
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Analysis/Invoice Example.pdf}
+    \includegraphics[width=\textwidth]{./Analysis/Invoice_Example.pdf}
+    \caption{Invoice Example} \label{Invoice_Example.pdf}
 \end{figure}
 
 
 The following image is an example of the second output form, a Royalty Statement.
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Analysis/Royalty Statement Example.pdf}
+    \includegraphics[width=\textwidth]{./Analysis/Royalty_Statement_Example.pdf}
+    \caption{Royalty Statement Example} \label{Royalty_Statement_Example.pdf}
 \end{figure}
 
 \subsection{The proposed system}
@@ -190,7 +183,7 @@ In the proposed system the Customer's information will still be received through
 
 \subsubsection{Data sources and destinations}
 \begin{center}
-\begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3cm}|p{2.5cm}|}
     \hline
     \textbf{Source} & \textbf{Data} & \textbf{Data Type} & \textbf{Destination} \\ \hline
     Customer Enquiry & Forename & String & Shahida  \\ \hline
@@ -222,12 +215,17 @@ In the proposed system the Customer's information will still be received through
     Shahida & Postcode & String & Database  \\ \hline
     Shahida & PhoneNumber & String & Database  \\ \hline
     Database & Author ID & Integer & Shahida  \\ \hline
+    Shahida & Invoice & String & Invoice Folder \\ \hline 
     Shahida & Invoice & String & Customer  \\ \hline
     Customer & Payment & - & Shahida  \\ \hline
     Shahida & Cover Details & String & Cover Designer\\ \hline
     Shahida & Book & String & Editor  \\ \hline
     Editor & Completed Book & String & Shahida  \\ \hline
     Cover Designer & Completed Cover & Image & Shahida \\ \hline
+    Shahida & Royalty Statement & - & Royalty Statement Folder \\ \hline
+    Shahida & Royalty Statement & - & Customer \\ \hline
+    Shahida & Royalties & Real & Customer \\ \hline 
+	
     \hline
 \end{tabular}
 \end{center}
@@ -235,13 +233,14 @@ In the proposed system the Customer's information will still be received through
 \subsubsection{Data flow diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Analysis/Data Flow Diagrams 2.pdf}
+    \includegraphics[width=\textwidth]{./Analysis/Data_Flow_Diagrams_2.pdf}
+    \caption{Data Flow Diagram} \label{Data_Flow_Diagrams_2.pdf}
 \end{figure}
 
 \subsubsection{Data dictionary}
 
 \begin{center}
-\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{3cm}|}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}|}
     \hline
     \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} \\ \hline
     FirstName & String & 2-20 Characters & Length & Jo  \\ \hline
@@ -281,15 +280,17 @@ The general objectives are:
 \begin{itemize}
     \item Organised layout for the database.
     \item Prevention of unnecessary duplication of data.
-    \item Simple interface for entering data.
-    \item Search function to find a specific customer in the database
-    \item Ability to edit existing data easily
-    \item Ability to calculate royalties using given data
+    \item Simple interface for entering data, meaning it can be conducted quickly.
+    \item Search function to find a specific customer in the database.
+    \item Ability to edit existing data easily and quickly.
 \end{itemize}
+
+The System must be able to prevent unecessary duplication of data, and be able to organise data well, and this will be a priority.
+
 
 \subsection{Specific Objectives}
 
-Organising a layout for the database:
+Organising a new layout for the database:
 
 \begin{itemize}
     \item Be able to sort by date (ascending and descending)
@@ -332,7 +333,6 @@ Calculating royalties:
 
 \begin{itemize}
     \item Organising the data using certain attributes
-    \item Calculating royalties
     \item Preventing Duplication
 \end{itemize}
 
@@ -348,16 +348,21 @@ Calculating royalties:
 \subsection{ER Diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Analysis/ER Diagram.pdf}
+    \caption{ER Diagram} \label{ER_Diagram.pdf}
+    \includegraphics[width=\textwidth]{./Analysis/ER_Diagram.pdf}
 \end{figure}
 
 \subsection{Entity Descriptions}
 
 Customer(\underline{Author ID}, Forename,Surname, Email, Address, Postcode, Phone Number)
-PhoneNumber)
-Enquiry(\underline{Book}, \emph{Author ID}, Forename, Surname, Email)
 
-Book(\underline{ISBN Number}, \emph{AuthorID}, Title, Pages, Size, Cover type, Colour, Back Type, Paper, Font, Font size)
+Enquiry(\underline{Email}, \emph{Author ID}, Forename, Surname)
+
+Invoice(\underline{Author ID}, \emph{Book Title}, Price, Forename, Surname, Address, Postcode)
+
+Royalties(\underline{AuthorID}, \emph{Book Title}, Price, Forename, Surname, Address, Postcode)
+
+Book(\underline{ISBN Number}, \emph{AuthorID}, Book Title, Pages, Size, Cover type, Colour, Back Type, Paper, Font, Font size)
 
 \section{Object Analysis}
 
@@ -366,30 +371,31 @@ Book(\underline{ISBN Number}, \emph{AuthorID}, Title, Pages, Size, Cover type, C
 \begin{itemize}
     \item Shahida
     \item Customer
-    \item Enquiry
+    \item Editor
+    \item Cover Designer
+    \item Spreadsheet
+
 \end{itemize}
 
 \subsection{Relationship diagrams}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Analysis/Relationship Diagram.pdf}
+    \includegraphics[width=\textwidth]{./Analysis/Relationship_Diagram.pdf}
+    \caption{Relationship Diagram} \label{Relationship_Diagram.pdf}
 \end{figure}
 
 \subsection{Class definitions}
 
 Key:
 
-\begin{center}
 \begin{tabular}{|p{2.5cm}|}
     \hline
-    \textbf{Label} \\ \hline
+    \textbf{Label}  \\ \hline
     Attributes \\ \hline
-    Behaviours \\ \hline
+    Behaviours  \\ \hline
     \hline
 \end{tabular}
-\end{center}
 
-\begin{center}
 \begin{tabular}{|p{2.5cm}|}
     \hline
     \textbf{Customer} \\ \hline
@@ -397,17 +403,14 @@ Key:
     Add ForeName \\ Edit Forename \\ Add Surname \\ Edit Surname \\ Add Email \\ Edit Email \\ Add Address \\ Edit Address \\ Add Postcode \\ Edit Address \\ Add Postcode \\ Edit Postcode \\ Add Phone Number \\ Edit Phone Number \\ \hline
     \hline
 \end{tabular}
-\end{center}
 
-\begin{center}
 \begin{tabular}{|p{2.5cm}|}
     \hline
     \textbf{Book} \\ \hline
     Title \\ Pages \\ Size \\ Cover Type \\ Colour \\ Back Type \\ Paper \\ Font \\ Font Size \\ \hline
-    Add Title \\ Add Pages \\ Add Sizel \\ Add Cover Type \\ Add Colour \\ Add Back Type \\ Add Paper \\ Add Font \\ Add Font Size \\ \hline
+    Add Title \\ Edit Title \\ Add Pages \\ Edit Pages \\ Add Size \\ Edit Size \\ Add Cover Type \\ Edit Cover Type \\ Add Colour \\ Edit Colour \\ Add Back Type \\ Edit Back Type \\ Add Paper \\ Edit Paper \\ Add Font \\ Edit Font \\ Add Font Size \\ Edit Font Size\\ \hline
     \hline
 \end{tabular}
-\end{center}
 
 \section{Other Abstractions and Graphs}
 
@@ -426,7 +429,7 @@ Computer Specifications:
     \item AMD Radeon HD 8330 Graphics Card
 \end{itemize}
 
-The proposed system will have no problem with running on this machine, as it uses a small amount of CPU usage. A constraint would be the size of the screen. This is because the system will need to be based around the screen size of her laptop. As her laptop is portable, portability is not a constraint.
+The proposed system will have no problem with running on this machine, as it uses a small amount of CPU usage. A constraint would be the size of the screen. This is because the system will need to be based around the screen size of her laptop. As her laptop is portable, portability is not a constraint. The laptop will need enough RAM to hold the system. However, Shahida's laptop has more than enough memory for this, meaning this will not be a problem. 
 
 \subsection{Software}
 
@@ -434,15 +437,15 @@ Shahida would prefer that the system will run on Windows 7, as she uses this ope
 
 \subsection{Time}
 
-Shahida does not need this system to be built quickly, but she would like it to be complete as soon as reasonably possible. Otherwise, the only time restriction for this project is , which has been set by my teacher.
+Shahida does not need this system to be built quickly, but she would like it to be complete as soon as reasonably possible. Otherwise, the only deadline for this project is April 2015, which has been set by my teacher.
 
 \subsection{User Knowledge}
 
-Having worked in the publishing industry beforehand, being an author has also given Shahida the knowledge of how to run her current company. 
+Having worked in the publishing industry beforehand, being an author has also given Shahida the knowledge of how to run her current company. Aside from being able to perform basic tasks on a computer, browsing the internet and using social media, Shahida has small experience with computers.
 
 \subsection{Access restrictions}
 
-Shahida will be the only person who will have full access to all the data in the proposed system, and she will be the only one who can access it. This can be password protected for security reasons, meaning that only she can gain access to the database. The database will comply to the Data Protection Act 1998, as the company already does so with their current system.
+Shahida will be the only person who will have full access to all the data in the proposed system, and she will be the only one who can access it. This can be password protected for security reasons, meaning that only she can gain access to the database. This is also because she is the only necessary person to view, enter and edit data in the system, as her Editor and her Cover Designer do not need to use the database. As she is the only user of the database, it will be easier to keep secure. The authors will be able to make requests about personal data, such as having it removed, or receiving a copy of the personal data about them. The database will comply to the Data Protection Act 1998, as the company already does so with their current system.
 
 \section{Limitations}
 
@@ -451,7 +454,7 @@ Generally, all actions require the use of a computer in the company. However, ra
 
 \subsection{Areas considered for future computerisation}
 
-The database could be used online, so that the authors can use their Author ID to log in and see just their details on the database. This would mean that the customers would not have to contact Shahida to receive the data held about them, as they can see the data by theirselves.
+The database could be used online, so that the authors can use their Author ID to log in and see just their details on the database. This would mean that the customers would not have to contact Shahida to receive the data held about them, as they can see the data by theirselves. They will also be able to access this data from anywhere where they have access to the internet. This could also enable Shahida to access the data from other machines aside from her laptop.
 
 \section{Solutions}
 
@@ -460,9 +463,13 @@ The database could be used online, so that the authors can use their Author ID t
 \begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|}
     \hline
     \textbf{Solution} & \textbf{Advantages} & \textbf{Disadvantages} \\ \hline
-    Re-organisation of the current spreadsheet & No changes to current operating system and software & Current problems will still occur, Difficult to keep organised \\ \hline
-    Python Desktop Application with GUI & User Friendly, Clear and easy to interpret & Takes up more memory, Takes longer to create the application  \\ \hline
-    Filing system & No electronics needed & More problems may be encountered than the current system, Lots of physical space is required \\ \hline
+
+    Re-organisation of the current spreadsheet & No changes to current operating system and software required, will not cost & Current problems will still occur, Difficult to keep organised as it will require more maintenance to do so \\ \hline
+
+    Python Desktop Application with GUI & User Friendly, Clear and easy to interpret, Layout can be designed specificly for the client, Usage of buttons simplifies tasks, Minimal training needed for most levels of experience & Takes up more memory, Takes longer to create the application  \\ \hline
+
+    Filing system & No electronics needed, Costs less, Minimal training needed for most levels of experience & Difficult to back up the data due to it being held on paper, data will have to be sent via post when necessary, Lots of physical space is required, more prone to damage and deteriation due to more movement \\ \hline
+
     \hline
 \end{tabular}
 \end{center}
@@ -470,7 +477,8 @@ The database could be used online, so that the authors can use their Author ID t
 I have chosen to use the Python Desktop Application with GUI as my solution. This is because:
 
 \begin{itemize}
-    \item I am already familiar with the Python Programming Language.
+    \item I am already familiar with the Python Programming Language, whereas I have little knowledge of how to manage a Paper Filing system or with creating advance spreadsheets.
     \item This will keep the system using computers and software, meaning there will not be a drastic change.
-    \item Using the application will take less time than manually entering everything into a spreadsheet, and less time than writing details down on paper.
+    \item Using the application will take less time than manually entering everything into a spreadsheet.
+    \item This will also take less time and physical space than writing details down on paper.
 \end{itemize}
