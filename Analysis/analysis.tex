@@ -7,7 +7,7 @@
 My client, Shahida Rahman, is an Author, and the Director and Secretary of Perfect Publishers Ltd, which has been a self publishing company since 2005. This means that the author pays Perfect Publishers to publish their book. She published her first book through Perfect Publishers Ltd, and this was when the company was born. She is 42 years old and is a mother of 4 children. Shahida uses computers to deal with online enquiries and to publish books from all over the world. Furthermore, she also produces the royalty statements for each book twice yearly. Aside from this, she has little experience with computers. Shahida generally uses a computer for research, social networking and reading the news. Every book is outsourced to an Editor and a Cover Designer. When the book is fully edited and formatted to the right specifications, they return the ready to print files to Shahida, who sends the books off to print. They track the books and their details manually using a database on an Excel Spreadsheet. Currently, it is difficult to keep all the data up to date and it is rather disorganised. Shahida would like to be able to look up a book/number of books in the system by using the details, such as the Author/Title/Date etc. She would also like the new system to link this database with information about the royalties of each book, and when they are needed to be paid every six months. The system could send an email to her, updating her about these.
 
 \subsection{Define the current system}
-The system that is currently being used consists of Shahida entering the book and its details into the spreadsheet. These details are taken from the enquiries that she receives via email, and include; first name, last name, email, and vague details of the book. Then, the more accurate details such as; book title, size, number of pages, hardback/paperback, mat or gloss, crème or white paper, font and font size are discussed between Shahida and the customer. She also records their details in a separate spreadsheet, which includes their email, phone number, and address, upon the customer's consent. The spreadsheets are used to track current and previous customers and their books, as the details about the book and themselves are recorded in these. Subsequently, Shahida informs the customer of the price details, waits for full payment and  then sends the customer an invoice. She then contacts her editor and her illustrator to start work on the book. Shahida refers to her company's website, where the calculated prices are ready for books, in order to correctly price the book, in accordance to the book’s details. Once the book is finished, the book is sent off to print, and the author receives 25 copies.
+The system that is currently being used consists of Shahida entering the book and its details into the spreadsheet. These details are taken from the enquiries that she receives via email, and include; first name, last name, email, and vague details of the book. Then, the more accurate details such as; book title, size, number of pages, hardback/paperback, mat or gloss, crème or white paper, font and font size are discussed between Shahida and the customer. She also records their details in a separate spreadsheet, which includes their email, phone number, and address, upon the customer's consent. The spreadsheets are used to track current and previous customers and their books, as the details about the book and themselves are recorded in these. Subsequently, Shahida informs the customer of the price details, waits for full payment and  then sends the customer an invoice. She then contacts her editor and her illustrator to start work on the book. Shahida refers to her company's website, where the calculated prices are ready for books, in order to correctly price the book, in accordance to the book’s details. An ISBN number is assigned to the book, which is bought in bulks by Shahida from the ISBN Office. Once the book is finished, the book is sent off to print, and the author receives 25 copies.
 
 \subsection{Describe the problems}
 There are numerous problems with the current system. First of all, the usage of the spreadsheet makes it harder to find a customer and their details, and their book’s details. This is because the spreadsheet is much disorganised. Furthermore, it is harder to keep track of the details of each book, meaning it is difficult to update the details of the book when necessary. Because there are a large number of books in the system, it is harder to find each book and then seperately find the customer that the book was written by, as they are in seperate spreadsheets, meaning that Shahida must manually search for them in both spreadsheets. Also, if the same author makes an enquiry about another book, their details must be entered into the spreadsheet again, because it is difficult to find where the customers details currently are due to there being many customers in the spreadsheet, having incorrectly entered their data from a given enquiry, or they might have been removed after having been there for a long time This could cause inconsistencies in the data, because for instance, the customer may move house, meaning their address would need changing, and it would be difficult to find and update all entries where their address is recorded. 
@@ -29,8 +29,6 @@ There are numerous problems with the current system. First of all, the usage of 
 
 \subsubsection{Data sources and destinations}
 In the current system there are three key data sources that are used. These are Shahida herself, the customer and the spreadsheets. The Customer sends the enquiry which is sent via email. After the details about the book have been discussed, they are stored in one spreadsheet, and the details of the customer are stored in a seperate spreadsheet, linked to the details of the book. These details are agreed seperately from the enquiry, between Shahida and the customer. Details such as the book size, page number, hardback/softback and paper type are used to calculate the cost for the customer, which is used to create an invoice which is sent to the customer. This is the first output of the system. A copy of every invoice is stored on Shahida's computer in a special folder just for invoices. Once Shahida receives full payment, the work is conducted and completed. If the customer wishes to publish another book, they send another enquiry, and their personal data is duplicated because of the details of the new book which are added. Every six months after the book has been published, the royalties must be paid to the author. The royalties are the profit that the author makes from sales of her book from bookshops. A royalty statement is created and stored in a special folder just for royalties.
-
-
 
 \begin{center}
 \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3cm}|p{3cm}|}
@@ -67,7 +65,10 @@ In the current system there are three key data sources that are used. These are 
     Shahida & PhoneNumber & 07123456789 & Author Database  \\ \hline
     Shahida & Invoice & - & Invoice Folder \\ \hline
     Shahida & Invoice & - & Customer  \\ \hline
-    Customer & Payment & 1000 & Shahida  \\ \hline
+    Shahida & ISBN & 9780007525492 & Book Database \\ \hline
+    Shahida & Date Published & 23/10/2014 & Book Database \\ \hline
+    Shahida & Price & £12.99 & Book Database \\ \hline
+    Customer & Payment & £1000 & Shahida  \\ \hline
     Shahida & Cover Preferences & - & Cover Designer\\ \hline
     Shahida & Book & - & Editor  \\ \hline
     Editor & Completed Book & - & Shahida  \\ \hline
@@ -81,7 +82,7 @@ In the current system there are three key data sources that are used. These are 
 
 
 \subsubsection{Algorithms}
-In the current system there are two Algorithms which are being used. The first sends an invoice to the customer and checks whether Shahida has recieved full payment. Once Shahida has received full payment, she, her cover designer and her editor can begin working on the book. The second algorithm checks whether the work has been completed, so that the completed book can then be sent off for printing. 
+In the current system there are two Algorithms which are being used. The first sends an invoice to the customer and checks whether Shahida has recieved full payment. Once Shahida has received full payment, she, her cover designer and her editor can begin working on the book. The second algorithm consists of completing the work that is needed to be done, and checks whether the work has been completed, so that the completed book can then be sent off for printing. 
 
 \begin{algorithm}[H]
     \caption{First Algorithm - Sending an invoice and Checking for Payment}
@@ -111,7 +112,7 @@ Send Invoice
 
 
 \begin{algorithm}[H]
-    \caption{Second Algorithm - Checking If Work is Completed}
+    \caption{Second Algorithm - Completing Work and Checking If Work is Completed}
 \begin{algorithmic}[1]
 \SET{$WorkComplete$}{$false$}
 \SET{$CoverComplete$}{$false$}
@@ -179,7 +180,7 @@ The following image is an example of the second output form, a Royalty Statement
 
 \subsection{The proposed system}
 
-In the proposed system the Customer's information will still be received through the online form on the company's website, which Shahida receives via email. She will then enter this into the system using a new interface that will ask her for the details. This will be placed into a database. Each Customer's book will have a primary key, the ISBN number. In a seperate database, the author's details will be stored and the author will have a special ID number which is used only in the databases. Every book that is published by the same author will have an attribute which is the author's ID. The ID will just be a number. The system's interface will have a search feature, which can search for book titles, authors, and author IDs.
+In the proposed system the Customer's information will still be received through the online form on the company's website, which Shahida receives via email. She will then enter this into the system using a new interface that will ask her for the details. This will be placed into a database. Each Customer's book will have a primary key, the ISBN number which Shahida assigns to the book. In a seperate database, the author's details will be stored and the author will have a special ID number which is used only in the databases. Every book that is published by the same author will have an attribute which is the author's ID. The ID will just be a number. The system's interface will have a search feature, which can search for book titles, authors, and author IDs.
 
 \subsubsection{Data sources and destinations}
 \begin{center}
@@ -214,14 +215,18 @@ In the proposed system the Customer's information will still be received through
     Shahida & Address & String & Database  \\ \hline
     Shahida & Postcode & String & Database  \\ \hline
     Shahida & PhoneNumber & String & Database  \\ \hline
-    Database & Author ID & Integer & Shahida  \\ \hline
+    Shahida & ISBN & String & Database \\ \hline
+    Shahida & Date Published & Date & Database \\ \hline
+    Shahida & Price & Real & Book Database \\ \hline
+    Database* & Author ID & Integer & Shahida  \\ \hline
     Shahida & Invoice & String & Invoice Folder \\ \hline 
     Shahida & Invoice & String & Customer  \\ \hline
-    Customer & Payment & - & Shahida  \\ \hline
+    Customer & Payment & Real & Shahida  \\ \hline
     Shahida & Cover Details & String & Cover Designer\\ \hline
     Shahida & Book & String & Editor  \\ \hline
     Editor & Completed Book & String & Shahida  \\ \hline
     Cover Designer & Completed Cover & Image & Shahida \\ \hline
+    Shahida & DatePublished & Date & Database \\ \hline 
     Shahida & Royalty Statement & - & Royalty Statement Folder \\ \hline
     Shahida & Royalty Statement & - & Customer \\ \hline
     Shahida & Royalties & Real & Customer \\ \hline 
@@ -229,6 +234,7 @@ In the proposed system the Customer's information will still be received through
     \hline
 \end{tabular}
 \end{center}
+*The Database will create a number and assign that number as an Author ID
 
 \subsubsection{Data flow diagram}
 
@@ -250,6 +256,7 @@ In the proposed system the Customer's information will still be received through
     Address & String & 5-64 Characters & Length & Example Road  \\ \hline
     Postcode & String & 7 Characters & Format & AB1 2CD  \\ \hline
     Author ID & Integer & 1-255 & Range & 17  \\ \hline
+    ISBN & String & 13 Characters & Length & 9780007525492 \\ \hline
     BookTitle & String & 1-127 Characters & Length & The Hobbit  \\ \hline
     NoOfPages & Integer & 1-1023 & Range & 395  \\ \hline
     Size & String & 5 & Existence & Large \\ \hline
@@ -258,19 +265,28 @@ In the proposed system the Customer's information will still be received through
     Paper & String & 11 Characters & Existence & White Paper\\ \hline
     Font & String & 1-64 Characters & Length & Arial  \\ \hline
     FontSize & Real & 8-64 & Numbers only & 12.5  \\ \hline
+    DatePublished & Date & dd/mm/yyyy & Range & 23/10/2014 \\ \hline
+    Price & Real & Numbers only & £12.99 \\ \hline
     \hline
 \end{tabular}
 \end{center}
 
 \subsubsection{Volumetrics}
 
-I have conducted calculations to calculate the maximum  possible size of 1 customer record, which is 318 Bytes.
+I have conducted calculations to calculate the maximum  possible size of 1 customer and book record, which is 275 Bytes. However, when a customer wishes to publish more than one book, more book records are required. As the most amount of books one customer has published with the company is 3, we can have 4 book records per customer record.
 
-Each Character is 1 byte, each number up to 255 is 1 byte, and each number between 256 and 32768 is 2 bytes.
+Each ASCII Character is 1 byte, each number up to 255 is 1 byte, and each number between 256 and 32768 is 2 bytes. Real Numbers such as 12.5 are 2 bytes, and a Date is 3 bytes.
 
-FirstName (20) + LastName (20) + Email (30) + PhoneNumber (15) + Address (64) + Postcode (7) + Author ID (1) + Book Title (1), NoOfPages (2), Size (5), Back (9), Cover (5), Paper (11), Font (64), FontSize (64) = 318 Bytes
+Firstly, I have worked out the size of the customer record, which is 157 Bytes.
 
-I have chosen to use a size of 100 different customer records, which would be equivalent to 31.8 kilobytes. This is because the company rarely have more than 20 enquiries in a year. This would be a suitable number of customer records as it will last a few years before it may require resizing, which can be conducted at a later date when necessary. 31.8 kb will be not be difficult for Shahida's PC to hold, as it is a relatively small size.
+FirstName (20) + LastName (20) + Email (30) + PhoneNumber (15) + Address (64) + Postcode (7) + Author ID (1) = 157 Bytes.
+
+I have then calculated the size of one book record, which is 118 Bytes.
+Book Title (1), NoOfPages (2), Size (5), Back (9), Cover (5), Paper (11), Font (64), FontSize (2) + ISBN (13) + DatePublished (3) + Price (2) + Author ID (1) = 118 Bytes
+
+If we have 4 book records per customer record, that would mean that the size for 1 customer with 4 books would be 157 + (5 * 118) = 747 Bytes.
+
+I have chosen to use a size of 100 different customer records, which would be equivalent to 74700 bytes, and 74700 / 1024 = 72.9 Kilobytes. This is because the company rarely have more than 20 enquiries in a year. This would be a suitable number of customer records as it will last a few years before it may require resizing, which can be conducted at a later date when necessary. 72.9 KB will be not be difficult for Shahida's PC to hold, as it is a very small size.
 
 \section{Objectives}
 
@@ -286,7 +302,6 @@ The general objectives are:
 \end{itemize}
 
 The System must be able to prevent unecessary duplication of data, and be able to organise data well, and this will be a priority.
-
 
 \subsection{Specific Objectives}
 
@@ -321,14 +336,6 @@ Search function and editing data:
     \item Can be edited upon finding the desired data
 \end{itemize}
 
-
-Calculating royalties:
-
-\begin{itemize}
-    \item Receives inputs from user (print cost, wholesale price and quantity sold)
-    \item Uses inputs to calculate the royalties
-\end{itemize}
-
 \subsection{Core Objectives}
 
 \begin{itemize}
@@ -354,15 +361,17 @@ Calculating royalties:
 
 \subsection{Entity Descriptions}
 
-Customer(\underline{Author ID}, Forename,Surname, Email, Address, Postcode, Phone Number)
+Customer(\underline{Author ID}, \emph{Email}, Forename, Surname, Address, Postcode, Phone Number)
 
 Enquiry(\underline{Email}, \emph{Author ID}, Forename, Surname)
 
-Invoice(\underline{Author ID}, \emph{Book Title}, Price, Forename, Surname, Address, Postcode)
+Invoice(\underline{Author ID}, \emph{ISBN Number}, Book title, Price, Forename, Surname, Address, Postcode)
 
-Royalties(\underline{AuthorID}, \emph{Book Title}, Price, Forename, Surname, Address, Postcode)
+Royalties(\underline{AuthorID}, \emph{ISBN Number}, Book title, Price, Forename, Surname, Address, Postcode)
 
-Book(\underline{ISBN Number}, \emph{AuthorID}, Book Title, Pages, Size, Cover type, Colour, Back Type, Paper, Font, Font size)
+Book(\underline{ISBN Number}, \emph{AuthorID}, Book Title, Pages, Size, Cover type, Colour, Back Type, Paper, Font, Font size, Date published, Price)
+
+The database will only store data about the customers and their books, as the enquiries give details about the books and customers, and the royalties and invoices are stored seperately from the database.
 
 \section{Object Analysis}
 
@@ -407,12 +416,13 @@ Key:
 \begin{tabular}{|p{2.5cm}|}
     \hline
     \textbf{Book} \\ \hline
-    Title \\ Pages \\ Size \\ Cover Type \\ Colour \\ Back Type \\ Paper \\ Font \\ Font Size \\ \hline
-    Add Title \\ Edit Title \\ Add Pages \\ Edit Pages \\ Add Size \\ Edit Size \\ Add Cover Type \\ Edit Cover Type \\ Add Colour \\ Edit Colour \\ Add Back Type \\ Edit Back Type \\ Add Paper \\ Edit Paper \\ Add Font \\ Edit Font \\ Add Font Size \\ Edit Font Size\\ \hline
+    Title \\ ISBN \\ Pages \\ Size \\ Cover Type \\ Colour \\ Back Type \\ Paper \\ Font \\ Font Size \\ \hline
+    Add Title \\ Edit Title \\ Add ISBN \\ Edit ISBN \\ Add Pages \\ Edit Pages \\ Add Size \\ Edit Size \\ Add Cover Type \\ Edit Cover Type \\ Add Colour \\ Edit Colour \\ Add Back Type \\ Edit Back Type \\ Add Paper \\ Edit Paper \\ Add Font \\ Edit Font \\ Add Font Size \\ Edit Font Size\\ Add Date Published \\ Edit Date Published \\ Add Price \\ Edit Price \\ \hline
     \hline
 \end{tabular}
 
 \section{Other Abstractions and Graphs}
+Graphs not required.
 
 \section{Constraints}
 

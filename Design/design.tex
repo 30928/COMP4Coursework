@@ -32,7 +32,10 @@
 
 \subsection{Identification of appropriate storage media}
 
+
+
 \section{Database Design}
+
 
 \subsection{Normalisation}
 
@@ -40,7 +43,128 @@
 
 \subsubsection{Entity Descriptions}
 
-\subsubsection{1NF to 3NF}
+Customer(\underline{Author ID}, FirstName, LastName, Email, Address, Postcode, Phone Number)
+
+Invoice(\underline{InvoicePayment}, \underline{InvoiceDate}, \emph{ISBN}, \emph{AuthorID}, InvoiceQuantity, InvoiceDiscount, ShippingPrice, ShippingType)
+
+Royalties(\underline{RoyaltyPayment}, \underline{RoyaltiesDate}, \emph{ISBN}, \emph{AuthorID}, RoyaltyDiscount, WholeSalePrice, RoyaltyQuantity, NetSales, PrintCost)
+
+Book(\underline{ISBN}, \emph{AuthorID}, Book Title, NoOfPages, Size, Cover, Paper, Back, Paper, Font, FontSize, DatePublished, Price)
+
+\subsubsection{UNF to 3NF}
+
+Key:
+
+\textbf{Bold Font} = Primary Key
+\emph{Italics} = Foreign Key
+Each Column represents a new group.
+
+First of all, I have started with the data in its unnormalised form.
+
+\begin{tabular}{|p{2.5cm}|}
+    \hline
+    FirstName \\
+    LastName \\
+    Email \\
+    PhoneNumber \\
+    Address \\
+    PostCode \\
+    AuthorID \\
+    ISBN \\
+    BookTitle \\
+    NoOfPages \\
+    Size \\
+    Back \\
+    Cover \\
+    Paper \\
+    Font \\
+    FontSize \\
+    DatePublished \\
+    Price \\
+    RoyaltyPayment \\
+    RoyaltiesDate \\
+    Discount \\
+    WholeSalePrice \\
+    Quantity \\
+    NetSales \\
+    PrintCost \\
+    InvoicePayment \\
+    InvoiceDate \\
+    ShippingPrice \\
+    ShippingType \\
+    \hline
+\end{tabular}
+
+Then, I put it into the first normal form.
+
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|}
+    \hline
+    \textbf{AuthorID} & \textbf{ISBN} \\
+    FirstName & \textbf{AuthorID} \\
+    LastName & BookTitle \\
+    Email & NoOfPages \\
+    PhoneNumber & Size \\
+    Address & Back \\
+    PostCode & Cover \\
+    & Paper \\
+    & Font \\
+    & FontSize \\
+    & DatePublished\\
+    & Price \\
+    & RoyaltyPayment \\
+    & RoyaltiesDate \\
+    & Discount \\
+    & WholeSalePrice \\
+    & Quantity \\
+    & NetSales \\
+    & PrintCost \\
+    & InvoicePayment \\
+    & InvoiceDate \\
+    & ShippingPrice \\
+    & ShippingType \\
+    \hline
+\end{tabular}
+
+After that, I put it into the second normal form.
+
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+    \hline
+    \textbf{AuthorID} & \textbf{ISBN} & \textbf{ISBN} \\
+    FirstName & \textbf{AuthorID} & BookTitle \\
+    LastName & RoyaltyPayment & NoOfPages \\
+    Email  & RoyaltiesDate & Size \\
+    PhoneNumber & RoyaltyDiscount & Back \\
+    Address & WholeSalePrice & Cover \\
+    PostCode & RoyaltyQuantity & Paper \\
+    & NetSales & Font \\
+    & PrintCost & FontSize \\
+    & InvoicePayment & DatePublished \\
+    & InvoiceDate & Price \\
+    & InvoiceDiscount & \\
+    & InvoiceQuantity & \\
+    & ShippingPrice & \\
+    & ShippingType & \\
+    \hline
+\end{tabular}
+
+Finally, I put the data into its third normal form.
+
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+    \hline
+    \textbf{AuthorID} & \textbf{ISBN} & \textbf{ISBN} & \textbf{RoyaltyPayment} & \textbf{InvoicePayment} \\
+    FirstName & \textbf{AuthorID} & \emph{AuthorID} & \textbf{RoyaltiesDate} & \textbf{InvoiceDate} \\
+    LastName & \emph{RoyaltyPayment} & BookTitle & \emph{ISBN} & \emph{ISBN} \\
+    Email  & \emph{RoyaltiesDate} & NoOfPages & \emph{AuthorID} & \emph{AuthorID} \\
+    PhoneNumber & \emph{InvoicePayment} & Size & RoyaltyDiscount & InvoiceQuantity \\
+    Address & \emph{InvoiceDate} & Back & WholeSalePrice & InvoiceDiscount \\
+    PostCode & & Cover & RoyaltyQuantity & ShippingPrice \\
+    & & Paper & NetSales & ShippingType \\
+    & & Font & PrintCost & \\
+    & & FontSize & &\\
+    & & DatePublished & & \\
+    & & Price & & \\
+    \hline
+\end{tabular}
 
 \section{Security and Integrity of the System and Data}
 
