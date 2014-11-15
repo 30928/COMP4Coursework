@@ -33,13 +33,20 @@
 \subsection{Identification of appropriate storage media}
 
 
+\newpage
 
 \section{Database Design}
 
-
 \subsection{Normalisation}
-
+ 
 \subsubsection{ER Diagrams}
+
+
+\begin{figure}[H]
+    \caption{ER Diagram} \label{ER_Diagram.pdf}
+    \includegraphics[width=\textwidth]{./Design/ER_Diagram.pdf}
+\end{figure}
+
 
 \subsubsection{Entity Descriptions}
 
@@ -56,7 +63,9 @@ Book(\underline{ISBN}, \emph{AuthorID}, Book Title, NoOfPages, Size, Cover, Pape
 Key:
 
 \textbf{Bold Font} = Primary Key
+
 \emph{Italics} = Foreign Key
+
 Each Column represents a new group.
 
 First of all, I have started with the data in its unnormalised form.
@@ -149,7 +158,7 @@ After that, I put it into the second normal form.
 
 Finally, I put the data into its third normal form.
 
-\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2cm}|p{3cm}|p{3cm}|}
     \hline
     \textbf{AuthorID} & \textbf{ISBN} & \textbf{ISBN} & \textbf{RoyaltyPayment} & \textbf{InvoicePayment} \\
     FirstName & \textbf{AuthorID} & \emph{AuthorID} & \textbf{RoyaltiesDate} & \textbf{InvoiceDate} \\
@@ -164,6 +173,17 @@ Finally, I put the data into its third normal form.
     & & DatePublished & & \\
     & & Price & & \\
     \hline
+\end{tabular}
+
+\subsection{SQL Queries}
+
+I am using Python to format the SQL query text strings.
+
+\begin{tabular}{|p{10cm}|p{5cm}|}
+    \hline
+    \textbf{SQL} & \textbf{Descriptions} \\ \hline
+     """insert into \\ Customer(FirstName, LastName, Email, PhoneNumber, Address, Postcode) values (\{0\}, \{1\}, \{2\}, \{3\}, \{4\}, \{5\}) \\ """.format(FirstName, LastName, Email, PhoneNumber, Address, Postcode) & An example of an SQL statement which adds customer records to the database. Here, it is entering a new customer record with the attributes: FirstName, LastName, Email, PhoneNumber, Address and Postcode. \\ \hline
+    """create table Royalties(\\ RoyaltyPayment REAL,\\ RoyaltiesDate DATE,\\ ISBN STRING,\\ AuthorID INTEGER,\\ RoyaltyDiscount STRING,\\ WholeSalePrice REAL,\\ RoyaltyQuantity INTEGER,\\ NetSales REAL,\\ PrintCost REAL\\ PRIMARY KEY(RoyaltyPayment, RoyaltiesDate) \\ FOREIGN KEY(ISBN, AuthorID) REFERENCES \\ Book(ISBN), Customer(AuthorID) """ & An example of an SQL statement that creates a new table for the Royalties. There is a composite primary key consisting of RoyaltyPayment and RoyaltiesDate, and there are two foreign keys, which are ISBN and AuthorID. \\ \hline
 \end{tabular}
 
 \section{Security and Integrity of the System and Data}
