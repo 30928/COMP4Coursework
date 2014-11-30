@@ -29,8 +29,18 @@ Log In Window
 Main Database Interface
 \begin{itemize}
     \item This will be the "home" interface.
-    \item A user interface is presented with a set of options which are: Search Database, Add Entry, Remove Entry, Edit Entry, Change Password, and Log out.
+    \item A view of the Customer details in the database will be available.
+    \item The user can select an author from the basic view of the database, and click view
+    \item A user interface is presented with a set of options which are: View, Search Database, Add Entry, Remove an Entry, Edit an Entry, Change Password, and Log out.
     \item Clicking the Search Database Button will prompt a seperate interface to open, and shows details which can be used to search for specific items in the database.
+
+\end{itemize}
+
+\
+View Screen
+\begin{itemize}
+    \item Clicking view after having selected an customer will open a new window which will show a more in depth view of it. It will show the books that have been published with them.
+    \item There will be buttons to expand on certain fields, including Royalties, Publishing Invoices and Book Invoices. These will show in new windows. If the user has clicked on Royalties, they have the option to click on Royalties Items on the following screen, where they can see breakdown of it. If they have clicked on Book Invoices, they can click on the Book Invoice Items on the following screen to see a breakdown of these too.
 \end{itemize}
 
 \
@@ -39,17 +49,8 @@ Adding/Removing/Editing Customers and Entries
 \begin{itemize}
     \item Clicking the Add Entry Button will prompt a seperate interface to open, and contains a layout of entry boxes for required fields for entering details about a specific entry type, which could be a new customer, or a book/royalties/royalty items/book invoice/book invoice items/publication invoice, dependent on which has been selected. An existing customer can be selected using the search function, using search criteria that may consist of specific attributes.
     \item If a customer already exists, and details are needed to be edited or deleted, a search can be conducted to find that customer.
-    \item Clicking the Remove Entry Button will prompt a seperate interface to open, which contains a view of the database. Entries can be searched for and then can be selected and deleted.
-    \item Clicking the Edit Entry button will prompt a seperate interface to open, and will contain a view of the database. An entry can be searched for using the search, selected, and once the user clicks "Edit", the window will be replaced by the window for Adding Entries, but the data will be in their respective entry fields already. Then, the data can be edited and saved.
-\end{itemize}
-
-\
-
-Calendar Interface
-\begin{itemize}
-    \item This interface will open when a date input is required. This will be when data is being searched for, or when data is being added or edited.
-    \item It will consist of a visual calendar, and a date can be selected from clicking on a certain date.
-    \item Once confirm is clicked, the selected date will be used for that entry.
+    \item Clicking the Remove Entry Button will prompt a seperate interface to open, which contains a view of the database. If an entry was selected beforehand, then upon clicking Remove Entry, The user will be prompted for confirmation, then asked to enter their password. Entries can be searched for and then can be selected and deleted, and the user will be prompted for confirmation
+    \item Clicking the Edit Entry button will prompt a seperate interface to open, and will contain a view of the database. An entry can be searched for using the search, selected, and once the user clicks "Edit", the window will be replaced by the window for Adding Entries, but the data will be in their respective entry fields already. If an entry was selected before hand, the window for Adding entries will open first upon clicking Edit Entry, and the data will be in the fields already, ready for editing. Then, the data can be edited and saved, and the user will be prompted for confirmation then asked to enter their password.
 \end{itemize}
 
 \
@@ -65,45 +66,76 @@ Changing Password
 Search Window
 \begin{itemize}
     \item Clicking the Search Database Button will open a seperate interface, which contains a set of fields that the user can use to search the database by.
-    \item Once the Search Button is clicked, a list of all the data entries that match the search criteria will come up in a list in the Main Window, in a similar view to the original database.
+    \item Once the Search Button is clicked, a list of all the data entries that match the search criteria will come up in a list in the Main Window.
+    \item The search can be refined by searching again, and an item can be selected from the search results.
 \end{itemize}
 
 \subsection{System flowcharts showing an overview of the complete system}
 
-The following is a flowchart showing an overview of the complete system.
+The following is a flowchart representing a summary of the complete system.
 
 \begin{figure}[H]
     \caption{Flowchart 1} \label{Flowchart_1.pdf}
-    \includegraphics[width=\textwidth]{./Design/Flowchart_1.pdf}
+    \includegraphics[width=\textwidth]{./Design/Flowcharts/Flowchart_1.pdf}
 \end{figure}
 
 \begin{figure}[H]
     \caption{Flowchart 2} \label{Flowchart_2.pdf}
-    \includegraphics[width=\textwidth]{./Design/Flowchart_2.pdf}
+    \includegraphics[width=\textwidth]{./Design/Flowcharts/Flowchart_2.pdf}
 \end{figure}
 
 \begin{figure}[H]
     \caption{Flowchart 3} \label{Flowchart_3.pdf}
-    \includegraphics[width=\textwidth]{./Design/Flowchart_3.pdf}
+    \includegraphics[width=\textwidth]{./Design/Flowcharts/Flowchart_3.pdf}
 \end{figure}
 
 \begin{figure}[H]
     \caption{Flowchart 4} \label{Flowchart_4.pdf}
-    \includegraphics[width=\textwidth]{./Design/Flowchart_4.pdf}
+    \includegraphics[width=\textwidth]{./Design/Flowcharts/Flowchart_4.pdf}
 \end{figure}
 
 \begin{figure}[H]
     \caption{Flowchart 5} \label{Flowchart_5.pdf}
-    \includegraphics[width=\textwidth]{./Design/Flowchart_5.pdf}
+    \includegraphics[width=\textwidth]{./Design/Flowcharts/Flowchart_5.pdf}
 \end{figure}
 
 \begin{figure}[H]
     \caption{Flowchart 6} \label{Flowchart_6.pdf}
-    \includegraphics[width=\textwidth]{./Design/Flowchart_6.pdf}
+    \includegraphics[width=\textwidth]{./Design/Flowcharts/Flowchart_6.pdf}
 \end{figure}
 
 
 \section{User Interface Designs}
+
+\begin{figure}[H]
+    \caption{Login Screen and Main Menu} \label{Login_Screen_and_Main_Menu.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{View Menu and Royalties} \label{View_Menu_and_Royalties.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{RoyaltiesItems and BookInvoice and Items} \label{RoyaltiesItems_and_BookInvoice_and_Items.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Publishing Invoice} \label{PubInvoice.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/PubInvoice.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Search} \label{Search.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/Search.pdf}
+\end{figure}
+
+
+\section{Hardware Specification}
+
+The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ratio screen which runs on Windows 8. This is imperative to the size of the application I will be creating because it must fit on the given screen size and can't be resizable. A mouse or touchpad will be used for navigational purposes, and for confirmation of entries. Also, a keyboard will be used for inputting information into fields for entering and editing information. All the data used by the program and its database will be held on a local hard drive, and a display is needed for the outputs of the program.
 
 \section{Program Structure}
 
@@ -325,6 +357,7 @@ Finally, I put the data into its third normal form.
 \end{tabular}
 
 \newpage
+
 \subsection{SQL Queries}
 
 I am using Python to format the SQL query text strings.
