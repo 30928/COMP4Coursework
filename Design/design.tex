@@ -41,6 +41,7 @@ View Screen
 \begin{itemize}
     \item Clicking view after having selected an customer will open a new window which will show a more in depth view of it. It will show the books that have been published with them.
     \item There will be buttons to expand on certain fields, including Royalties, Publishing Invoices and Book Invoices. These will show in new windows. If the user has clicked on Royalties, they have the option to click on Royalties Items on the following screen, where they can see breakdown of it. If they have clicked on Book Invoices, they can click on the Book Invoice Items on the following screen to see a breakdown of these too.
+    \item Customers can be searched for quickly using their AuthorID on this screen.
 \end{itemize}
 
 \
@@ -50,7 +51,7 @@ Adding/Removing/Editing Customers and Entries
     \item Clicking the Add Entry Button will prompt a seperate interface to open, and contains a layout of entry boxes for required fields for entering details about the customer. After this, the user can click on the customer's new record from the menu and click edit or a book/royalties/royalty items/book invoice/book invoice items/publication invoice, dependent on which has been selected. An existing customer can be selected using the search function.
     \item If a customer already exists, and details are needed to be edited or deleted, a search can be conducted to find that customer.
     \item Clicking the Remove Entry Button will prompt a seperate interface to open, which contains a view of the database, consisting of all the customers. Three search boxes can be used for searching for their forename, surname or AuthorID. If an entry was selected beforehand, then upon clicking Remove Entry, The user will be prompted for confirmation, then asked to enter their password. 
-    \item Clicking the Edit Entry button will prompt a seperate interface to open, and will contain a view of the database. An entry can be searched for using the search, selected, and once the user clicks "Edit", the user will be prompted with a text box, asking for the user to enter text. Upon confirming what the user wants to enter, they are required to enter their password. This will then be saved. If an entry was selected before hand, a new window for Adding entries will open first upon clicking Edit Entry, and the data about the customers will be in the fields already, ready for editing. Then, the data can be edited and saved, and the user will be prompted for confirmation then asked to enter their password.
+    \item Clicking the Edit Entry button will prompt a seperate interface to open, and will contain a view of the database. An entry can be searched for using the search, selected, and once the user clicks "Edit", the user will be prompted with a text box, asking for the user to enter text. Upon confirming what the user wants to enter, they are required to enter their password. This will then be saved. If a customer entry was selected before hand, a new window for adding entries will open first upon clicking Edit Entry, and the data about the customers will be in the fields already, ready for editing. Then, the data can be edited and saved, and the user will be prompted for confirmation then asked to enter their password.
 \end{itemize}
 
 \
@@ -132,34 +133,44 @@ The following is a flowchart representing a summary of the complete system.
     \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/Search.pdf}
 \end{figure}
 
+\begin{figure}[H]
+    \caption{Editing Screens} \label{Editing_Screens.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/Editing_Screens.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Remove Entry and Change Password} \label{Remove_Entry_and_Change_Password.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf}
+\end{figure}
+
 
 \section{Hardware Specification}
 
 The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ratio screen which runs on Windows 8. This is imperative to the size of the application I will be creating because it must fit on the given screen size and can't be resizable. A mouse or touchpad will be used for navigational purposes, and for confirmation of entries. Also, a keyboard will be used for inputting information into fields for entering and editing information. All the data used by the program and its database will be held on a local hard drive, and a display is needed for the outputs of the program.
-
-\section{Program Structure}
-
-\subsection{Top-down design structure charts}
-
-\subsection{Algorithms in pseudo-code for each data transformation process}
-
-\subsection{Object Diagrams}
-
-\subsection{Class Definitions}
-
-\section{Prototyping}
-
-\section{Definition of Data Requirements}
-
-\subsection{Identification of all data input items}
-
-\subsection{Identification of all data output items}
-
-\subsection{Explanation of how data output items are generated}
-
-\subsection{Data Dictionary}
-
-\subsection{Identification of appropriate storage media}
+%
+%\section{Program Structure}
+%
+%\subsection{Top-down design structure charts}
+%
+%\subsection{Algorithms in pseudo-code for each data transformation process}
+%
+%\subsection{Object Diagrams}
+%
+%\subsection{Class Definitions}
+%
+%\section{Prototyping}
+%
+%\section{Definition of Data Requirements}
+%
+%\subsection{Identification of all data input items}
+%
+%\subsection{Identification of all data output items}
+%
+%\subsection{Explanation of how data output items are generated}
+%
+%\subsection{Data Dictionary}
+%
+%\subsection{Identification of appropriate storage media}
 
 
 \newpage
@@ -370,15 +381,15 @@ I am using Python to format the SQL query text strings.
     """select Customer.LastName, Book.BookTitle \\ from Customer, Book \\ where Price < 13.00 and \\ Back = "Paperback"  & This statement will return all the LastNames and the BookTitles from the Customer table and the Book table whose book is paperback and costs less than £13. \\ \hline
 \end{tabular}
 
-\section{Security and Integrity of the System and Data}
-
-\subsection{Security and Integrity of Data}
-
-\subsection{System Security}
-
-\section{Validation}
-
-\section{Testing}
+%\section{Security and Integrity of the System and Data}
+%
+%\subsection{Security and Integrity of Data}
+%
+%\subsection{System Security}
+%
+%\section{Validation}
+%
+%\section{Testing}
 
 \begin{landscape}
 \subsection{Outline Plan}

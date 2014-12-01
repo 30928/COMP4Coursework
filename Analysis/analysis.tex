@@ -31,7 +31,7 @@ There are numerous problems with the current system. First of all, the usage of 
 In the current system there are three key data sources that are used. These are Shahida herself, the customer and the spreadsheets. The Customer sends the enquiry which is sent via email. After the details about the book have been discussed, they are stored in one spreadsheet, and the details of the customer are stored in a seperate spreadsheet, linked to the details of the book. These details are agreed seperately from the enquiry, between Shahida and the customer. Details such as the book size, page number, hardback/softback and paper type are used to calculate the cost for the customer, which is used to create an invoice which is sent to the customer. This is the first output of the system. A copy of every invoice is stored on Shahida's computer in a special folder just for invoices. Once Shahida receives full payment, the work is conducted and completed. If the customer wishes to publish another book, they send another enquiry, and their personal data is duplicated because of the details of the new book which are added. Every six months after the book has been published, the royalties must be paid to the author. The royalties are the profit that the author makes from sales of her book from bookshops. A royalty statement is created and stored in a special folder just for royalties.
 
 \begin{center}
-\begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3cm}|p{3cm}|}
+\begin{tabular}{|p{1.5cm}|p{3cm}|p{3cm}|p{2.5cm}|}
     \hline
     \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
     Customer Enquiry & Forename & Peter & Shahida  \\ \hline
@@ -66,6 +66,13 @@ In the current system there are three key data sources that are used. These are 
     Shahida & Invoice & - & Customer  \\ \hline
     Shahida & ISBN & 9780007525492 & Book Database \\ \hline
     Shahida & Date Published & 23/10/2014 & Book Database \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{1.5cm}|p{3cm}|p{3cm}|p{2.5cm}|}
+    \hline
+    \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
     Shahida & Price & £12.99 & Book Database \\ \hline
     Customer & Payment & £1000 & Shahida  \\ \hline
     Shahida & Cover Preferences & - & Cover Designer\\ \hline
@@ -183,7 +190,7 @@ In the proposed system the Customer's information will still be received through
 
 \subsubsection{Data sources and destinations}
 \begin{center}
-\begin{tabular}{|p{3cm}|p{3.5cm}|p{3cm}|p{2.5cm}|}
+\begin{tabular}{|p{3cm}|p{3cm}|p{2cm}|p{2cm}|}
     \hline
     \textbf{Source} & \textbf{Data} & \textbf{Data Type} & \textbf{Destination} \\ \hline
     Customer Enquiry & Forename & String & Shahida  \\ \hline
@@ -220,6 +227,12 @@ In the proposed system the Customer's information will still be received through
     Database* & Author ID & Integer & Shahida  \\ \hline
     Shahida & Invoice & String & Invoice Folder \\ \hline 
     Shahida & Invoice & String & Customer  \\ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{|p{3cm}|p{3cm}|p{2cm}|p{2cm}|}
+    \hline
+    \textbf{Source} & \textbf{Data} & \textbf{Data Type} & \textbf{Destination} \\ \hline
     Customer & Payment & Real & Shahida  \\ \hline
     Shahida & Cover Details & String & Cover Designer\\ \hline
     Shahida & Book & String & Editor  \\ \hline
@@ -245,7 +258,7 @@ In the proposed system the Customer's information will still be received through
 \subsubsection{Data dictionary}
 
 \begin{center}
-\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}|}
+\begin{tabular}{|p{2cm}|p{1cm}|p{2.5cm}|p{1.5cm}|p{3cm}|}
     \hline
     \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} \\ \hline
     FirstName & String & 2-20 Characters & Length & Jo  \\ \hline
