@@ -381,14 +381,27 @@ I am using Python to format the SQL query text strings.
     """select Customer.LastName, Book.BookTitle \\ from Customer, Book \\ where Price < 13.00 and \\ Back = "Paperback"  & This statement will return all the LastNames and the BookTitles from the Customer table and the Book table whose book is paperback and costs less than £13. \\ \hline
 \end{tabular}
 
-%\section{Security and Integrity of the System and Data}
-%
-%\subsection{Security and Integrity of Data}
-%
-%\subsection{System Security}
-%
-%\section{Validation}
-%
+\section{Security and Integrity of the System and Data}
+
+\subsection{Security and Integrity of Data}
+The system will store personal data about the customers and will comply to the Data Protection Act. This means that the data must be frequently updated in order to keep it up to date, so there will be a way to edit and change the information using the program. All the data in the database must be kept securely, so that it can only be granted access to someone with the use of a passwor.d To ensure that all data stored is valid, everytime the user uses the keyboard, a check ill be completed to make sure that the data is valid. I need make checks for the addition and removals of data, so that all records will have the sufficient key data.
+
+\subsection{System Security}
+
+The database will be password protected to make sure that only users who know the password can access the database. This will keep the number of users of the database to a minimum. This can prevent the data from being tampered with or stolen. The database will be encrypted in order to avoid unwanted people having access to the data without the use of the system., therefore the number of people who can acces the data can be determined beforehand.
+
+\section{Validation}
+
+The system will check to make sure each entry is valid, in order to avoid any invalid entries into the database. 
+
+\begin{center}
+    \begin{tabular}{|p{2cm}|p{5cm}|p{5cm}|p{4cm}|}
+        \hline
+        \textbf{Item} & \textbf{Purpose of Test Series} & \textbf{Testing Strategy} & \textbf{Strategy Rationale}\\ \hline
+         &  & Example & Example \\ \hline
+    \end{tabular}
+\end{center}
+
 %\section{Testing}
 
 \begin{landscape}
@@ -398,7 +411,7 @@ I am using Python to format the SQL query text strings.
     \begin{tabular}{|p{2cm}|p{5cm}|p{5cm}|p{4cm}|}
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test Series} & \textbf{Testing Strategy} & \textbf{Strategy Rationale}\\ \hline
-        Example & Example & Example & Example \\ \hline
+        1 &  & Example & Example \\ \hline
     \end{tabular}
 \end{center}
 

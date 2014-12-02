@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  1 DEC 2014 21:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  2 DEC 2014 23:16
 entering extended mode
 **C:/Users/Imran*Rahman/Documents/Year*13/Computing/git/COMP4Coursework/coursew
 ork.tex
@@ -733,7 +733,7 @@ Chapter 1.
 [5
 
 
-] <./Analysis/Interview_Questions_1.jpg, id=639, 614.295pt x 844.8363pt>
+] <./Analysis/Interview_Questions_1.jpg, id=659, 614.295pt x 844.8363pt>
 File: ./Analysis/Interview_Questions_1.jpg Graphic file (type jpg)
 
 <use ./Analysis/Interview_Questions_1.jpg>
@@ -741,7 +741,7 @@ Package pdftex.def Info: ./Analysis/Interview_Questions_1.jpg used on input lin
 e 17.
 (pdftex.def)             Requested size: 284.52756pt x 391.31078pt.
  [6]
-<./Analysis/Interview_Questions_2.jpg, id=645, 614.295pt x 844.8363pt>
+<./Analysis/Interview_Questions_2.jpg, id=665, 614.295pt x 844.8363pt>
 File: ./Analysis/Interview_Questions_2.jpg Graphic file (type jpg)
 
 <use ./Analysis/Interview_Questions_2.jpg>
@@ -841,7 +841,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--82
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 94.
  [11]
-<./Analysis/Data_Flow_Diagrams_1.pdf, id=674, 597.23125pt x 845.1575pt>
+<./Analysis/Data_Flow_Diagrams_1.pdf, id=694, 597.23125pt x 845.1575pt>
 File: ./Analysis/Data_Flow_Diagrams_1.pdf Graphic file (type pdf)
 
 <use ./Analysis/Data_Flow_Diagrams_1.pdf>
@@ -860,7 +860,7 @@ Overfull \vbox (3.5658pt too high) has occurred while \output is active []
 l.153 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/A
 nalysis/Data_Flow_Diagrams_1.pdf>]
-<./Analysis/Invoice_Example.pdf, id=696, 597.55246pt x 845.07718pt>
+<./Analysis/Invoice_Example.pdf, id=716, 597.55246pt x 845.07718pt>
 File: ./Analysis/Invoice_Example.pdf Graphic file (type pdf)
 
 <use ./Analysis/Invoice_Example.pdf>
@@ -875,7 +875,7 @@ re.1.4}) has been already used, duplicate ignored
 l.181 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/A
 nalysis/Invoice_Example.pdf>]
-<./Analysis/Royalty_Statement_Example.pdf, id=762, 614.295pt x 794.97pt>
+<./Analysis/Royalty_Statement_Example.pdf, id=782, 614.295pt x 794.97pt>
 File: ./Analysis/Royalty_Statement_Example.pdf Graphic file (type pdf)
 
 <use ./Analysis/Royalty_Statement_Example.pdf>
@@ -954,7 +954,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--242
 \OT1/cmr/m/n/10 State-ment
  []
 
-[18] <./Analysis/Data_Flow_Diagrams_2.pdf, id=808, 597.23125pt x 845.1575pt>
+[18] <./Analysis/Data_Flow_Diagrams_2.pdf, id=828, 597.23125pt x 845.1575pt>
 File: ./Analysis/Data_Flow_Diagrams_2.pdf Graphic file (type pdf)
 
 <use ./Analysis/Data_Flow_Diagrams_2.pdf>
@@ -1021,7 +1021,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 309.
  [22]
-<./Analysis/ER_Diagram.pdf, id=839, 299.1175pt x 421.575pt>
+<./Analysis/ER_Diagram.pdf, id=859, 299.1175pt x 421.575pt>
 File: ./Analysis/ER_Diagram.pdf Graphic file (type pdf)
 
 <use ./Analysis/ER_Diagram.pdf>
@@ -1039,7 +1039,7 @@ Overfull \vbox (15.74626pt too high) has occurred while \output is active []
 l.373 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/A
 nalysis/ER_Diagram.pdf>]
-<./Analysis/Relationship_Diagram.pdf, id=863, 421.575pt x 597.23125pt>
+<./Analysis/Relationship_Diagram.pdf, id=883, 421.575pt x 597.23125pt>
 File: ./Analysis/Relationship_Diagram.pdf Graphic file (type pdf)
 
 <use ./Analysis/Relationship_Diagram.pdf>
@@ -1156,7 +1156,7 @@ Chapter 2.
 
 
 ] [36]
-<./Design/Flowcharts/Flowchart_1.pdf, id=921, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_1.pdf, id=941, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_1.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_1.pdf>
@@ -1164,7 +1164,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_1.pdf used on input line
  80.
 (pdftex.def)             Requested size: 345.0pt x 488.75769pt.
  [37]
-<./Design/Flowcharts/Flowchart_2.pdf, id=926, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_2.pdf, id=946, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_2.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_2.pdf>
@@ -1179,7 +1179,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_2.pdf used on input line
 l.87 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/De
 sign/Flowcharts/Flowchart_1.pdf>]
-<./Design/Flowcharts/Flowchart_3.pdf, id=941, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_3.pdf, id=961, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_3.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_3.pdf>
@@ -1194,7 +1194,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_3.pdf used on input line
 l.92 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/De
 sign/Flowcharts/Flowchart_2.pdf>]
-<./Design/Flowcharts/Flowchart_4.pdf, id=956, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_4.pdf, id=976, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_4.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_4.pdf>
@@ -1209,7 +1209,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_4.pdf used on input line
 l.97 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/De
 sign/Flowcharts/Flowchart_3.pdf>]
-<./Design/Flowcharts/Flowchart_5.pdf, id=971, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_5.pdf, id=991, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_5.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_5.pdf>
@@ -1224,7 +1224,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_5.pdf used on input line
 l.102 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/Flowcharts/Flowchart_4.pdf>]
-<./Design/Flowcharts/Flowchart_6.pdf, id=986, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_6.pdf, id=1006, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_6.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_6.pdf>
@@ -1239,7 +1239,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_6.pdf used on input line
 l.107 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/Flowcharts/Flowchart_5.pdf>]
-<./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf, id=1002, 421.575p
+<./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf, id=1022, 421.575p
 t x 597.23125pt>
 File: ./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf Graphic file 
 (type pdf)
@@ -1256,7 +1256,7 @@ u.pdf used on input line 113.
 l.115 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/Flowcharts/Flowchart_6.pdf>]
-<./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf, id=1017, 421.575pt x
+<./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf, id=1037, 421.575pt x
  597.23125pt>
 File: ./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf Graphic file (ty
 pe pdf)
@@ -1274,7 +1274,7 @@ l.120
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf>]
 <./Design/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf, id=
-1034, 455.7025pt x 711.65875pt>
+1054, 455.7025pt x 711.65875pt>
 File: ./Design/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf
  Graphic file (type pdf)
 
@@ -1301,7 +1301,7 @@ Overfull \vbox (8.68109pt too high) has occurred while \output is active []
 l.125 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf>]
-<./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf, id=1083, 455.7025pt
+<./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf, id=1103, 455.7025pt
  x 654.445pt>
 File: ./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf Graphic file (t
 ype pdf)
@@ -1310,7 +1310,7 @@ Package pdftex.def Info: ./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.
 pdf used on input line 128.
 (pdftex.def)             Requested size: 345.0pt x 495.47604pt.
 
-<./Design/UserInterfaceDesign/Search.pdf, id=1084, 483.8075pt x 654.445pt>
+<./Design/UserInterfaceDesign/Search.pdf, id=1104, 483.8075pt x 654.445pt>
 File: ./Design/UserInterfaceDesign/Search.pdf Graphic file (type pdf)
 
 <use ./Design/UserInterfaceDesign/Search.pdf>
@@ -1325,7 +1325,7 @@ line 133.
 l.135 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf>]
-<./Design/UserInterfaceDesign/Editing_Screens.pdf, id=1101, 483.8075pt x 654.44
+<./Design/UserInterfaceDesign/Editing_Screens.pdf, id=1121, 483.8075pt x 654.44
 5pt>
 File: ./Design/UserInterfaceDesign/Editing_Screens.pdf Graphic file (type pdf)
  <use ./Design/UserInterfaceDesign/Editing_Screens.pdf>
@@ -1340,7 +1340,7 @@ on input line 138.
 l.140 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/UserInterfaceDesign/Search.pdf>]
-<./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf, id=1117, 48
+<./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf, id=1137, 48
 3.8075pt x 654.445pt>
 File: ./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf Graphic
  file (type pdf)
@@ -1366,7 +1366,7 @@ icate ignored
 l.174 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf>] [51]
-<./Design/ER_Diagram.pdf, id=1152, 421.575pt x 597.23125pt>
+<./Design/ER_Diagram.pdf, id=1172, 421.575pt x 597.23125pt>
 File: ./Design/ER_Diagram.pdf Graphic file (type pdf)
 
 <use ./Design/ER_Diagram.pdf>
@@ -1415,46 +1415,51 @@ Overfull \hbox (105.79134pt too wide) in paragraph at lines 376--383
  []
 
 [59]
-Underfull \hbox (badness 10000) in paragraph at lines 410--410
+Overfull \hbox (158.24408pt too wide) in paragraph at lines 398--403
+ [] 
+ []
+
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 423--423
 []|\OT1/cmr/bx/n/10 Purpose of
  []
 
 
-Underfull \hbox (badness 5475) in paragraph at lines 410--410
+Underfull \hbox (badness 5475) in paragraph at lines 423--423
 []|\OT1/cmr/bx/n/10 Test Data
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--410
+Underfull \hbox (badness 10000) in paragraph at lines 423--423
 \OT1/cmr/bx/n/10 mal/ Er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--410
+Underfull \hbox (badness 10000) in paragraph at lines 423--423
 \OT1/cmr/bx/n/10 ro-neous/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--410
+Underfull \hbox (badness 10000) in paragraph at lines 423--423
 []|\OT1/cmr/bx/n/10 Expected
  []
 
 
-Overfull \hbox (15.4704pt too wide) in alignment at lines 408--412
+Overfull \hbox (15.4704pt too wide) in alignment at lines 421--425
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 412
+Underfull \vbox (badness 10000) detected at line 425
  []
 
-[60
+[61
 
 ])
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\git\COMP4Coursework\Testing
 \testing.tex"
 Chapter 3.
-[61
+[62
 
 
 
@@ -1527,15 +1532,15 @@ Overfull \hbox (15.4704pt too wide) in alignment at lines 39--43
 Underfull \vbox (badness 10000) detected at line 43
  []
 
-[62
+[63
 
-] [63]) [64
+] [64]) [65
 
 ]
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\git\COMP4Coursework\Mainten
 ance\maintenance.tex"
 Chapter 4.
-Excluding 'comment' comment. [65
+Excluding 'comment' comment. [66
 
 
 
@@ -1543,13 +1548,13 @@ Excluding 'comment' comment. [65
 Overfull \vbox (349.24393pt too high) has occurred while \output is active []
 
 
-[66] Excluding 'comment' comment. [67
+[67] Excluding 'comment' comment. [68
 
 ])
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\git\COMP4Coursework\Manual\
 manual.tex"
 Chapter 5.
-) [68
+) [69
 
 
 
@@ -1558,11 +1563,11 @@ Chapter 5.
 Overfull \vbox (248.63841pt too high) has occurred while \output is active []
 
 
-[69]
+[70]
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\git\COMP4Coursework\Evaluat
 ion\evaluation.tex"
 Chapter 6.
-) [70
+) [71
 
 
 
@@ -1570,7 +1575,7 @@ Chapter 6.
 Overfull \vbox (6.61086pt too high) has occurred while \output is active []
 
 
-[71]
+[72]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 17.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 17.
 
@@ -1591,7 +1596,7 @@ ion\evaluation.aux"))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 17.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 17.
 Package rerunfilecheck Info: File `coursework.out' has not changed.
-(rerunfilecheck)             Checksum: F59BB79D1F2E96C27F3AFD6CC4BCCE24;8291.
+(rerunfilecheck)             Checksum: 644AD805AF4C352F16976B924D2C64EF;8601.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1599,10 +1604,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 17.
  ) 
 Here is how much of TeX's memory you used:
- 10317 strings out of 493921
- 153678 string characters out of 3144855
+ 10326 strings out of 493921
+ 153801 string characters out of 3144855
  264396 words of memory out of 3000000
- 13169 multiletter control sequences out of 15000+200000
+ 13173 multiletter control sequences out of 15000+200000
  10876 words of font info for 39 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  37i,12n,45p,1581b,548s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1616,9 +1621,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmu10.pfb>
-Output written on coursework.pdf (72 pages, 1977148 bytes).
+Output written on coursework.pdf (73 pages, 1981842 bytes).
 PDF statistics:
- 1343 PDF objects out of 1440 (max. 8388607)
- 237 named destinations out of 1000 (max. 500000)
- 1079 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1370 PDF objects out of 1440 (max. 8388607)
+ 242 named destinations out of 1000 (max. 500000)
+ 1111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
