@@ -40,7 +40,7 @@ Main Database Interface
 View Screen
 \begin{itemize}
     \item Clicking view after having selected an customer will open a new window which will show a more in depth view of it. It will show the books that have been published with them.
-    \item There will be buttons to expand on certain fields, including Royalties, Publishing Invoices and Book Invoices. These will show in new windows. If the user has clicked on Royalties, they have the option to click on Royalties Items on the following screen, where they can see breakdown of it. If they have clicked on Book Invoices, they can click on the Book Invoice Items on the following screen to see a breakdown of these too.
+    \item There will be buttons to expand on certain fields, including Royalties, Publishing Invoices and Book Invoices. These will show in new windows. If the user has clicked on Royalties, they have the option to click on Royalties Items on the following screen, where they can see breakdown of it. If they have clicked on Book Invoices, they can click on the Book Invoice Items on the following screen to see a breakdown of these too. From the Royalties/Book Invoice screens, they can calculate and add more Royalties/Invoices.
     \item Customers can be searched for quickly using their AuthorID on this screen.
 \end{itemize}
 
@@ -143,34 +143,94 @@ The following is a flowchart representing a summary of the complete system.
     \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf}
 \end{figure}
 
+\begin{figure}[H]
+    \caption{Calculations} \label{Calculations.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/Calculations.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Adding Publishing Invoices} \label{AddPubInvoice.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/AddPubInvoice.pdf}
+\end{figure}
 
 \section{Hardware Specification}
 
 The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ratio screen which runs on Windows 8. This is imperative to the size of the application I will be creating because it must fit on the given screen size and can't be resizable. A mouse or touchpad will be used for navigational purposes, and for confirmation of entries. Also, a keyboard will be used for inputting information into fields for entering and editing information. All the data used by the program and its database will be held on a local hard drive, and a display is needed for the outputs of the program.
-%
-%\section{Program Structure}
-%
-%\subsection{Top-down design structure charts}
-%
-%\subsection{Algorithms in pseudo-code for each data transformation process}
-%
-%\subsection{Object Diagrams}
-%
-%\subsection{Class Definitions}
-%
-%\section{Prototyping}
-%
-%\section{Definition of Data Requirements}
-%
-%\subsection{Identification of all data input items}
-%
-%\subsection{Identification of all data output items}
-%
-%\subsection{Explanation of how data output items are generated}
-%
-%\subsection{Data Dictionary}
-%
-%\subsection{Identification of appropriate storage media}
+
+\section{Program Structure}
+
+\subsection{Top-down design structure charts}
+
+\subsection{Algorithms in pseudo-code for each data transformation process}
+
+\subsection{Object Diagrams}
+
+\subsection{Class Definitions}
+
+\section{Prototyping}
+
+\section{Definition of Data Requirements}
+
+\subsection{Identification of all data input items}
+
+\subsection{Identification of all data output items}
+
+\subsection{Explanation of how data output items are generated}
+
+\subsection{Data Dictionary}
+
+
+\begin{center}
+\begin{tabular}{|p{2cm}|p{1cm}|p{2.5cm}|p{1.5cm}|p{3cm}|}
+    \hline
+    \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} \\ \hline
+    FirstName & String & 2-20 Characters & Length & Jo  \\ \hline
+    LastName & String & 2-20 Characters & Length & Williamson  \\ \hline
+    Email & String & 7-30 Characters & Length & mail@example.com  \\ \hline
+    PhoneNumber & String & 9-15 Characters & Format & 07123456789  \\ \hline
+    Address & String & 5-64 Characters & Length & Example Road  \\ \hline
+    Postcode & String & 7 Characters & Format & AB1 2CD  \\ \hline
+    AuthorID & Integer & 1-255 & Range & 17  \\ \hline
+    ISBN & String & 13 Characters & Length & 9780007525492 \\ \hline
+    BookTitle & String & 1-127 Characters & Length & The Hobbit  \\ \hline
+    NoOfPages & Integer & 1-1023 & Range & 395  \\ \hline
+    Size & String & 5 & Existence & Large \\ \hline
+    Back & String & 8 or 9 Characters& Existence & Paperback  \\ \hline
+    Cover & String & 3 or 5 Characters & Existence & Gloss \\ \hline
+    Paper & String & 11 Characters & Existence & White Paper\\ \hline
+    Font & String & 1-64 Characters & Length & Arial  \\ \hline
+    FontSize & Real & 8-64 & Numbers only & 12.5  \\ \hline
+    DatePublished & Date & dd/mm/yyyy & Range & 23/10/2014 \\ \hline
+    Price & Real & 0.01-63.00 & Numbers only & £12.99 \\ \hline
+    RoyaltiesID & Integer & 1-255 & Numbers only & 123 \\ \hline
+    RoyaltiesItems & Integer & 1-511 & Numbers only & 12 \\ \hline
+    Currency & String & 1 Character & Pound, Dollar or Euro sign & £ \\ \hline
+    RoyaltyPayment & Real & 1-32767 & Numbers only & 489.92 \\ \hline
+    RoyaltiesDate & Date & dd/mm/yyyy & Range & 03/12/2014 \\ \hline
+    RoyaltyDiscount & Real & 0-100 & Numbers only & 40 \\ \hline
+    WholeSalePrice & Real & 0.01-63.00 & Numbers only & 7.99 \\ \hline
+    RoyaltyQuantity & Integer & 1- 2047 & Numbers only & 192 \\ \hline
+    NetSales & Real & 0.01-32767.00 & Numbers only & 900.00 \\ \hline
+    PrintCost & Real & 0.01-32767.00 & Numbers only & 800.00 \\ \hline
+    ExcRateFromGBP & Real & 0-1027 & Numbers only & 1.67 \\ \hline
+    PubInvoiceID & Integer & 1-511 & Numbers only & 123 \\ \hline
+    PubInvoiceDate & Date & dd/mm/yyy & Range & 23/05/2014 \\ \hline
+    PubInvoiceService & String & 1-127 Characters & Length & Standard \\ \hline
+    PubInvoicePayment & Real & 0.01-32767.00 & Numbers only & 700.00 \\ \hline
+    BooksInvoiceID & Integer & 1-255 & Numbers only & 99 \\ \hline
+    BooksInvoiceItems & Integer & 1-255 & Numbers only & 2 \\ \hline
+    BooksInvoicePayment & Real & 0.01-32767.00 & Numbers only & 600.00 \\ \hline
+    BooksInvoiceTotal & Real & 0.01-32767.00 & Numbers only & 500.00 \\ \hline
+    BooksInvoiceDate & Date & dd/mm/yyyy & Range & 01/01/2014 \\ \hline
+    BooksInvoiceDiscount & Real & 0-100 & Numbers only & 50 \\ \hline
+    BooksInvoiceQuantity & Integer & 1-2047 & Numbers only & 777 \\ \hline
+    Shipping Type & String & 7-8 Characters & Range & Premium \\ \hline
+    Shipping Price & Real & 0.01-64.00 & Numbers only & 25.00 \\ \hline
+    \hline
+\end{tabular}
+\end{center}
+
+\subsection{Identification of appropriate storage media}
 
 
 \newpage
@@ -241,15 +301,15 @@ First of all, I have started with the data in its unnormalised form.
     RoyaltyQuantity \\
     NetSales \\
     PrintCost \\
-    ExcRateToGBP \\
+    ExcRateFromGBP \\
     PubInvoiceID \\
     PubInvoicePayment \\
     PubInvoiceDate \\
     PubInvoiceService \\
-    PubInvoiceOrder \\
     BooksInvoiceID \\
     BooksInvoiceItems \\
-    BooksInvoicePayment
+    BooksInvoicePayment \\
+    BooksInvoiceTotal \\
     BooksInvoiceDate \\
     BooksInvoiceDiscount \\
     BooksInvoiceQuantity \\
@@ -285,15 +345,15 @@ Then, I put it into the first normal form.
     & RoyaltyQuantity \\
     & NetSales \\
     & PrintCost \\
-    & ExcRateToGBP \\
+    & ExcRateFromGBP \\
     & PubInvoiceID \\
     & PubInvoiceDate \\
     & PubInvoiceService \\
-    & PubInvoiceOrder \\
     & PubInvoicePayment \\
     & BooksInvoiceID \\
     & BooksInvoiceItems \\
     & BooksInvoicePayment \\
+    & BooksInvoiceTotal \\
     & BooksInvoiceDate \\
     & BooksInvoiceDiscount \\
     & BooksInvoiceQuantity \\
@@ -318,15 +378,15 @@ After that, I put it into the second normal form.
     & RoyaltyQuantity & FontSize \\
     & NetSales & DatePublished \\
     & PrintCost & Price \\
-    & ExcRateToGBP & \\
+    & ExcRateFromGBP & \\
     & PubInvoiceID & \\
     & PubInvoiceDate & \\
     & PubInvoiceService & \\
-    & PubInvoiceOrder & \\
     & PubInvoicePayment & \\
     & BooksInvoiceID & \\
     & BooksInvoiceItems & \\
     & BooksInvoicePayment & \\
+    & BooksInvoiceTotal & \\
     & BooksInvoiceDate & \\
     & BooksInvoiceDiscount & \\
     & BooksInvoiceQuantity & \\
@@ -345,11 +405,11 @@ Finally, I put the data into its third normal form.
     LastName & BookTitle & RoyaltyPayment & \emph{ISBN} & \emph{ISBN} \\
     Email & NoOfPages & RoyaltiesDate & Currency & PubInvoiceDate \\
     PhoneNumber & Size & & RoyaltyDiscount & PubInvoiceService \\
-    Address & Back & & WholeSalePrice & PubInvoiceOrder \\
-    PostCode & Cover & & RoyaltyQuantity & PubInvoicePayment \\
+    Address & Back & & WholeSalePrice & PubInvoicePayment\\
+    PostCode & Cover & & RoyaltyQuantity &  \\
     & Paper & & NetSales & \\
     & Font & & PrintCost & \\
-    & FontSize & & ExcRateToGBP & \\
+    & FontSize & & ExcRateFromGBP & \\
     & DatePublished & & & \\
     & Price & & & \\
     \hline
@@ -359,8 +419,9 @@ Finally, I put the data into its third normal form.
     \hline
     \textbf{BooksInvoiceID} & \textbf{BooksInvoiceItems} \\
     \emph{AuthorID} & \emph{BooksInvoiceID} \\
-    BooksInvoicePayment & \emph{ISBN} \\
-    BooksInvoiceDate & BooksInvoiceQuantity \\
+    BooksInvoiceTotal & \emph{ISBN} \\
+    BooksInvoiceDate& BooksInvoicePayment \\
+    & BooksInvoiceQuantity \\
     & BooksInvoiceDiscount \\
     & ShippingType \\
     & ShippingPrice \\
@@ -377,7 +438,7 @@ I am using Python to format the SQL query text strings.
     \hline
     \textbf{SQL} & \textbf{Descriptions} \\ \hline 
      """insert into \\ Customer(FirstName, LastName, Email, PhoneNumber, Address, Postcode) values (\{0\}, \{1\}, \{2\}, \{3\}, \{4\}, \{5\}) \\ """.format(FirstName, LastName, Email, PhoneNumber, Address, Postcode) & An example of an SQL statement which adds customer records to the database. Here, it is entering a new customer record with the attributes: FirstName, LastName, Email, PhoneNumber, Address and Postcode. \\ \hline
-    """create table RoyaltiesItems(\\ RoyaltiesID INTEGER, \\ Currency REAL, \\ RoyaltyDiscount STRING,\\  WholeSalePrice REAL,\\ RoyaltyQuantity INTEGER,\\ NetSales REAL,\\ PrintCost REAL, \\ ExcRateToGBP STRING \\ PRIMARY KEY(RoyaltiesItems) \\ FOREIGN KEY(RoyaltiesID) REFERENCES \\ Royalties(RoyaltiesID) """ & An example of an SQL statement that creates a new table for the Royalties. There is a primary key which is RoyaltiesItems, and there is one foreign key, which is RoyaltiesID. \\ \hline 
+    """create table RoyaltiesItems(\\ RoyaltiesID INTEGER, \\ Currency REAL, \\ RoyaltyDiscount STRING,\\  WholeSalePrice REAL,\\ RoyaltyQuantity INTEGER,\\ NetSales REAL,\\ PrintCost REAL, \\ ExcRateFromGBP STRING \\ PRIMARY KEY(RoyaltiesItems) \\ FOREIGN KEY(RoyaltiesID) REFERENCES \\ Royalties(RoyaltiesID) """ & An example of an SQL statement that creates a new table for the Royalties. There is a primary key which is RoyaltiesItems, and there is one foreign key, which is RoyaltiesID. \\ \hline 
     """select Customer.LastName, Book.BookTitle \\ from Customer, Book \\ where Price < 13.00 and \\ Back = "Paperback"  & This statement will return all the LastNames and the BookTitles from the Customer table and the Book table whose book is paperback and costs less than £13. \\ \hline
 \end{tabular}
 
@@ -394,15 +455,8 @@ The database will be password protected to make sure that only users who know th
 
 The system will check to make sure each entry is valid, in order to avoid any invalid entries into the database. 
 
-\begin{center}
-    \begin{tabular}{|p{2cm}|p{5cm}|p{5cm}|p{4cm}|}
-        \hline
-        \textbf{Item} & \textbf{Purpose of Test Series} & \textbf{Testing Strategy} & \textbf{Strategy Rationale}\\ \hline
-         &  & Example & Example \\ \hline
-    \end{tabular}
-\end{center}
 
-%\section{Testing}
+\section{Testing}
 
 \begin{landscape}
 \subsection{Outline Plan}
@@ -411,7 +465,11 @@ The system will check to make sure each entry is valid, in order to avoid any in
     \begin{tabular}{|p{2cm}|p{5cm}|p{5cm}|p{4cm}|}
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test Series} & \textbf{Testing Strategy} & \textbf{Strategy Rationale}\\ \hline
-        1 &  & Example & Example \\ \hline
+        1 & Testing the flow of control between user interfaces & Top-down Testing & \\ \hline
+        2 & Testing the validation of input data & Bottom-up testing & All components are to be tested after development \\ \hline
+        3 & Testing the algorithms' functionality & White box testing \\ \hline
+        4 & Testing that the information has been successfully stored, and in the right places & Black box testing \\ \hline
+        5 & Testing the system and whether it meets the requirements & System testing \\ \hline
     \end{tabular}
 \end{center}
 
@@ -421,7 +479,20 @@ The system will check to make sure each entry is valid, in order to avoid any in
     \begin{longtable}{|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test} & \textbf{Test Description} & \textbf{Test Data} & \textbf{Test Data Type (Normal/ Erroneous/ Boundary)} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Evidence}\\ \hline
-        Example & Example & Example & Example & Example & Example & Example & Example \\ \hline
+        1.1 & Test the Log in button on the log in sreen & This should check whether the password and email match and exist in a record & Click the log in button & Normal & If the email and password match, the main menu should open, else the program should prompt the user with an error & & \\ \hline
+        1.2 & Test the View button on the main menu & This button links the main menu to the view menu. & Click the View Button & Normal & The program should open the View Menu in a new window & & \\ \hline
+        1.3 & Testing the Log Out button on the Main Menu & This button links to the Login screen, where the user is required to log in again & Click the Log out button & Normal & The screen should switch to the log out screen & & \\ \hline
+        1.4 & Testing the Search Database button on the Main Menu & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button & Normal & The program should open a new window consisting of the Search Database screen & & \\ \hline
+        1.5 & Testing the Add Entry button on the Main Menu & This button should prompt a seperate interface to open and show the Add Entry screen & Click the Add Entry button & Normal & The program should open the Add Entry screen in a new window & & \\ \hline
+        1.6 & Testing the Edit Entry button from the Main Menu & This button links to the Editing screen & Click the Edit Entry button & Normal & The program should switch to the Editing screen from the Main Menu &  & \\ \hline
+        1.7 & Testing the Edit Entry button after an entry has been selected beforehand & These conditions should open the Edit Entry screen upon clicking Edit Entry, with data on the selected entry already filled in on the grid & Click on an entry, and then click Edit Entry & Normal & The program should open the Edit Entry screen in a new window & & \\ \hline
+        1.8 & Testing the Remove Entry Button after an entry has been selected beforehand & These conditions should prompt the user for verification on deleting a selected customer record & Click on an entry and then click Remove Entry & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & & \\ \hline
+        1.9 & Testing the Change Password Button on the Main Menu & This button prompts the Change Password window to open & Click the Change Password button & Normal & The program should open the Change Password window, with fields required to be filled in in order to change the password & & \\ \hline
+        1.10 & Testing the Quick Search button on the Main Menu & This button returns the customer that matches the entered AuthorID & Type in an AuthorID and click QuickSearch & Normal & The program should return the customer that matches the entered AuthorID and show it in the grid & & \\ \hline
+        2.1 & Verify that some criteria has been entered when using the search & At least one set of the input boxes and dropdown lists must have been filled in or selected from, else the program will prompt the user about the error & Number based search selection and positive number input, String Based search selection and valid text input , Nothing, No selections and valid text and number inputs & Normal, Normal, Erroneous, Erroneous & Accept, Accept, Error, Error & & \\ \hline
+        2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com, helloworld, test @testmail.com, test.com@testmail & Normal, Erroneous, Erroneous, Erroneous & Accept, Error, Error, Error & & \\ \hline
+        2.3 & Verify that a valid AuthorID has been entered on the main menu & The user will be prompted with an error & 123, 12, 1234, a23, 1 23, -123, @/! & Normal, Erroneous, Erroneous, Erroneous, Erroneous, Erroneous, Erroneous & Accept, Error, Error, Error, Error, Error, Error & & \\ \hline
+
     \end{longtable}
 \end{center}
 \end{landscape}

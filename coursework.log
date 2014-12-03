@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  2 DEC 2014 23:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  3 DEC 2014 23:32
 entering extended mode
 **C:/Users/Imran*Rahman/Documents/Year*13/Computing/git/COMP4Coursework/coursew
 ork.tex
@@ -733,7 +733,7 @@ Chapter 1.
 [5
 
 
-] <./Analysis/Interview_Questions_1.jpg, id=659, 614.295pt x 844.8363pt>
+] <./Analysis/Interview_Questions_1.jpg, id=725, 614.295pt x 844.8363pt>
 File: ./Analysis/Interview_Questions_1.jpg Graphic file (type jpg)
 
 <use ./Analysis/Interview_Questions_1.jpg>
@@ -741,7 +741,7 @@ Package pdftex.def Info: ./Analysis/Interview_Questions_1.jpg used on input lin
 e 17.
 (pdftex.def)             Requested size: 284.52756pt x 391.31078pt.
  [6]
-<./Analysis/Interview_Questions_2.jpg, id=665, 614.295pt x 844.8363pt>
+<./Analysis/Interview_Questions_2.jpg, id=731, 614.295pt x 844.8363pt>
 File: ./Analysis/Interview_Questions_2.jpg Graphic file (type jpg)
 
 <use ./Analysis/Interview_Questions_2.jpg>
@@ -841,7 +841,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--82
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 94.
  [11]
-<./Analysis/Data_Flow_Diagrams_1.pdf, id=694, 597.23125pt x 845.1575pt>
+<./Analysis/Data_Flow_Diagrams_1.pdf, id=760, 597.23125pt x 845.1575pt>
 File: ./Analysis/Data_Flow_Diagrams_1.pdf Graphic file (type pdf)
 
 <use ./Analysis/Data_Flow_Diagrams_1.pdf>
@@ -860,7 +860,7 @@ Overfull \vbox (3.5658pt too high) has occurred while \output is active []
 l.153 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/A
 nalysis/Data_Flow_Diagrams_1.pdf>]
-<./Analysis/Invoice_Example.pdf, id=716, 597.55246pt x 845.07718pt>
+<./Analysis/Invoice_Example.pdf, id=782, 597.55246pt x 845.07718pt>
 File: ./Analysis/Invoice_Example.pdf Graphic file (type pdf)
 
 <use ./Analysis/Invoice_Example.pdf>
@@ -875,7 +875,7 @@ re.1.4}) has been already used, duplicate ignored
 l.181 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/A
 nalysis/Invoice_Example.pdf>]
-<./Analysis/Royalty_Statement_Example.pdf, id=782, 614.295pt x 794.97pt>
+<./Analysis/Royalty_Statement_Example.pdf, id=848, 614.295pt x 794.97pt>
 File: ./Analysis/Royalty_Statement_Example.pdf Graphic file (type pdf)
 
 <use ./Analysis/Royalty_Statement_Example.pdf>
@@ -954,7 +954,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--242
 \OT1/cmr/m/n/10 State-ment
  []
 
-[18] <./Analysis/Data_Flow_Diagrams_2.pdf, id=828, 597.23125pt x 845.1575pt>
+[18] <./Analysis/Data_Flow_Diagrams_2.pdf, id=894, 597.23125pt x 845.1575pt>
 File: ./Analysis/Data_Flow_Diagrams_2.pdf Graphic file (type pdf)
 
 <use ./Analysis/Data_Flow_Diagrams_2.pdf>
@@ -1021,7 +1021,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 309.
  [22]
-<./Analysis/ER_Diagram.pdf, id=859, 299.1175pt x 421.575pt>
+<./Analysis/ER_Diagram.pdf, id=925, 299.1175pt x 421.575pt>
 File: ./Analysis/ER_Diagram.pdf Graphic file (type pdf)
 
 <use ./Analysis/ER_Diagram.pdf>
@@ -1039,7 +1039,7 @@ Overfull \vbox (15.74626pt too high) has occurred while \output is active []
 l.373 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/A
 nalysis/ER_Diagram.pdf>]
-<./Analysis/Relationship_Diagram.pdf, id=883, 421.575pt x 597.23125pt>
+<./Analysis/Relationship_Diagram.pdf, id=949, 421.575pt x 597.23125pt>
 File: ./Analysis/Relationship_Diagram.pdf Graphic file (type pdf)
 
 <use ./Analysis/Relationship_Diagram.pdf>
@@ -1156,7 +1156,7 @@ Chapter 2.
 
 
 ] [36]
-<./Design/Flowcharts/Flowchart_1.pdf, id=941, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_1.pdf, id=1007, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_1.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_1.pdf>
@@ -1164,7 +1164,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_1.pdf used on input line
  80.
 (pdftex.def)             Requested size: 345.0pt x 488.75769pt.
  [37]
-<./Design/Flowcharts/Flowchart_2.pdf, id=946, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_2.pdf, id=1012, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_2.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_2.pdf>
@@ -1179,7 +1179,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_2.pdf used on input line
 l.87 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/De
 sign/Flowcharts/Flowchart_1.pdf>]
-<./Design/Flowcharts/Flowchart_3.pdf, id=961, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_3.pdf, id=1027, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_3.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_3.pdf>
@@ -1194,7 +1194,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_3.pdf used on input line
 l.92 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/De
 sign/Flowcharts/Flowchart_2.pdf>]
-<./Design/Flowcharts/Flowchart_4.pdf, id=976, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_4.pdf, id=1042, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_4.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_4.pdf>
@@ -1209,7 +1209,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_4.pdf used on input line
 l.97 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/De
 sign/Flowcharts/Flowchart_3.pdf>]
-<./Design/Flowcharts/Flowchart_5.pdf, id=991, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_5.pdf, id=1057, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_5.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_5.pdf>
@@ -1224,7 +1224,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_5.pdf used on input line
 l.102 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/Flowcharts/Flowchart_4.pdf>]
-<./Design/Flowcharts/Flowchart_6.pdf, id=1006, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_6.pdf, id=1072, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_6.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_6.pdf>
@@ -1239,7 +1239,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_6.pdf used on input line
 l.107 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/Flowcharts/Flowchart_5.pdf>]
-<./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf, id=1022, 421.575p
+<./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf, id=1088, 421.575p
 t x 597.23125pt>
 File: ./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf Graphic file 
 (type pdf)
@@ -1256,7 +1256,7 @@ u.pdf used on input line 113.
 l.115 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/Flowcharts/Flowchart_6.pdf>]
-<./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf, id=1037, 421.575pt x
+<./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf, id=1103, 421.575pt x
  597.23125pt>
 File: ./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf Graphic file (ty
 pe pdf)
@@ -1274,7 +1274,7 @@ l.120
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf>]
 <./Design/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf, id=
-1054, 455.7025pt x 711.65875pt>
+1120, 455.7025pt x 711.65875pt>
 File: ./Design/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf
  Graphic file (type pdf)
 
@@ -1301,7 +1301,7 @@ Overfull \vbox (8.68109pt too high) has occurred while \output is active []
 l.125 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf>]
-<./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf, id=1103, 455.7025pt
+<./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf, id=1169, 455.7025pt
  x 654.445pt>
 File: ./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf Graphic file (t
 ype pdf)
@@ -1310,7 +1310,7 @@ Package pdftex.def Info: ./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.
 pdf used on input line 128.
 (pdftex.def)             Requested size: 345.0pt x 495.47604pt.
 
-<./Design/UserInterfaceDesign/Search.pdf, id=1104, 483.8075pt x 654.445pt>
+<./Design/UserInterfaceDesign/Search.pdf, id=1170, 483.8075pt x 654.445pt>
 File: ./Design/UserInterfaceDesign/Search.pdf Graphic file (type pdf)
 
 <use ./Design/UserInterfaceDesign/Search.pdf>
@@ -1325,7 +1325,7 @@ line 133.
 l.135 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf>]
-<./Design/UserInterfaceDesign/Editing_Screens.pdf, id=1121, 483.8075pt x 654.44
+<./Design/UserInterfaceDesign/Editing_Screens.pdf, id=1187, 483.8075pt x 654.44
 5pt>
 File: ./Design/UserInterfaceDesign/Editing_Screens.pdf Graphic file (type pdf)
  <use ./Design/UserInterfaceDesign/Editing_Screens.pdf>
@@ -1340,7 +1340,7 @@ on input line 138.
 l.140 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
 esign/UserInterfaceDesign/Search.pdf>]
-<./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf, id=1137, 48
+<./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf, id=1203, 48
 3.8075pt x 654.445pt>
 File: ./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf Graphic
  file (type pdf)
@@ -1357,109 +1357,1266 @@ assword.pdf used on input line 143.
                                                   \fi \fi 
 l.145 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
-esign/UserInterfaceDesign/Editing_Screens.pdf>] [50pdfTeX warning (ext4): desti
-nation with the same identifier (name{figure.2.13}) has been already used, dupl
-icate ignored
+esign/UserInterfaceDesign/Editing_Screens.pdf>]
+<./Design/UserInterfaceDesign/Calculations.pdf, id=1220, 483.8075pt x 682.55pt>
+File: ./Design/UserInterfaceDesign/Calculations.pdf Graphic file (type pdf)
+<use ./Design/UserInterfaceDesign/Calculations.pdf>
+Package pdftex.def Info: ./Design/UserInterfaceDesign/Calculations.pdf used on 
+input line 148.
+(pdftex.def)             Requested size: 345.0pt x 486.73853pt.
+ [50pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.174 
+l.150 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
-esign/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf>] [51]
-<./Design/ER_Diagram.pdf, id=1172, 421.575pt x 597.23125pt>
-File: ./Design/ER_Diagram.pdf Graphic file (type pdf)
-
-<use ./Design/ER_Diagram.pdf>
-Package pdftex.def Info: ./Design/ER_Diagram.pdf used on input line 187.
-(pdftex.def)             Requested size: 345.0pt x 488.75769pt.
- [52]
-Overfull \vbox (42.29927pt too high) has occurred while \output is active []
-
-
-[53pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
-4}) has been already used, duplicate ignored
+esign/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf>]
+<./Design/UserInterfaceDesign/AddPubInvoice.pdf, id=1235, 483.8075pt x 682.55pt
+>
+File: ./Design/UserInterfaceDesign/AddPubInvoice.pdf Graphic file (type pdf)
+ <use ./Design/UserInterfaceDesign/AddPubInvoice.pdf>
+Package pdftex.def Info: ./Design/UserInterfaceDesign/AddPubInvoice.pdf used on
+ input line 153.
+(pdftex.def)             Requested size: 345.0pt x 486.73853pt.
+ [51pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.189 
+l.155 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
-esign/ER_Diagram.pdf>]
-Overfull \hbox (18.46674pt too wide) in paragraph at lines 195--196
-[]\OT1/cmr/m/n/10 Invoice($[]$, $[]$, \OT1/cmr/m/it/10 ISBN\OT1/cmr/m/n/10 , \O
-T1/cmr/m/it/10 Au-thorID\OT1/cmr/m/n/10 , In-voice-Quan-tity, In-voiceDis-
+esign/UserInterfaceDesign/Calculations.pdf>] [52pdfTeX warning (ext4): destinat
+ion with the same identifier (name{figure.2.15}) has been already used, duplica
+te ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.159 
+       <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
+esign/UserInterfaceDesign/AddPubInvoice.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 186--186
+[]\OT1/cmr/bx/n/10 Data
  []
 
-[54]
-Underfull \hbox (badness 10000) in paragraph at lines 252--254
-[]\OT1/cmr/m/n/10 BooksInvoicePayment
+
+Overfull \hbox (8.82056pt too wide) in paragraph at lines 186--186
+[]\OT1/cmr/bx/n/10 Validation| 
  []
 
-[55] [56] [57]
-Overfull \hbox (1.0905pt too wide) in paragraph at lines 345--345
+
+Overfull \hbox (5.7613pt too wide) in paragraph at lines 190--190
+[]\OT1/cmr/m/n/10 PhoneNumber| 
+ []
+
+
+Overfull \hbox (2.13063pt too wide) in paragraph at lines 193--193
+[]\OT1/cmr/m/n/10 Integer| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+[]\OT1/cmr/m/n/10 1-127 Char-ac-
+ []
+
+
+Overfull \hbox (2.13063pt too wide) in paragraph at lines 196--196
+[]\OT1/cmr/m/n/10 Integer| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (7.03908pt too wide) in paragraph at lines 203--203
+[]\OT1/cmr/m/n/10 DatePublished| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (2.13063pt too wide) in paragraph at lines 205--205
+[]\OT1/cmr/m/n/10 Integer| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (7.23349pt too wide) in paragraph at lines 206--206
+[]\OT1/cmr/m/n/10 RoyaltiesItems| 
+ []
+
+
+Overfull \hbox (2.13063pt too wide) in paragraph at lines 206--206
+[]\OT1/cmr/m/n/10 Integer| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--206
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
+[]\OT1/cmr/m/n/10 Pound,
+ []
+
+
+Overfull \hbox (15.31688pt too wide) in paragraph at lines 208--208
 []\OT1/cmr/m/n/10 RoyaltyPayment| 
  []
 
 
-Overfull \hbox (1.58636pt too wide) in paragraph at lines 349--350
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (3.98349pt too wide) in paragraph at lines 209--209
+[]\OT1/cmr/m/n/10 RoyaltiesDate| 
+ []
+
+
+Overfull \hbox (15.37242pt too wide) in paragraph at lines 210--210
+[]\OT1/cmr/m/n/10 RoyaltyDiscount| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (11.31685pt too wide) in paragraph at lines 211--211
+[]\OT1/cmr/m/n/10 WholeSalePrice| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (16.01135pt too wide) in paragraph at lines 212--212
+[]\OT1/cmr/m/n/10 RoyaltyQuantity| 
+ []
+
+
+Overfull \hbox (2.13063pt too wide) in paragraph at lines 212--212
+[]\OT1/cmr/m/n/10 Integer| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--212
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--213
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--214
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (24.99745pt too wide) in paragraph at lines 215--215
+[]\OT1/cmr/m/n/10 ExcRateFromGBP| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (2.81683pt too wide) in paragraph at lines 216--216
+[]\OT1/cmr/m/n/10 PubInvoiceID| 
+ []
+
+
+Overfull \hbox (2.13063pt too wide) in paragraph at lines 216--216
+[]\OT1/cmr/m/n/10 Integer| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--216
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (12.53908pt too wide) in paragraph at lines 217--217
+[]\OT1/cmr/m/n/10 PubInvoiceDate| 
+ []
+
+
+Overfull \hbox (22.42798pt too wide) in paragraph at lines 218--218
+[]\OT1/cmr/m/n/10 PubInvoiceService| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--218
+[]\OT1/cmr/m/n/10 1-127 Char-ac-
+ []
+
+
+Overfull \hbox (30.03912pt too wide) in paragraph at lines 219--219
 []\OT1/cmr/m/n/10 PubInvoicePayment| 
  []
 
 
-Overfull \hbox (99.11217pt too wide) in paragraph at lines 341--357
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (11.48354pt too wide) in paragraph at lines 220--220
+[]\OT1/cmr/m/n/10 BooksInvoiceID| 
+ []
+
+
+Overfull \hbox (2.13063pt too wide) in paragraph at lines 220--220
+[]\OT1/cmr/m/n/10 Integer| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (24.45578pt too wide) in paragraph at lines 221--221
+[]\OT1/cmr/m/n/10 BooksInvoiceItems| 
+ []
+
+
+Overfull \hbox (2.13063pt too wide) in paragraph at lines 221--221
+[]\OT1/cmr/m/n/10 Integer| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--221
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (38.70583pt too wide) in paragraph at lines 222--222
+[]\OT1/cmr/m/n/10 BooksInvoicePayment| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (23.28912pt too wide) in paragraph at lines 223--223
+[]\OT1/cmr/m/n/10 BooksInvoiceTotal| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--223
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (21.20578pt too wide) in paragraph at lines 224--224
+[]\OT1/cmr/m/n/10 BooksInvoiceDate| 
+ []
+
+
+Overfull \hbox (38.76137pt too wide) in paragraph at lines 225--225
+[]\OT1/cmr/m/n/10 BooksInvoiceDiscount| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Overfull \hbox (39.4003pt too wide) in paragraph at lines 226--226
+[]\OT1/cmr/m/n/10 BooksInvoiceQuantity| 
+ []
+
+
+Overfull \hbox (2.13063pt too wide) in paragraph at lines 226--226
+[]\OT1/cmr/m/n/10 Integer| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--227
+[]\OT1/cmr/m/n/10 Shipping
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+[]\OT1/cmr/m/n/10 Shipping
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+[]\OT1/cmr/m/n/10 Numbers
+ []
+
+[53] [54]
+Overfull \vbox (639.30782pt too high) has occurred while \output is active []
+
+
+[55] [56] <./Design/ER_Diagram.pdf, id=1281, 421.575pt x 597.23125pt>
+File: ./Design/ER_Diagram.pdf Graphic file (type pdf)
+
+<use ./Design/ER_Diagram.pdf>
+Package pdftex.def Info: ./Design/ER_Diagram.pdf used on input line 247.
+(pdftex.def)             Requested size: 345.0pt x 488.75769pt.
+ [57]
+Overfull \vbox (42.29927pt too high) has occurred while \output is active []
+
+
+[58pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
+6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.249 
+       <C:/Users/Imran Rahman/Documents/Year 13/Computing/git/COMP4Coursework/D
+esign/ER_Diagram.pdf>]
+Overfull \hbox (18.46674pt too wide) in paragraph at lines 255--256
+[]\OT1/cmr/m/n/10 Invoice($[]$, $[]$, \OT1/cmr/m/it/10 ISBN\OT1/cmr/m/n/10 , \O
+T1/cmr/m/it/10 Au-thorID\OT1/cmr/m/n/10 , In-voice-Quan-tity, In-voiceDis-
+ []
+
+[59] [60] [61] [62]
+Overfull \hbox (1.0905pt too wide) in paragraph at lines 405--405
+[]\OT1/cmr/m/n/10 RoyaltyPayment| 
+ []
+
+
+Overfull \hbox (1.58636pt too wide) in paragraph at lines 408--409
+[]\OT1/cmr/m/n/10 PubInvoicePayment| 
+ []
+
+
+Overfull \hbox (99.11217pt too wide) in paragraph at lines 401--417
 [][] 
  []
 
-[58]
-Overfull \hbox (105.79134pt too wide) in paragraph at lines 376--383
+[63]
+Overfull \hbox (105.79134pt too wide) in paragraph at lines 437--444
 [][] 
  []
 
-[59]
-Overfull \hbox (158.24408pt too wide) in paragraph at lines 398--403
- [] 
- []
-
-[60]
-Underfull \hbox (badness 10000) in paragraph at lines 423--423
+[64] [65]
+Underfull \hbox (badness 10000) in paragraph at lines 481--481
 []|\OT1/cmr/bx/n/10 Purpose of
  []
 
 
-Underfull \hbox (badness 5475) in paragraph at lines 423--423
+Underfull \hbox (badness 5475) in paragraph at lines 481--481
 []|\OT1/cmr/bx/n/10 Test Data
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--423
+Underfull \hbox (badness 10000) in paragraph at lines 481--481
 \OT1/cmr/bx/n/10 mal/ Er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--423
+Underfull \hbox (badness 10000) in paragraph at lines 481--481
 \OT1/cmr/bx/n/10 ro-neous/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--423
+Underfull \hbox (badness 10000) in paragraph at lines 481--481
 []|\OT1/cmr/bx/n/10 Expected
  []
 
 
-Overfull \hbox (15.4704pt too wide) in alignment at lines 421--425
+Underfull \hbox (badness 3189) in paragraph at lines 482--482
+\OT1/cmr/m/n/10 but-ton on the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--482
+[]|\OT1/cmr/m/n/10 This should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--482
+\OT1/cmr/m/n/10 check whether
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--482
+\OT1/cmr/m/n/10 the pass-word
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 482--482
+\OT1/cmr/m/n/10 and ex-ist in a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--482
+\OT1/cmr/m/n/10 and pass-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--482
+\OT1/cmr/m/n/10 the main
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--482
+\OT1/cmr/m/n/10 open, else
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--482
+\OT1/cmr/m/n/10 the pro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--482
+\OT1/cmr/m/n/10 prompt the
+ []
+
+
+Underfull \hbox (badness 2662) in paragraph at lines 483--483
+[]|\OT1/cmr/m/n/10 Test the View
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 483--483
+\OT1/cmr/m/n/10 but-ton on the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--483
+[]|\OT1/cmr/m/n/10 This but-ton
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 483--483
+\OT1/cmr/m/n/10 links the main
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--483
+\OT1/cmr/m/n/10 menu to the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--483
+[]|\OT1/cmr/m/n/10 Click the
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 483--483
+\OT1/cmr/m/n/10 should open
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--483
+\OT1/cmr/m/n/10 the View
+ []
+
+
+Underfull \hbox (badness 5217) in paragraph at lines 483--483
+\OT1/cmr/m/n/10 Menu in a
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 484--484
+\OT1/cmr/m/n/10 Out but-ton on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+[]|\OT1/cmr/m/n/10 This but-ton
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+\OT1/cmr/m/n/10 links to the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+\OT1/cmr/m/n/10 Lo-gin screen,
+ []
+
+
+Underfull \hbox (badness 5878) in paragraph at lines 484--484
+\OT1/cmr/m/n/10 is re-quired to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+[]|\OT1/cmr/m/n/10 The screen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+\OT1/cmr/m/n/10 should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+\OT1/cmr/m/n/10 switch to
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 484--484
+\OT1/cmr/m/n/10 the log out
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+[]|\OT1/cmr/m/n/10 Testing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 the Search
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 Database but-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+[]|\OT1/cmr/m/n/10 This but-ton
+ []
+
+
+Underfull \hbox (badness 7907) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 should prompt
+ []
+
+
+Underfull \hbox (badness 4518) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 a seper-ate in-
+ []
+
+
+Underfull \hbox (badness 7256) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 which can be
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 used to search
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 for spe-cific
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 items in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+[]|\OT1/cmr/m/n/10 Click the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 Search
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 Database
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+[]|\OT1/cmr/m/n/10 The pro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 sist-ing of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 the Search
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/m/n/10 Database
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--486
+[]|\OT1/cmr/m/n/10 This but-ton
+ []
+
+
+Underfull \hbox (badness 7907) in paragraph at lines 486--486
+\OT1/cmr/m/n/10 should prompt
+ []
+
+
+Underfull \hbox (badness 3138) in paragraph at lines 486--486
+\OT1/cmr/m/n/10 show the Add
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--486
+[]|\OT1/cmr/m/n/10 Click the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--486
+\OT1/cmr/m/n/10 Add En-try
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 486--486
+\OT1/cmr/m/n/10 should open
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 486--486
+\OT1/cmr/m/n/10 a new win-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+\OT1/cmr/m/n/10 En-try but-ton
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 487--487
+\OT1/cmr/m/n/10 from the Main
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+[]|\OT1/cmr/m/n/10 This but-ton
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+\OT1/cmr/m/n/10 links to the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+[]|\OT1/cmr/m/n/10 Click the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+\OT1/cmr/m/n/10 Edit En-try
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+[]|\OT1/cmr/m/n/10 The pro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+\OT1/cmr/m/n/10 switch to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+\OT1/cmr/m/n/10 the Edit-ing
+ []
+
+
+Underfull \hbox (badness 5970) in paragraph at lines 487--487
+\OT1/cmr/m/n/10 screen from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+\OT1/cmr/m/n/10 the Main
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 been se-lected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+[]|\OT1/cmr/m/n/10 These con-di-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 tions should
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 open the Edit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 En-try screen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 upon click-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 Edit En-try,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 with data on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 the se-lected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 en-try al-ready
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 en-try, and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 then click
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 should open
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 488--488
+\OT1/cmr/m/n/10 a new win-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+[]|\OT1/cmr/m/n/10 Testing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 Re-move En-try
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 But-ton af-ter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 an en-try has
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 been se-lected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+[]|\OT1/cmr/m/n/10 These con-di-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 tions should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 for ver-i-fi-ca-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+[]|\OT1/cmr/m/n/10 Click on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 an en-try
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 and then
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 should open
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 a Ver-i-fi-ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 ask-ing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 user for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 con-fir-ma-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 and ver-i-fi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 ca-tion on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 re-mov-ing
+ []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 the se-lected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--489
+\OT1/cmr/m/n/10 cus-tomer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+[]|\OT1/cmr/m/n/10 Testing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 Change Pass-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+[]|\OT1/cmr/m/n/10 This but-ton
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 prompts the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 Change Pass-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+[]|\OT1/cmr/m/n/10 Click the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 Change
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 Pass-word
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 should open
+ []
+
+
+Underfull \hbox (badness 7099) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 the Change
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 Pass-word
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 win-dow,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 with fields
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 re-quired to
+ []
+
+
+Underfull \hbox (badness 3138) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 be filled in
+ []
+
+
+Underfull \hbox (badness 2846) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 in or-der to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\OT1/cmr/m/n/10 change the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+[]|\OT1/cmr/m/n/10 Testing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 Quick Search
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 but-ton on the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+[]|\OT1/cmr/m/n/10 This but-ton
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 re-turns the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 cus-tomer that
+ []
+
+
+Underfull \hbox (badness 1867) in paragraph at lines 491--491
+[]|\OT1/cmr/m/n/10 Type in an
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 Au-thorID
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 and click
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+[]|\OT1/cmr/m/n/10 The pro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 re-turn the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 cus-tomer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 the en-tered
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--491
+\OT1/cmr/m/n/10 Au-thorID
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 en-tered when
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+[]|\OT1/cmr/m/n/10 At least one
+ []
+
+
+Underfull \hbox (badness 6300) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 in or se-lected
+ []
+
+
+Underfull \hbox (badness 3179) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 from, else the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 pro-gram will
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+[]|\OT1/cmr/m/n/10 Number
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 se-lec-tion
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 and pos-i-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 num-ber in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 put, String
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 se-lec-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 and valid
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 text in-put
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 , Noth-ing,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 No se-lec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 tions and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 valid text
+ []
+
+
+Underfull \hbox (badness 1810) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 and num-ber
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+[]|\OT1/cmr/m/n/10 Normal,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 Nor-mal,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 Er-ro-neous,
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 492--492
+[]|\OT1/cmr/m/n/10 Accept, Ac-
+ []
+
+
+Underfull \hbox (badness 2538) in paragraph at lines 492--492
+\OT1/cmr/m/n/10 cept, Er-ror,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+[]|\OT1/cmr/m/n/10 Verify that a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+[]|\OT1/cmr/m/n/10 The pro-gram
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+\OT1/cmr/m/n/10 will prompt
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+\OT1/cmr/m/n/10 in-putted an
+ []
+
+
+Overfull \hbox (25.42801pt too wide) in paragraph at lines 493--493
+[]|\OT1/cmr/m/n/10 test@testmail.com,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+\OT1/cmr/m/n/10 hel-loworld,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+\OT1/cmr/m/n/10 test @test-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+\OT1/cmr/m/n/10 mail.com,
+ []
+
+
+Overfull \hbox (22.65022pt too wide) in paragraph at lines 493--493
+\OT1/cmr/m/n/10 test.com@testmail| 
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 493--493
+[]|\OT1/cmr/m/n/10 Accept, Er-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+\OT1/cmr/m/n/10 ror, Er-ror,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--494
+[]|\OT1/cmr/m/n/10 Verify that a
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 494--494
+\OT1/cmr/m/n/10 valid Au-thorID
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--494
+\OT1/cmr/m/n/10 has been en-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--494
+\OT1/cmr/m/n/10 tered on the
+ []
+
+
+Underfull \hbox (badness 4899) in paragraph at lines 494--494
+\OT1/cmr/m/n/10 prompted with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--494
+[]|\OT1/cmr/m/n/10 123, 12,
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 494--494
+[]|\OT1/cmr/m/n/10 Accept, Er-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--494
+\OT1/cmr/m/n/10 ror, Er-ror,
+ []
+
+
+Overfull \hbox (15.4704pt too wide) in alignment at lines 479--496
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 425
+Underfull \vbox (badness 10000) detected at line 496
  []
 
-[61
+[66
 
-])
+] [67] [68] [69] [70] [71] [72])
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\git\COMP4Coursework\Testing
 \testing.tex"
 Chapter 3.
-[62
+[73
 
 
 
@@ -1532,15 +2689,15 @@ Overfull \hbox (15.4704pt too wide) in alignment at lines 39--43
 Underfull \vbox (badness 10000) detected at line 43
  []
 
-[63
+[74
 
-] [64]) [65
+] [75]) [76
 
 ]
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\git\COMP4Coursework\Mainten
 ance\maintenance.tex"
 Chapter 4.
-Excluding 'comment' comment. [66
+Excluding 'comment' comment. [77
 
 
 
@@ -1548,13 +2705,13 @@ Excluding 'comment' comment. [66
 Overfull \vbox (349.24393pt too high) has occurred while \output is active []
 
 
-[67] Excluding 'comment' comment. [68
+[78] Excluding 'comment' comment. [79
 
 ])
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\git\COMP4Coursework\Manual\
 manual.tex"
 Chapter 5.
-) [69
+) [80
 
 
 
@@ -1563,11 +2720,11 @@ Chapter 5.
 Overfull \vbox (248.63841pt too high) has occurred while \output is active []
 
 
-[70]
+[81]
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\git\COMP4Coursework\Evaluat
 ion\evaluation.tex"
 Chapter 6.
-) [71
+) [82
 
 
 
@@ -1575,7 +2732,7 @@ Chapter 6.
 Overfull \vbox (6.61086pt too high) has occurred while \output is active []
 
 
-[72]
+[83]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 17.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 17.
 
@@ -1596,7 +2753,7 @@ ion\evaluation.aux"))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 17.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 17.
 Package rerunfilecheck Info: File `coursework.out' has not changed.
-(rerunfilecheck)             Checksum: 644AD805AF4C352F16976B924D2C64EF;8601.
+(rerunfilecheck)             Checksum: 0B657ACB5EF2F5AFA744CC298047D4EC;9683.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1604,10 +2761,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 17.
  ) 
 Here is how much of TeX's memory you used:
- 10326 strings out of 493921
- 153801 string characters out of 3144855
- 264396 words of memory out of 3000000
- 13173 multiletter control sequences out of 15000+200000
+ 10377 strings out of 493921
+ 154780 string characters out of 3144855
+ 293494 words of memory out of 3000000
+ 13196 multiletter control sequences out of 15000+200000
  10876 words of font info for 39 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  37i,12n,45p,1581b,548s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1621,9 +2778,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmu10.pfb>
-Output written on coursework.pdf (73 pages, 1981842 bytes).
+Output written on coursework.pdf (84 pages, 2047347 bytes).
 PDF statistics:
- 1370 PDF objects out of 1440 (max. 8388607)
- 242 named destinations out of 1000 (max. 500000)
- 1111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1508 PDF objects out of 1728 (max. 8388607)
+ 268 named destinations out of 1000 (max. 500000)
+ 1225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
