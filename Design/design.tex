@@ -153,6 +153,11 @@ The following is a flowchart representing a summary of the complete system.
     \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/AddPubInvoice.pdf}
 \end{figure}
 
+\begin{figure}[H]
+    \caption{Add Book} \label{AddBook.pdf}
+    \includegraphics[width=\textwidth]{./Design/UserInterfaceDesign/AddBook.pdf}
+\end{figure}
+
 \section{Hardware Specification}
 
 The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ratio screen which runs on Windows 8. This is imperative to the size of the application I will be creating because it must fit on the given screen size and can't be resizable. A mouse or touchpad will be used for navigational purposes, and for confirmation of entries. Also, a keyboard will be used for inputting information into fields for entering and editing information. All the data used by the program and its database will be held on a local hard drive, and a display is needed for the outputs of the program.
@@ -163,11 +168,510 @@ The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ra
 
 \subsection{Algorithms in pseudo-code for each data transformation process}
 
+\begin{algorithm}[H]
+    \caption{Add Customer Entry}
+\begin{algorithmic}[1]
+
+\Function{AddEntry}{CustomerTable}
+Loop = 1
+\SET{$GetNewAuthorID$}{$False$}
+\SET{$ConfirmClicked$}{$False$}
+NewAuthorID = 0
+
+\While{$GetNewAuthorID = false$}
+
+    NewAuthorID = loop
+    Get AuthorID[loop] from CustomerTable
+
+    \If{$NewAuthorID \ = \ AuthorID[loop]$}
+
+        loop = loop +1
+
+    \Else
+
+        \SET{$GetNewAuthorID$}{$True$}
+
+    \EndIf
+\EndWhile
+
+FirstName = null
+LastName = null
+Email = null
+PhoneNumber = null
+Address = null
+Postcode = null
+
+\While{$len(FirstName) <= 0$}
+
+    INPUT FirstName
+
+\EndWhile
+
+\While{$len(LastName) <= 0$}
+
+    INPUT LastName
+
+\EndWhile
+
+\While{$len(Email) <= 0$}
+
+    INPUT Email
+
+\EndWhile
+
+\While{$len(PhoneNumber) <= 0$}
+
+    INPUT PhoneNumber
+
+\EndWhile
+
+\While{$len(Address) <= 0$}
+
+    INPUT Address
+
+\EndWhile
+
+\While{$len(Postcode) <= 0$}
+
+    INPUT Postcode
+
+\EndWhile
+
+\If{$ConfirmClicked \ == \ True$}
+
+    CONNECT to Customer Database
+
+\EndIf
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+    \caption{Add and Calculate Royalty Items}
+\begin{algorithmic}[1]
+
+\Function{AddRoyaltyItem}{}
+
+\SET{$CalculateClicked$}{$False$}
+\SET{$AddToDatabaseClicked$}{$False$}
+
+Date = null
+WholeSalePrice = null
+QuantitySold = null
+PrintCost = null
+Currency = null
+ExcRateFromGBP = null
+ISBN = null
+RoyaltyDiscount = null
+
+\While{$len(Date) <= 0$}
+
+    INPUT Date
+
+\EndWhile
+
+\While{$len(WholeSalePrice) <= 0$}
+
+    INPUT WholeSalePrice
+
+\EndWhile
+
+\While{$len(QuantitySold) <= 0$}
+
+    INPUT LastName
+
+\EndWhile
+
+\While{$len(PrintCost) <= 0$}
+
+    INPUT PrintCost
+
+\EndWhile
+
+\While{$len(Currency) <= 0$}
+
+    INPUT Currency
+
+\EndWhile
+
+\If{$Currency \ <> \ £$}
+
+    \While{$len(ExcRatefromGBP) <= 0$}
+
+        INPUT ExcRateFromGBP
+
+    \EndWhile
+\EndIf
+
+\While{$len(ISBN) <= 0$}
+
+    INPUT ISBN
+
+\EndWhile
+
+\While{$len(RoyaltyDiscount) <= 0$}
+
+    INPUT RoyaltyDiscount
+    \If{$RoyaltyDiscount \ > \ 100$}
+
+        RoyaltyDiscount = null
+
+    \EndIf
+
+    \If{$RoyaltyDiscount \ < \ 0$}
+
+        RoyaltyDiscount = null
+
+    \EndIf
+\EndWhile
+
+\If{$CalculateClicked \ == \ True$}
+
+    NetSales = WholeSalePrice * RoyaltyQuantity
+    NetPubComp = NetSales - PrintCost
+    OUTPUT NetPubComp
+
+\EndIf
+
+\If{$AddToDatabaseClicked \ == \ True$}
+    
+    CONNECT to RoyaltyItems Database
+    
+\EndIf
+
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}[H]
+    \caption{Add and Calculate Invoice Items}
+\begin{algorithmic}[1]
+
+\Function{AddInvoiceItem}{BookTable}
+
+\SET{$CalculateClicked$}{$False$}
+\SET{$AddToDatabaseClicked$}{$False$}
+
+Date = null
+QuantityBought = null
+InvoiceDiscount = null
+ShippingType= null
+ShippingPrice= null
+ISBN = null
+
+
+\While{$len(Date) <= 0$}
+
+    INPUT Date
+
+\EndWhile
+
+\While{$len(QuantityBought) <= 0$}
+
+    INPUT QuantityBought
+
+\EndWhile
+
+\While{$len(InvoiceDiscount) <= 0$}
+
+    INPUT InvoiceDiscount
+
+\EndWhile
+
+\While{$len(ISBN) <= 0$}
+
+    INPUT ISBN
+
+\EndWhile
+
+\While{$len(ShippingType) <= 0$}
+
+    INPUT ShippingType
+
+\EndWhile
+
+\While{$len(ShippingPrice) <= 0$}
+
+    INPUT ShippingPrice
+
+\EndWhile
+
+\If{$CalculateClicked \ == \ True$}
+
+    InvoicePayment = QuantityBought * Price * InvoiceDiscount + Shipping Price
+    OUTPUT InvoicePayment
+
+\EndIf
+
+\If{$AddToDatabaseClicked \ == \ True$}
+    
+    CONNECT to Invoice Database
+    
+\EndIf
+
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+    \caption{Add Book}
+\begin{algorithmic}[1]
+
+\Function{AddInvoiceItem}{CustomerTable}
+
+\SET{$AddToDatabaseClicked$}{$False$}
+
+DatePublished = null
+ISBN = null
+AuthorID = null
+BookTitle = null
+NoOfPages = null
+Size = null
+Back = null
+Cover = null
+Paper = null
+Font = null
+FontSize = null
+Price = null
+
+\While{$len(DatePublished) <= 0$}
+
+    INPUT DatePublished
+
+\EndWhile
+
+\While{$len(ISBN) <= 0$}
+
+    INPUT ISBN
+
+\EndWhile
+
+\While{$len(BookTitle) <= 0$}
+
+    INPUT BookTitle
+
+\EndWhile
+
+\While{$len(Size) <= 0$}
+
+    INPUT Size
+
+\EndWhile
+
+\While{$len(BackType) <= 0$}
+
+    INPUT BackType
+
+\EndWhile
+
+\While{$len(NoOfPages) <= 0$}
+
+    INPUT NoOfPages
+
+\EndWhile
+
+\While{$len(Paper) <= 0$}
+
+    INPUT Paper
+
+\EndWhile
+
+\While{$len(Font) <= 0$}
+
+    INPUT Font
+
+\EndWhile
+
+\While{$len(FontSize) <= 0$}
+
+    INPUT FontSize
+
+\EndWhile
+
+\While{$len(Price) <= 0$}
+
+    INPUT Price
+
+\EndWhile
+
+\If{$AddToDatabaseClicked \ == \ True$}
+    
+    CONNECT to Book Database
+    
+\EndIf
+
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+    \caption{Add and Publishing Invoice}
+\begin{algorithmic}[1]
+
+\Function{AddInvoiceItem}{BookTable, CustomerTable}
+
+\SET{$AddToDatabaseClicked$}{$False$}
+
+Date = null
+AuthorID = null
+ServiceType = null
+InvoicePayment= null
+ISBN = null
+
+\While{$len(Date) <= 0$}
+
+    INPUT Date
+
+\EndWhile
+
+\While{$len(AuthorID) <= 0$}
+
+    INPUT AuthorID
+
+\EndWhile
+
+\While{$len(InvoicePayment) <= 0$}
+
+    INPUT InvoicePayment
+
+\EndWhile
+
+\While{$len(ISBN) <= 0$}
+
+    INPUT ISBN
+
+\EndWhile
+
+\While{$len(ServiceType) <= 0$}
+
+    INPUT ServiceType
+
+\EndWhile
+
+\If{$AddToDatabaseClicked \ == \ True$}
+    
+    CONNECT to PubInvoice Database
+    
+\EndIf
+
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+    \caption{Add Book}
+\begin{algorithmic}[1]
+
+\Function{AddInvoiceItem}{CustomerTable}
+
+\SET{$AddToDatabaseClicked$}{$False$}
+
+DatePublished = null
+ISBN = null
+AuthorID = null
+BookTitle = null
+NoOfPages = null
+Size = null
+Back = null
+Cover = null
+Paper = null
+Font = null
+FontSize = null
+Price = null
+
+\While{$len(DatePublished) <= 0$}
+
+    INPUT DatePublished
+
+\EndWhile
+
+\While{$len(ISBN) <= 0$}
+
+    INPUT ISBN
+
+\EndWhile
+
+\While{$len(BookTitle) <= 0$}
+
+    INPUT BookTitle
+
+\EndWhile
+
+\While{$len(Size) <= 0$}
+
+    INPUT Size
+
+\EndWhile
+
+\While{$len(BackType) <= 0$}
+
+    INPUT BackType
+
+\EndWhile
+
+\While{$len(NoOfPages) <= 0$}
+
+    INPUT NoOfPages
+
+\EndWhile
+
+\While{$len(Paper) <= 0$}
+
+    INPUT Paper
+
+\EndWhile
+
+\While{$len(Font) <= 0$}
+
+    INPUT Font
+
+\EndWhile
+
+\While{$len(FontSize) <= 0$}
+
+    INPUT FontSize
+
+\EndWhile
+
+\While{$len(Price) <= 0$}
+
+    INPUT Price
+
+\EndWhile
+
+\If{$AddToDatabaseClicked \ == \ True$}
+    
+    CONNECT to Book Database
+    
+\EndIf
+
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
 \subsection{Object Diagrams}
 
 \subsection{Class Definitions}
 
 \section{Prototyping}
+
+It will be helpful to create a prototype of the main menu to make sure that different windows can be navigated through without any difficulty. This would give me a good idea of the flow of control between interfaces. Also, I plan to prototype a log in screen, because this would help me identify the difficulties involved in moving to and from the main menu and log in screen.
+
+Furthermore, I plan to prototype the adding, editing and removal of data to and from the database. I am going to prototype this in order to make sure that data can be successfully added, edited and removed to and from the database so that it can be confirmed that this can be conducted upon creation of the program.
+
+I have already prototyped the calendar interface used for inputting the date in a box. This is just a prototype of the basic interface, which is for selecting a date and placing it in the text box. It can switch between months with a dropdown list, or using the arrows and also years.
+
+\begin{figure}[H]
+    \caption{Calendar 1} \label{Calendar_1.pdf}
+    \includegraphics[width=\textwidth]{./Design/Calendar_1.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Calendar 2} \label{Calendar_2.pdf}
+    \includegraphics[width=\textwidth]{./Design/Calendar_2.pdf}
+\end{figure}
 
 \section{Definition of Data Requirements}
 
@@ -179,6 +683,7 @@ The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ra
 
 \subsection{Data Dictionary}
 
+There have been some changes to my data dictionary as a number of elements have been identified that need to be added to the system.
 
 \begin{center}
 \begin{tabular}{|p{2cm}|p{1cm}|p{2.5cm}|p{1.5cm}|p{3cm}|}
@@ -428,8 +933,6 @@ Finally, I put the data into its third normal form.
     \hline
 \end{tabular}
 
-\newpage
-
 \subsection{SQL Queries}
 
 I am using Python to format the SQL query text strings.
@@ -492,6 +995,15 @@ The system will check to make sure each entry is valid, in order to avoid any in
         2.1 & Verify that some criteria has been entered when using the search & At least one set of the input boxes and dropdown lists must have been filled in or selected from, else the program will prompt the user about the error & Number based search selection and positive number input, String Based search selection and valid text input , Nothing, No selections and valid text and number inputs & Normal, Normal, Erroneous, Erroneous & Accept, Accept, Error, Error & & \\ \hline
         2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com, helloworld, test @testmail.com, test.com@testmail & Normal, Erroneous, Erroneous, Erroneous & Accept, Error, Error, Error & & \\ \hline
         2.3 & Verify that a valid AuthorID has been entered on the main menu & The user will be prompted with an error & 123, 12, 1234, a23, 1 23, -123, @/! & Normal, Erroneous, Erroneous, Erroneous, Erroneous, Erroneous, Erroneous & Accept, Error, Error, Error, Error, Error, Error & & \\ \hline
+        3.1 & Verify that all fields required are entered when adding a book & If all fields are filled in correctly, a book will be successfully added to the database & Fill all Fields Correctly and then click Add to Database, Leave Fields Blank and then click Add to Database & Normal & Verification screen should open, User will be prompted with an error & & \\ \hline
+        3.2 & Verify that all fields required are entered and calculations are complete when adding an Invoice Item & If all fields are filled in correctly and the calculations are complete, then the invoice item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database, Leave Fields Blank and click Calculate, Fill all fields correctly and click add to database & Normal & Verification screen should open, User will be prompted with an error, User will be prompted to click Calculate & & \\ \hline
+        3.3 & Verify that all fields required are entered and calculations are complete when adding a Royalty Item & If all fields are filled in correctly and the calculations are complete, then the royalty item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database, Leave Fields Blank and click Calculate, Fill all fields correctly and click add to database & Normal & Verification screen should open, User will be prompted with an error, User will be prompted to click Calculate & & \\ \hline
+        4.1 & Verify that all book data has been added to the book database & All the information should be added to the correct fields in the book table & Book Information & Normal & Added to the Book Table & & \\ \hline
+        4.2 & Verify that all royalty item data has been added to the book database & All the information should be added to the correct fields in the royalty item table & Royalty Items Information & Normal & Added to the Royalty Items Table & & \\ \hline
+        4.3 & Verify that all invoice items data has been added to the Invoice Items database & All the information should be added to the correct fields in the Invoice Items table & Invoice Items Information & Normal & Added to the Invoice Items Table & & \\ \hline
+        4.4 & Verify that all publishing invoice data has been added to the publishing invoice database & All the information should be added to the correct fields in the Publishing Invoice table & Publishing Invoice Information & Normal & Added to the Publishing Invoice Table & & \\ \hline
+        5 & Verify that the program meets the requirements given & Run the program testing all parts to make sure they meet all of the requirements & Add entries for all possible inputs in order to test them all, view all windows, change password and log out. & Normal & Program is up to the required standards & & \\ \hline
+
 
     \end{longtable}
 \end{center}
