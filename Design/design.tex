@@ -166,6 +166,8 @@ The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ra
 
 \subsection{Top-down design structure charts}
 
+%
+
 \subsection{Algorithms in pseudo-code for each data transformation process}
 
 \begin{algorithm}[H]
@@ -250,7 +252,7 @@ Postcode = null
     \caption{Add and Calculate Royalty Items}
 \begin{algorithmic}[1]
 
-\Function{AddRoyaltyItem}{}
+\Function{AddRoyaltyItem}{Book Table}
 
 \SET{$CalculateClicked$}{$False$}
 \SET{$AddToDatabaseClicked$}{$False$}
@@ -258,7 +260,6 @@ Postcode = null
 Date = null
 WholeSalePrice = null
 QuantitySold = null
-PrintCost = null
 Currency = null
 ExcRateFromGBP = null
 ISBN = null
@@ -282,12 +283,6 @@ RoyaltyDiscount = null
 
 \EndWhile
 
-\While{$len(PrintCost) <= 0$}
-
-    INPUT PrintCost
-
-\EndWhile
-
 \While{$len(Currency) <= 0$}
 
     INPUT Currency
@@ -301,6 +296,7 @@ RoyaltyDiscount = null
         INPUT ExcRateFromGBP
 
     \EndWhile
+
 \EndIf
 
 \While{$len(ISBN) <= 0$}
@@ -312,6 +308,7 @@ RoyaltyDiscount = null
 \While{$len(RoyaltyDiscount) <= 0$}
 
     INPUT RoyaltyDiscount
+
     \If{$RoyaltyDiscount \ > \ 100$}
 
         RoyaltyDiscount = null
@@ -323,7 +320,68 @@ RoyaltyDiscount = null
         RoyaltyDiscount = null
 
     \EndIf
+
 \EndWhile
+
+\If{$Cover \ == \ Colour$}
+
+    Size = Small
+    PagePrice = 0.06 * NoOfPages
+
+    \If{$Back \ == \ Hard$}
+        
+        CoverPrice = 5
+   
+    \EndIf    
+
+    \If{$Back \ == \ Soft$}
+
+        CoverPrice = 3
+
+    \EndIf
+
+\EndIf
+
+\If{$Cover \ == \ Black/White$}
+
+    \If{$Size \ == \ Large$}
+
+        PagePrice = 0.015 * NoOfPages
+
+        \If{$Back \ == \ Hard$}
+            
+            CoverPrice = 5
+
+        \EndIf
+
+        \If{$Back \ == \ Soft$}
+            
+            CoverPrice = 1
+    
+        \EndIf   
+
+    \EndIf
+ 
+    \If{$Size \ == \ Small$}
+
+        PagePrice = 0.01 * NoOfPages
+
+        \If{$Back \ == \ Hard$}
+            
+            CoverPrice = 4      
+
+        \EndIf
+
+        \If{$Back \ == \ Soft$}
+            CoverPrice = 0.7
+
+        \EndIf    
+        
+    \EndIf
+
+\EndIf
+
+PrintCost = (PagePrice + CoverPrice) * RoyaltyQuantity
 
 \If{$CalculateClicked \ == \ True$}
 
@@ -340,6 +398,7 @@ RoyaltyDiscount = null
 \EndIf
 
 \EndFunction
+
 \end{algorithmic}
 \end{algorithm}
 
@@ -399,7 +458,7 @@ ISBN = null
 
 \If{$CalculateClicked \ == \ True$}
 
-    InvoicePayment = QuantityBought * Price * InvoiceDiscount + Shipping Price
+    InvoicePayment = (QuantityBought * Price * InvoiceDiscount) + Shipping Price
     OUTPUT InvoicePayment
 
 \EndIf
@@ -563,7 +622,70 @@ ISBN = null
 
 \subsection{Object Diagrams}
 
+%
+
 \subsection{Class Definitions}
+
+Key:
+
+\begin{tabular}{|p{2.5cm}|}
+    \hline
+    \textbf{Label}  \\ \hline
+    Attributes \\ \hline
+    Behaviours  \\ \hline
+    \hline
+\end{tabular}
+
+\begin{tabular}{|p{2.5cm}|}
+    \hline
+    \textbf{Customer} \\ \hline
+    Author ID \\ ForeName \\ Surname \\ Email \\ Address \\ Postcode \\ Phone Number \\ \hline
+    Add ForeName \\ Edit Forename \\ Add Surname \\ Edit Surname \\ Add Email \\ Edit Email \\ Add Address \\ Edit Address \\ Add Postcode \\ Edit Postcode \\ Add Phone Number \\ Edit Phone Number \\ \hline
+    \hline
+\end{tabular}
+
+\begin{tabular}{|p{2.5cm}|}
+    \hline
+    \textbf{Book} \\ \hline
+    ISBN \\ AuthorID \\ BookTitle \\ NoOfPages \\ Size \\ Cover \\ Back \\ Paper \\ Font \\ FontSize \\ Price \\ DatePublished \\ \hline
+    Add ISBN \\ Edit ISBN \\ Add AuthorID \\ Edit AuthorID \\ Add BookTitle \\ Edit BookTitle \\ Add NoOfPages \\ Edit NoOfPages \\ Add Size \\ Edit Size \\ Add Cover \\ Edit Cover \\ Add Back \\ Edit Back \\ Add Paper \\ Edit Paper \\ Add Font \\ Edit Font \\ Add FontSize \\ Edit FontSize \\ Add DatePublished \\ Edit DatePublished \\ Add Price \\ Edit Price \\ \hline
+    \hline
+\end{tabular}
+
+\begin{tabular}{|p{2.5cm}|}
+    \hline
+    \textbf{Royalties} \\ \hline
+    RoyaltiesID \\ AuthorID \\ RoyaltyPayment \\ RoyaltiesDate \\ \hline
+    Add AuthorID \\ Edit AuthorID \\ Add RoyaltiesDate \\ Edit Royalties Date \\ \hline
+\end{tabular}
+
+\begin{tabular}{|p{2.5cm}|}
+    \hline
+    \textbf{Royalties Items} \\ \hline
+    RoyaltiesItems \\ RoyaltiesID \\ ISBN \\ Currency \\ RoyaltyDiscount \\ WholesalePrice \\ RoyaltyQuantity \\ NetSales \\ PrintCost \\ ExcRateFromGBP \\ \hline
+    Add RoyaltiesID \\ Edit RoyaltiesID \\ Add ISBN \\ Edit ISBN \\ Add Currency \\ Edit Currency \\ Add RoyaltyDiscount \\ Edit RoyaltyDiscount \\ Add WholesalePrice \\ Edit WholesalePrice \\ Add RoyaltyQuantity \\ Edit RoyaltyQuantity \\ Add ExcRateFromGBP \\ Edit ExcRateFromGBP \\ \hline
+\end{tabular}
+
+\begin{tabular}{|p{2.5cm}|}
+    \hline
+    \textbf{BooksInvoice} \\ \hline
+    BooksInvoiceID \\ AuthorID \\ BooksInvoicePayment \\ BooksInvoiceDate \\ \hline
+    Add AuthorID \\ Edit AuthorID \\ Add BooksInvoiceDate \\ Edit BooksInvoiceDaate \\ \hline
+\end{tabular}
+
+\begin{tabular}{|p{2.5cm}|}
+    \hline
+    \textbf{BooksInvoiceItems} \\ \hline
+    BooksInvoiceItems \\ BooksInvoiceID \\ ISBN \\ BooksInvoiceQuantity \\ BooksInvoiceDiscount \\ ShippingType \\ ShippingPrice \\ \hline
+    Add BooksInvoiceID \\ Edit BooksInvoiceID \\ Add ISBN \\ Edit ISBN \\ Add BooksInvoiceQuantity \\ Edit BooksInvoiceQuantity \\ Add BooksInvoiceDiscount \\ Edit BooksInvoiceDiscount \\ Add ShippingType \\ Edit Shipping Type \\ Add ShippingPrice \\ Edit ShippingPrice \\ \hline
+\end{tabular}
+
+\begin{tabular}{|p{2.5cm}|}
+    \hline
+    \textbf{PubInvoiceItems} \\ \hline
+    PubInvoiceID \\ AuthorID \\ ISBN \\ PubInvoiceDate \\ PubInvoiceService \\ PubInvoicePayment \\ \hline
+    Add AuthorID \\ Edit AuthorID \\ Add ISBN \\ Edit ISBN \\ Add PubInvoiceDate \\ Edit PubInvoiceDate \\ Add PubInvoiceService \\ Edit PubInvoiceService \\ Add PubInvoicePayment \\ EditPubInvoicePayment \\ \hline
+\end{tabular}
 
 \section{Prototyping}
 
@@ -587,9 +709,77 @@ I have already prototyped the calendar interface used for inputting the date in 
 
 \subsection{Identification of all data input items}
 
+\begin{itemize}
+    \item First Name
+    \item Last Name
+    \item Email
+    \item Phone Number
+    \item Address
+    \item Postcode
+    \item ISBN
+    \item Book Title
+    \item Number of pages
+    \item Size
+    \item Back type
+    \item Cover type
+    \item Paper type
+    \item Font
+    \item Font size
+    \item Date published
+    \item Price
+    \item Currency
+    \item Royalty payment
+    \item Royalties date
+    \item Royalty discount
+    \item Wholesale price
+    \item Royalty Quantity
+    \item Exchange rate from pounds
+    \item Publishing invoice date
+    \item Publishing invoice service
+    \item Publishing invoice payment
+    \item Books invoice date
+    \item Books invoice discount
+    \item Books invoice quantity
+    \item Shipping price
+    \item Shipping type
+\end{itemize}
+
 \subsection{Identification of all data output items}
 
+\begin{itemize}
+    \item Author ID
+    \item Royalties ID
+    \item Publishing Invoice ID
+    \item Books Invoice ID
+    \item Net Sales
+    \item Print Cost
+    \item Royalty Payment
+    \item Net Publishing Compensation
+    \item Books Invoice Payment
+    \item Royalties Items
+    \item Books Invoice Items
+\end{itemize}
+
 \subsection{Explanation of how data output items are generated}
+
+\begin{center}
+\begin{tabular}{|p{2cm}|p{2cm}|p{2.5cm}|}
+    \hline
+    \textbf{Output} & \textbf{How it is produced} & \textbf{Input Items Required to Produce} \\ \hline
+    Author ID & Produced by program & \\ \hline
+    Royalties ID & Produced by program & \\ \hline
+    Publishing Invoice ID & Produced by program & \\ \hline
+    Books Invoice ID & Produced by program & \\ \hline
+    Net Sales & Calculated by program using inputs & Wholesale Price, Royalty Quantity \\ \hline
+    Print Cost & Calculated by program using inputs & Number of Pages, Size, Back type, Cover type, Royalty Quantity \\ \hline
+    Net Publishing Compensation & Calculated by program using inputs/outputs & Net Sales, Print Cost \\ \hline
+    Royalty Payment & Calculated by program using outputs & Net Publsihing Compensation \\ \hline
+    Books Invoice Payment & Calculated by program using inputs & Books Invoice Quantity, Books Invoice Discount, Price, Shipping Price \\ \hline
+    Royalties Items & Produced by program & \\ \hline
+    Books Invoice Items & Produced by program & \\ \hline
+\end{tabular}
+\end{center}
+
 
 \subsection{Data Dictionary}
 
@@ -647,8 +837,7 @@ There have been some changes to my data dictionary as a number of elements have 
 
 \subsection{Identification of appropriate storage media}
 
-
-\newpage
+A hard drive would be an example of an appropriate storage media. For back up purposes, an external hard drive would be the optimal solution, because it is portable, meaning it can be kept off site, as well as being able to hold all data files on it. The database will be needed to be kept for long term storage. This is the data will be required to be accessed a number of times.
 
 \section{Database Design}
 
@@ -734,7 +923,7 @@ First of all, I have started with the data in its unnormalised form.
 \end{tabular}
 
 \newpage
-Then, I put it into the first normal form.
+Then, I put it into the first normal form, seperating the repeating attributes and the non-repeating attributes.
 
 \begin{tabular}{|p{2.5cm}|p{3.5cm}|}
     \hline
