@@ -165,8 +165,11 @@ The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ra
 \section{Program Structure}
 
 \subsection{Top-down design structure charts}
-
-%
+.
+\begin{figure}[H]
+    \caption{Top-down design structure chart} \label{Top-down_design_structure_chart.pdf}
+    \includegraphics[width=\textwidth]{./Design/Top-down_design_structure_chart.pdf}
+\end{figure}
 
 \subsection{Algorithms in pseudo-code for each data transformation process}
 
@@ -197,10 +200,15 @@ NewAuthorID = 0
 \EndWhile
 
 FirstName = null
+
 LastName = null
+
 Email = null
+
 PhoneNumber = null
+
 Address = null
+
 Postcode = null
 
 \While{$len(FirstName) <= 0$}
@@ -249,20 +257,24 @@ Postcode = null
 \end{algorithm}
 
 \begin{algorithm}[H]
-    \caption{Add and Calculate Royalty Items}
+    \caption{Add and Calculate Royalty Items- part 1}
 \begin{algorithmic}[1]
-
-\Function{AddRoyaltyItem}{Book Table}
 
 \SET{$CalculateClicked$}{$False$}
 \SET{$AddToDatabaseClicked$}{$False$}
 
 Date = null
+
 WholeSalePrice = null
+
 QuantitySold = null
+
 Currency = null
+
 ExcRateFromGBP = null
+
 ISBN = null
+
 RoyaltyDiscount = null
 
 \While{$len(Date) <= 0$}
@@ -323,9 +335,17 @@ RoyaltyDiscount = null
 
 \EndWhile
 
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+    \caption{Add and Calculate Royalty Items- part 2}
+\begin{algorithmic}[1]
+
 \If{$Cover \ == \ Colour$}
 
     Size = Small
+
     PagePrice = 0.06 * NoOfPages
 
     \If{$Back \ == \ Hard$}
@@ -386,7 +406,9 @@ PrintCost = (PagePrice + CoverPrice) * RoyaltyQuantity
 \If{$CalculateClicked \ == \ True$}
 
     NetSales = WholeSalePrice * RoyaltyQuantity
+
     NetPubComp = NetSales - PrintCost
+
     OUTPUT NetPubComp
 
 \EndIf
@@ -396,8 +418,6 @@ PrintCost = (PagePrice + CoverPrice) * RoyaltyQuantity
     CONNECT to RoyaltyItems Database
     
 \EndIf
-
-\EndFunction
 
 \end{algorithmic}
 \end{algorithm}
@@ -413,10 +433,15 @@ PrintCost = (PagePrice + CoverPrice) * RoyaltyQuantity
 \SET{$AddToDatabaseClicked$}{$False$}
 
 Date = null
+
 QuantityBought = null
+
 InvoiceDiscount = null
+
 ShippingType= null
+
 ShippingPrice= null
+
 ISBN = null
 
 
@@ -436,7 +461,20 @@ ISBN = null
 
     INPUT InvoiceDiscount
 
+    \If{$InvoiceDiscount \ > \ 100$}
+
+        InvoiceDiscount = null
+
+    \EndIf
+
+    \If{$InvoiceDiscount \ < \ 0$}
+
+        InvoiceDiscount = null
+
+    \EndIf
+
 \EndWhile
+
 
 \While{$len(ISBN) <= 0$}
 
@@ -459,6 +497,7 @@ ISBN = null
 \If{$CalculateClicked \ == \ True$}
 
     InvoicePayment = (QuantityBought * Price * InvoiceDiscount) + Shipping Price
+
     OUTPUT InvoicePayment
 
 \EndIf
@@ -482,16 +521,27 @@ ISBN = null
 \SET{$AddToDatabaseClicked$}{$False$}
 
 DatePublished = null
+
 ISBN = null
+
 AuthorID = null
+
 BookTitle = null
+
 NoOfPages = null
+
 Size = null
+
 Back = null
+
 Cover = null
+
 Paper = null
+
 Font = null
+
 FontSize = null
+
 Price = null
 
 \While{$len(DatePublished) <= 0$}
@@ -573,9 +623,13 @@ Price = null
 \SET{$AddToDatabaseClicked$}{$False$}
 
 Date = null
+
 AuthorID = null
+
 ServiceType = null
+
 InvoicePayment= null
+
 ISBN = null
 
 \While{$len(Date) <= 0$}
@@ -728,7 +782,6 @@ I have already prototyped the calendar interface used for inputting the date in 
     \item Date published
     \item Price
     \item Currency
-    \item Royalty payment
     \item Royalties date
     \item Royalty discount
     \item Wholesale price
@@ -1056,9 +1109,49 @@ The database will be password protected to make sure that only users who know th
 \section{Validation}
 
 The system will check to make sure each entry is valid, in order to avoid any invalid entries into the database. 
-
-
+ 
+\begin{center}
+    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+    \textbf{Item} & \textbf{Example} & \textbf{Validation} & \textbf{Comments}\\ \hline
+    FirstName & John & Presence Check, Type Check & Makes sure that a name is entered, and that the name is just letters. \\ \hline
+    LastName & Smith & Presence Check, Type Check & Makes sure that a name is entered, and that the name is just letters. \\ \hline
+    Email & test@mail.com & Presence Check, Type Check & Makes sure that an email is entered and that the @ symbol comes before the '.' in the email. \\ \hline
+    PhoneNumber & 07123456789 & Presence Check & Makes sure that a phone number is entered. \\ \hline
+    Address & 1 Example Road & Presence Check & Makes sure that an address is entered. \\ \hline
+    Postcode & AB1 2CD & Presence Check & Makes sure that a Postcode is entered. \\ \hline
+    ISBN & 9780748782987 & Presence Check, Length Check & Makes sure that an ISBN is entered and is not longer than 13 digits. \\ \hline
+    BookTitle & Computing A2 Text Book & Presence Check & Makes sure that a Book Title has been entered. \\ \hline
+    NoOfPages & 395 & Presence Check, Type Check & Makes sure that a positive integer has been entered. \\ \hline
+    Size & Large & Presence Check & Makes sure that a Size has been entered. \\ \hline
+    Back & Hard & Presence Check & Makes sure that a Back type has been entered. \\ \hline
+    Cover & Colour & Presence Check & Makes sure that a Cover type has been entered. \\ \hline
+    Paper & White & Presence Check & Makes sure that a Paper type has been entered. \\ \hline
+    Font & Microsoft Sans Serif & Presence Check & Makes sure that a Font has been entered. \\ \hline
+    FontSize & 12 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
+    DatePublished & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
+    Price & 8.99 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
+    Currency & £ & Presence Check, Type Check & Makes sure that the correct symbol has been entered. \\ \hline
+    RoyaltiesDate & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
+    RoyaltyDiscount & 50 & Presence Check, Type Check, Range Check & Makes sure that a positive value has been entered, just digits, and it must be between 0 and 100. \\ \hline
+    WholesalePrice & 5.99 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
+    RoyaltyQuantity & 150 & Presence Check, Type Check & Makes sure that a positive integer has been entered. \\ \hline
+    ExcRateFromGBP & 1.67 & Presence Check, Type Check & Makes sure that a value has been entered. \\ \hline
+    PubInvoiceDate & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
+    PubInvoiceService & Standard & Presence Check & Makes sure that a Service has been entered. \\ \hline
+    PubInvoicePayment & £1659.99 & Presence Check, Type Check & Makes sure that a positive value has been entered. \\ \hline
+    BooksInvoiceDate & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
+    BooksInvoiceDiscount & 50 & Presence Check, Type Check, Range Check & Makes sure that a positive value has been entered, just digits, and it must be between 0 and 100. \\ \hline
+    BooksInvoiceQuantity & 25 & PresenceCheck, Type Check & Makes sure that a positive integer has been entered. \\ \hline
+    Shipping Type & Premium & Presence Check & Makes sure that a Shipping type has been entered. \\ \hline
+    Shipping Price & 4.00 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
+    AuthorID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Customer Table to find the entry to confirm that it is valid. \\ \hline 
+    RoyaltiesID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Royalties Table to find the entry to confirm that it is valid. \\ \hline
 \section{Testing}
+    PubInvoiceID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the PubInvoice Table to find the entry to confirm that it is valid. \\ \hline
+    BooksInvoiceID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Books Invoice Table to find the entry to confirm that it is valid. \\ \hline
+\end{tabular}
+\end{center}
+
 
 \begin{landscape}
 \subsection{Outline Plan}
@@ -1069,9 +1162,9 @@ The system will check to make sure each entry is valid, in order to avoid any in
         \textbf{Test Series} & \textbf{Purpose of Test Series} & \textbf{Testing Strategy} & \textbf{Strategy Rationale}\\ \hline
         1 & Testing the flow of control between user interfaces & Top-down Testing & \\ \hline
         2 & Testing the validation of input data & Bottom-up testing & All components are to be tested after development \\ \hline
-        3 & Testing the algorithms' functionality & White box testing \\ \hline
-        4 & Testing that the information has been successfully stored, and in the right places & Black box testing \\ \hline
-        5 & Testing the system and whether it meets the requirements & System testing \\ \hline
+        3 & Testing the algorithms' functionality & White box testing & \\ \hline
+        4 & Testing that the information has been successfully stored, and in the right places & Black box testing & \\ \hline
+        5 & Testing the system and whether it meets the requirements & System testing & \\ \hline
     \end{tabular}
 \end{center}
 
