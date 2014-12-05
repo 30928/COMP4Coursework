@@ -672,11 +672,12 @@ ISBN = null
 \end{algorithmic}
 \end{algorithm}
 
-
-
 \subsection{Object Diagrams}
 
-%
+\begin{figure}[H]
+    \caption{Object Diagram} \label{Object_Diagram.pdf}
+    \includegraphics[width=\textwidth]{./Design/Object_Diagram.pdf}
+\end{figure}
 
 \subsection{Class Definitions}
 
@@ -690,7 +691,7 @@ Key:
     \hline
 \end{tabular}
 
-\begin{tabular}{|p{2.5cm}|}
+\begin{tabular}{|p{4cm}|}
     \hline
     \textbf{Customer} \\ \hline
     Author ID \\ ForeName \\ Surname \\ Email \\ Address \\ Postcode \\ Phone Number \\ \hline
@@ -698,7 +699,7 @@ Key:
     \hline
 \end{tabular}
 
-\begin{tabular}{|p{2.5cm}|}
+\begin{tabular}{|p{4cm}|}
     \hline
     \textbf{Book} \\ \hline
     ISBN \\ AuthorID \\ BookTitle \\ NoOfPages \\ Size \\ Cover \\ Back \\ Paper \\ Font \\ FontSize \\ Price \\ DatePublished \\ \hline
@@ -706,35 +707,35 @@ Key:
     \hline
 \end{tabular}
 
-\begin{tabular}{|p{2.5cm}|}
+\begin{tabular}{|p{4cm}|}
     \hline
     \textbf{Royalties} \\ \hline
     RoyaltiesID \\ AuthorID \\ RoyaltyPayment \\ RoyaltiesDate \\ \hline
     Add AuthorID \\ Edit AuthorID \\ Add RoyaltiesDate \\ Edit Royalties Date \\ \hline
 \end{tabular}
 
-\begin{tabular}{|p{2.5cm}|}
+\begin{tabular}{|p{4cm}|}
     \hline
     \textbf{Royalties Items} \\ \hline
     RoyaltiesItems \\ RoyaltiesID \\ ISBN \\ Currency \\ RoyaltyDiscount \\ WholesalePrice \\ RoyaltyQuantity \\ NetSales \\ PrintCost \\ ExcRateFromGBP \\ \hline
     Add RoyaltiesID \\ Edit RoyaltiesID \\ Add ISBN \\ Edit ISBN \\ Add Currency \\ Edit Currency \\ Add RoyaltyDiscount \\ Edit RoyaltyDiscount \\ Add WholesalePrice \\ Edit WholesalePrice \\ Add RoyaltyQuantity \\ Edit RoyaltyQuantity \\ Add ExcRateFromGBP \\ Edit ExcRateFromGBP \\ \hline
 \end{tabular}
 
-\begin{tabular}{|p{2.5cm}|}
+\begin{tabular}{|p{4cm}|}
     \hline
     \textbf{BooksInvoice} \\ \hline
     BooksInvoiceID \\ AuthorID \\ BooksInvoicePayment \\ BooksInvoiceDate \\ \hline
     Add AuthorID \\ Edit AuthorID \\ Add BooksInvoiceDate \\ Edit BooksInvoiceDaate \\ \hline
 \end{tabular}
 
-\begin{tabular}{|p{2.5cm}|}
+\begin{tabular}{|p{4cm}|}
     \hline
     \textbf{BooksInvoiceItems} \\ \hline
     BooksInvoiceItems \\ BooksInvoiceID \\ ISBN \\ BooksInvoiceQuantity \\ BooksInvoiceDiscount \\ ShippingType \\ ShippingPrice \\ \hline
     Add BooksInvoiceID \\ Edit BooksInvoiceID \\ Add ISBN \\ Edit ISBN \\ Add BooksInvoiceQuantity \\ Edit BooksInvoiceQuantity \\ Add BooksInvoiceDiscount \\ Edit BooksInvoiceDiscount \\ Add ShippingType \\ Edit Shipping Type \\ Add ShippingPrice \\ Edit ShippingPrice \\ \hline
 \end{tabular}
 
-\begin{tabular}{|p{2.5cm}|}
+\begin{tabular}{|p{4cm}|}
     \hline
     \textbf{PubInvoiceItems} \\ \hline
     PubInvoiceID \\ AuthorID \\ ISBN \\ PubInvoiceDate \\ PubInvoiceService \\ PubInvoicePayment \\ \hline
@@ -868,6 +869,13 @@ There have been some changes to my data dictionary as a number of elements have 
     RoyaltyDiscount & Real & 0-100 & Numbers only & 40 \\ \hline
     WholeSalePrice & Real & 0.01-63.00 & Numbers only & 7.99 \\ \hline
     RoyaltyQuantity & Integer & 1- 2047 & Numbers only & 192 \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{1cm}|p{2.5cm}|p{1.5cm}|p{2cm}|}
+    \hline
+    \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} \\ \hline
     NetSales & Real & 0.01-32767.00 & Numbers only & 900.00 \\ \hline
     PrintCost & Real & 0.01-32767.00 & Numbers only & 800.00 \\ \hline
     ExcRateFromGBP & Real & 0-1027 & Numbers only & 1.67 \\ \hline
@@ -1055,33 +1063,33 @@ After that, I put it into the second normal form.
 \newpage
 Finally, I put the data into its third normal form.
 
-\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{3cm}|p{3cm}|}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{3cm}|}
     \hline
-    \textbf{AuthorID} & \textbf{ISBN} & \textbf{RoyaltiesID} & \textbf{RoyaltiesItems} & \textbf{PubInvoiceID} \\
-    FirstName & \emph{AuthorID} & \emph{AuthorID} & \emph{RoyaltiesID} & \emph{AuthorID} \\
-    LastName & BookTitle & RoyaltyPayment & \emph{ISBN} & \emph{ISBN} \\
-    Email & NoOfPages & RoyaltiesDate & Currency & PubInvoiceDate \\
-    PhoneNumber & Size & & RoyaltyDiscount & PubInvoiceService \\
-    Address & Back & & WholeSalePrice & PubInvoicePayment\\
-    PostCode & Cover & & RoyaltyQuantity &  \\
-    & Paper & & NetSales & \\
-    & Font & & PrintCost & \\
-    & FontSize & & ExcRateFromGBP & \\
-    & DatePublished & & & \\
-    & Price & & & \\
+    \textbf{AuthorID} & \textbf{ISBN} & \textbf{RoyaltiesID} & \textbf{RoyaltiesItems} \\
+    FirstName & \emph{AuthorID} & \emph{AuthorID} & \emph{RoyaltiesID} \\
+    LastName & BookTitle & RoyaltyPayment & \emph{ISBN}  \\
+    Email & NoOfPages & RoyaltiesDate & Currency  \\
+    PhoneNumber & Size & & RoyaltyDiscount  \\
+    Address & Back & & WholeSalePrice \\
+    PostCode & Cover & & RoyaltyQuantity  \\
+    & Paper & & NetSales \\
+    & Font & & PrintCost \\
+    & FontSize & & ExcRateFromGBP \\
+    & DatePublished & & \\
+    & Price & & \\
     \hline
 \end{tabular}
 
-\begin{tabular}{|p{3.5cm}|p{3.5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|}
     \hline
-    \textbf{BooksInvoiceID} & \textbf{BooksInvoiceItems} \\
-    \emph{AuthorID} & \emph{BooksInvoiceID} \\
-    BooksInvoiceTotal & \emph{ISBN} \\
-    BooksInvoiceDate& BooksInvoicePayment \\
-    & BooksInvoiceQuantity \\
-    & BooksInvoiceDiscount \\
-    & ShippingType \\
-    & ShippingPrice \\
+    \textbf{PubInvoiceID} & \textbf{BooksInvoiceID} & \textbf{BooksInvoiceItems} \\
+    \emph{AuthorID} & \emph{AuthorID} & \emph{BooksInvoiceID} \\
+    \emph{ISBN}& BooksInvoiceTotal & \emph{ISBN} \\
+    PubInvoiceDate & BooksInvoiceDate & BooksInvoicePayment \\
+    PubInvoiceService & & BooksInvoiceQuantity \\
+    PubInvoicePayment & & BooksInvoiceDiscount \\
+    & & ShippingType \\
+    & & ShippingPrice \\
     \hline
 \end{tabular}
 
@@ -1089,7 +1097,7 @@ Finally, I put the data into its third normal form.
 
 I am using Python to format the SQL query text strings.
 
-\begin{tabular}{|p{10cm}|p{5cm}|}
+\begin{tabular}{|p{6cm}|p{5cm}|}
     \hline
     \textbf{SQL} & \textbf{Descriptions} \\ \hline 
      """insert into \\ Customer(FirstName, LastName, Email, PhoneNumber, Address, Postcode) values (\{0\}, \{1\}, \{2\}, \{3\}, \{4\}, \{5\}) \\ """.format(FirstName, LastName, Email, PhoneNumber, Address, Postcode) & An example of an SQL statement which adds customer records to the database. Here, it is entering a new customer record with the attributes: FirstName, LastName, Email, PhoneNumber, Address and Postcode. \\ \hline
@@ -1111,7 +1119,7 @@ The database will be password protected to make sure that only users who know th
 The system will check to make sure each entry is valid, in order to avoid any invalid entries into the database. 
  
 \begin{center}
-    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{3cm}|}
     \textbf{Item} & \textbf{Example} & \textbf{Validation} & \textbf{Comments}\\ \hline
     FirstName & John & Presence Check, Type Check & Makes sure that a name is entered, and that the name is just letters. \\ \hline
     LastName & Smith & Presence Check, Type Check & Makes sure that a name is entered, and that the name is just letters. \\ \hline
@@ -1127,6 +1135,12 @@ The system will check to make sure each entry is valid, in order to avoid any in
     Cover & Colour & Presence Check & Makes sure that a Cover type has been entered. \\ \hline
     Paper & White & Presence Check & Makes sure that a Paper type has been entered. \\ \hline
     Font & Microsoft Sans Serif & Presence Check & Makes sure that a Font has been entered. \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{|p{2.5cm}|p{2cm}|p{2cm}|p{3cm}|}
+    \textbf{Item} & \textbf{Example} & \textbf{Validation} & \textbf{Comments}\\ \hline
     FontSize & 12 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
     DatePublished & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
     Price & 8.99 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
@@ -1135,25 +1149,35 @@ The system will check to make sure each entry is valid, in order to avoid any in
     RoyaltyDiscount & 50 & Presence Check, Type Check, Range Check & Makes sure that a positive value has been entered, just digits, and it must be between 0 and 100. \\ \hline
     WholesalePrice & 5.99 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
     RoyaltyQuantity & 150 & Presence Check, Type Check & Makes sure that a positive integer has been entered. \\ \hline
-    ExcRateFromGBP & 1.67 & Presence Check, Type Check & Makes sure that a value has been entered. \\ \hline
-    PubInvoiceDate & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
-    PubInvoiceService & Standard & Presence Check & Makes sure that a Service has been entered. \\ \hline
-    PubInvoicePayment & £1659.99 & Presence Check, Type Check & Makes sure that a positive value has been entered. \\ \hline
-    BooksInvoiceDate & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
-    BooksInvoiceDiscount & 50 & Presence Check, Type Check, Range Check & Makes sure that a positive value has been entered, just digits, and it must be between 0 and 100. \\ \hline
-    BooksInvoiceQuantity & 25 & PresenceCheck, Type Check & Makes sure that a positive integer has been entered. \\ \hline
+    ExcRate FromGBP & 1.67 & Presence Check, Type Check & Makes sure that a value has been entered. \\ \hline
+    Pub Invoice Date & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
+    Pub Invoice Service & Standard & Presence Check & Makes sure that a Service has been entered. \\ \hline
+    Pub Invoice Payment & £1659.99 & Presence Check, Type Check & Makes sure that a positive value has been entered. \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{|p{2.5cm}|p{2cm}|p{2cm}|p{3.5cm}|}
+    \textbf{Item} & \textbf{Example} & \textbf{Validation} & \textbf{Comments}\\ \hline
+    Books Invoice Date & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
+    Books Invoice Discount & 50 & Presence Check, Type Check, Range Check & Makes sure that a positive value has been entered, just digits, and it must be between 0 and 100. \\ \hline
+    Books Invoice Quantity & 25 & PresenceCheck, Type Check & Makes sure that a positive integer has been entered. \\ \hline
     Shipping Type & Premium & Presence Check & Makes sure that a Shipping type has been entered. \\ \hline
     Shipping Price & 4.00 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
     AuthorID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Customer Table to find the entry to confirm that it is valid. \\ \hline 
     RoyaltiesID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Royalties Table to find the entry to confirm that it is valid. \\ \hline
-\section{Testing}
     PubInvoiceID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the PubInvoice Table to find the entry to confirm that it is valid. \\ \hline
     BooksInvoiceID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Books Invoice Table to find the entry to confirm that it is valid. \\ \hline
 \end{tabular}
 \end{center}
 
 
+
+
 \begin{landscape}
+
+\section{Testing}
+
 \subsection{Outline Plan}
 
 \begin{center}
