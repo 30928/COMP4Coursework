@@ -559,96 +559,6 @@ ISBN = null
 \end{algorithmic}
 \end{algorithm}
 
-\begin{algorithm}[H]
-    \caption{Add Book}
-\begin{algorithmic}[1]
-
-\Function{AddInvoiceItem}{CustomerTable}
-
-\SET{$AddToDatabaseClicked$}{$False$}
-
-DatePublished = null
-ISBN = null
-AuthorID = null
-BookTitle = null
-NoOfPages = null
-Size = null
-Back = null
-Cover = null
-Paper = null
-Font = null
-FontSize = null
-Price = null
-
-\While{$len(DatePublished) <= 0$}
-
-    INPUT DatePublished
-
-\EndWhile
-
-\While{$len(ISBN) <= 0$}
-
-    INPUT ISBN
-
-\EndWhile
-
-\While{$len(BookTitle) <= 0$}
-
-    INPUT BookTitle
-
-\EndWhile
-
-\While{$len(Size) <= 0$}
-
-    INPUT Size
-
-\EndWhile
-
-\While{$len(BackType) <= 0$}
-
-    INPUT BackType
-
-\EndWhile
-
-\While{$len(NoOfPages) <= 0$}
-
-    INPUT NoOfPages
-
-\EndWhile
-
-\While{$len(Paper) <= 0$}
-
-    INPUT Paper
-
-\EndWhile
-
-\While{$len(Font) <= 0$}
-
-    INPUT Font
-
-\EndWhile
-
-\While{$len(FontSize) <= 0$}
-
-    INPUT FontSize
-
-\EndWhile
-
-\While{$len(Price) <= 0$}
-
-    INPUT Price
-
-\EndWhile
-
-\If{$AddToDatabaseClicked \ == \ True$}
-    
-    CONNECT to Book Database
-    
-\EndIf
-
-\EndFunction
-\end{algorithmic}
-\end{algorithm}
 
 
 \subsection{Object Diagrams}
@@ -664,12 +574,12 @@ Furthermore, I plan to prototype the adding, editing and removal of data to and 
 I have already prototyped the calendar interface used for inputting the date in a box. This is just a prototype of the basic interface, which is for selecting a date and placing it in the text box. It can switch between months with a dropdown list, or using the arrows and also years.
 
 \begin{figure}[H]
-    \caption{Calendar 1} \label{Calendar_1.pdf}
+    \caption{Calendar Interface} \label{Calendar_1.pdf}
     \includegraphics[width=\textwidth]{./Design/Calendar_1.pdf}
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Calendar 2} \label{Calendar_2.pdf}
+    \caption{Calendar - Date Selection} \label{Calendar_2.pdf}
     \includegraphics[width=\textwidth]{./Design/Calendar_2.pdf}
 \end{figure}
 
