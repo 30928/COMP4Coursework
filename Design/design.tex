@@ -407,9 +407,9 @@ PrintCost = (PagePrice + CoverPrice) * RoyaltyQuantity
 
     NetSales = WholeSalePrice * RoyaltyQuantity
 
-    NetPubComp = NetSales - PrintCost
+    RoyaltyPayment = NetSales - PrintCost
 
-    OUTPUT NetPubComp
+    OUTPUT RoyaltyPayment
 
 \EndIf
 
@@ -723,21 +723,21 @@ Key:
 
 \begin{tabular}{|p{4cm}|}
     \hline
-    \textbf{BooksInvoice} \\ \hline
-    BooksInvoiceID \\ AuthorID \\ BooksInvoicePayment \\ BooksInvoiceDate \\ \hline
-    Add AuthorID \\ Edit AuthorID \\ Add BooksInvoiceDate \\ Edit BooksInvoiceDaate \\ \hline
+    \textbf{BookInvoice} \\ \hline
+    BookInvoiceID \\ AuthorID \\ BookInvoicePayment \\ BookInvoiceDate \\ \hline
+    Add AuthorID \\ Edit AuthorID \\ Add BookInvoiceDate \\ Edit BookInvoiceDaate \\ \hline
 \end{tabular}
 
 \begin{tabular}{|p{4cm}|}
     \hline
-    \textbf{BooksInvoiceItems} \\ \hline
-    BooksInvoiceItems \\ BooksInvoiceID \\ ISBN \\ BooksInvoiceQuantity \\ BooksInvoiceDiscount \\ ShippingType \\ ShippingPrice \\ \hline
-    Add BooksInvoiceID \\ Edit BooksInvoiceID \\ Add ISBN \\ Edit ISBN \\ Add BooksInvoiceQuantity \\ Edit BooksInvoiceQuantity \\ Add BooksInvoiceDiscount \\ Edit BooksInvoiceDiscount \\ Add ShippingType \\ Edit Shipping Type \\ Add ShippingPrice \\ Edit ShippingPrice \\ \hline
+    \textbf{BookInvoiceItems} \\ \hline
+    BookInvoiceItems \\ BookInvoiceID \\ ISBN \\ BookInvoiceQuantity \\ BookInvoiceDiscount \\ ShippingType \\ ShippingPrice \\ \hline
+    Add BookInvoiceID \\ Edit BookInvoiceID \\ Add ISBN \\ Edit ISBN \\ Add BookInvoiceQuantity \\ Edit BookInvoiceQuantity \\ Add BookInvoiceDiscount \\ Edit BookInvoiceDiscount \\ Add ShippingType \\ Edit Shipping Type \\ Add ShippingPrice \\ Edit ShippingPrice \\ \hline
 \end{tabular}
 
 \begin{tabular}{|p{4cm}|}
     \hline
-    \textbf{PubInvoiceItems} \\ \hline
+    \textbf{PubInvoice} \\ \hline
     PubInvoiceID \\ AuthorID \\ ISBN \\ PubInvoiceDate \\ PubInvoiceService \\ PubInvoicePayment \\ \hline
     Add AuthorID \\ Edit AuthorID \\ Add ISBN \\ Edit ISBN \\ Add PubInvoiceDate \\ Edit PubInvoiceDate \\ Add PubInvoiceService \\ Edit PubInvoiceService \\ Add PubInvoicePayment \\ EditPubInvoicePayment \\ \hline
 \end{tabular}
@@ -791,9 +791,9 @@ I have already prototyped the calendar interface used for inputting the date in 
     \item Publishing invoice date
     \item Publishing invoice service
     \item Publishing invoice payment
-    \item Books invoice date
-    \item Books invoice discount
-    \item Books invoice quantity
+    \item Book invoice date
+    \item Book invoice discount
+    \item Book invoice quantity
     \item Shipping price
     \item Shipping type
 \end{itemize}
@@ -809,9 +809,9 @@ I have already prototyped the calendar interface used for inputting the date in 
     \item Print Cost
     \item Royalty Payment
     \item Net Publishing Compensation
-    \item Books Invoice Payment
+    \item Book Invoice Payment
     \item Royalties Items
-    \item Books Invoice Items
+    \item Book Invoice Items
 \end{itemize}
 
 \subsection{Explanation of how data output items are generated}
@@ -823,14 +823,14 @@ I have already prototyped the calendar interface used for inputting the date in 
     Author ID & Produced by program & \\ \hline
     Royalties ID & Produced by program & \\ \hline
     Publishing Invoice ID & Produced by program & \\ \hline
-    Books Invoice ID & Produced by program & \\ \hline
+    Book Invoice ID & Produced by program & \\ \hline
     Net Sales & Calculated by program using inputs & Wholesale Price, Royalty Quantity \\ \hline
     Print Cost & Calculated by program using inputs & Number of Pages, Size, Back type, Cover type, Royalty Quantity \\ \hline
     Net Publishing Compensation & Calculated by program using inputs/outputs & Net Sales, Print Cost \\ \hline
     Royalty Payment & Calculated by program using outputs & Net Publsihing Compensation \\ \hline
-    Books Invoice Payment & Calculated by program using inputs & Books Invoice Quantity, Books Invoice Discount, Price, Shipping Price \\ \hline
+    Book Invoice Payment & Calculated by program using inputs & Book Invoice Quantity, Book Invoice Discount, Price, Shipping Price \\ \hline
     Royalties Items & Produced by program & \\ \hline
-    Books Invoice Items & Produced by program & \\ \hline
+    Book Invoice Items & Produced by program & \\ \hline
 \end{tabular}
 \end{center}
 
@@ -883,13 +883,12 @@ There have been some changes to my data dictionary as a number of elements have 
     PubInvoiceDate & Date & dd/mm/yyy & Range & 23/05/2014 \\ \hline
     PubInvoiceService & String & 1-127 Characters & Length & Standard \\ \hline
     PubInvoicePayment & Real & 0.01-32767.00 & Numbers only & 700.00 \\ \hline
-    BooksInvoiceID & Integer & 1-255 & Numbers only & 99 \\ \hline
-    BooksInvoiceItems & Integer & 1-255 & Numbers only & 2 \\ \hline
-    BooksInvoicePayment & Real & 0.01-32767.00 & Numbers only & 600.00 \\ \hline
-    BooksInvoiceTotal & Real & 0.01-32767.00 & Numbers only & 500.00 \\ \hline
-    BooksInvoiceDate & Date & dd/mm/yyyy & Range & 01/01/2014 \\ \hline
-    BooksInvoiceDiscount & Real & 0-100 & Numbers only & 50 \\ \hline
-    BooksInvoiceQuantity & Integer & 1-2047 & Numbers only & 777 \\ \hline
+    BookInvoiceID & Integer & 1-255 & Numbers only & 99 \\ \hline
+    BookInvoiceItems & Integer & 1-255 & Numbers only & 2 \\ \hline
+    BookInvoicePayment & Real & 0.01-32767.00 & Numbers only & 600.00 \\ \hline
+    BookInvoiceDate & Date & dd/mm/yyyy & Range & 01/01/2014 \\ \hline
+    BookInvoiceDiscount & Real & 0-100 & Numbers only & 50 \\ \hline
+    BookInvoiceQuantity & Integer & 1-2047 & Numbers only & 777 \\ \hline
     Shipping Type & String & 7-8 Characters & Range & Premium \\ \hline
     Shipping Price & Real & 0.01-64.00 & Numbers only & 25.00 \\ \hline
     \hline
@@ -917,11 +916,20 @@ A hard drive would be an example of an appropriate storage media. For back up pu
 
 Customer(\underline{Author ID}, FirstName, LastName, Email, Address, Postcode, Phone Number)
 
-Invoice(\underline{InvoicePayment}, \underline{InvoiceDate}, \emph{ISBN}, \emph{AuthorID}, InvoiceQuantity, InvoiceDiscount, ShippingPrice, ShippingType)
-
-Royalties(\underline{RoyaltyPayment}, \underline{RoyaltiesDate}, \emph{ISBN}, \emph{AuthorID}, RoyaltyDiscount, WholeSalePrice, RoyaltyQuantity, NetSales, PrintCost)
-
 Book(\underline{ISBN}, \emph{AuthorID}, Book Title, NoOfPages, Size, Cover, Paper, Back, Paper, Font, FontSize, DatePublished, Price)
+
+BookInvoice(\underline{BookInvoiceID}, \emph{AuthorID}, InvoiceDate, InvoicePayment)
+
+BookInvoiceItems(\underline{BookInvoiceItems}, \emph{BookInvoiceID}, \emph{ISBN}, BooksInvoiceQuantity, BooksInvoiceDiscount, ShippingPrice, ShippingType) 
+
+Royalties(\underline{RoyaltiesID}, \emph{AuthorID}, RoyaltiesDate, RoyaltyPayment)
+
+RoyaltiesItems(\underline{RoyaltiesItems}, \emph{RoyaltiesID}, \emph{ISBN}, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, NetSales, PrintCost, ExcRateFromGBP)
+
+PubInvoice(\underline{PubInvoiceID}, \emph{AuthorID}, \emph{ISBN}, PubInvoiceDate, PubInvoiceOrder, PubInvoicePayment)
+
+
+
 
 \subsubsection{UNF to 3NF}
 
@@ -971,13 +979,12 @@ First of all, I have started with the data in its unnormalised form.
     PubInvoicePayment \\
     PubInvoiceDate \\
     PubInvoiceService \\
-    BooksInvoiceID \\
-    BooksInvoiceItems \\
-    BooksInvoicePayment \\
-    BooksInvoiceTotal \\
-    BooksInvoiceDate \\
-    BooksInvoiceDiscount \\
-    BooksInvoiceQuantity \\
+    BookInvoiceID \\
+    BookInvoiceItems \\
+    BookInvoicePayment \\
+    BookInvoiceDate \\
+    BookInvoiceDiscount \\
+    BookInvoiceQuantity \\
     ShippingType \\
     ShippingPrice \\
     \hline
@@ -1015,13 +1022,12 @@ Then, I put it into the first normal form, seperating the repeating attributes a
     & PubInvoiceDate \\
     & PubInvoiceService \\
     & PubInvoicePayment \\
-    & BooksInvoiceID \\
-    & BooksInvoiceItems \\
-    & BooksInvoicePayment \\
-    & BooksInvoiceTotal \\
-    & BooksInvoiceDate \\
-    & BooksInvoiceDiscount \\
-    & BooksInvoiceQuantity \\
+    & BookInvoiceID \\
+    & BookInvoiceItems \\
+    & BookInvoicePayment \\
+    & BookInvoiceDate \\
+    & BookInvoiceDiscount \\
+    & BookInvoiceQuantity \\
     & ShippingType \\
     & ShippingPrice \\
     \hline
@@ -1048,13 +1054,12 @@ After that, I put it into the second normal form.
     & PubInvoiceDate & \\
     & PubInvoiceService & \\
     & PubInvoicePayment & \\
-    & BooksInvoiceID & \\
-    & BooksInvoiceItems & \\
-    & BooksInvoicePayment & \\
-    & BooksInvoiceTotal & \\
-    & BooksInvoiceDate & \\
-    & BooksInvoiceDiscount & \\
-    & BooksInvoiceQuantity & \\
+    & BookInvoiceID & \\
+    & BooInvoiceItems & \\
+    & BookInvoicePayment & \\
+    & BookInvoiceDate & \\
+    & BookInvoiceDiscount & \\
+    & BookInvoiceQuantity & \\
     & ShippingType & \\
     & ShippingPrice & \\
     \hline
@@ -1084,11 +1089,10 @@ Finally, I put the data into its third normal form.
     \hline
     \textbf{PubInvoiceID} & \textbf{BooksInvoiceID} & \textbf{BooksInvoiceItems} \\
     \emph{AuthorID} & \emph{AuthorID} & \emph{BooksInvoiceID} \\
-    \emph{ISBN}& BooksInvoiceTotal & \emph{ISBN} \\
-    PubInvoiceDate & BooksInvoiceDate & BooksInvoicePayment \\
-    PubInvoiceService & & BooksInvoiceQuantity \\
-    PubInvoicePayment & & BooksInvoiceDiscount \\
-    & & ShippingType \\
+    \emph{ISBN}& BookInvoicePayment & \emph{ISBN} \\
+    PubInvoiceDate & BookInvoiceDate & BookInvoiceQuantity \\
+    PubInvoiceService & & BookInvoiceDiscount \\
+    PubInvoicePayment & & ShippingType \\
     & & ShippingPrice \\
     \hline
 \end{tabular}
@@ -1159,15 +1163,15 @@ The system will check to make sure each entry is valid, in order to avoid any in
 \begin{center}
     \begin{tabular}{|p{2.5cm}|p{2cm}|p{2cm}|p{3.5cm}|}
     \textbf{Item} & \textbf{Example} & \textbf{Validation} & \textbf{Comments}\\ \hline
-    Books Invoice Date & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
-    Books Invoice Discount & 50 & Presence Check, Type Check, Range Check & Makes sure that a positive value has been entered, just digits, and it must be between 0 and 100. \\ \hline
-    Books Invoice Quantity & 25 & PresenceCheck, Type Check & Makes sure that a positive integer has been entered. \\ \hline
+    Book Invoice Date & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
+    Book Invoice Discount & 50 & Presence Check, Type Check, Range Check & Makes sure that a positive value has been entered, just digits, and it must be between 0 and 100. \\ \hline
+    Book Invoice Quantity & 25 & PresenceCheck, Type Check & Makes sure that a positive integer has been entered. \\ \hline
     Shipping Type & Premium & Presence Check & Makes sure that a Shipping type has been entered. \\ \hline
     Shipping Price & 4.00 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
     AuthorID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Customer Table to find the entry to confirm that it is valid. \\ \hline 
     RoyaltiesID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Royalties Table to find the entry to confirm that it is valid. \\ \hline
     PubInvoiceID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the PubInvoice Table to find the entry to confirm that it is valid. \\ \hline
-    BooksInvoiceID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Books Invoice Table to find the entry to confirm that it is valid. \\ \hline
+    BookInvoiceID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Book Invoice Table to find the entry to confirm that it is valid. \\ \hline
 \end{tabular}
 \end{center}
 
