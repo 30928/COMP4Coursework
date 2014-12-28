@@ -77,7 +77,7 @@ def book_invoice_table(db_name):
 
 def book_invoice_items_table(db_name):
     sql = """create table BookInvoiceItems
-             (BookInvoiceItems,
+             (BookInvoiceItems integer,
              BookInvoiceID integer,
              ISBN text,
              BookInvoiceQuantity integer,

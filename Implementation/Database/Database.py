@@ -15,7 +15,6 @@ def update_data(data, table, update, ID):
         cursor = db.cursor()
         cursor.execute("PRAGMA foreign_keys_ = ON")
         sql = "update {} set {} where {} = {}".format(table, update, ID, data)
-        print(sql)
         cursor.execute(sql)
         db.commit()
 
@@ -30,8 +29,97 @@ def delete_data(data, table, ID):
             db.commit()
     except:
         print("Error")
+
+
+def calculate_royalties(RoyaltiesID):
+    
+    with sqlite3.connect("PP.db") as db:
+        cursor = db.cursor()
+        cursor.execute("PRAGMA foreign_keys_ = ON")
+
+        RoyaltyTemp = 0
+        i = 1
+        while i != 0:
+            
+            try:
+                sql = "select NetSales from RoyaltiesItems where RoyaltiesID = {} and RoyaltiesItems = {}".format(RoyaltiesID, i)
+                cursor.execute(sql)
+                NetSalesList = list(cursor.fetchone())
+                NetSales = NetSalesList[0]
+       
+                sql = "select PrintCost from RoyaltiesItems where RoyaltiesID = {} and RoyaltiesItems = {}".format(RoyaltiesID, i)
+                cursor.execute(sql)
+                PrintCostList = list(cursor.fetchone())
+                PrintCost = PrintCostList[0]
+
+                sql = "select RoyaltyQuantity from RoyaltiesItems where RoyaltiesID = {} and RoyaltiesItems = {}".format(RoyaltiesID, i)
+                cursor.execute(sql)
+                RoyaltyQuantityList = list(cursor.fetchone())
+                RoyaltyQuantity = RoyaltyQuantityList[0]
+                    
+                RoyaltyTemp += NetSales - (PrintCost * RoyaltyQuantity)
+                        
+                i += 1
+                
+            except:
+                RoyaltiesPayment = RoyaltyTemp
+                sql = "update Royalties set RoyaltyPayment = {} where RoyaltiesID = {}".format(RoyaltiesPayment, RoyaltiesID)
+                cursor.execute(sql)
+                db.commit()
+                i = 0
+
+
+def calculate_book_invoice_payment(BookInvoiceID):
+    
+    with sqlite3.connect("PP.db") as db:
+        cursor = db.cursor()
+        cursor.execute("PRAGMA foreign_keys_ = ON")
+
+        BookInvoiceTemp = 0
+        i = 1
+        while i != 0:
+
+            try:
+                sql = "select BookInvoiceQuantity from BookInvoiceItems where BookInvoiceID = {} and BookInvoiceItems = {}".format(BookInvoiceID, i)
+                cursor.execute(sql)
+                BookInvoiceQuantityList = list(cursor.fetchone())
+                BookInvoiceQuantity = BookInvoiceQuantityList[0]
+           
+                sql = "select BookInvoiceDiscount from BookInvoiceItems where BookInvoiceID = {} and BookInvoiceItems = {}".format(BookInvoiceID, i)
+                cursor.execute(sql)
+                BookInvoiceDiscountList = list(cursor.fetchone())
+                BookInvoiceDiscount = BookInvoiceDiscountList[0]
+                BookInvoiceDiscount /= 100
+
+                sql = "select ShippingPrice from BookInvoiceItems where BookInvoiceID = {} and BookInvoiceItems = {}".format(BookInvoiceID, i)
+                cursor.execute(sql)
+                ShippingPriceList = list(cursor.fetchone())
+                ShippingPrice = ShippingPriceList[0]
+
+                sql = "select ISBN from BookInvoiceItems where BookInvoiceID = {} and BookInvoiceItems = {}".format(BookInvoiceID, i)
+                cursor.execute(sql)
+                ISBNList = list(cursor.fetchone())
+                ISBN = ISBNList[0]
+
+                sql = "select Price from Book where ISBN = {}".format(ISBN)
+                cursor.execute(sql)
+                PriceList = list(cursor.fetchone())
+                Price = PriceList[0]
+                    
+                BookInvoiceTemp += (BookInvoiceQuantity * Price * BookInvoiceDiscount) + ShippingPrice
+                        
+                i += 1
+                
+            except:
+                BookInvoicePayment = BookInvoiceTemp
+                sql = "update BookInvoice set BookInvoicePayment = {} where BookInvoiceID = {}".format(BookInvoicePayment, BookInvoiceID)
+                cursor.execute(sql)
+                db.commit()
+                i = 0
+
+
         
-#place holders and table contents for adding entries
+#placeholders and table contents for adding entries
 def CustomerEntry():
     table = "Customer (FirstName, LastName, Email, PhoneNumber, Address, Postcode)"
     placeholders = "(?, ?, ?, ?, ?, ?)"
@@ -105,8 +193,9 @@ def input_pub_invoice():
 
 def input_book_invoice():
     AuthorID = input("Enter AuthorID: ")
-    BookInvoiceDate = input("Enter book invoice date: ")
     BookInvoicePayment = None
+    BookInvoiceDate = input("Enter book invoice date: ")
+
 
     input_data = (AuthorID, BookInvoicePayment, BookInvoiceDate)
     return input_data
@@ -119,10 +208,11 @@ def input_book_invoice_items():
     ShippingType = input("Enter shipping type: ")
     ShippingPrice = input("Enter shipping price: ")
     input_data = (BookInvoiceID, ISBN, BookInvoiceQuantity, BookInvoiceDiscount, ShippingType, ShippingPrice)
-    return input_data
+    return input_data, BookInvoiceID
 
 def input_royalties():
     AuthorID = input("Enter AuthorID: ")
+
     RoyaltyPayment = None
     RoyaltiesDate = input("Enter royalties date: ")
     input_data = (AuthorID, RoyaltyPayment, RoyaltiesDate)
@@ -135,17 +225,17 @@ def input_royalties_items():
     RoyaltyDiscount = input("Enter royalty discount: ")
     WholesalePrice = float(input("Enter wholesale price: "))
     RoyaltyQuantity = int(input("Enter quantity bought: "))
-    #PrintCost = float(input("Enter print cost: "))
-    PrintCost = None
+    PrintCost = float(input("Enter print cost: "))
     ExcRateFromGBP = None
     NetSales = WholesalePrice * RoyaltyQuantity
-    #RoyaltiesItemPayment = NetSales - PrintCost
+    RoyaltiesItemPayment = NetSales - PrintCost
     if Currency != "£":
         ExcRateFromGBP = float(input("Enter current exchange rate from pounds: "))
-        #RoyaltiesItemPayment = RoyaltiesItemPayment / ExcRateFromGBP
+        RoyaltiesItemPayment /= ExcRateFromGBP
         
     input_data = (RoyaltiesID, ISBN, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, PrintCost, NetSales, ExcRateFromGBP)
-    return input_data
+    
+    return input_data, RoyaltiesID
 
 #Displaying the Main Menu
 def DisplayMainMenu():
@@ -335,17 +425,22 @@ def main():
                     table, placeholders = BookInvoiceEntry()
                     create_data(book_invoice_data, table, placeholders)
                 elif Choice == '5':
-                    book_invoice_items_data = input_book_invoice_items()
+                    book_invoice_items_data, BookInvoiceID = input_book_invoice_items()
                     table, placeholders = BookInvoiceItemsEntry()
                     create_data(book_invoice_items_data, table, placeholders)
+                    calculate_book_invoice_payment(BookInvoiceID)
+                    
                 elif Choice == '6':
                     royalties_data = input_royalties()
                     table, placeholders = RoyaltiesEntry()
                     create_data(royalties_data, table, placeholders)
+
                 elif Choice == '7':
-                    royalties_items_data = input_royalties_items()
+                    royalties_items_data, RoyaltiesID = input_royalties_items()
                     table, placeholders = RoyaltiesItemsEntry()
                     create_data(royalties_items_data, table, placeholders)
+                    calculate_royalties(RoyaltiesID)
+                    
 
         if Choice == '2':
 
