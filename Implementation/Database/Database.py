@@ -19,6 +19,7 @@ def update_data(data, table, update, ID):
         db.commit()
 
 #deleting data
+
 def delete_data(data, table, ID):
     try:
         with sqlite3.connect("PP.db") as db:
@@ -30,7 +31,7 @@ def delete_data(data, table, ID):
     except:
         print("Error")
 
-
+#calculating the royalties after every time a new item is entered
 def calculate_royalties(RoyaltiesID):
     
     with sqlite3.connect("PP.db") as db:
@@ -68,7 +69,7 @@ def calculate_royalties(RoyaltiesID):
                 db.commit()
                 i = 0
 
-
+#calculating the book invoice payment every time an item is entered
 def calculate_book_invoice_payment(BookInvoiceID):
     
     with sqlite3.connect("PP.db") as db:
