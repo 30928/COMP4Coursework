@@ -3,98 +3,87 @@ from PyQt4.QtGui import *
 import sys
 import sqlite3
 
-class TableWidget(QMainWindow):
+class dbTableWidget(QTableWidget):
     """table widget"""
 
     def __init__(self):
         super().__init__()
         
     def initTable(self):
-        self.table = QTableWidget()
-        self.table.setFixedSize(716,275)
+        #adding table widget
+        self.setFixedSize(716,275)
+        self.clear()
+        self.setColumnCount(7)
+        CustomerHeaders = ["AuthorID", "Firstname", "Lastname", "Email", "Phonenumber", "Address", "Postcode"]
+        self.setHorizontalHeaderLabels(CustomerHeaders)
         
     def CustomerTable(self):
-        self.table.clear()
-        self.table.setColumnCount(7)
-        self.table.setRowCount(1)
+        self.clear()
+        self.setColumnCount(7)
+        self.setRowCount(1)
         
         CustomerHeaders = ["AuthorID", "Forename", "Surname", "Email", "Phonenumber", "Address", "Postcode"]
-        self.table.setHorizontalHeaderLabels(CustomerHeaders)
+        self.setHorizontalHeaderLabels(CustomerHeaders)
 
-        with sqlite3.connect("PP.db") as db:
+        with sqlite3.connect("PP.db") as db: #fetching all customer data from db
             cursor = db.cursor()
             cursor.execute("PRAGMA foreign_keys_ = ON")
             
-            sql = "select all AuthorID from Customer"
+            sql = "select all AuthorID from Customer" 
             cursor.execute(sql)
             self.AuthorIDList = list(cursor.fetchall())
 
-            sql = "select all Firstname from Customer"
+            sql = "select all Firstname from Customer" 
             cursor.execute(sql)
             self.FirstnameList = list(cursor.fetchall())
 
-            sql = "select all Lastname from Customer"
+            sql = "select all Lastname from Customer" 
             cursor.execute(sql)
             self.LastnameList = list(cursor.fetchall())
 
-            sql = "select all Email from Customer"
+            sql = "select all Email from Customer" 
             cursor.execute(sql)
             self.EmailList = list(cursor.fetchall())
             
-            sql = "select all Phonenumber from Customer"
+            sql = "select all Phonenumber from Customer" 
             cursor.execute(sql)
             self.PhonenumberList = list(cursor.fetchall())
 
-            sql = "select all Address from Customer"
+            sql = "select all Address from Customer" 
             cursor.execute(sql)
             self.AddressList = list(cursor.fetchall())
 
-            sql = "select all Postcode from Customer"
+            sql = "select all Postcode from Customer" 
             cursor.execute(sql)
             self.PostcodeList = list(cursor.fetchall())
-
-
-        
-        for count in range(0, len(self.AuthorIDList)):
-            self.table.insertRow(1)
-            AuthorID = self.AuthorIDList[count]
-            AuthorID = list(AuthorID)[0]
-            self.table.setItem(count, 0, QTableWidgetItem(str(AuthorID)))
-
-            Firstname = self.FirstnameList[count]
-            Firstname = list(Firstname)[0]
-            self.table.setItem(count, 1, QTableWidgetItem(str(Firstname)))
             
-            Lastname = self.LastnameList[count]
-            Lastname = list(Lastname)[0]
-            self.table.setItem(count, 2, QTableWidgetItem(str(Lastname)))
+        initMainMenuButtons.table.setRowCount(len(self.AuthorIDList))
 
-            Email = self.EmailList[count]
-            Email = list(Email)[0]
-            self.table.setItem(count, 3, QTableWidgetItem(str(Email)))
+        for count in range(0, int(len(self.AuthorIDList))): #adding to the main table
+            self.AuthorID = self.AuthorIDList[count]
+            self.AuthorID = list(self.AuthorID)[0]
+            self.table.setItem(count, 0, QTableWidgetItem(str(self.AuthorID)))
 
-            Phonenumber = self.PhonenumberList[count]
-            Phonenumber = list(Phonenumber)[0]
-            self.table.setItem(count, 4, QTableWidgetItem(str(Phonenumber)))
-
-            Address = self.AddressList[count]
-            Address = list(Address)[0]
-            self.table.setItem(count, 5, QTableWidgetItem(str(Address)))
-
-            Postcode = self.PostcodeList[count]
-            Postcode = list(Postcode)[0]
-            self.table.setItem(count, 6, QTableWidgetItem(str(Postcode)))
-
-    def AddEntryToTable(self, addEntryDlg):
-        self.initTable(self)
-        self.CustomerTable(self)
-        self.table.insertRow(1)
-        for count in range(1, 6):
-            self.table.setItem(1, count, QTableWidgetItem(str(addEntryDlg.EntryList[count])))
-
-   
-
-    
-
+            self.Firstname = self.FirstnameList[count]
+            self.Firstname = list(self.Firstname)[0]
+            self.table.setItem(count, 1, QTableWidgetItem(str(self.Firstname)))
             
+            self.Lastname = self.LastnameList[count]
+            self.Lastname = list(self.Lastname)[0]
+            self.table.setItem(count, 2, QTableWidgetItem(str(self.Lastname)))
 
+            self.Email = self.EmailList[count]
+            self.Email = list(self.Email)[0]
+            self.table.setItem(count, 3, QTableWidgetItem(str(self.Email)))
+
+            self.Phonenumber = self.PhonenumberList[count]
+            self.Phonenumber = list(self.Phonenumber)[0]
+            self.table.setItem(count, 4, QTableWidgetItem(str(self.Phonenumber)))
+
+            self.Address = self.AddressList[count]
+            self.Address = list(self.Address)[0]
+            self.table.setItem(count, 5, QTableWidgetItem(str(self.Address)))
+
+            self.Postcode = self.PostcodeList[count]
+            self.Postcode = list(self.Postcode)[0]
+            self.table.setItem(count, 6, QTableWidgetItem(str(self.Postcode)))

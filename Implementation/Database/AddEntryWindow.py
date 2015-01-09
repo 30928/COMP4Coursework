@@ -4,12 +4,13 @@ import sqlite3
 import sys
 from MainMenu import *
 
-class AddEntryWindow(QDialog):
+class dbAddEntryWindow(QDialog):
     """add entry window dialog"""
 
     def __init__(self):
         super().__init__()
 
+    def initAddEntryWindow(self):
         self.setFixedSize(617,90)
         self.setModal(True) #modal window
         self.AddEntryTable = QTableWidget(self) #table for adding entry
