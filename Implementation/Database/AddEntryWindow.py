@@ -2,7 +2,6 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import sqlite3
 import sys
-from MainMenu import *
 
 class dbAddEntryWindow(QDialog):
     """add entry window dialog"""
@@ -11,6 +10,7 @@ class dbAddEntryWindow(QDialog):
         super().__init__()
 
     def initAddEntryWindow(self):
+        self.setWindowTitle("Add Entry")
         self.setFixedSize(617,90)
         self.setModal(True) #modal window
         self.AddEntryTable = QTableWidget(self) #table for adding entry
@@ -33,8 +33,6 @@ class dbAddEntryWindow(QDialog):
         self.btnConfirm.clicked.connect(self.AddEntryTodb) #call function after clicking confirm
 
         self.exec_()
-
-
                 
     def AddEntryTodb(self):
         #fetching inputs from table
@@ -53,4 +51,3 @@ class dbAddEntryWindow(QDialog):
             sql = "insert into Customer (FirstName, LastName, Email, PhoneNumber, Address, Postcode) values (?, ?, ?, ?, ?, ?)"
             cursor.execute(sql, self.input_data)
             db.commit()
-

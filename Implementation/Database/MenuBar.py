@@ -30,10 +30,6 @@ class dbMenuBar(QMenuBar):
         self.account_menu = self.addMenu("Account")
         self.account_menu.addAction(self.change_password)
         self.account_menu.addAction(self.log_out)
-        
-        
-
-        #self.refresh.triggered.connect(self.RefreshTable)
 
 
         

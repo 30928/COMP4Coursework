@@ -33,15 +33,15 @@ Main Database Interface
     \item The user can select an author from the basic view of the database, and click view
     \item A user interface is presented with a set of options which are: View, Search Database, Add Entry, Remove an Entry, Edit an Entry, Change Password, and Log out.
     \item Clicking the Search Database Button will prompt a seperate interface to open, and shows details which can be used to search for specific items in the database.
-
+    \item Customers can be searched for quickly using their first name on this screen.
 \end{itemize}
 
 \
 View Screen
 \begin{itemize}
     \item Clicking view after having selected an customer will open a new window which will show a more in depth view of it. It will show the books that have been published with them.
-    \item There will be buttons to expand on certain fields, including Royalties, Publishing Invoices and Book Invoices. These will show in new windows. If the user has clicked on Royalties, they have the option to click on Royalties Items on the following screen, where they can see breakdown of it. If they have clicked on Book Invoices, they can click on the Book Invoice Items on the following screen to see a breakdown of these too. From the Royalties/Book Invoice screens, they can calculate and add more Royalties/Invoices.
-    \item Customers can be searched for quickly using their AuthorID on this screen.
+    \item There will be buttons to expand on certain fields, including Royalties, Publishing Invoices and Book Invoices. These will show in new windows. The user can see the breakdown of various parts of the database, such as the royalties and invoices. The user will have the option to add and remove royalties and invoices.
+
 \end{itemize}
 
 \
@@ -66,9 +66,9 @@ Changing Password
 
 Search Window
 \begin{itemize}
-    \item Clicking the Search Database Button will open a seperate interface, which contains a set of fields that the user can use to search the database by.
-    \item Once the Search Button is clicked, a list of all the data entries that match the search criteria will come up in a list in the Main Window.
-    \item The search can be refined by searching again, and an item can be selected from the search results.
+    \item Clicking the Search Database Button will open a seperate interface, which contains a set options which the user can choose from in order to conduct a search.
+    \item Once the Search Button is clicked, a list of all the data entries that match the search criteria will come up in a list in the Main Window or the Editing Window.
+    \item The search will only use values and text strings that the user is familiar with, and will not require the user to know obscure pieces of data.
 \end{itemize}
 
 \subsection{System flowcharts showing an overview of the complete system}
@@ -103,6 +103,11 @@ The following is a flowchart representing a summary of the complete system.
 \begin{figure}[H]
     \caption{Flowchart 6} \label{Flowchart_6.pdf}
     \includegraphics[width=\textwidth]{./Design/Flowcharts/Flowchart_6.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Flowchart 7} \label{Flowchart_7.pdf}
+    \includegraphics[width=\textwidth]{./Design/Flowcharts/Flowchart_7.pdf}
 \end{figure}
 
 
@@ -160,14 +165,14 @@ The following is a flowchart representing a summary of the complete system.
 
 \section{Hardware Specification}
 
-The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ratio screen which runs on Windows 8. This is imperative to the size of the application I will be creating because it must fit on the given screen size and can't be resizable. A mouse or touchpad will be used for navigational purposes, and for confirmation of entries. Also, a keyboard will be used for inputting information into fields for entering and editing information. All the data used by the program and its database will be held on a local hard drive, and a display is needed for the outputs of the program.
+The system needs to be able to run on a laptop with a 1366 x 768, 16:9 aspect ratio screen which runs on Windows 8. This is imperative to the size of the application I will be creating because it must fit on the given screen size and can't be resizable. A mouse or touchpad will be used for navigational purposes, and for confirmation of entries. Also, a keyboard will be used for inputting information into fields for entering and editing information. All the data used by the program and its database will be held on a local hard drive, and a display is needed for the outputs of the program. These are all suitable for their purposes required, and are available to my client, as she already has all of the required input and output devices, software and hardware.
 
 \section{Program Structure}
 
 \subsection{Top-down design structure charts}
 .
 \begin{figure}[H]
-    \caption{Top-down design structure chart} \label{Top-down_design_structure_chart.pdf}
+    \caption{Top-down design structure chart} \label{Top_down_design_structure_chart.pdf}
     \includegraphics[width=\textwidth]{./Design/Top-down_design_structure_chart.pdf}
 \end{figure}
 
@@ -817,20 +822,19 @@ I have already prototyped the calendar interface used for inputting the date in 
 \subsection{Explanation of how data output items are generated}
 
 \begin{center}
-\begin{tabular}{|p{2cm}|p{2cm}|p{2.5cm}|}
+\begin{tabular}{|p{3cm}|p{4cm}|p{3cm}|}
     \hline
     \textbf{Output} & \textbf{How it is produced} & \textbf{Input Items Required to Produce} \\ \hline
-    Author ID & Produced by program & \\ \hline
-    Royalties ID & Produced by program & \\ \hline
-    Publishing Invoice ID & Produced by program & \\ \hline
-    Book Invoice ID & Produced by program & \\ \hline
-    Net Sales & Calculated by program using inputs & Wholesale Price, Royalty Quantity \\ \hline
-    Print Cost & Calculated by program using inputs & Number of Pages, Size, Back type, Cover type, Royalty Quantity \\ \hline
-    Net Publishing Compensation & Calculated by program using inputs/outputs & Net Sales, Print Cost \\ \hline
-    Royalty Payment & Calculated by program using outputs & Net Publsihing Compensation \\ \hline
-    Book Invoice Payment & Calculated by program using inputs & Book Invoice Quantity, Book Invoice Discount, Price, Shipping Price \\ \hline
-    Royalties Items & Produced by program & \\ \hline
-    Book Invoice Items & Produced by program & \\ \hline
+    Author ID & Generated by program, using first available unused number & \\ \hline
+    Royalties ID & Generated by program, using first available unused number & \\ \hline
+    Publishing Invoice ID & Generated by program, using first available unused number & \\ \hline
+    Book Invoice ID & Generated by program, using first available unused number & \\ \hline
+    Net Sales & Calculated using WholesalePrice x Quantity & Wholesale Price, Royalty Quantity \\ \hline
+    Print Cost & Calculated by program using certain criteria for some details of the book & Number of Pages, Size, Back type, Cover type, Royalty Quantity \\ \hline
+    Royalty Payment & Calculated by program using calculations of all payments under the same RoyaltiesID & \\ \hline
+    Book Invoice Payment & Calculated by program using calculations of all payments under the same BookInvoiceID & Book Invoice Quantity, Book Invoice Discount, Price, Shipping Price \\ \hline
+    Royalties Items &  Generated by program, using first available unused number & \\ \hline
+    Book Invoice Items &  Generated by program, using first available unused number & \\ \hline
 \end{tabular}
 \end{center}
 
@@ -840,16 +844,16 @@ I have already prototyped the calendar interface used for inputting the date in 
 There have been some changes to my data dictionary as a number of elements have been identified that need to be added to the system.
 
 \begin{center}
-\begin{tabular}{|p{2cm}|p{1cm}|p{2.5cm}|p{1.5cm}|p{3cm}|}
+\begin{tabular}{|p{2.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|}
     \hline
     \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} \\ \hline
-    FirstName & String & 2-20 Characters & Length & Jo  \\ \hline
-    LastName & String & 2-20 Characters & Length & Williamson  \\ \hline
-    Email & String & 7-30 Characters & Length & mail@example.com  \\ \hline
-    PhoneNumber & String & 9-15 Characters & Format & 07123456789  \\ \hline
+    Firstname & String & 2-20 Characters & Length & Jo  \\ \hline
+    Lastname & String & 2-20 Characters & Length & Williamson  \\ \hline
+    Email & String & 7-30 Characters & Length & jo@mail.com  \\ \hline
+    Phonenumber & String & 9-15 Characters & Format & 07123456789  \\ \hline
     Address & String & 5-64 Characters & Length & Example Road  \\ \hline
     Postcode & String & 7 Characters & Format & AB1 2CD  \\ \hline
-    AuthorID & Integer & 1-255 & Range & 17  \\ \hline
+    AuthorID & Integer & 1-255 & Unique in table, not Null & 17  \\ \hline
     ISBN & String & 13 Characters & Length & 9780007525492 \\ \hline
     BookTitle & String & 1-127 Characters & Length & The Hobbit  \\ \hline
     NoOfPages & Integer & 1-1023 & Range & 395  \\ \hline
@@ -861,30 +865,31 @@ There have been some changes to my data dictionary as a number of elements have 
     FontSize & Real & 8-64 & Numbers only & 12.5  \\ \hline
     DatePublished & Date & dd/mm/yyyy & Range & 23/10/2014 \\ \hline
     Price & Real & 0.01-63.00 & Numbers only & £12.99 \\ \hline
-    RoyaltiesID & Integer & 1-255 & Numbers only & 123 \\ \hline
-    RoyaltiesItems & Integer & 1-511 & Numbers only & 12 \\ \hline
+    RoyaltiesID & Integer & 1-255 & Unique in table, not Null & 123 \\ \hline
+    RoyaltiesItems & Integer & 1-511 & Unique in table, not Null & 12 \\ \hline
     Currency & String & 1 Character & Pound, Dollar or Euro sign & £ \\ \hline
     RoyaltyPayment & Real & 1-32767 & Numbers only & 489.92 \\ \hline
     RoyaltiesDate & Date & dd/mm/yyyy & Range & 03/12/2014 \\ \hline
-    RoyaltyDiscount & Real & 0-100 & Numbers only & 40 \\ \hline
-    WholeSalePrice & Real & 0.01-63.00 & Numbers only & 7.99 \\ \hline
-    RoyaltyQuantity & Integer & 1- 2047 & Numbers only & 192 \\ \hline
+
 \end{tabular}
 \end{center}
 
 \begin{center}
-\begin{tabular}{|p{3cm}|p{1cm}|p{2.5cm}|p{1.5cm}|p{2cm}|}
+\begin{tabular}{|p{3cm}|p{1cm}|p{2.5cm}|p{1.5cm}|p{1.5cm}|}
     \hline
     \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} \\ \hline
+    RoyaltyDiscount & Real & 0-100 & Numbers only & 40 \\ \hline
+    WholeSalePrice & Real & 0.01-63.00 & Numbers only & 7.99 \\ \hline
+    RoyaltyQuantity & Integer & 1- 2047 & Numbers only & 192 \\ \hline
     NetSales & Real & 0.01-32767.00 & Numbers only & 900.00 \\ \hline
     PrintCost & Real & 0.01-32767.00 & Numbers only & 800.00 \\ \hline
     ExcRateFromGBP & Real & 0-1027 & Numbers only & 1.67 \\ \hline
-    PubInvoiceID & Integer & 1-511 & Numbers only & 123 \\ \hline
+    PubInvoiceID & Integer & 1-511 &Unique in table, not Null & 123 \\ \hline
     PubInvoiceDate & Date & dd/mm/yyy & Range & 23/05/2014 \\ \hline
     PubInvoiceService & String & 1-127 Characters & Length & Standard \\ \hline
     PubInvoicePayment & Real & 0.01-32767.00 & Numbers only & 700.00 \\ \hline
-    BookInvoiceID & Integer & 1-255 & Numbers only & 99 \\ \hline
-    BookInvoiceItems & Integer & 1-255 & Numbers only & 2 \\ \hline
+    BookInvoiceID & Integer & 1-255 & Unique in table, not Null & 99 \\ \hline
+    BookInvoiceItems & Integer & 1-255 & Unique in table, not Null & 2 \\ \hline
     BookInvoicePayment & Real & 0.01-32767.00 & Numbers only & 600.00 \\ \hline
     BookInvoiceDate & Date & dd/mm/yyyy & Range & 01/01/2014 \\ \hline
     BookInvoiceDiscount & Real & 0-100 & Numbers only & 50 \\ \hline
@@ -897,7 +902,7 @@ There have been some changes to my data dictionary as a number of elements have 
 
 \subsection{Identification of appropriate storage media}
 
-A hard drive would be an example of an appropriate storage media. For back up purposes, an external hard drive would be the optimal solution, because it is portable, meaning it can be kept off site, as well as being able to hold all data files on it. The database will be needed to be kept for long term storage. This is the data will be required to be accessed a number of times.
+A hard drive, such as the hard drive in my client's laptop, would be an example of appropriate storage media. For back up purposes, an external hard disk would be the optimal solution, because it is portable, meaning it can be kept off site, as well as being able to hold all data files on it. The database will be needed to be kept for long term storage. This is the data will be required to be accessed a number of times.
 
 \section{Database Design}
 
@@ -918,9 +923,9 @@ Customer(\underline{Author ID}, FirstName, LastName, Email, Address, Postcode, P
 
 Book(\underline{ISBN}, \emph{AuthorID}, Book Title, NoOfPages, Size, Cover, Paper, Back, Paper, Font, FontSize, DatePublished, Price)
 
-BookInvoice(\underline{BookInvoiceID}, \emph{AuthorID}, InvoiceDate, InvoicePayment)
+BookInvoice(\underline{BookInvoiceID}, \emph{AuthorID}, BookInvoiceDate, BookInvoicePayment)
 
-BookInvoiceItems(\underline{BookInvoiceItems}, \emph{BookInvoiceID}, \emph{ISBN}, BooksInvoiceQuantity, BooksInvoiceDiscount, ShippingPrice, ShippingType) 
+BookInvoiceItems(\underline{BookInvoiceItems}, \emph{BookInvoiceID}, \emph{ISBN}, BookInvoiceQuantity, BookInvoiceDiscount, ShippingPrice, ShippingType) 
 
 Royalties(\underline{RoyaltiesID}, \emph{AuthorID}, RoyaltiesDate, RoyaltyPayment)
 
@@ -1104,26 +1109,30 @@ I am using Python to format the SQL query text strings.
 \begin{tabular}{|p{6cm}|p{5cm}|}
     \hline
     \textbf{SQL} & \textbf{Descriptions} \\ \hline 
-     """insert into \\ Customer(FirstName, LastName, Email, PhoneNumber, Address, Postcode) values (\{0\}, \{1\}, \{2\}, \{3\}, \{4\}, \{5\}) \\ """.format(FirstName, LastName, Email, PhoneNumber, Address, Postcode) & An example of an SQL statement which adds customer records to the database. Here, it is entering a new customer record with the attributes: FirstName, LastName, Email, PhoneNumber, Address and Postcode. \\ \hline
-    """create table RoyaltiesItems(\\ RoyaltiesID INTEGER, \\ Currency REAL, \\ RoyaltyDiscount STRING,\\  WholeSalePrice REAL,\\ RoyaltyQuantity INTEGER,\\ NetSales REAL,\\ PrintCost REAL, \\ ExcRateFromGBP STRING \\ PRIMARY KEY(RoyaltiesItems) \\ FOREIGN KEY(RoyaltiesID) REFERENCES \\ Royalties(RoyaltiesID) """ & An example of an SQL statement that creates a new table for the Royalties. There is a primary key which is RoyaltiesItems, and there is one foreign key, which is RoyaltiesID. \\ \hline 
-    """select Customer.LastName, Book.BookTitle \\ from Customer, Book \\ where Price < 13.00 and \\ Back = "Paperback"  & This statement will return all the LastNames and the BookTitles from the Customer table and the Book table whose book is paperback and costs less than £13. \\ \hline
+     """insert into Customer(FirstName, LastName, Email, PhoneNumber, Address, Postcode) values (Ex, ample, example@mail.com, 07123456789, 1 example road, AB1 2CD) """ & An example of an SQL statement which adds customer records to the database. Here, it is entering a new customer record with the attributes: Firstname, Lastname, Email, Phonenumber, Address and Postcode. \\ \hline
+    """create table RoyaltiesItems( RoyaltiesID INTEGER,  Currency REAL,  RoyaltyDiscount STRING,  WholeSalePrice REAL, RoyaltyQuantity INTEGER, NetSales REAL, PrintCost REAL, ExcRateFromGBP STRING  PRIMARY KEY(RoyaltiesItems) FOREIGN KEY(RoyaltiesID) REFERENCES  Royalties(RoyaltiesID) """ & An example of an SQL statement that creates a new table for the Royalties. There is a primary key which is RoyaltiesItems, and there is one foreign key, which is RoyaltiesID. \\ \hline 
+    """select LastName, BookTitle from Customer, Book where Price = 13.00 and  Back = Paperback """ & This statement will return all the LastNames and the BookTitles from the Customer table and the Book table whose book is paperback and costs £13. \\ \hline
+    """update Customer set Firstname = 'John', Lastname = 'Smith' where AuthorID = 1 """ & This statement will update the Firstname to 'John' and Lastname to 'Smith' of an entry in the Customer table where the AuthorID = 1. \\ \hline
+    """delete from Customer where AuthorID = 1 """ & This statement will delete the entry in the Customer table where the AuthorID = 1 \\ \hline
+    """select * from RoyaltiesItems where Currency = '£' and Firstname from Customer = 'John'""" & This statement will fetch all the RoyaltiesItems where the Currency is in GBP, and the firstname of the corresponding author is John.
 \end{tabular}
 
 \section{Security and Integrity of the System and Data}
 
 \subsection{Security and Integrity of Data}
-The system will store personal data about the customers and will comply to the Data Protection Act. This means that the data must be frequently updated in order to keep it up to date, so there will be a way to edit and change the information using the program. All the data in the database must be kept securely, so that it can only be granted access to someone with the use of a passwor.d To ensure that all data stored is valid, everytime the user uses the keyboard, a check ill be completed to make sure that the data is valid. I need make checks for the addition and removals of data, so that all records will have the sufficient key data.
+
+The system will store personal data about the customers and will comply to the Data Protection Act. This means that the data requires sufficiently frequent checks, so there will be a way to edit and change the information using the program. All the data in the database must be kept securely, so that it can only be granted access to someone with the use of a password. To ensure that all data stored is valid, everytime the user adds data to the database, a check will be conducted to ensure that the data is valid. I need to keep referential integrity in the database so that there are never any records with missing key data upon any removals.
 
 \subsection{System Security}
 
-The database will be password protected to make sure that only users who know the password can access the database. This will keep the number of users of the database to a minimum. This can prevent the data from being tampered with or stolen. The database will be encrypted in order to avoid unwanted people having access to the data without the use of the system., therefore the number of people who can acces the data can be determined beforehand.
-
+The database will be password protected to make sure that only users who know the password can access the database. This will keep the number of users of the database to a minimum. This can prevent the data from being tampered with or stolen. The database will be encrypted in order to avoid unwanted people having access to the data without the use of the system, therefore the number of people who can access the data can be determined beforehand.
 \section{Validation}
 
 The system will check to make sure each entry is valid, in order to avoid any invalid entries into the database. 
  
 \begin{center}
     \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{3cm}|}
+    \hline
     \textbf{Item} & \textbf{Example} & \textbf{Validation} & \textbf{Comments}\\ \hline
     FirstName & John & Presence Check, Type Check & Makes sure that a name is entered, and that the name is just letters. \\ \hline
     LastName & Smith & Presence Check, Type Check & Makes sure that a name is entered, and that the name is just letters. \\ \hline
@@ -1166,7 +1175,7 @@ The system will check to make sure each entry is valid, in order to avoid any in
     Book Invoice Date & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
     Book Invoice Discount & 50 & Presence Check, Type Check, Range Check & Makes sure that a positive value has been entered, just digits, and it must be between 0 and 100. \\ \hline
     Book Invoice Quantity & 25 & PresenceCheck, Type Check & Makes sure that a positive integer has been entered. \\ \hline
-    Shipping Type & Premium & Presence Check & Makes sure that a Shipping type has been entered. \\ \hline
+    Shipping Type & Premium & Lookup check & Makes sure that a Shipping type has been entered. \\ \hline
     Shipping Price & 4.00 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
     AuthorID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Customer Table to find the entry to confirm that it is valid. \\ \hline 
     RoyaltiesID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Royalties Table to find the entry to confirm that it is valid. \\ \hline

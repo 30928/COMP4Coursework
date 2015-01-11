@@ -4,7 +4,7 @@ import sys
 import sqlite3
 
 class dbTableWidget(QTableWidget):
-    """table widget"""
+    """main table widget"""
 
     def __init__(self):
         super().__init__()
@@ -12,12 +12,14 @@ class dbTableWidget(QTableWidget):
     def initTable(self):
         #adding table widget
         self.setFixedSize(716,275)
-        self.clear()
         self.setColumnCount(7)
         CustomerHeaders = ["AuthorID", "Firstname", "Lastname", "Email", "Phonenumber", "Address", "Postcode"]
         self.setHorizontalHeaderLabels(CustomerHeaders)
+        self.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.setEditTriggers(QAbstractItemView.NoEditTriggers)
         
     def CustomerTable(self):
+        
         self.clear()
         self.setColumnCount(7)
         self.setRowCount(1)
@@ -57,33 +59,33 @@ class dbTableWidget(QTableWidget):
             cursor.execute(sql)
             self.PostcodeList = list(cursor.fetchall())
             
-        initMainMenuButtons.table.setRowCount(len(self.AuthorIDList))
+        self.setRowCount(len(self.AuthorIDList))
 
         for count in range(0, int(len(self.AuthorIDList))): #adding to the main table
             self.AuthorID = self.AuthorIDList[count]
             self.AuthorID = list(self.AuthorID)[0]
-            self.table.setItem(count, 0, QTableWidgetItem(str(self.AuthorID)))
+            self.setItem(count, 0, QTableWidgetItem(str(self.AuthorID)))
 
             self.Firstname = self.FirstnameList[count]
             self.Firstname = list(self.Firstname)[0]
-            self.table.setItem(count, 1, QTableWidgetItem(str(self.Firstname)))
+            self.setItem(count, 1, QTableWidgetItem(str(self.Firstname)))
             
             self.Lastname = self.LastnameList[count]
             self.Lastname = list(self.Lastname)[0]
-            self.table.setItem(count, 2, QTableWidgetItem(str(self.Lastname)))
+            self.setItem(count, 2, QTableWidgetItem(str(self.Lastname)))
 
             self.Email = self.EmailList[count]
             self.Email = list(self.Email)[0]
-            self.table.setItem(count, 3, QTableWidgetItem(str(self.Email)))
+            self.setItem(count, 3, QTableWidgetItem(str(self.Email)))
 
             self.Phonenumber = self.PhonenumberList[count]
             self.Phonenumber = list(self.Phonenumber)[0]
-            self.table.setItem(count, 4, QTableWidgetItem(str(self.Phonenumber)))
+            self.setItem(count, 4, QTableWidgetItem(str(self.Phonenumber)))
 
             self.Address = self.AddressList[count]
             self.Address = list(self.Address)[0]
-            self.table.setItem(count, 5, QTableWidgetItem(str(self.Address)))
+            self.setItem(count, 5, QTableWidgetItem(str(self.Address)))
 
             self.Postcode = self.PostcodeList[count]
             self.Postcode = list(self.Postcode)[0]
-            self.table.setItem(count, 6, QTableWidgetItem(str(self.Postcode)))
+            self.setItem(count, 6, QTableWidgetItem(str(self.Postcode)))
