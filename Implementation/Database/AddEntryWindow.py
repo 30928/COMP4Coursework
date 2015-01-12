@@ -31,7 +31,6 @@ class dbAddEntryWindow(QDialog):
         self.btnConfirm.clicked.connect(self.accept) #accept on clicking confirm
         self.btnCancel.clicked.connect(self.reject) #reject on clicking cancel
         self.btnConfirm.clicked.connect(self.AddEntryTodb) #call function after clicking confirm
-
         self.exec_()
                 
     def AddEntryTodb(self):

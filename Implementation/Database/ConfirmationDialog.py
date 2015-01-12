@@ -2,13 +2,14 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import sqlite3
 import sys
+from MainMenu import *
 
 class ConfirmationDialog(QDialog):
     """creating confirmation modal dialogs"""
 
     def __init__(self):
         super().__init__()
-
+        
     def RemoveDlg(self):
         self.setWindowTitle("Verification")
         self.setFixedSize(275, 100)
@@ -47,20 +48,17 @@ class ConfirmationDialog(QDialog):
         self.btnConfirm.clicked.connect(self.accept)
         self.btnCancel.clicked.connect(self.reject)
         self.ConfirmedDialog = ConfirmationDialog()
+        self.ConfirmedDialog.Name = self.Name
         self.btnConfirm.clicked.connect(self.ConfirmedDialog.Confirmed)
-
-
-
-        
         self.exec_()
 
     def Confirmed(self):
         self.setWindowTitle("Confirmation")
-        self.setFixedSize(275, 50)
+        self.setFixedSize(275, 100)
         self.setModal(True)
         
-        self.lblConfirmed = QLabel("{}'s records have been successfully erased.".format("temp"), self)
-        self.lblConfirmed.setFixedSize(250, 20)
+        self.lblConfirmed = QLabel("{}'s records have been successfully erased.".format(self.Name), self)
+        self.lblConfirmed.setFixedSize(250, 50)
         self.lblConfirmed.setWordWrap(True)
         self.lblConfirmed.setAlignment(Qt.AlignHCenter)
         
@@ -75,8 +73,10 @@ class ConfirmationDialog(QDialog):
         
         self.vertical = QVBoxLayout()
         self.vertical.addWidget(self.lblConfirmed)
+        self.vertical.addStretch(1)
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
+        self.Accepted = True
         self.exec_()
         
 

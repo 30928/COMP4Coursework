@@ -7,6 +7,7 @@ from initMainMenuButtons import *
 from AddEntryWindow import *
 from TableWidget import *
 from ConfirmationDialog import *
+from ViewWindow import *
 
 class MainWindow(QMainWindow):
     """main window"""
@@ -31,28 +32,40 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.MainMenuButtons)
         
         self.AddEntryWindow = dbAddEntryWindow()
-
+        #self.ViewWindow = dbViewWindow()
+        
         #connections
-        self.MenuBar.refresh.triggered.connect(self.RefreshTable) 
-        self.MainMenuButtons.btnAddEntry.clicked.connect(self.AddEntryWindow.initAddEntryWindow) #connection for 'add entry'
-        self.MainMenuButtons.btnRemoveEntry.clicked.connect(self.RemoveEntry)
+        self.MainMenuButtons.btnAddEntry.clicked.connect(self.AddEntry) #connection for 'add entry'
+        self.MainMenuButtons.btnRemoveEntry.clicked.connect(self.RemoveEntry) #connection for 'remove entry'
+
         
     def RefreshTable(self): #refreshing table to show changes made
         self.TableWidget.CustomerTable()
 
+    def AddEntry(self):
+        self.AddEntryWindow.initAddEntryWindow()
+        self.RefreshTable()
 
-    def RemoveEntry(self):
+    def RemoveEntry(self): #remove entry
         self.SelectedRow = self.TableWidget.currentRow()
         self.SelectedAuthorID = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 0)).text()
-        
+        #getting AuthorID of a row
         self.ConfirmDialog = ConfirmationDialog()
+        self.Firstname = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 1)).text()
+        self.Lastname = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 2)).text()
+        self.ConfirmDialog.Name = "{} {}".format(self.Firstname, self.Lastname)
         self.ConfirmDialog.RemoveDlg()
-        with sqlite3.connect("PP.db") as db:
-            cursor = db.cursor()
-            cursor.execute("PRAGMA foreign_keys_ = ON")
-            sql = "delete from Customer where AuthorID = {}".format(self.SelectedAuthorID)
-            cursor.execute(sql)
-            db.commit()
+        
+        if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
+            
+            with sqlite3.connect("PP.db") as db:
+                cursor = db.cursor()
+                cursor.execute("PRAGMA foreign_keys_ = ON")
+                sql = "delete from Customer where AuthorID = {}".format(self.SelectedAuthorID)
+                cursor.execute(sql)
+                db.commit()
+                
+            self.RefreshTable()
         
 def main():
     app = QApplication(sys.argv)

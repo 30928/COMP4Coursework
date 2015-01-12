@@ -14,7 +14,6 @@ class dbMenuBar(QMenuBar):
         self.add_entry = QAction("Add Entry", self)
         self.update_entry = QAction("Update Entry", self)
         self.remove_entry = QAction("Remove Entry", self)
-        self.refresh = QAction("Refresh Table", self)
         self.change_password = QAction("Change Password", self)
         self.log_out = QAction("Log Out", self)
         
@@ -25,7 +24,6 @@ class dbMenuBar(QMenuBar):
         self.actions_menu.addAction(self.add_entry)
         self.actions_menu.addAction(self.update_entry)
         self.actions_menu.addAction(self.remove_entry)
-        self.actions_menu.addAction(self.refresh)
 
         self.account_menu = self.addMenu("Account")
         self.account_menu.addAction(self.change_password)
