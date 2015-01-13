@@ -16,13 +16,13 @@ class dbAddEntryWindow(QDialog):
         self.AddEntryTable = QTableWidget(self) #table for adding entry
         self.AddEntryTable.setRowCount(1)
         self.AddEntryTable.setColumnCount(6)
-        self.AddEntryTable.setFixedSize(617,55)
+        self.AddEntryTable.setFixedSize(617, 55)
         self.CustomerHeaders = ["Firstname", "Lastname", "Email", "Phonenumber", "Address", "Postcode"]
         self.AddEntryTable.setHorizontalHeaderLabels(self.CustomerHeaders)
         
         self.btnConfirm = QPushButton("Confirm", self) #buttons
         self.btnCancel = QPushButton("Cancel", self)
-        self.btnConfirm.move(530,60)
+        self.btnConfirm.move(530, 60)
         self.btnCancel.move(450, 60)
         
         self.vertical = QVBoxLayout() #vbox layout        

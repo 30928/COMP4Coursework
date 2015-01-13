@@ -15,38 +15,38 @@ class initMainMenuButtons(QWidget):
         self.vertical = QVBoxLayout()
         
         self.btnLogOut = QPushButton("Log Out", self)
-        self.btnLogOut.setFixedSize(100,30)
+        self.btnLogOut.setFixedSize(100, 30)
         
         self.leQuickSearch = QLineEdit(self)
         self.leQuickSearch.setPlaceholderText("Author Surname")
-        self.leQuickSearch.setFixedSize(100,25)
+        self.leQuickSearch.setFixedSize(100, 25)
         
         self.btnQuickSearch = QPushButton("Quick Search", self)
-        self.btnQuickSearch.setFixedSize(100,30)
+        self.btnQuickSearch.setFixedSize(100, 30)
 
         self.horizontalTop = QHBoxLayout()
         self.horizontalTop.addWidget(self.btnLogOut)
-        self.horizontalTop.addStretch(2)
+        self.horizontalTop.addStretch(1)
         self.horizontalTop.addWidget(self.leQuickSearch)
         self.horizontalTop.addWidget(self.btnQuickSearch)
 
         self.btnView = QPushButton("View", self)
-        self.btnView.setFixedSize(100,40)
+        self.btnView.setFixedSize(100, 40)
         
         self.btnSearchdb = QPushButton("Search Database", self)
-        self.btnSearchdb.setFixedSize(100,40)
+        self.btnSearchdb.setFixedSize(100, 40)
         
         self.btnAddEntry = QPushButton("Add Entry", self)
-        self.btnAddEntry.setFixedSize(100,40)
+        self.btnAddEntry.setFixedSize(100, 40)
         
         self.btnUpdateEntry = QPushButton("Update Entry", self)
-        self.btnUpdateEntry.setFixedSize(100,40)
+        self.btnUpdateEntry.setFixedSize(100, 40)
         
         self.btnRemoveEntry = QPushButton("Remove Entry", self)
-        self.btnRemoveEntry.setFixedSize(100,40)
+        self.btnRemoveEntry.setFixedSize(100, 40)
         
         self.btnChangePassword = QPushButton("Change Password", self)
-        self.btnChangePassword.setFixedSize(100,40)
+        self.btnChangePassword.setFixedSize(100, 40)
     
         self.horizontalBottom = QHBoxLayout()
         

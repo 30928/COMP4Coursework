@@ -50,6 +50,7 @@ class ConfirmationDialog(QDialog):
         self.ConfirmedDialog = ConfirmationDialog()
         self.ConfirmedDialog.Name = self.Name
         self.btnConfirm.clicked.connect(self.ConfirmedDialog.Confirmed)
+        self.ConfirmedDialog.Accepted = False
         self.exec_()
 
     def Confirmed(self):

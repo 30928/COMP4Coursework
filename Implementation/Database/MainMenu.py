@@ -28,17 +28,41 @@ class MainWindow(QMainWindow):
         self.MainMenuButtons.vertical.addLayout(self.MainMenuButtons.horizontalTop)
         self.MainMenuButtons.vertical.addWidget(self.TableWidget)
         self.MainMenuButtons.vertical.addLayout(self.MainMenuButtons.horizontalBottom)
+            
         self.MainMenuButtons.setLayout(self.MainMenuButtons.vertical)
-        self.setCentralWidget(self.MainMenuButtons)
+        self.StackedLayout = QStackedLayout()
+        self.StackedLayout.addWidget(self.MainMenuButtons)
+        self.StackedLayout.setCurrentWidget(self.MainMenuButtons)
+        self.setCentralWidget(self.StackedLayout.currentWidget())
         
         self.AddEntryWindow = dbAddEntryWindow()
-        #self.ViewWindow = dbViewWindow()
+        self.ViewWindow = dbViewWindow()
+        self.ViewWindow.View()
+        self.ViewWindow.vertical.addLayout(self.ViewWindow.horizontalTop)
+        self.ViewWindow.table = dbTableWidget()
+        self.ViewWindow.table.initTable()
+        self.ViewWindow.vertical.addWidget(self.ViewWindow.table)
+        self.ViewWindow.vertical.addLayout(self.ViewWindow.horizontalBottom)
+        self.ViewWindow.setLayout(self.ViewWindow.vertical)
+        self.StackedLayout.addWidget(self.ViewWindow)
         
         #connections
         self.MainMenuButtons.btnAddEntry.clicked.connect(self.AddEntry) #connection for 'add entry'
         self.MainMenuButtons.btnRemoveEntry.clicked.connect(self.RemoveEntry) #connection for 'remove entry'
+        self.MainMenuButtons.btnView.clicked.connect(self.ViewCustomer)
+        self.ViewWindow.btnBack.clicked.connect(self.Back)
 
+    def ViewCustomer(self):
+        self.StackedLayout.setCurrentWidget(self.ViewWindow)
+        self.setCentralWidget(self.StackedLayout.currentWidget())
+        self.MenuBar.setVisible(False)
+        self.ViewWindow.table.BookTable()
         
+    def Back(self):
+        self.StackedLayout.setCurrentWidget(self.MainMenuButtons)
+        self.setCentralWidget(self.StackedLayout.currentWidget())
+        self.MenuBar.setVisible(True)
+    
     def RefreshTable(self): #refreshing table to show changes made
         self.TableWidget.CustomerTable()
 
@@ -57,15 +81,13 @@ class MainWindow(QMainWindow):
         self.ConfirmDialog.RemoveDlg()
         
         if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
-            
             with sqlite3.connect("PP.db") as db:
                 cursor = db.cursor()
                 cursor.execute("PRAGMA foreign_keys_ = ON")
                 sql = "delete from Customer where AuthorID = {}".format(self.SelectedAuthorID)
                 cursor.execute(sql)
                 db.commit()
-                
-            self.RefreshTable()
+        self.RefreshTable()
         
 def main():
     app = QApplication(sys.argv)
