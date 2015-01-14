@@ -154,56 +154,54 @@ class dbTableWidget(QTableWidget):
         for count in range(0, int(len(self.AuthorIDList))): #adding to the table
             self.AuthorID = self.AuthorIDList[count]
             self.AuthorID = list(self.AuthorID)[0]
-            self.setItem(count, 0, QTableWidgetItem(str(self.AuthorID)))
-
-            self.ISBN = self.ISBNList[count]
-            self.ISBN = list(self.ISBN)[0]
-            self.setItem(count, 1, QTableWidgetItem(str(self.ISBN)))
             
-            self.BookTitle = self.BookTitleList[count]
-            self.BookTitle = list(self.BookTitle)[0]
-            self.setItem(count, 2, QTableWidgetItem(str(self.BookTitle)))
+            if str(self.AuthorID) == str(self.selectedID):
+                self.setItem(count, 0, QTableWidgetItem(str(self.AuthorID)))
 
-            self.NoOfPages = self.NoOfPagesList[count]
-            self.NoOfPages = list(self.NoOfPages)[0]
-            self.setItem(count, 3, QTableWidgetItem(str(self.NoOfPages)))
+                self.ISBN = self.ISBNList[count]
+                self.ISBN = list(self.ISBN)[0]
+                self.setItem(count, 1, QTableWidgetItem(str(self.ISBN)))
+                
+                self.BookTitle = self.BookTitleList[count]
+                self.BookTitle = list(self.BookTitle)[0]
+                self.setItem(count, 2, QTableWidgetItem(str(self.BookTitle)))
 
-            self.Size = self.SizeList[count]
-            self.Size = list(self.Size)[0]
-            self.setItem(count, 4, QTableWidgetItem(str(self.Size)))
+                self.NoOfPages = self.NoOfPagesList[count]
+                self.NoOfPages = list(self.NoOfPages)[0]
+                self.setItem(count, 3, QTableWidgetItem(str(self.NoOfPages)))
 
-            self.Size = self.SizeList[count]
-            self.Size = list(self.Size)[0]
-            self.setItem(count, 5, QTableWidgetItem(str(self.Size)))
+                self.Size = self.SizeList[count]
+                self.Size = list(self.Size)[0]
+                self.setItem(count, 4, QTableWidgetItem(str(self.Size)))
 
-            self.Back = self.BackList[count]
-            self.Back = list(self.Back)[0]
-            self.setItem(count, 6, QTableWidgetItem(str(self.Back)))
+                self.Size = self.SizeList[count]
+                self.Size = list(self.Size)[0]
+                self.setItem(count, 5, QTableWidgetItem(str(self.Size)))
 
-            self.Cover = self.CoverList[count]
-            self.Cover = list(self.Cover)[0]
-            self.setItem(count, 6, QTableWidgetItem(str(self.Cover)))
+                self.Back = self.BackList[count]
+                self.Back = list(self.Back)[0]
+                self.setItem(count, 6, QTableWidgetItem(str(self.Back)))
 
-            self.Paper = self.PaperList[count]
-            self.Paper = list(self.Paper)[0]
-            self.setItem(count, 6, QTableWidgetItem(str(self.Paper)))
+                self.Cover = self.CoverList[count]
+                self.Cover = list(self.Cover)[0]
+                self.setItem(count, 7, QTableWidgetItem(str(self.Cover)))
 
-            self.Font = self.FontList[count]
-            self.Font = list(self.Font)[0]
-            self.setItem(count, 6, QTableWidgetItem(str(self.Font)))
+                self.Paper = self.PaperList[count]
+                self.Paper = list(self.Paper)[0]
+                self.setItem(count, 8, QTableWidgetItem(str(self.Paper)))
 
-            self.FontSize = self.FontSizeList[count]
-            self.FontSize = list(self.FontSize)[0]
-            self.setItem(count, 6, QTableWidgetItem(str(self.FontSize)))
+                self.Font = self.FontList[count]
+                self.Font = list(self.Font)[0]
+                self.setItem(count, 9, QTableWidgetItem(str(self.Font)))
 
-            self.DatePub = self.DatePubList[count]
-            self.DatePub = list(self.DatePub)[0]
-            self.setItem(count, 6, QTableWidgetItem(str(self.DatePub)))
+                self.FontSize = self.FontSizeList[count]
+                self.FontSize = list(self.FontSize)[0]
+                self.setItem(count, 10, QTableWidgetItem(str(self.FontSize)))
 
-            self.Price = self.PriceList[count]
-            self.Price = list(self.Price)[0]
-            self.setItem(count, 6, QTableWidgetItem(str(self.Price)))
-        
+                self.DatePub = self.DatePubList[count]
+                self.DatePub = list(self.DatePub)[0]
+                self.setItem(count, 11, QTableWidgetItem(str(self.DatePub)))
 
-
-        
+                self.Price = self.PriceList[count]
+                self.Price = list(self.Price)[0]
+                self.setItem(count, 12, QTableWidgetItem(str(self.Price)))

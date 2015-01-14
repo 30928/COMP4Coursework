@@ -30,12 +30,18 @@ class MainWindow(QMainWindow):
         self.MainMenuButtons.vertical.addLayout(self.MainMenuButtons.horizontalBottom)
             
         self.MainMenuButtons.setLayout(self.MainMenuButtons.vertical)
-        self.StackedLayout = QStackedLayout()
+
+        self.StackedLayout = QStackedLayout()     
+        
+        self.centralWidget = QWidget()
+        self.centralWidget.setLayout(self.StackedLayout)
+        self.setCentralWidget(self.centralWidget)
+
         self.StackedLayout.addWidget(self.MainMenuButtons)
-        self.StackedLayout.setCurrentWidget(self.MainMenuButtons)
-        self.setCentralWidget(self.StackedLayout.currentWidget())
+        self.StackedLayout.setCurrentIndex(1)
         
         self.AddEntryWindow = dbAddEntryWindow()
+        
         self.ViewWindow = dbViewWindow()
         self.ViewWindow.View()
         self.ViewWindow.vertical.addLayout(self.ViewWindow.horizontalTop)
@@ -44,6 +50,7 @@ class MainWindow(QMainWindow):
         self.ViewWindow.vertical.addWidget(self.ViewWindow.table)
         self.ViewWindow.vertical.addLayout(self.ViewWindow.horizontalBottom)
         self.ViewWindow.setLayout(self.ViewWindow.vertical)
+        
         self.StackedLayout.addWidget(self.ViewWindow)
         
         #connections
@@ -53,14 +60,18 @@ class MainWindow(QMainWindow):
         self.ViewWindow.btnBack.clicked.connect(self.Back)
 
     def ViewCustomer(self):
-        self.StackedLayout.setCurrentWidget(self.ViewWindow)
-        self.setCentralWidget(self.StackedLayout.currentWidget())
-        self.MenuBar.setVisible(False)
-        self.ViewWindow.table.BookTable()
+        #self.setCentralWidget(self.StackedLayout.currentIndex())
+
+        self.ViewWindow.table.selectedID = QTableWidgetItem(self.TableWidget.item(self.TableWidget.currentRow(), 0)).text()
+        if self.ViewWindow.table.selectedID != "":
+            self.StackedLayout.setCurrentIndex(1)
+            self.ViewWindow.table.BookTable()
+            self.MenuBar.setVisible(False)
         
     def Back(self):
-        self.StackedLayout.setCurrentWidget(self.MainMenuButtons)
-        self.setCentralWidget(self.StackedLayout.currentWidget())
+        self.ViewWindow.table.selectedID = ""
+        self.StackedLayout.setCurrentIndex(0)
+        #self.setCentralWidget(self.StackedLayout.currentIndex())
         self.MenuBar.setVisible(True)
     
     def RefreshTable(self): #refreshing table to show changes made
