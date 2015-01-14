@@ -41,6 +41,7 @@ class MainWindow(QMainWindow):
         self.StackedLayout.setCurrentIndex(1)
         
         self.AddEntryWindow = dbAddEntryWindow()
+        self.AddBookWindow = dbAddEntryWindow()
         
         self.ViewWindow = dbViewWindow()
         self.ViewWindow.View()
@@ -58,15 +59,21 @@ class MainWindow(QMainWindow):
         self.MainMenuButtons.btnRemoveEntry.clicked.connect(self.RemoveEntry) #connection for 'remove entry'
         self.MainMenuButtons.btnView.clicked.connect(self.ViewCustomer)
         self.ViewWindow.btnBack.clicked.connect(self.Back)
+        self.ViewWindow.btnAddBook.clicked.connect(self.AddBook)
 
+    def AddBook(self):
+       self.AddBookWindow.initAddBookWindow()
+       
     def ViewCustomer(self):
         #self.setCentralWidget(self.StackedLayout.currentIndex())
 
         self.ViewWindow.table.selectedID = QTableWidgetItem(self.TableWidget.item(self.TableWidget.currentRow(), 0)).text()
+
         if self.ViewWindow.table.selectedID != "":
             self.StackedLayout.setCurrentIndex(1)
             self.ViewWindow.table.BookTable()
             self.MenuBar.setVisible(False)
+            
         
     def Back(self):
         self.ViewWindow.table.selectedID = ""

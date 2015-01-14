@@ -174,34 +174,30 @@ class dbTableWidget(QTableWidget):
                 self.Size = list(self.Size)[0]
                 self.setItem(count, 4, QTableWidgetItem(str(self.Size)))
 
-                self.Size = self.SizeList[count]
-                self.Size = list(self.Size)[0]
-                self.setItem(count, 5, QTableWidgetItem(str(self.Size)))
-
                 self.Back = self.BackList[count]
                 self.Back = list(self.Back)[0]
-                self.setItem(count, 6, QTableWidgetItem(str(self.Back)))
+                self.setItem(count, 5, QTableWidgetItem(str(self.Back)))
 
                 self.Cover = self.CoverList[count]
                 self.Cover = list(self.Cover)[0]
-                self.setItem(count, 7, QTableWidgetItem(str(self.Cover)))
+                self.setItem(count, 6, QTableWidgetItem(str(self.Cover)))
 
                 self.Paper = self.PaperList[count]
                 self.Paper = list(self.Paper)[0]
-                self.setItem(count, 8, QTableWidgetItem(str(self.Paper)))
+                self.setItem(count, 7, QTableWidgetItem(str(self.Paper)))
 
                 self.Font = self.FontList[count]
                 self.Font = list(self.Font)[0]
-                self.setItem(count, 9, QTableWidgetItem(str(self.Font)))
+                self.setItem(count, 8, QTableWidgetItem(str(self.Font)))
 
                 self.FontSize = self.FontSizeList[count]
                 self.FontSize = list(self.FontSize)[0]
-                self.setItem(count, 10, QTableWidgetItem(str(self.FontSize)))
+                self.setItem(count, 9, QTableWidgetItem(str(self.FontSize)))
 
                 self.DatePub = self.DatePubList[count]
                 self.DatePub = list(self.DatePub)[0]
-                self.setItem(count, 11, QTableWidgetItem(str(self.DatePub)))
+                self.setItem(count, 10, QTableWidgetItem(str(self.DatePub)))
 
                 self.Price = self.PriceList[count]
                 self.Price = list(self.Price)[0]
-                self.setItem(count, 12, QTableWidgetItem(str(self.Price)))
+                self.setItem(count, 11, QTableWidgetItem(str(self.Price)))

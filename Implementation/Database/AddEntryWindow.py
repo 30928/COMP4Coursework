@@ -32,7 +32,17 @@ class dbAddEntryWindow(QDialog):
         self.btnCancel.clicked.connect(self.reject) #reject on clicking cancel
         self.btnConfirm.clicked.connect(self.AddEntryTodb) #call function after clicking confirm
         self.exec_()
-                
+
+    def initAddBookWindow(self):
+        self.setWindowTitle("Add Book")
+        self.setFixedSize(617,90)
+        self.setModal(True) #modal window
+
+
+
+        
+        self.exec_()        
+    
     def AddEntryTodb(self):
         #fetching inputs from table
         self.Firstname = QTableWidgetItem(self.AddEntryTable.item(0, 0)).text()
