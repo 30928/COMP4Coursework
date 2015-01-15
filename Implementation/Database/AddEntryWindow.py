@@ -13,13 +13,14 @@ class dbAddEntryWindow(QDialog):
         self.setWindowTitle("Add Entry")
         self.setFixedSize(617,90)
         self.setModal(True) #modal window
-        self.AddEntryTable = QTableWidget(self) #table for adding entry
+        self.AddEntryTable = QTableWidget(self) #table for adding customer entry
         self.AddEntryTable.setRowCount(1)
         self.AddEntryTable.setColumnCount(6)
         self.AddEntryTable.setFixedSize(617, 55)
         self.CustomerHeaders = ["Firstname", "Lastname", "Email", "Phonenumber", "Address", "Postcode"]
         self.AddEntryTable.setHorizontalHeaderLabels(self.CustomerHeaders)
-        
+        self.label = QLabel("123123123", self)
+        self.label.move(60,60)
         self.btnConfirm = QPushButton("Confirm", self) #buttons
         self.btnCancel = QPushButton("Cancel", self)
         self.btnConfirm.move(530, 60)
@@ -35,11 +36,59 @@ class dbAddEntryWindow(QDialog):
 
     def initAddBookWindow(self):
         self.setWindowTitle("Add Book")
-        self.setFixedSize(617,90)
+        self.setFixedSize(700,280)
         self.setModal(True) #modal window
 
+        self.btnDate = QPushButton("Date", self) #buttons,line edits and combo boxes
+        self.qleDate = QLineEdit(self)
+        self.cbAuthorID = QComboBox(self)
+        self.qleBookTitle = QLineEdit(self)
+        self.qleBookTitle.setPlaceholderText("Insert Book Title")
+        self.qleNoOfPages = QLineEdit(self)
+        self.cbSize = QComboBox(self)
+        self.cbBack = QComboBox(self)
+        self.qleISBN = QLineEdit(self)
+        self.qleFont = QLineEdit(self)
+        self.qleFontSize = QLineEdit(self)
+        self.cbCover = QComboBox(self)
+        self.qlePrice = QLineEdit(self)
+        self.cbPaper = QComboBox(self)
+        self.btnAddTodb = QPushButton("Add To Database", self)
+        self.btnCancel = QPushButton("Cancel", self)
 
+        self.horizontalTop = QHBoxLayout()
+        self.horizontalTop.addWidget(self.btnDate)
+        self.horizontalTop.addWidget(self.qleDate)
+        
+        self.verticalLeft = QVBoxLayout() #left side
+        self.verticalLeft.addLayout(self.horizontalTop)
+        self.verticalLeft.addWidget(self.cbAuthorID)
+        self.verticalLeft.addWidget(self.qleBookTitle)
+        self.verticalLeft.addWidget(self.qleNoOfPages)
+        self.verticalLeft.addWidget(self.cbSize)
+        self.verticalLeft.addWidget(self.cbBack)
+        self.verticalLeft.addWidget(self.qleISBN)
+        self.verticalLeft.addWidget(self.qleFont)
 
+        self.horizontalBottom = QHBoxLayout()
+        self.horizontalBottom.addWidget(self.btnCancel)
+        self.horizontalBottom.addWidget(self.btnAddTodb)
+        
+        self.verticalRight = QVBoxLayout() #right side
+        self.verticalRight.addWidget(self.cbCover)
+        self.verticalRight.addWidget(self.qlePrice)
+        self.verticalRight.addWidget(self.qleFontSize)
+        self.verticalRight.addWidget(self.cbPaper)
+        self.verticalRight.addStretch(1)
+        self.verticalRight.addLayout(self.horizontalBottom)
+
+        self.mainHorizontal = QHBoxLayout()
+        self.mainHorizontal.addLayout(self.verticalLeft)
+        self.mainHorizontal.addLayout(self.verticalRight)
+        self.setLayout(self.mainHorizontal)
+        
+        self.btnAddTodb.clicked.connect(self.accept) #accept on clicking confirm
+        self.btnCancel.clicked.connect(self.reject) #reject on clicking cancel
         
         self.exec_()        
     
