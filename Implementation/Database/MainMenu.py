@@ -8,6 +8,7 @@ from AddEntryWindow import *
 from TableWidget import *
 from ConfirmationDialog import *
 from ViewWindow import *
+from AddBookWindow import *
 
 class MainWindow(QMainWindow):
     """main window"""
@@ -21,8 +22,8 @@ class MainWindow(QMainWindow):
         self.setMenuBar(self.MenuBar)
         
         self.TableWidget = dbTableWidget()
+        self.TableWidget.currentTable = "Customer"
         self.TableWidget.initTable()
-        self.TableWidget.CustomerTable()
         
         self.MainMenuButtons = initMainMenuButtons()
         self.MainMenuButtons.vertical.addLayout(self.MainMenuButtons.horizontalTop)
@@ -40,14 +41,13 @@ class MainWindow(QMainWindow):
         self.StackedLayout.addWidget(self.MainMenuButtons)
         self.StackedLayout.setCurrentIndex(1)
         
-        self.AddEntryWindow = dbAddEntryWindow()
-        self.AddBookWindow = dbAddEntryWindow()
+
         
         self.ViewWindow = dbViewWindow()
         self.ViewWindow.View()
         self.ViewWindow.vertical.addLayout(self.ViewWindow.horizontalTop)
         self.ViewWindow.table = dbTableWidget()
-        self.ViewWindow.table.initTable()
+        self.ViewWindow.table.currentTable = "Book"
         self.ViewWindow.vertical.addWidget(self.ViewWindow.table)
         self.ViewWindow.vertical.addLayout(self.ViewWindow.horizontalBottom)
         self.ViewWindow.setLayout(self.ViewWindow.vertical)
@@ -59,17 +59,29 @@ class MainWindow(QMainWindow):
         self.MainMenuButtons.btnRemoveEntry.clicked.connect(self.RemoveEntry) #connection for 'remove entry'
         self.MainMenuButtons.btnView.clicked.connect(self.ViewCustomer)
         self.ViewWindow.btnBack.clicked.connect(self.Back)
-        self.ViewWindow.btnAddBook.clicked.connect(self.AddBook)
+        self.ViewWindow.btnAddBook.clicked.connect(self.AddBookWindow)
 
-    def AddBook(self):
-       self.AddBookWindow.initAddBookWindow()
+    def initLayout(self):
+
+        with sqlite3.connect("PP.db") as db:
+            cursor = db.cursor()
+            sql = "select * from {}".format(self.currentTable)
+            cursor.execute(sql)
+        self.columns = [tuple[0] for tuple in cursor.description]
+        
+    
+    def AddBookWindow(self):
+        self.AddBookWindow = dbAddBookWindow()
+        self.currentTable = "Book"
+        self.initLayout()
+        #self.AddBookWindow.initAddBookWindow()
        
     def ViewCustomer(self):
-        #self.setCentralWidget(self.StackedLayout.currentIndex())
 
         self.ViewWindow.table.selectedID = QTableWidgetItem(self.TableWidget.item(self.TableWidget.currentRow(), 0)).text()
 
         if self.ViewWindow.table.selectedID != "":
+            self.ViewWindow.table.currentTable = "Book"
             self.StackedLayout.setCurrentIndex(1)
             self.ViewWindow.table.BookTable()
             self.MenuBar.setVisible(False)
@@ -78,13 +90,13 @@ class MainWindow(QMainWindow):
     def Back(self):
         self.ViewWindow.table.selectedID = ""
         self.StackedLayout.setCurrentIndex(0)
-        #self.setCentralWidget(self.StackedLayout.currentIndex())
         self.MenuBar.setVisible(True)
     
     def RefreshTable(self): #refreshing table to show changes made
         self.TableWidget.CustomerTable()
 
     def AddEntry(self):
+        self.AddEntryWindow = dbAddEntryWindow()
         self.AddEntryWindow.initAddEntryWindow()
         self.RefreshTable()
 
