@@ -11,7 +11,7 @@ class dbAddEntryWindow(QDialog):
 
     def initAddEntryWindow(self):
         self.setWindowTitle("Add Entry")
-        self.setFixedSize(617,90)
+        self.setFixedSize(640,115)
         self.setModal(True) #modal window
         self.AddEntryTable = QTableWidget(self) #table for adding customer entry
         self.AddEntryTable.setRowCount(1)
@@ -19,16 +19,19 @@ class dbAddEntryWindow(QDialog):
         self.AddEntryTable.setFixedSize(617, 55)
         self.CustomerHeaders = ["Firstname", "Lastname", "Email", "Phonenumber", "Address", "Postcode"]
         self.AddEntryTable.setHorizontalHeaderLabels(self.CustomerHeaders)
-        self.label = QLabel("123123123", self)
-        self.label.move(60,60)
         self.btnConfirm = QPushButton("Confirm", self) #buttons
         self.btnCancel = QPushButton("Cancel", self)
-        self.btnConfirm.move(530, 60)
-        self.btnCancel.move(450, 60)
+        self.horizontal = QHBoxLayout()
+        self.horizontal.addStretch(1)
+        self.horizontal.addWidget(self.btnCancel)
+        self.horizontal.addWidget(self.btnConfirm)
         
         self.vertical = QVBoxLayout() #vbox layout
         self.vertical.addWidget(self.AddEntryTable)
-
+        self.vertical.addStretch(1)
+        self.vertical.addLayout(self.horizontal)
+        self.setLayout(self.vertical)
+        
         self.btnConfirm.clicked.connect(self.accept) #accept on clicking confirm
         self.btnCancel.clicked.connect(self.reject) #reject on clicking cancel
         self.btnConfirm.clicked.connect(self.AddEntryTodb) #call function after clicking confirm
@@ -47,7 +50,7 @@ class dbAddEntryWindow(QDialog):
         
         with sqlite3.connect("PP.db") as db:
             cursor = db.cursor()
-            cursor.execute("PRAGMA foreign_keys_ = ON")
+            cursor.execute("PRAGMA foreign_keys = ON")
             sql = "insert into Customer (FirstName, LastName, Email, PhoneNumber, Address, Postcode) values (?, ?, ?, ?, ?, ?)"
             cursor.execute(sql, self.input_data)
             db.commit()

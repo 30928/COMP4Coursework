@@ -196,8 +196,6 @@ def input_book_invoice():
     AuthorID = input("Enter AuthorID: ")
     BookInvoicePayment = None
     BookInvoiceDate = input("Enter book invoice date: ")
-
-
     input_data = (AuthorID, BookInvoicePayment, BookInvoiceDate)
     return input_data
 
@@ -430,7 +428,6 @@ def main():
                     table, placeholders = BookInvoiceItemsEntry()
                     create_data(book_invoice_items_data, table, placeholders)
                     calculate_book_invoice_payment(BookInvoiceID)
-                    
                 elif Choice == '6':
                     royalties_data = input_royalties()
                     table, placeholders = RoyaltiesEntry()

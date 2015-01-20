@@ -910,12 +910,12 @@ A hard drive, such as the hard drive in my client's laptop, would be an example 
  
 \subsubsection{ER Diagrams}
 
+\
 
 \begin{figure}[H]
     \caption{ER Diagram} \label{ER_Diagram.pdf}
     \includegraphics[width=\textwidth]{./Design/ER_Diagram.pdf}
 \end{figure}
-
 
 \subsubsection{Entity Descriptions}
 
@@ -932,8 +932,6 @@ Royalties(\underline{RoyaltiesID}, \emph{AuthorID}, RoyaltiesDate, RoyaltyPaymen
 RoyaltiesItems(\underline{RoyaltiesItems}, \emph{RoyaltiesID}, \emph{ISBN}, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, NetSales, PrintCost, ExcRateFromGBP)
 
 PubInvoice(\underline{PubInvoiceID}, \emph{AuthorID}, \emph{ISBN}, PubInvoiceDate, PubInvoiceOrder, PubInvoicePayment)
-
-
 
 
 \subsubsection{UNF to 3NF}
@@ -1098,7 +1096,7 @@ Finally, I put the data into its third normal form.
     PubInvoiceDate & BookInvoiceDate & BookInvoiceQuantity \\
     PubInvoiceService & & BookInvoiceDiscount \\
     PubInvoicePayment & & ShippingType \\
-    & & ShippingPrice \\
+    & & ShippingPrice \\ 
     \hline
 \end{tabular}
 
@@ -1114,14 +1112,14 @@ I am using Python to format the SQL query text strings.
     """select LastName, BookTitle from Customer, Book where Price = 13.00 and  Back = Paperback """ & This statement will return all the LastNames and the BookTitles from the Customer table and the Book table whose book is paperback and costs £13. \\ \hline
     """update Customer set Firstname = 'John', Lastname = 'Smith' where AuthorID = 1 """ & This statement will update the Firstname to 'John' and Lastname to 'Smith' of an entry in the Customer table where the AuthorID = 1. \\ \hline
     """delete from Customer where AuthorID = 1 """ & This statement will delete the entry in the Customer table where the AuthorID = 1 \\ \hline
-    """select * from RoyaltiesItems where Currency = '£' and Firstname from Customer = 'John'""" & This statement will fetch all the RoyaltiesItems where the Currency is in GBP, and the firstname of the corresponding author is John.
+    """select * from RoyaltiesItems where Currency = '£' and Firstname from Customer = 'John'""" & This statement will fetch all the RoyaltiesItems where the Currency is in GBP, and the firstname of the corresponding author is John. \\ \hline
 \end{tabular}
 
 \section{Security and Integrity of the System and Data}
 
 \subsection{Security and Integrity of Data}
 
-The system will store personal data about the customers and will comply to the Data Protection Act. This means that the data requires sufficiently frequent checks, so there will be a way to edit and change the information using the program. All the data in the database must be kept securely, so that it can only be granted access to someone with the use of a password. To ensure that all data stored is valid, everytime the user adds data to the database, a check will be conducted to ensure that the data is valid. I need to keep referential integrity in the database so that there are never any records with missing key data upon any removals.
+The system will store personal data about the customers and will comply to the Data Protection Act. This means that the data requires sufficiently frequent checks, so there will be a way to edit and change the information using the program. All the data in the database must be kept securely, so that it can only be granted access to someone with the use of a password. To ensure that all data stored is valid, everytime the user adds data to the database, a check will be conducted to ensure that the data is valid. I need to keep referential integrity in the database so that there are never any records with missing key data upon any removals and the database will be encrypted.
 
 \subsection{System Security}
 
@@ -1153,6 +1151,7 @@ The system will check to make sure each entry is valid, in order to avoid any in
 
 \begin{center}
     \begin{tabular}{|p{2.5cm}|p{2cm}|p{2cm}|p{3cm}|}
+    \hline
     \textbf{Item} & \textbf{Example} & \textbf{Validation} & \textbf{Comments}\\ \hline
     FontSize & 12 & Presence Check, Type Check & Makes sure that a positive value has been entered, and just digits. \\ \hline
     DatePublished & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
@@ -1171,6 +1170,7 @@ The system will check to make sure each entry is valid, in order to avoid any in
 
 \begin{center}
     \begin{tabular}{|p{2.5cm}|p{2cm}|p{2cm}|p{3.5cm}|}
+    \hline
     \textbf{Item} & \textbf{Example} & \textbf{Validation} & \textbf{Comments}\\ \hline
     Book Invoice Date & 25 Dec 2014 & Presence Check, Type Check & Makes sure that a Date has been entered. \\ \hline
     Book Invoice Discount & 50 & Presence Check, Type Check, Range Check & Makes sure that a positive value has been entered, just digits, and it must be between 0 and 100. \\ \hline
@@ -1183,8 +1183,6 @@ The system will check to make sure each entry is valid, in order to avoid any in
     BookInvoiceID & 21 & Presence Check, Type Check, Look up Check & Makes sure that an integer has been entered, and will check the Book Invoice Table to find the entry to confirm that it is valid. \\ \hline
 \end{tabular}
 \end{center}
-
-
 
 
 \begin{landscape}
@@ -1220,18 +1218,33 @@ The system will check to make sure each entry is valid, in order to avoid any in
         1.7 & Testing the Edit Entry button after an entry has been selected beforehand & These conditions should open the Edit Entry screen upon clicking Edit Entry, with data on the selected entry already filled in on the grid & Click on an entry, and then click Edit Entry & Normal & The program should open the Edit Entry screen in a new window & & \\ \hline
         1.8 & Testing the Remove Entry Button after an entry has been selected beforehand & These conditions should prompt the user for verification on deleting a selected customer record & Click on an entry and then click Remove Entry & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & & \\ \hline
         1.9 & Testing the Change Password Button on the Main Menu & This button prompts the Change Password window to open & Click the Change Password button & Normal & The program should open the Change Password window, with fields required to be filled in in order to change the password & & \\ \hline
-        1.10 & Testing the Quick Search button on the Main Menu & This button returns the customer that matches the entered AuthorID & Type in an AuthorID and click QuickSearch & Normal & The program should return the customer that matches the entered AuthorID and show it in the grid & & \\ \hline
-        2.1 & Verify that some criteria has been entered when using the search & At least one set of the input boxes and dropdown lists must have been filled in or selected from, else the program will prompt the user about the error & Number based search selection and positive number input, String Based search selection and valid text input , Nothing, No selections and valid text and number inputs & Normal, Normal, Erroneous, Erroneous & Accept, Accept, Error, Error & & \\ \hline
-        2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com, helloworld, test @testmail.com, test.com@testmail & Normal, Erroneous, Erroneous, Erroneous & Accept, Error, Error, Error & & \\ \hline
-        2.3 & Verify that a valid AuthorID has been entered on the main menu & The user will be prompted with an error & 123, 12, 1234, a23, 1 23, -123, @/! & Normal, Erroneous, Erroneous, Erroneous, Erroneous, Erroneous, Erroneous & Accept, Error, Error, Error, Error, Error, Error & & \\ \hline
-        3.1 & Verify that all fields required are entered when adding a book & If all fields are filled in correctly, a book will be successfully added to the database & Fill all Fields Correctly and then click Add to Database, Leave Fields Blank and then click Add to Database & Normal & Verification screen should open, User will be prompted with an error & & \\ \hline
-        3.2 & Verify that all fields required are entered and calculations are complete when adding an Invoice Item & If all fields are filled in correctly and the calculations are complete, then the invoice item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database, Leave Fields Blank and click Calculate, Fill all fields correctly and click add to database & Normal & Verification screen should open, User will be prompted with an error, User will be prompted to click Calculate & & \\ \hline
-        3.3 & Verify that all fields required are entered and calculations are complete when adding a Royalty Item & If all fields are filled in correctly and the calculations are complete, then the royalty item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database, Leave Fields Blank and click Calculate, Fill all fields correctly and click add to database & Normal & Verification screen should open, User will be prompted with an error, User will be prompted to click Calculate & & \\ \hline
-        4.1 & Verify that all book data has been added to the book database & All the information should be added to the correct fields in the book table & Book Information & Normal & Added to the Book Table & & \\ \hline
-        4.2 & Verify that all royalty item data has been added to the book database & All the information should be added to the correct fields in the royalty item table & Royalty Items Information & Normal & Added to the Royalty Items Table & & \\ \hline
-        4.3 & Verify that all invoice items data has been added to the Invoice Items database & All the information should be added to the correct fields in the Invoice Items table & Invoice Items Information & Normal & Added to the Invoice Items Table & & \\ \hline
-        4.4 & Verify that all publishing invoice data has been added to the publishing invoice database & All the information should be added to the correct fields in the Publishing Invoice table & Publishing Invoice Information & Normal & Added to the Publishing Invoice Table & & \\ \hline
-        5 & Verify that the program meets the requirements given & Run the program testing all parts to make sure they meet all of the requirements & Add entries for all possible inputs in order to test them all, view all windows, change password and log out. & Normal & Program is up to the required standards & & \\ \hline
+        1.10 & Testing the Quick Search button on the Main Menu & This button returns the customer that matches the entered AuthorID & Type in a Lastname and click QuickSearch & Normal & The program should return the customer that matches the entered Lastname and show it in the grid & & \\ \hline
+        1.11 & Testing the back button on the View Menu & This button returns back to the main menu & Click Back & Normal & The program should return back to the main menu & & \\ \hline
+        1.12 & Testing the Add Book Button on the View Menu & This button opens up a new window for adding a book & Click Add Book & Normal & The program should open a new window for adding a book & & \\ \hline
+        1.13 & Testing the View Publishing Invoice button on the View Menu & This button opens up a new window displaying details about the selected book's publishing invoice & Click View Publishing invoice & Normal & The program should open a new window containing details about the selected book's publishing invoice & & \\ \hline
+        1.14 & Testing the View Royalties button on the View Menu & This button opens up a new window displaying details about the selected book's royalties & Click View Royalties & Normal & The program should open a new window containing details about the selected book's royalties & & \\ \hline
+        1.15 & Testing the View Book Invoice button on the View Menu & This button opens up a new window displaying details about the selected book's book invoices & Click View Book Invoices & Normal & The program should open a new window containing details about the selected book's book invoices & & \\ \hline
+        1.16 & Testing the Delete book button on the View Menu & This button opens up a new window asking for verification on deleting a selected book record & Click Delete book & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & & \\ \hline
+        2.1 & Verify that some criteria has been entered when using the search & At least one set of the input boxes and dropdown lists must have been filled in or selected from, else the program will prompt the user about the error & Selected from list with names and values entered \newline Selected from list, values enteredand no names entered \newline Just values entered \newline Nothing   & Normal \newline Normal \newline Erroneous \newline Erroneous & Accept \newline Accept \newline Error \newline Error & & \\ \hline
+        2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com \newline helloworld \newline test @testmail.com \newline test.com@testmail & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
+        2.3 & Verify that a valid Firstname has been entered when adding an entry & The user will be prompted with an error & John \newline Jo hn \newline Jo?hn \newline Jo2n & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
+        2.4 & Verify that a valid Lastname has been entered when adding an entry & The user will be prompted with an error & Smith \newline Sm ith \newline Smi!th \newline Smi1th & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
+        2.5 & Verify that a valid Phonenumber has been entered when adding an entry & The user will be prompted with an error & 07123456789 \newline 07123123.3 \newline 071CO2 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
+        2.7 & Verify that a valid Address has been entered when adding an entry & The user will be prompted with an error & 1 Example road \newline @@~£! \newline 1231231 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
+        2.8 & Verify that a valid ISBN has been entered when adding a book & The user will be prompted with an error & 1234567890123 \newline @@~£! \newline 123 \newline HelloWorld & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
+        2.9 & Verify that a valid NoOfPages has been entered when adding a book & The user will be prompted with an error & 123 \newline 123456789 \newline 2.3 \newline @! \newline HelloWorld & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error& & \\ \hline
+        2.10 & Verify that a valid ISBN has been entered when adding a book & The user will be prompted with an error & 1234567890123 \newline @@~£! \newline 123 \newline HelloWorld & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
+        3.1 & Verify that all fields required are entered when adding a book & If all fields are filled in correctly, a book will be successfully added to the database & Fill all Fields Correctly and then click Add to Database \newline Leave Fields Blank and then click Add to Database & Normal \newline Erroneous & Verification screen should open \newline User will be prompted with an error & & \\ \hline
+        3.2 & Verify that all fields required are entered and calculations are complete when adding an Invoice Item & If all fields are filled in correctly and the calculations are complete, then the invoice item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneuos \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted with an error & & \\ \hline
+        3.3 & Verify that all fields required are entered and calculations are complete when adding a Royalty Item & If all fields are filled in correctly and the calculations are complete, then the royalty item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneous \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted to click Calculate & & \\ \hline
+        4.1 & Verify that all author data has been added to the author database & All the information should be added to the correct fields in the author table & Author Information & Normal & Added to the Author Table & & \\ \hline
+        4.2 & Verify that all book data has been added to the book database & All the information should be added to the correct fields in the book table & Book Information & Normal & Added to the Book Table & & \\ \hline
+        4.3 & Verify that all royalty item data has been added to the book database & All the information should be added to the correct fields in the royalty item table & Royalty Items Information & Normal & Added to the Royalty Items Table & & \\ \hline
+        4.4 & Verify that all invoice items data has been added to the Invoice Items database & All the information should be added to the correct fields in the Book Invoice Items table & Invoice Items Information & Normal & Added to the Invoice Items Table & & \\ \hline
+        4.5 & Verify that all publishing invoice data has been added to the publishing invoice database & All the information should be added to the correct fields in the Publishing Invoice table & Publishing Invoice Information & Normal & Added to the Publishing Invoice Table & & \\ \hline
+        4.6 & Verify that all Royalties data has been added to the Royalties database & All the information should be added to the correct fields in the Royalties table & Royalties Information & Normal & Added to the Royalties Table & & \\ \hline
+        4.7 & Verify that all Book Invoice data has been added to the Book Invoice database & All the information should be added to the correct fields in the Book Invoice table & Book Invoice Information & Normal & Added to the Book Invoice Table & & \\ \hline
+        5 & Verify that the program meets the requirements given & Run the program testing all parts to make sure they meet all of the requirements & Add entries for all possible inputs in order to test them all, update all entries, remove the entries, conduct a search, view all windows, change password and log out. & Normal & Program is up to the required standards & & \\ \hline
 
 
     \end{longtable}

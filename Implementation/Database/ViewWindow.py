@@ -4,7 +4,7 @@ import sqlite3
 import sys
 
 class dbViewWindow(QWidget):
-    """view window"""
+    """generic view window"""
 
     def __init__(self):
         super().__init__()
@@ -19,8 +19,8 @@ class dbViewWindow(QWidget):
         self.btnViewRoyalties.setFixedSize(100, 40)
         self.btnViewBookInvoices = QPushButton("View Book  \n Invoices", self)
         self.btnViewBookInvoices.setFixedSize(100, 40)
-        self.btnViewPubInvoices = QPushButton("View Publishing \n Invoice", self)
-        self.btnViewPubInvoices.setFixedSize(100, 40)
+        self.btnViewPubInvoice = QPushButton("View Publishing \n Invoice", self)
+        self.btnViewPubInvoice.setFixedSize(100, 40)
         self.btnAddBook = QPushButton("Add Book", self)
         self.btnAddBook.setFixedSize(100, 40)
         self.btnDeleteBook = QPushButton("Delete Book", self)
@@ -32,12 +32,10 @@ class dbViewWindow(QWidget):
         self.horizontalTop.addWidget(self.btnBack)
         
         self.horizontalBottom = QHBoxLayout()
-        self.horizontalBottom.addWidget(self.btnViewPubInvoices)
+        self.horizontalBottom.addWidget(self.btnViewPubInvoice)
         self.horizontalBottom.addWidget(self.btnViewBookInvoices)
         self.horizontalBottom.addWidget(self.btnViewRoyalties)
         self.horizontalBottom.addWidget(self.btnAddBook)
         self.horizontalBottom.addWidget(self.btnDeleteBook)
 
         self.vertical = QVBoxLayout()
-        
-

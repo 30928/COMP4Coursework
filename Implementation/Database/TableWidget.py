@@ -8,35 +8,22 @@ class dbTableWidget(QTableWidget):
 
     def __init__(self):
         super().__init__()
-        self.setFixedSize(716,275)
-        
-    def CustomerTable(self):
-        
-        self.clear()
-        self.setColumnCount(7)
-        self.setRowCount(1)
-        
-        CustomerHeaders = ["AuthorID", "Forename", "Surname", "Email", "Phonenumber", "Address", "Postcode"]
-        self.setHorizontalHeaderLabels(CustomerHeaders)
-        self.setSelectionBehavior(QAbstractItemView.SelectRows)
-        self.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
 
     def initTable(self):
         self.clear()
+        #self.setFixedSize(716,275)
         self.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.setEditTriggers(QAbstractItemView.NoEditTriggers)
         
-        with sqlite3.connect("PP.db") as db: #fetching all data from db
+        with sqlite3.connect("PP.db") as db: #fetching data from db
             cursor = db.cursor()
-            sql = "select * from {}".format(self.currentTable)
-            cursor.execute(sql)
+            cursor.execute(self.sql)
         self.columns = [tuple[0] for tuple in cursor.description]
-        self.setHorizontalHeaderLabels(self.columns)
         self.setRowCount(0)
-
+        self.setColumnCount(len(self.columns))
+        self.setHorizontalHeaderLabels(self.columns)
         for self.row, form in enumerate(cursor):
             self.insertRow(self.row)
             for self.column, item in enumerate(form):
-                self.item = QTableWidgetItem(str(item))
-                self.setItem(self.row, self.column, self.item) 
+                self.setItem(self.row, self.column, QTableWidgetItem(str(item)))

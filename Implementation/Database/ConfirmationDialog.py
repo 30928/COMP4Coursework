@@ -15,7 +15,7 @@ class ConfirmationDialog(QDialog):
         self.setFixedSize(275, 100)
         self.setModal(True)
 
-        self.lblWarningMsg = QLabel("Are you sure you want to delete this customer and all records about them?", self)
+        self.lblWarningMsg = QLabel("Are you sure you want to delete this {}".format(self.DeleteMsg, self))
         self.lblWarningMsg.move(50,50)
         self.lblWarningMsg.setFixedSize(250,50)
         self.lblWarningMsg.setWordWrap(True)
