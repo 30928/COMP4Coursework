@@ -166,18 +166,19 @@ class MainWindow(QMainWindow):
             self.UpdateEntryWindow.table.sql = "select Firstname, Lastname, Email, Phonenumber, Address, Postcode from Customer where AuthorID = {}".format(self.SelectedAuthorID)
             self.UpdateEntryWindow.table.initTable()
             self.UpdateEntryWindow.table.setFixedSize(630, 55)
+            self.UpdateEntryWindow.Verify = ConfirmationDialog()
+            self.UpdateEntryWindow.Verify.Msg = QLabel("Insert Password to confirm all changes", self)
             self.UpdateEntryWindow.initUpdateEntryWindowDlg()
             
             
     def RemoveEntry(self):
         self.SelectedRow = self.TableWidget.currentRow()
         self.SelectedAuthorID = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 0)).text() #getting AuthorID of a row
-        
         self.ConfirmDialog = ConfirmationDialog()
-        self.ConfirmDialog.DeleteMsg = "customer and all records about them?"
         self.Firstname = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 1)).text()
         self.Lastname = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 2)).text()
         self.ConfirmDialog.Name = "{} {}".format(self.Firstname, self.Lastname)
+        self.ConfirmDialog.Msg = "Are you sure you want to delete this customer and all records about them?".format(self.DeleteMsg)
         self.ConfirmDialog.RemoveDlg()
         
         if self.ConfirmDialog.ConfirmedDialog.Accepted == True:

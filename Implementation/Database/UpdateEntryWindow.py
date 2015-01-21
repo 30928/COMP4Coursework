@@ -27,9 +27,12 @@ class dbUpdateEntryWindow(QDialog):
         self.setLayout(self.vertical)
         self.btnEdit.clicked.connect(self.Edit)
         self.btnConfirm.clicked.connect(self.accept)
-        self.btnConfirm.clicked.connect(self.UpdateChanges)
+        self.btnConfirm.clicked.connect(self.Verification)
         self.TableName = "Customer"
-        self.exec_() 
+        self.exec_()
+
+    def Verification(self):
+        self.Verify.RemoveDlg()
         
     def Edit(self):
         self.SelectedItem = self.table.currentItem()
@@ -40,7 +43,7 @@ class dbUpdateEntryWindow(QDialog):
             self.EditDlg.setModal(True)
             self.EditDlg.setWindowTitle("Input Text")
             self.EditDlg.setFixedSize(210, 120)
-            self.EditDlg.lbl = QLabel("Insert text to save over current entry.", self)
+            self.EditDlg.lbl = QLabel("Insert text to save over current entry", self)
             self.EditDlg.qle = QLineEdit(self)
             self.EditDlg.qle.setPlaceholderText("Insert text here")
             self.EditDlg.btnConfirm = QPushButton("Confirm", self)
@@ -60,10 +63,13 @@ class dbUpdateEntryWindow(QDialog):
             self.EditDlg.vertical.addLayout(self.EditDlg.btnhorizontal)
             self.EditDlg.setLayout(self.EditDlg.vertical)
             self.EditDlg.btnConfirm.clicked.connect(self.EditDlg.accept)
+            
+            self.btnConfirm.clicked.connect.
             self.EditDlg.exec_()
 
             self.EditInput = self.EditDlg.qle.text()
             self.table.setItem(self.SelectedRow, self.SelectedColumn, QTableWidgetItem(self.EditInput))
+
 
     def UpdateChanges(self):
         
