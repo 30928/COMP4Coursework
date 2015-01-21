@@ -4,13 +4,13 @@ import sqlite3
 import sys
 from MainMenu import *
 
-class ConfirmationDialog(QDialog):
+class dbConfirmationDialog(QDialog):
     """creating confirmation modal dialogs"""
 
     def __init__(self):
         super().__init__()
         
-    def RemoveDlg(self):
+    def VerifyDlg(self):
         self.setWindowTitle("Verification")
         self.setFixedSize(275, 100)
         self.setModal(True)
@@ -38,7 +38,6 @@ class ConfirmationDialog(QDialog):
         self.horizontal2.addWidget(self.btnCancel)
         self.horizontal2.addWidget(self.btnConfirm)
 
-        
         self.vertical = QVBoxLayout()
         self.vertical.addWidget(self.lblWarningMsg)
         self.vertical.addLayout(self.horizontal1)
@@ -47,9 +46,11 @@ class ConfirmationDialog(QDialog):
         
         self.btnConfirm.clicked.connect(self.accept)
         self.btnCancel.clicked.connect(self.reject)
-        self.ConfirmedDialog = ConfirmationDialog()
-        self.ConfirmedDialog.Name = self.Name
-        self.btnConfirm.clicked.connect(self.ConfirmedDialog.Confirmed)
+        self.ConfirmedDialog = dbConfirmationDialog()
+        self.ConfirmedDialog.ConfirmedMsg = self.ConfirmedMsg
+
+        self.btnConfirm.clicked.connect(self.ConfirmedDialog.Confirmed)                
+        
         self.ConfirmedDialog.Accepted = False
         self.exec_()
 
@@ -58,10 +59,10 @@ class ConfirmationDialog(QDialog):
         self.setFixedSize(275, 100)
         self.setModal(True)
         
-        self.lblConfirmed = QLabel("{}'s records have been successfully erased.".format(self.Name), self)
+        self.lblConfirmed = QLabel(self.ConfirmedMsg, self)
         self.lblConfirmed.setFixedSize(250, 50)
         self.lblConfirmed.setWordWrap(True)
-        self.lblConfirmed.setAlignment(Qt.AlignHCenter
+        self.lblConfirmed.setAlignment(Qt.AlignHCenter)
         
         self.btnOk = QPushButton("OK", self)
         self.btnOk.setFixedSize(75, 30)

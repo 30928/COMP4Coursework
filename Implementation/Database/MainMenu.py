@@ -40,11 +40,8 @@ class MainWindow(QMainWindow):
         self.centralWidget.setLayout(self.StackedLayout)
         self.setCentralWidget(self.centralWidget)
 
-        self.StackedLayout.addWidget(self.MainMenuButtons)
-        self.StackedLayout.setCurrentIndex(1)
-        
-
-        
+        self.StackedLayout.addWidget(self.MainMenuButtons)   
+    
         self.ViewWindow = dbViewWindow()
         self.ViewWindow.View()
         self.ViewWindow.vertical.addLayout(self.ViewWindow.horizontalTop)
@@ -93,10 +90,10 @@ class MainWindow(QMainWindow):
             self.SelectedID = QTableWidgetItem(self.ViewWindow.table.item(self.SelectedRow, 0)).text()
             self.SelectedIDName = "ISBN"
 
-        self.ConfirmDialog = ConfirmationDialog()
+        self.ConfirmDialog = dbConfirmationDialog()
         self.ConfirmDialog.DeleteMsg = self.CurrentTable
         self.ConfirmDialog.Name = "{} {}".format(self.Firstname, self.Lastname)
-        self.ConfirmDialog.RemoveDlg()
+        self.ConfirmDialog.VerifyDlg()
         if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
             with sqlite3.connect("PP.db") as db:
                 cursor = db.cursor()
@@ -161,31 +158,31 @@ class MainWindow(QMainWindow):
         self.SelectedAuthorID = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 0)).text()
         if self.SelectedAuthorID != "":
             self.UpdateEntryWindow = dbUpdateEntryWindow()
-
+            self.UpdateEntryWindow.SelectedAuthorID = self.SelectedAuthorID
             self.UpdateEntryWindow.table = dbTableWidget()
             self.UpdateEntryWindow.table.sql = "select Firstname, Lastname, Email, Phonenumber, Address, Postcode from Customer where AuthorID = {}".format(self.SelectedAuthorID)
             self.UpdateEntryWindow.table.initTable()
             self.UpdateEntryWindow.table.setFixedSize(630, 55)
-            self.UpdateEntryWindow.Verify = ConfirmationDialog()
-            self.UpdateEntryWindow.Verify.Msg = QLabel("Insert Password to confirm all changes", self)
+            self.UpdateEntryWindow.Verify = dbConfirmationDialog()
             self.UpdateEntryWindow.initUpdateEntryWindowDlg()
             
             
     def RemoveEntry(self):
         self.SelectedRow = self.TableWidget.currentRow()
-        self.SelectedAuthorID = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 0)).text() #getting AuthorID of a row
         self.ConfirmDialog = ConfirmationDialog()
+        self.ConfirmDialog.SelectedAuthorID = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 0)).text() #getting AuthorID of a row
         self.Firstname = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 1)).text()
         self.Lastname = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 2)).text()
         self.ConfirmDialog.Name = "{} {}".format(self.Firstname, self.Lastname)
-        self.ConfirmDialog.Msg = "Are you sure you want to delete this customer and all records about them?".format(self.DeleteMsg)
-        self.ConfirmDialog.RemoveDlg()
+        self.ConfirmDialog.Msg = "Are you sure you want to delete this customer and all records about them?"
+        self.ConfirmDialog.ConfirmedMsg = "{}'s records have been successfully erased.".format(self.ConfirmDialog.Name)
+        self.ConfirmDialog.VerifyDlg()
         
         if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
             with sqlite3.connect("PP.db") as db:
                 cursor = db.cursor()
                 cursor.execute("PRAGMA foreign_keys = ON")
-                sql = "delete from Customer where AuthorID = {}".format(self.SelectedAuthorID)
+                sql = "delete from Customer where AuthorID = {}".format(self.ConfirmDialog.SelectedAuthorID)
                 cursor.execute(sql)
                 db.commit()
         self.RefreshTable()

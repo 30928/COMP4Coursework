@@ -2,6 +2,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import sqlite3
 import sys
+from ConfirmationDialog import *
 
 class dbUpdateEntryWindow(QDialog):
     """update entry window dialog"""
@@ -26,13 +27,25 @@ class dbUpdateEntryWindow(QDialog):
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
         self.btnEdit.clicked.connect(self.Edit)
-        self.btnConfirm.clicked.connect(self.accept)
         self.btnConfirm.clicked.connect(self.Verification)
         self.TableName = "Customer"
+        self.ID = "AuthorID"
+        self.i = 0 #rogue variable
         self.exec_()
 
     def Verification(self):
-        self.Verify.RemoveDlg()
+
+        self.Verify.Msg = "Insert Password to confirm all changes"
+        self.Verify.ConfirmedMsg = "Update successful"
+        
+        if self.i == 1:
+            self.Verify.open() #NEED TO REINSTANTIATE HERE BUT CAN'T
+        if self.i == 0:
+            self.i = 1
+            self.Verify.VerifyDlg()
+        if self.Verify.ConfirmedDialog.Accepted == True:
+            self.UpdateChanges()
+            self.accept()
         
     def Edit(self):
         self.SelectedItem = self.table.currentItem()
@@ -63,19 +76,23 @@ class dbUpdateEntryWindow(QDialog):
             self.EditDlg.vertical.addLayout(self.EditDlg.btnhorizontal)
             self.EditDlg.setLayout(self.EditDlg.vertical)
             self.EditDlg.btnConfirm.clicked.connect(self.EditDlg.accept)
-            
-            self.btnConfirm.clicked.connect.
+            self.EditDlg.btnConfirm.clicked.connect(self.GetInput)
             self.EditDlg.exec_()
-
-            self.EditInput = self.EditDlg.qle.text()
-            self.table.setItem(self.SelectedRow, self.SelectedColumn, QTableWidgetItem(self.EditInput))
+            
+    def GetInput(self):
+        self.EditInput = self.EditDlg.qle.text()
+        self.table.setItem(self.SelectedRow, self.SelectedColumn, QTableWidgetItem(self.EditInput))
 
 
     def UpdateChanges(self):
-        
+        UL = [] #UL = Update List
+        for count in range(0, 6):
+            UL.append(self.table.item(0, count).text())
+        self.Update = "Firstname = '{}', Lastname = '{}', Email = '{}', Phonenumber = '{}', Address = '{}', Postcode = '{}'".format(UL[0], UL[1], UL[2], UL[3], UL[4], UL[5])
         with sqlite3.connect("PP.db") as db:
             cursor = db.cursor()
             cursor.execute("PRAGMA foreign_keys = ON")
-            sql = "update {} set {} where {} = {}".format(self.TableName, update, ID, data)
+            sql = "update {} set {} where {} = {}".format(self.TableName, self.Update, self.ID, self.SelectedAuthorID)
             cursor.execute(sql)
             db.commit()
+
