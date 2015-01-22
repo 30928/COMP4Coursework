@@ -34,15 +34,12 @@ class dbUpdateEntryWindow(QDialog):
         self.exec_()
 
     def Verification(self):
-
+        #self.Verify = dbConfirmationDialog() #Cannot instantiate for some reason
+        QCoreApplication.instance().quit
         self.Verify.Msg = "Insert Password to confirm all changes"
         self.Verify.ConfirmedMsg = "Update successful"
-        
-        if self.i == 1:
-            self.Verify.open() #NEED TO REINSTANTIATE HERE BUT CAN'T
-        if self.i == 0:
-            self.i = 1
-            self.Verify.VerifyDlg()
+
+        self.Verify.VerifyDlg()
         if self.Verify.ConfirmedDialog.Accepted == True:
             self.UpdateChanges()
             self.accept()

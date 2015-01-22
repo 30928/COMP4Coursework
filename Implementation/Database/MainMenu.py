@@ -93,6 +93,8 @@ class MainWindow(QMainWindow):
         self.ConfirmDialog = dbConfirmationDialog()
         self.ConfirmDialog.DeleteMsg = self.CurrentTable
         self.ConfirmDialog.Name = "{} {}".format(self.Firstname, self.Lastname)
+        self.ConfirmDialog.Msg = "Are you sure you want to delete this book?"
+        self.ConfirmDialog.ConfirmedMsg = "Book was successfully deleted"
         self.ConfirmDialog.VerifyDlg()
         if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
             with sqlite3.connect("PP.db") as db:
@@ -169,7 +171,7 @@ class MainWindow(QMainWindow):
             
     def RemoveEntry(self):
         self.SelectedRow = self.TableWidget.currentRow()
-        self.ConfirmDialog = ConfirmationDialog()
+        self.ConfirmDialog = dbConfirmationDialog()
         self.ConfirmDialog.SelectedAuthorID = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 0)).text() #getting AuthorID of a row
         self.Firstname = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 1)).text()
         self.Lastname = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 2)).text()
