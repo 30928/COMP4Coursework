@@ -61,26 +61,27 @@ class MainWindow(QMainWindow):
         self.ViewWindow.btnAddBook.clicked.connect(self.AddBookWindow)
         self.ViewWindow.btnDeleteBook.clicked.connect(self.RemoveFromDB)
         self.ViewWindow.btnViewPubInvoice.clicked.connect(self.ViewPubInvoice)
+
         
     def AddToDB(self):
-        idl = [] #input data list
-        self.input_data = ""
-        if self.AddBookWindow.AddType == "Book":
+        self.input_data = [] #input data list
+        if self.AddType == "Book":
             self.TableValues = "Book (ISBN, AuthorID, BookTitle, NoOfPages, Size, Back, Cover, Paper, Font, FontSize, DatePublished, Price)"
             self.Placeholders = "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        
             for count in range(0, 12):
                 try:
-                    idl.append(str(self.AddBookWindow.inputList[count].currentText()))
+                    self.input_data.append(str(self.AddBookWindow.inputList[count].currentText()))
                 except:
-                    idl.append(self.AddBookWindow.inputList[count].text())
-            self.input_data = (idl[0], idl[1], idl[2], idl[3], idl[4], idl[5], idl[6], idl[7], idl[8], idl[9], idl[10], idl[11])
-        
+                    self.input_data.append(self.AddBookWindow.inputList[count].text())
+
         with sqlite3.connect("PP.db") as db:
             cursor = db.cursor()
             cursor.execute("PRAGMA foreign_keys = ON")
             self.sql = "insert into {} values {}".format(self.TableValues, self.Placeholders)
             cursor.execute(self.sql, self.input_data)
             db.commit()
+
 
     def RemoveFromDB(self):
         #getting primary key of the row
@@ -107,15 +108,6 @@ class MainWindow(QMainWindow):
         self.ViewWindow.table.sql = "select * from Book where AuthorID = {}".format(self.SelectedAuthorID)
         self.ViewWindow.table.initTable()
 
-    def AddBookWindow(self):
-        self.AddBookWindow = dbAddItemWindow()
-        self.AddBookWindow.AnswerButtons()
-        self.AddBookWindow.btnConfirm.clicked.connect(self.AddToDB)
-        self.AddBookWindow.sql = "select * from Book"
-        self.AddBookWindow.AddType = "Book"
-        self.AddBookWindow.selectedID = self.SelectedID
-        self.AddBookWindow.initAddItemWindow()
-        self.ViewWindow.table.initTable()
         
     def ViewCustomer(self):
         self.SelectedRow = self.TableWidget.currentRow()
@@ -130,30 +122,62 @@ class MainWindow(QMainWindow):
             self.StackedLayout.setCurrentIndex(1)
             self.MenuBar.setVisible(False)
 
+
+    def AddBookWindow(self):
+        self.AddBookWindow = dbAddItemWindow()
+        self.AddBookWindow.AnswerButtons()
+        self.AddBookWindow.btnConfirm.clicked.connect(self.AddToDB)
+        self.AddBookWindow.sql = "select * from Book"
+        self.AddType = "Book"
+        self.AddBookWindow.AddType = self.AddType
+        self.AddBookWindow.selectedID = self.SelectedID
+        self.AddBookWindow.initAddItemWindow()
+        self.ViewWindow.table.initTable()
+
+
     def ViewPubInvoice(self):
         self.ViewWindow.SelectedRow = self.ViewWindow.table.currentRow()
         self.SelectedISBN = QTableWidgetItem(self.ViewWindow.table.item(self.ViewWindow.SelectedRow, 0)).text()
         if self.SelectedISBN != "":
             self.PubInvoiceWindow = dbRoyaltiesAndInvoices()
+            self.PubInvoiceWindow.PubInvoiceButtons()
+            self.PubInvoiceWindow.btnAddPubInvoice.clicked.connect(self.AddPubInvoiceWindow)
             self.PubInvoiceWindow.table = dbTableWidget()
             self.PubInvoiceWindow.table.sql = "select * from PubInvoice where ISBN = {}".format(self.SelectedISBN)
             self.PubInvoiceWindow.table.initTable()
             self.PubInvoiceWindow.table.setFixedSize(620, 150)
-            self.PubInvoiceWindow.PubInvoice()      
+            self.PubInvoiceWindow.PubInvoice()
+
             
+    def AddPubInvoiceWindow(self):
+        self.AddPubInvoiceWindow = dbAddItemWindow()
+        self.AddPubInvoiceWindow.AnswerButtons() #init buttons for connections first
+        self.AddPubInvoiceWindow.btnConfirm.clicked.connect(self.AddToDB)
+        self.AddPubInvoiceWindow.sql = "select * from PubInvoice"
+        self.AddType = "PubInvoice"
+        self.AddPubInvoiceWindow.AddType = self.AddType
+        self.AddPubInvoiceWindow.selectedISBN = self.SelectedISBN 
+        self.AddPubInvoiceWindow.initAddItemWindow()
+        self.PubInvoiceWindow.table.initTable()
+        self.PubInvoiceWindow.table.setFixedSize(620, 150)
+        
+
     def Back(self):
         self.ViewWindow.table.selectedID = None
         self.CurrentTable = "Customer"
         self.StackedLayout.setCurrentIndex(0)
         self.MenuBar.setVisible(True)
+
     
-    def RefreshTable(self): #refreshing table to show changes made
+    def RefreshTable(self):
         self.TableWidget.initTable()
 
-    def AddEntry(self):
+
+    def AddEntry(self): #customer entry
         self.AddEntryWindow = dbAddEntryWindow()
         self.AddEntryWindow.initAddEntryWindow()
         self.RefreshTable()
+
 
     def UpdateCustomer(self):
         self.SelectedRow = self.TableWidget.currentRow()
@@ -166,8 +190,14 @@ class MainWindow(QMainWindow):
             self.UpdateEntryWindow.table.initTable()
             self.UpdateEntryWindow.table.setFixedSize(630, 55)
             self.UpdateEntryWindow.Verify = dbConfirmationDialog()
+            self.UpdateEntryWindow.initConfirmBtn()
+            self.UpdateEntryWindow.btnConfirm.clicked.connect(self.VerifyUpdate)
             self.UpdateEntryWindow.initUpdateEntryWindowDlg()
+
             
+    def VerifyUpdate(self):
+        self.UpdateEntryWindow.Verify = dbConfirmationDialog() #new instance for verification
+
             
     def RemoveEntry(self):
         self.SelectedRow = self.TableWidget.currentRow()
@@ -188,6 +218,7 @@ class MainWindow(QMainWindow):
                 cursor.execute(sql)
                 db.commit()
         self.RefreshTable()
+
         
 def main():
     app = QApplication(sys.argv)

@@ -37,15 +37,22 @@ class dbAddItemWindow(QDialog):
                     self.input = QLineEdit(self) #new line edit
                     self.input.setReadOnly(True)
                     self.input.setText(self.selectedID)
-                    
+                    self.ReadyForLayout = True
+        
                 elif self.AddType == "Book" and count in [4, 5, 6, 7]: #exceptions for book
                     self.input = QComboBox(self) #new combo box
-
+                    self.ReadyForLayout = True
+                    
+                elif self.AddType == "PubInvoice" and count == 0:
+                    self.ReadyForLayout = False #skips pubinvoiceID
+                    oount 
+                
                 else:
                     self.input = QLineEdit(self) #new line edit #standard input method
-                    
-                self.inputList.append(self.input)   #line edits/combo boxes appended to list for further reference
-                self.gridLayout.addWidget(self.inputList[count], *place)
+
+                if self.ReadyForLayout == True:
+                    self.inputList.append(self.input)   #line edits/combo boxes appended to list for further reference
+                    self.gridLayout.addWidget(self.inputList[count], *place)
 
                 count += 1
                 
@@ -71,18 +78,18 @@ class dbAddItemWindow(QDialog):
             self.inputList[10].setReadOnly(True)
 
 
-            self.horizontal = QHBoxLayout()
-            self.horizontal.addStretch(1)
-            self.horizontal.addWidget(self.btnCancel)
-            self.horizontal.addWidget(self.btnConfirm)
+        self.horizontal = QHBoxLayout()
+        self.horizontal.addStretch(1)
+        self.horizontal.addWidget(self.btnCancel)
+        self.horizontal.addWidget(self.btnConfirm)
             
-            self.vertical = QVBoxLayout()
-            self.vertical.addLayout(self.gridLayout)
-            self.vertical.addLayout(self.horizontal)
-            self.setLayout(self.vertical)
+        self.vertical = QVBoxLayout()
+        self.vertical.addLayout(self.gridLayout)
+        self.vertical.addLayout(self.horizontal)
+        self.setLayout(self.vertical)
             
-            self.btnConfirm.clicked.connect(self.accept) #accept on clicking confirm
-            self.btnCancel.clicked.connect(self.reject) #reject on clicking cancel
+        self.btnConfirm.clicked.connect(self.accept) #accept on clicking confirm
+        self.btnCancel.clicked.connect(self.reject) #reject on clicking cancel
         self.exec_()
         
     def AnswerButtons(self):

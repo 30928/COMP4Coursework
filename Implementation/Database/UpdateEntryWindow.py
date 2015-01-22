@@ -17,7 +17,7 @@ class dbUpdateEntryWindow(QDialog):
         self.table.setFixedSize(617, 55)
         self.setModal(True)
         self.btnEdit = QPushButton("Edit", self)
-        self.btnConfirm = QPushButton("Confirm", self)
+        #self.btnConfirm = QPushButton("Confirm", self)
         self.horizontal = QHBoxLayout()
         self.horizontal.addWidget(self.btnEdit)
         self.horizontal.addStretch(1)
@@ -32,13 +32,14 @@ class dbUpdateEntryWindow(QDialog):
         self.ID = "AuthorID"
         self.i = 0 #rogue variable
         self.exec_()
-
+        
+    def initConfirmBtn(self): #creating confirm btn for instantiation of verification window
+        self.btnConfirm = QPushButton("Confirm", self)
+        
     def Verification(self):
-        #self.Verify = dbConfirmationDialog() #Cannot instantiate for some reason
-        QCoreApplication.instance().quit
+
         self.Verify.Msg = "Insert Password to confirm all changes"
         self.Verify.ConfirmedMsg = "Update successful"
-
         self.Verify.VerifyDlg()
         if self.Verify.ConfirmedDialog.Accepted == True:
             self.UpdateChanges()

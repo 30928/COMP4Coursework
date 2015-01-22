@@ -13,11 +13,8 @@ class dbRoyaltiesAndInvoices(QDialog):
         self.setWindowTitle("View Publishing Invoices")
         self.setModal(True)
         self.setFixedSize(640, 220)
-        self.vertical = QVBoxLayout()
+        self.vertical = QVBoxLayout(self)
         self.vertical.addWidget(self.table)
-
-        self.btnAddPubInvoice = QPushButton("Add Publishing \n Invoice", self)
-        self.btnDeleteEntry = QPushButton("Delete \n Entry", self)
         self.btnAddPubInvoice.setFixedSize(100, 40)
         self.btnDeleteEntry.setFixedSize(100, 40)
         self.horizontal = QHBoxLayout()
@@ -26,4 +23,9 @@ class dbRoyaltiesAndInvoices(QDialog):
         self.horizontal.addWidget(self.btnDeleteEntry)
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
+        
         self.exec_()
+
+    def PubInvoiceButtons(self):
+        self.btnAddPubInvoice = QPushButton("Add Publishing \n Invoice", self)
+        self.btnDeleteEntry = QPushButton("Delete \n Entry", self)        

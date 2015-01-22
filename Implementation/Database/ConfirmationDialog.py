@@ -12,7 +12,7 @@ class dbConfirmationDialog(QDialog):
         
     def VerifyDlg(self):
         self.setWindowTitle("Verification")
-        self.setFixedSize(275, 100)
+        self.setFixedSize(275, 150)
         self.setModal(True)
 
         self.lblWarningMsg = QLabel(self.Msg, self)
