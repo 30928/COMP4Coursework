@@ -11,7 +11,6 @@ class dbAddItemWindow(QDialog):
     
     def initAddItemWindow(self):
         self.setWindowTitle("Add {}".format(self.AddType))
-        self.setFixedSize(350,200)
         self.setModal(True) #modal window
         
         with sqlite3.connect("PP.db") as db: #fetching data from db
@@ -29,6 +28,7 @@ class dbAddItemWindow(QDialog):
         self.qlabelList = []
         self.gridLayout = QGridLayout()
         count = 0
+
         for place, self.columnHeader in zip(places, self.columns):
 
             if self.columnHeader == '': #replacing spaces with line edits
@@ -37,34 +37,48 @@ class dbAddItemWindow(QDialog):
                     self.input = QLineEdit(self) #new line edit
                     self.input.setReadOnly(True)
                     self.input.setText(self.selectedID)
-                    self.ReadyForLayout = True
         
-                elif self.AddType == "Book" and count in [4, 5, 6, 7]: #exceptions for book
+                elif self.AddType == "Book" and count in [4, 5, 6, 7]: #exceptions for book where combobox is needed
                     self.input = QComboBox(self) #new combo box
-                    self.ReadyForLayout = True
+
+                elif self.AddType == "PubInvoice" and count == 0: #setting  isbn ineditable
+                    self.input = QLineEdit(self)
+                    self.input.setReadOnly(True)
+                    self.input.setText(self.selectedISBN)
+                    self.input.setFixedSize(85, 20)
+
+                elif self.AddType == "PubInvoice" and count == 1: #setting authorID ineditable
+                    self.input = QLineEdit(self)
+                    self.input.setReadOnly(True)
+                    self.input.setText(self.selectedID)
                     
-                elif self.AddType == "PubInvoice" and count == 0:
-                    self.ReadyForLayout = False #skips pubinvoiceID
-                    oount 
-                
+                elif self.AddType == "PubInvoice" and count == 3:
+                    self.input = QComboBox(self)
+                    
                 else:
                     self.input = QLineEdit(self) #new line edit #standard input method
-
-                if self.ReadyForLayout == True:
-                    self.inputList.append(self.input)   #line edits/combo boxes appended to list for further reference
-                    self.gridLayout.addWidget(self.inputList[count], *place)
-
+                    
+                self.inputList.append(self.input)   #line edits/combo boxes appended to list for further reference
+                self.gridLayout.addWidget(self.inputList[count], *place)
                 count += 1
                 
             else: #adding qlabels with the line edits
+
                 if self.AddType == "Book" and count == 10: #adding date button instead of qlabel
                     self.btnDate = QPushButton("Date", self)
                     self.qlabelList.append(self.btnDate)
-                else:            
+                    self.gridLayout.addWidget(self.qlabelList[count], *place)
+
+                elif self.AddType == "PubInvoice" and count == 2: #data button instead of qlabel
+                    self.btnDate = QPushButton("Date", self)
+                    self.qlabelList.append(self.btnDate)
+                    self.gridLayout.addWidget(self.qlabelList[count], *place)
+                
+                else:
                     self.qlabel = QLabel(str(self.columnHeader), self)
                     self.qlabelList.append(self.qlabel)
-                self.gridLayout.addWidget(self.qlabelList[count], *place)
-
+                    self.gridLayout.addWidget(self.qlabelList[count], *place)
+            
         if self.AddType == "Book":
             self.inputList[4].addItem("Large")
             self.inputList[4].addItem("Small")
@@ -77,7 +91,12 @@ class dbAddItemWindow(QDialog):
             
             self.inputList[10].setReadOnly(True)
 
-
+        if self.AddType == "PubInvoice":
+            self.inputList[3].addItem("Standard")
+            self.inputList[3].addItem("Enhanced")
+            self.inputList[3].addItem("Colour Publishing")
+            self.inputList[3].addItem("Reprint")
+            
         self.horizontal = QHBoxLayout()
         self.horizontal.addStretch(1)
         self.horizontal.addWidget(self.btnCancel)

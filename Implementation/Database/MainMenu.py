@@ -125,6 +125,7 @@ class MainWindow(QMainWindow):
 
     def AddBookWindow(self):
         self.AddBookWindow = dbAddItemWindow()
+        self.AddBookWindow.setFixedSize(360,200)
         self.AddBookWindow.AnswerButtons()
         self.AddBookWindow.btnConfirm.clicked.connect(self.AddToDB)
         self.AddBookWindow.sql = "select * from Book"
@@ -147,20 +148,20 @@ class MainWindow(QMainWindow):
             self.PubInvoiceWindow.table.initTable()
             self.PubInvoiceWindow.table.setFixedSize(620, 150)
             self.PubInvoiceWindow.PubInvoice()
-
             
     def AddPubInvoiceWindow(self):
         self.AddPubInvoiceWindow = dbAddItemWindow()
+        self.AddPubInvoiceWindow.setFixedSize(450,200)
+        self.AddPubInvoiceWindow.selectedID = self.SelectedID
         self.AddPubInvoiceWindow.AnswerButtons() #init buttons for connections first
         self.AddPubInvoiceWindow.btnConfirm.clicked.connect(self.AddToDB)
-        self.AddPubInvoiceWindow.sql = "select * from PubInvoice"
+        self.AddPubInvoiceWindow.sql = "select ISBN, AuthorID, PubInvoiceDate, PubInvoiceService, PubInvoicePayment from PubInvoice"
         self.AddType = "PubInvoice"
         self.AddPubInvoiceWindow.AddType = self.AddType
         self.AddPubInvoiceWindow.selectedISBN = self.SelectedISBN 
         self.AddPubInvoiceWindow.initAddItemWindow()
         self.PubInvoiceWindow.table.initTable()
         self.PubInvoiceWindow.table.setFixedSize(620, 150)
-        
 
     def Back(self):
         self.ViewWindow.table.selectedID = None
