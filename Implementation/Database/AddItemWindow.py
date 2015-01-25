@@ -33,33 +33,54 @@ class dbAddItemWindow(QDialog):
 
             if self.columnHeader == '': #replacing spaces with line edits
 
-                if self.AddType == "Book" and count == 1: #exceptions for book
-                    self.input = QLineEdit(self) #new line edit
-                    self.input.setReadOnly(True)
-                    self.input.setText(self.selectedID)
-        
-                elif self.AddType == "Book" and count in [4, 5, 6, 7]: #exceptions for book where combobox is needed
-                    self.input = QComboBox(self) #new combo box
+                if self.AddType == "Book" and count in [1, 4, 5, 6, 7, 10]:
 
-                elif self.AddType == "PubInvoice" and count == 0: #setting  isbn ineditable
-                    self.input = QLineEdit(self)
-                    self.input.setReadOnly(True)
-                    self.input.setText(self.selectedISBN)
-                    self.input.setFixedSize(85, 20)
+                    if count == 1: #exceptions for book
+                        self.input = QLineEdit(self) #new line edit
+                        self.input.setReadOnly(True)
+                        self.input.setText(self.selectedID)
+            
+                    elif count in [4, 5, 6, 7]: #exceptions for book where combobox is needed
+                        self.input = QComboBox(self) #new combo box
 
-                elif self.AddType == "PubInvoice" and count == 1: #setting authorID ineditable
-                    self.input = QLineEdit(self)
-                    self.input.setReadOnly(True)
-                    self.input.setText(self.selectedID)
+                    elif count == 10:
+                        self.input = QLineEdit(self)
+                        self.input.setReadOnly(True)
+
+                elif self.AddType == "PubInvoice" and count in [0, 1, 2, 3]:
                     
-                elif self.AddType == "PubInvoice" and count == 3:
-                    self.input = QComboBox(self)
+                    if count == 0: #setting  isbn ineditable
+                        self.input = QLineEdit(self)
+                        self.input.setReadOnly(True)
+                        self.input.setText(self.selectedISBN)
+
+                    elif count == 1: #setting authorID ineditable
+                        self.input = QLineEdit(self)
+                        self.input.setReadOnly(True)
+                        self.input.setText(self.selectedID)
+
+                    elif count == 2:
+                        self.input = QLineEdit(self)
+                        self.input.setReadOnly(True)
                     
+                    elif count == 3:
+                        self.input = QComboBox(self)
+                
+                elif self.AddType == "BookInvoice" and count in [0, 1]:
+
+                        self.input = QLineEdit(self)
+                        self.input.setReadOnly(True)
+                        
+                        if count == 0:
+                            self.input.setText(self.selectedID)
+                        
                 else:
                     self.input = QLineEdit(self) #new line edit #standard input method
-                    
+
+
                 self.inputList.append(self.input)   #line edits/combo boxes appended to list for further reference
                 self.gridLayout.addWidget(self.inputList[count], *place)
+
                 count += 1
                 
             else: #adding qlabels with the line edits
@@ -68,17 +89,34 @@ class dbAddItemWindow(QDialog):
                     self.btnDate = QPushButton("Date", self)
                     self.qlabelList.append(self.btnDate)
                     self.gridLayout.addWidget(self.qlabelList[count], *place)
+                    self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
+                    self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
 
                 elif self.AddType == "PubInvoice" and count == 2: #data button instead of qlabel
                     self.btnDate = QPushButton("Date", self)
                     self.qlabelList.append(self.btnDate)
                     self.gridLayout.addWidget(self.qlabelList[count], *place)
+                    self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
+                    self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
+
+                elif self.AddType == "BookInvoice" and count == 1:
+                    self.btnDate = QPushButton("Date", self)
+                    self.qlabelList.append(self.btnDate)
+                    self.gridLayout.addWidget(self.qlabelList[count], *place)
+                    self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
+                    self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
                 
                 else:
-                    self.qlabel = QLabel(str(self.columnHeader), self)
+                    if str(self.columnHeader) == "PubInvoiceService":
+                        self.qlabel = QLabel("Service", self)
+                    elif str(self.columnHeader) == "PubInvoicePayment":
+                        self.qlabel = QLabel("Payment", self)
+                    else:    
+                        self.qlabel = QLabel(str(self.columnHeader), self)
                     self.qlabelList.append(self.qlabel)
                     self.gridLayout.addWidget(self.qlabelList[count], *place)
             
+
         if self.AddType == "Book":
             self.inputList[4].addItem("Large")
             self.inputList[4].addItem("Small")
@@ -89,13 +127,38 @@ class dbAddItemWindow(QDialog):
             self.inputList[7].addItem("White")
             self.inputList[7].addItem("Creme")
             
-            self.inputList[10].setReadOnly(True)
+            #self.inputList[10].setReadOnly(True)
 
         if self.AddType == "PubInvoice":
             self.inputList[3].addItem("Standard")
             self.inputList[3].addItem("Enhanced")
             self.inputList[3].addItem("Colour Publishing")
             self.inputList[3].addItem("Reprint")
+
+        if self.Editing == True:
+
+            if self.AddType == "Book":
+
+                for count in range(0, 12):
+                    try: #for line edits
+                        self.inputList[count].setText(self.originalItemList[count])
+                    except: #for comboboxes
+                        self.originalIndex = self.inputList[count].findText(self.originalItemList[count])
+                        self.inputList[count].setCurrentIndex(self.originalIndex)
+
+            elif self.AddType == "PubInvoice":
+                
+                for count in range(0, 5):
+                    try:
+                        self.inputList[count].setText(self.originalItemList[count])
+                    except:
+                        self.originalIndex = self.inputList[count].findText(self.originalItemList[count])
+                        self.inputList[count].setCurrentIndex(self.originalIndex)
+                        
+            elif self.AddType == "BookInvoice":
+
+                for count in range(0, 3):
+                    self.inputList[count].setText(self.originalItemList[count])
             
         self.horizontal = QHBoxLayout()
         self.horizontal.addStretch(1)
@@ -106,8 +169,9 @@ class dbAddItemWindow(QDialog):
         self.vertical.addLayout(self.gridLayout)
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
-            
-        self.btnConfirm.clicked.connect(self.accept) #accept on clicking confirm
+        if self.Editing == False:
+            self.btnConfirm.clicked.connect(self.accept) #accept on clicking confirm
+
         self.btnCancel.clicked.connect(self.reject) #reject on clicking cancel
         self.exec_()
         
@@ -115,6 +179,15 @@ class dbAddItemWindow(QDialog):
         self.btnConfirm = QPushButton("Confirm", self)
         self.btnCancel = QPushButton("Cancel", self)
 
+    def getDate(self):
+        self.CalendarWidget.date = self.CalendarWidget.qle.text()
+        if self.AddType == "Book":
+            self.inputList[10].setText(self.CalendarWidget.date)
+            
+        elif self.AddType == "PubInvoice":
+            self.inputList[2].setText(self.CalendarWidget.date)
 
+        elif self.AddType == "BookInvoice":
+            self.inputList[1].setText(self.CalendarWidget.date)
         
     

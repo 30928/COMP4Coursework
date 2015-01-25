@@ -13,7 +13,7 @@ def create_data(data, table, placeholders):
 def update_data(data, table, update, ID):
     with sqlite3.connect("PP.db") as db:
         cursor = db.cursor()
-        cursor.execute("PRAGMA foreign_keys_ = ON")
+        cursor.execute("PRAGMA foreign_keys = ON")
         sql = "update {} set {} where {} = {}".format(table, update, ID, data)
         cursor.execute(sql)
         db.commit()
@@ -24,7 +24,7 @@ def delete_data(data, table, ID):
     try:
         with sqlite3.connect("PP.db") as db:
             cursor = db.cursor()
-            cursor.execute("PRAGMA foreign_keys_ = ON")
+            cursor.execute("PRAGMA foreign_keys = ON")
             sql = "delete from {} where {} = {}".format(table, ID, data)
             cursor.execute(sql)
             db.commit()
@@ -36,7 +36,7 @@ def calculate_royalties(RoyaltiesID):
     
     with sqlite3.connect("PP.db") as db:
         cursor = db.cursor()
-        cursor.execute("PRAGMA foreign_keys_ = ON")
+        cursor.execute("PRAGMA foreign_keys = ON")
 
         RoyaltyTemp = 0
         i = 1

@@ -7,8 +7,6 @@ class dbMenuBar(QMenuBar):
     
     def __init__(self):
         super().__init__()
-
-        #self.menu_bar = QMenuBar(self) #creating the menu bar
         
         self.search_database = QAction("Search Database", self) #creating actions
         self.add_entry = QAction("Add Entry", self)

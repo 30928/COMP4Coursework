@@ -13,8 +13,7 @@ class dbUpdateEntryWindow(QDialog):
     def initUpdateEntryWindowDlg(self):
         self.table.setSelectionBehavior(QAbstractItemView.SelectItems)
         self.setWindowTitle("Update Entry")
-        self.setFixedSize(640, 115)
-        self.table.setFixedSize(617, 55)
+
         self.setModal(True)
         self.btnEdit = QPushButton("Edit", self)
         #self.btnConfirm = QPushButton("Confirm", self)
@@ -30,7 +29,6 @@ class dbUpdateEntryWindow(QDialog):
         self.btnConfirm.clicked.connect(self.Verification)
         self.TableName = "Customer"
         self.ID = "AuthorID"
-        self.i = 0 #rogue variable
         self.exec_()
         
     def initConfirmBtn(self): #creating confirm btn for instantiation of verification window
@@ -90,7 +88,7 @@ class dbUpdateEntryWindow(QDialog):
         with sqlite3.connect("PP.db") as db:
             cursor = db.cursor()
             cursor.execute("PRAGMA foreign_keys = ON")
-            sql = "update {} set {} where {} = {}".format(self.TableName, self.Update, self.ID, self.SelectedAuthorID)
+            sql = "update {} set {} where {} = {}".format(self.TableName, self.Update, self.ID, self.selectedID)
             cursor.execute(sql)
             db.commit()
 

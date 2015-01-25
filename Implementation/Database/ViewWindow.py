@@ -23,6 +23,8 @@ class dbViewWindow(QWidget):
         self.btnViewPubInvoice.setFixedSize(100, 40)
         self.btnAddBook = QPushButton("Add Book", self)
         self.btnAddBook.setFixedSize(100, 40)
+        self.btnUpdateBook = QPushButton("Update Book", self)
+        self.btnUpdateBook.setFixedSize(100,40)
         self.btnDeleteBook = QPushButton("Delete Book", self)
         self.btnDeleteBook.setFixedSize(100, 40)
 
@@ -36,6 +38,7 @@ class dbViewWindow(QWidget):
         self.horizontalBottom.addWidget(self.btnViewBookInvoices)
         self.horizontalBottom.addWidget(self.btnViewRoyalties)
         self.horizontalBottom.addWidget(self.btnAddBook)
+        self.horizontalBottom.addWidget(self.btnUpdateBook)
         self.horizontalBottom.addWidget(self.btnDeleteBook)
 
         self.vertical = QVBoxLayout()
