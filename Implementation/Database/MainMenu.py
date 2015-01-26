@@ -67,6 +67,7 @@ class MainWindow(QMainWindow):
         self.ViewWindow.btnDeleteBook.clicked.connect(self.RemoveFromDB)
         self.ViewWindow.btnViewPubInvoice.clicked.connect(self.ViewPubInvoice)
         self.ViewWindow.btnViewBookInvoices.clicked.connect(self.ViewBookInvoice)
+        self.ViewWindow.btnViewRoyalties.clicked.connect(self.ViewRoyalties)
         
 
         
@@ -134,7 +135,7 @@ class MainWindow(QMainWindow):
         if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
             with sqlite3.connect("PP.db") as db:
                 cursor = db.cursor()
-                #cursor.execute("PRAGMA foreign_keys = ON")
+                cursor.execute("PRAGMA foreign_keys = ON")
                 sql = "delete from {} where {} = '{}'".format(self.CurrentTable, self.SelectedIDName, self.SelectedID)
                 cursor.execute(sql)
                 db.commit()
@@ -185,6 +186,10 @@ class MainWindow(QMainWindow):
         elif self.CurrentTable == "BookInvoice":
             self.AddWindow.sql = "select AuthorID, BookinvoiceDate, BookInvoicePayment from BookInvoice"
             self.AddWindow.setFixedSize(350,100)
+
+        elif self.CurrentTable == "Royalties":
+            self.AddWindow.sql = "select AuthorID, RoyaltiesDate, RoyaltyPayment from Royalties"
+            self.AddWindow.setFixedSize(350,100)
             
         self.AddWindow.AddType = self.CurrentTable
         self.AddWindow.selectedID = self.SelectedID
@@ -218,6 +223,7 @@ class MainWindow(QMainWindow):
             self.PubInvoiceWindow.PubInvoice()
             self.CurrentTable = "Book"
 
+
     def ViewBookInvoice(self):
         self.CurrentTable = "BookInvoice"
         self.ViewWindow.SelectedRow = self.ViewWindow.table.currentRow()
@@ -235,6 +241,26 @@ class MainWindow(QMainWindow):
             self.BookInvoiceWindow.table.setFixedSize(620, 150)
             self.BookInvoiceWindow.BookInvoice()
             self.CurrentTable = "Book"
+
+
+    def ViewRoyalties(self):
+        self.CurrentTable = "Royalties"
+        self.ViewWindow.SelectedRow = self.ViewWindow.table.currentRow()
+        self.SelectedISBN = QTableWidgetItem(self.ViewWindow.table.item(self.ViewWindow.SelectedRow, 0)).text()
+        self.SelectedID = QTableWidgetItem(self.TableWidget.item(self.TableWidget.currentRow(), 0)).text()
+        if self.SelectedISBN != "":
+            self.RoyaltiesWindow = dbRoyaltiesAndInvoices()
+            self.RoyaltiesWindow.RoyaltiesButtons()
+            self.RoyaltiesWindow.btnAddRoyalties.clicked.connect(self.AddItem)
+            self.RoyaltiesWindow.btnUpdateRoyalties.clicked.connect(self.UpdateEntry)
+            self.RoyaltiesWindow.btnDeleteEntry.clicked.connect(self.RemoveFromDB)
+            self.RoyaltiesWindow.table = dbTableWidget()
+            self.RoyaltiesWindow.table.sql = "select * from Royalties where AuthorID = {}".format(self.SelectedID)
+            self.RoyaltiesWindow.table.initTable()
+            self.RoyaltiesWindow.table.setFixedSize(620, 150)
+            self.RoyaltiesWindow.Royalties()
+            self.CurrentTable = "Book"
+
 
     def Back(self):
         self.ViewWindow.table.selectedID = None
@@ -333,7 +359,7 @@ class MainWindow(QMainWindow):
             
         
     def UpdateChanges(self):
-        UL = [] #UL = Update List
+        self.UpdateList = [] #UL = Update List
         self.SelectedAuthorID = self.SelectedID
         if self.CurrentTable == "Book":
             self.NoOfEntries = 12
@@ -353,21 +379,30 @@ class MainWindow(QMainWindow):
         
         for count in range(0, self.NoOfEntries):
             try:
-                UL.append(str(self.EditWindow.inputList[count].currentText()))
+                self.UpdateList.append(str(self.EditWindow.inputList[count].currentText()))
             except:
-                UL.append(self.EditWindow.inputList[count].text())
+                self.UpdateList.append(self.EditWindow.inputList[count].text())
                 
-        if self.CurrentTable == "Book":       
-            self.Update1 = "ISBN = '{}', AuthorID = '{}', BookTitle = '{}', NoOfPages = '{}', Size = '{}', Back = '{}',".format(UL[0], UL[1], UL[2], UL[3], UL[4], UL[5])
-            self.Update2 = " Cover = '{}', Paper = '{}', Font = '{}', FontSize = '{}', DatePublished = '{}', Price = '{}'".format(UL[6], UL[7], UL[8], UL[9], UL[10], UL[11])
-            self.Update = self.Update1 + self.Update2
-            
+        self.Update = ""
+        
+        if self.CurrentTable == "Book":
+            for count in range(0, len(self.UpdateList)):
+                self.Update += "{} = '{}'".format(self.ViewWindow.table.horizontalHeaderItem(count).text(), self.UpdateList[count])
+                if count != len(self.UpdateList) - 1:
+                    self.Update += ", "
+                    
         elif self.CurrentTable == "PubInvoice":
-            self.Update = "ISBN = '{}', AuthorID = '{}', PubInvoiceDate = '{}', PubInvoiceService = '{}', PubInvoicePayment = '{}'".format(UL[0], UL[1], UL[2], UL[3], UL[4])
+            for count in range(0, len(self.UpdateList)):
+                self.Update += "{} = '{}'".format(self.PubInvoiceWindow.table.horizontalHeaderItem(count + 1).text(), self.UpdateList[count])
+                if count != len(self.UpdateList) - 1:
+                    self.Update += ", "
 
         elif self.CurrentTable == "BookInvoice":
-            self.Update = "AuthorID = '{}', BookInvoiceDate = '{}', BookInvoicePayment = '{}'".format(UL[0], UL[1], UL[2])
-        
+            for count in range(0, len(self.UpdateList)):
+                self.Update += "{} = '{}'".format(self.BookInvoiceWindow.table.horizontalHeaderItem(count + 1).text(), self.UpdateList[count])
+                if count != len(self.UpdateList) - 1:
+                    self.Update += ", "
+                    
         with sqlite3.connect("PP.db") as db:
             cursor = db.cursor()
             cursor.execute("PRAGMA foreign_keys = ON")
@@ -400,7 +435,7 @@ class MainWindow(QMainWindow):
             if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
                 with sqlite3.connect("PP.db") as db:
                     cursor = db.cursor()
-                    cursor.execute("PRAGMA foreign_keys = ON")
+                    #cursor.execute("PRAGMA foreign_keys = ON")
                     sql = "delete from Customer where AuthorID = {}".format(self.ConfirmDialog.SelectedAuthorID)
                     cursor.execute(sql)
                     db.commit()
