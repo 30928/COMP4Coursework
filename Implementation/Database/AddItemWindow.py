@@ -66,7 +66,7 @@ class dbAddItemWindow(QDialog):
                     elif count == 3:
                         self.input = QComboBox(self)
                 
-                elif self.AddType == "BookInvoice" and count in [0, 1]:
+                elif self.AddType in ["BookInvoice", "Royalties"] and count in [0, 1]:
 
                         self.input = QLineEdit(self)
                         self.input.setReadOnly(True)
@@ -84,7 +84,7 @@ class dbAddItemWindow(QDialog):
                 count += 1
                 
             else: #adding qlabels with the line edits
-
+############################################################################################################################# Need to make date more efficient
                 if self.AddType == "Book" and count == 10: #adding date button instead of qlabel
                     self.btnDate = QPushButton("Date", self)
                     self.qlabelList.append(self.btnDate)
@@ -105,11 +105,18 @@ class dbAddItemWindow(QDialog):
                     self.gridLayout.addWidget(self.qlabelList[count], *place)
                     self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
                     self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
+
+                elif self.AddType == "Royalties" and count == 1:
+                    self.btnDate = QPushButton("Date", self)
+                    self.qlabelList.append(self.btnDate)
+                    self.gridLayout.addWidget(self.qlabelList[count], *place)
+                    self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
+                    self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
                 
                 else:
                     if str(self.columnHeader) == "PubInvoiceService":
                         self.qlabel = QLabel("Service", self)
-                    elif str(self.columnHeader) == "PubInvoicePayment":
+                    elif str(self.columnHeader) in ["PubInvoicePayment", "BookInvoicePayment", "RoyaltyPayment"]:
                         self.qlabel = QLabel("Payment", self)
                     else:    
                         self.qlabel = QLabel(str(self.columnHeader), self)
@@ -155,11 +162,12 @@ class dbAddItemWindow(QDialog):
                         self.originalIndex = self.inputList[count].findText(self.originalItemList[count])
                         self.inputList[count].setCurrentIndex(self.originalIndex)
                         
-            elif self.AddType == "BookInvoice":
+            elif self.AddType in ["BookInvoice", "Royalties"]:
 
                 for count in range(0, 3):
                     self.inputList[count].setText(self.originalItemList[count])
-            
+                    
+
         self.horizontal = QHBoxLayout()
         self.horizontal.addStretch(1)
         self.horizontal.addWidget(self.btnCancel)
@@ -187,7 +195,7 @@ class dbAddItemWindow(QDialog):
         elif self.AddType == "PubInvoice":
             self.inputList[2].setText(self.CalendarWidget.date)
 
-        elif self.AddType == "BookInvoice":
+        elif self.AddType in ["BookInvoice", "Royalties"]:
             self.inputList[1].setText(self.CalendarWidget.date)
         
     

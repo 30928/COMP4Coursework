@@ -87,6 +87,11 @@ class MainWindow(QMainWindow):
             self.TableValues = "BookInvoice (AuthorID, BookInvoiceDate, BookInvoicePayment)"
             self.Placeholders = "(?, ?, ?)"
             self.NoOfEntries = 3
+
+        elif self.CurrentTable == "Royalties":
+            self.TableValues = "Royalties (AuthorID, RoyaltiesDate, RoyaltyPayment)"
+            self.Placeholders = "(?, ?, ?)"
+            self.NoOfEntries = 3
             
         for count in range(0, self.NoOfEntries):
             try:
@@ -124,11 +129,19 @@ class MainWindow(QMainWindow):
             self.ConfirmDialog.ConfirmedMsg = "Invoice was successfully deleted"
 
         elif self.CurrentTable == "BookInvoice":
-            self.SeletedRow = self.BookInvoiceWindow.table.currentRow()
+            self.SelectedRow = self.BookInvoiceWindow.table.currentRow()
             self.selectedID = QTableWidgetItem(self.BookInvoiceWindow.table.item(self.SelectedRow, 0)).text()
             self.SelectedIDName = "BookInvoiceID"
             self.ConfirmDialog.Msg = "Are uou sure you want to delete this Invoice?"
             self.ConfirmDialog.ConfirmedMsg = "Invoice was successfully deleted"
+
+
+        elif self.CurrentTable == "Royalties":
+            self.SelectedRow = self.RoyaltiesWindow.table.currentRow()
+            self.selectedID = QTableWidgetItem(self.Royalties.table.item(self.SelectedRow, 0)).text()
+            self.SelectedIDName = "RoyaltiesID"
+            self.ConfirmDialog.Msg = "Are uou sure you want to delete this Entry?"
+            self.ConfirmDialog.ConfirmedMsg = "Entry was successfully deleted"
 
         self.ConfirmDialog.VerifyDlg()
             
@@ -153,6 +166,9 @@ class MainWindow(QMainWindow):
         elif self.CurrentTable == "BookInvoice":
             self.BookInvoiceWindow.table.sql = "select * from BookInvoice where AuthorID = {}".format(self.SelectedAuthorID)
             self.BookInvoiceWindow.table.initTable()
+
+        elif self.CurrentTable == "Royalties":
+            self.BookInvoiceWindow.table.sql = "select * from BookInvoice where AuthorID = {}".format(self.SelectedAuthorID)
 
     def ViewCustomer(self):
         self.SelectedRow = self.TableWidget.currentRow()
@@ -333,6 +349,15 @@ class MainWindow(QMainWindow):
                 self.EditWindow.originalItemList.append(QTableWidgetItem(self.BookInvoiceWindow.table.item(self.BookInvoiceWindow.SelectedRow, count)).text())
                 if self.BookInvoiceWindow.SelectedRow != -1:
                     self.Selection = True
+        elif self.CurrentTable == "Royalties":
+            self.EditWindow.setFixedSize(350, 100)
+            self.EditWindow.selectedID = self.SelectedID
+            self.EditWindow.sql = "select AuthorID, RoyaltiesDate, RoyaltiyPayment from Royalties".format(self.SelectedID)
+            for count in range(1, 4): #fetching existing data from table
+                self.RoyaltiesWindow.SelectedRow = self.RoyaltiesWindow.table.currentRow()
+                self.EditWindow.originalItemList.append(QTableWidgetItem(self.RoyaltiesWindow.table.item(self.RoyaltiesWindow.SelectedRow, count)).text())
+                if self.RoyaltiesWindow.SelectedRow != -1:
+                    self.Selection = True
         self.EditWindow.Editing = True
 
         if self.Selection == True:
@@ -376,6 +401,11 @@ class MainWindow(QMainWindow):
             self.NoOfEntries = 3
             self.ID = "BookInvoiceID"
             self.SelectedID = QTableWidgetItem(self.BookInvoiceWindow.table.item(self.BookInvoiceWindow.SelectedRow, 0)).text()
+
+        elif self.CurrentTable == "Royalties":
+            self.NoOfEntries = 3
+            self.ID = "RoyaltiesID"
+            self.SelectedID = QTableWidgetItem(self.RoyaltiesWindow.table.item(self.RoyaltiesWindow.SelectedRow, 0)).text()
         
         for count in range(0, self.NoOfEntries):
             try:
@@ -402,7 +432,13 @@ class MainWindow(QMainWindow):
                 self.Update += "{} = '{}'".format(self.BookInvoiceWindow.table.horizontalHeaderItem(count + 1).text(), self.UpdateList[count])
                 if count != len(self.UpdateList) - 1:
                     self.Update += ", "
-                    
+
+        elif self.CurrentTable == "Royalties":
+            for count in range(0, len(self.UpdateList)):
+                self.Update += "{} = '{}'".format(self.RoyaltiesWindow.table.horizontalHeaderItem(count + 1).text(), self.UpdateList[count])
+                if count != len(self.UpdateList) - 1:
+                    self.Update += ", "
+        
         with sqlite3.connect("PP.db") as db:
             cursor = db.cursor()
             cursor.execute("PRAGMA foreign_keys = ON")
@@ -418,6 +454,8 @@ class MainWindow(QMainWindow):
             self.PubInvoiceWindow.table.initTable()
         elif self.CurrentTable == "BookInvoice":
             self.BookInvoiceWindow.table.initTable()
+        elif self.CurrentTable == "Royalties":
+            self.RoyaltiesWindow.table.initTable()
 
         
     def RemoveEntry(self):
@@ -435,7 +473,7 @@ class MainWindow(QMainWindow):
             if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
                 with sqlite3.connect("PP.db") as db:
                     cursor = db.cursor()
-                    #cursor.execute("PRAGMA foreign_keys = ON")
+                    cursor.execute("PRAGMA foreign_keys = ON")
                     sql = "delete from Customer where AuthorID = {}".format(self.ConfirmDialog.SelectedAuthorID)
                     cursor.execute(sql)
                     db.commit()
