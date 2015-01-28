@@ -12,7 +12,6 @@ class dbTableWidget(QTableWidget):
 
     def initTable(self):
         self.clear()
-        #self.setFixedSize(716,275)
         self.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.setEditTriggers(QAbstractItemView.NoEditTriggers)
         

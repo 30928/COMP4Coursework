@@ -133,8 +133,6 @@ class dbAddItemWindow(QDialog):
             self.inputList[6].addItem("Black/White")
             self.inputList[7].addItem("White")
             self.inputList[7].addItem("Creme")
-            
-            #self.inputList[10].setReadOnly(True)
 
         if self.AddType == "PubInvoice":
             self.inputList[3].addItem("Standard")
