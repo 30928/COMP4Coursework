@@ -162,7 +162,7 @@ class dbAddItemWindow(QDialog):
                         
             elif self.AddType in ["BookInvoice", "Royalties"]:
 
-                for count in range(0, 3):
+                for count in range(0, 2):
                     self.inputList[count].setText(self.originalItemList[count])
                     
 

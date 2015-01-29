@@ -77,14 +77,14 @@ def book_invoice_table(db_name):
 
 def book_invoice_items_table(db_name):
     sql = """create table BookInvoiceItems
-             (BookInvoiceItems integer,
+             (BookInvoiceItemsID integer,
              BookInvoiceID integer,
              ISBN text,
              BookInvoiceQuantity integer,
              BookInvoiceDiscount real,
              ShippingType text,
              ShippingPrice real,
-             primary key(BookInvoiceItems),
+             primary key(BookInvoiceItemsID),
              foreign key(BookInvoiceID) references BookInvoice(BookInvoiceID),
              foreign key(ISBN) references Book(ISBN))"""
     create_table(db_name, "BookInvoiceItems", sql)
@@ -99,9 +99,9 @@ def royalties_table(db_name):
              foreign key(AuthorID) references Customer(AuthorID))"""
     create_table(db_name, "Royalties", sql)
 
-def royalties_items_table(db_name):
-    sql = """create table RoyaltiesItems
-             (RoyaltiesItems integer,
+def royalty_items_table(db_name):
+    sql = """create table RoyaltyItems
+             (RoyaltyItemsID integer,
              RoyaltiesID integer,
              ISBN text,
              Currency text,
@@ -111,10 +111,10 @@ def royalties_items_table(db_name):
              NetSales real,
              PrintCost real,
              ExcRateFromGBP real,
-             primary key(RoyaltiesItems),
+             primary key(RoyaltyItemsID),
              foreign key(RoyaltiesID) references Royalties(RoyaltiesID),
              foreign key(ISBN) references Book(ISBN))"""
-    create_table(db_name, "RoyaltiesItems", sql)
+    create_table(db_name, "RoyaltyItems", sql)
 
 def main():
     db_name = "PP.db"
@@ -124,7 +124,7 @@ def main():
     book_invoice_table(db_name)
     book_invoice_items_table(db_name)
     royalties_table(db_name)
-    royalties_items_table(db_name)
+    royalty_items_table(db_name)
 
     
 

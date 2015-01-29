@@ -43,17 +43,17 @@ def calculate_royalties(RoyaltiesID):
         while i != 0:
             
             try:
-                sql = "select NetSales from RoyaltiesItems where RoyaltiesID = {} and RoyaltiesItems = {}".format(RoyaltiesID, i)
+                sql = "select NetSales from RoyaltyItems where RoyaltiesID = {} and RoyaltyItems = {}".format(RoyaltiesID, i)
                 cursor.execute(sql)
                 NetSalesList = list(cursor.fetchone())
                 NetSales = NetSalesList[0]
        
-                sql = "select PrintCost from RoyaltiesItems where RoyaltiesID = {} and RoyaltiesItems = {}".format(RoyaltiesID, i)
+                sql = "select PrintCost from RoyaltyItems where RoyaltiesID = {} and RoyaltyItems = {}".format(RoyaltiesID, i)
                 cursor.execute(sql)
                 PrintCostList = list(cursor.fetchone())
                 PrintCost = PrintCostList[0]
 
-                sql = "select RoyaltyQuantity from RoyaltiesItems where RoyaltiesID = {} and RoyaltiesItems = {}".format(RoyaltiesID, i)
+                sql = "select RoyaltyQuantity from RoyaltyItems where RoyaltiesID = {} and RoyaltyItems = {}".format(RoyaltiesID, i)
                 cursor.execute(sql)
                 RoyaltyQuantityList = list(cursor.fetchone())
                 RoyaltyQuantity = RoyaltyQuantityList[0]
@@ -151,8 +151,8 @@ def RoyaltiesEntry():
     placeholders = "(?, ?, ?)"
     return table, placeholders
 
-def RoyaltiesItemsEntry():
-    table = "RoyaltiesItems (RoyaltiesID, ISBN, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, PrintCost, NetSales, ExcRateFromGBP)"
+def RoyaltyItemsEntry():
+    table = "RoyaltyItems (RoyaltiesID, ISBN, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, PrintCost, NetSales, ExcRateFromGBP)"
     placeholders = "(?, ?, ?, ?, ?, ?, ?, ?, ?)"
     return table, placeholders
 
@@ -217,7 +217,7 @@ def input_royalties():
     input_data = (AuthorID, RoyaltyPayment, RoyaltiesDate)
     return input_data
 
-def input_royalties_items():
+def input_royalty_items():
     RoyaltiesID = input("Enter RoyaltiesID: ")
     ISBN = input("Enter ISBN: ")
     Currency = input("Enter currency: ")
@@ -324,8 +324,8 @@ def GetUpdateChoice():
         ID = "RoyaltiesID"
         table = "Royalties"
     elif tablepick == "7":
-        ID = "RoyaltiesItems"
-        table = "RoyaltiesItems"
+        ID = "RoyaltyItems"
+        table = "RoyaltyItems"
     data = input("Enter the {} for the entry you want to update: ".format(ID))
 
     return table, data, ID
@@ -384,8 +384,8 @@ def GetDeleteChoice():
         ID = "RoyaltiesID"
         table = "Royalties"
     elif tablepick == "7":
-        ID = "RoyaltiesItems"
-        table = "RoyaltiesItems"
+        ID = "RoyaltyItems"
+        table = "RoyaltyItems"
 
     data = input("Enter the {}: ".format(ID))
 
@@ -434,9 +434,9 @@ def main():
                     create_data(royalties_data, table, placeholders)
 
                 elif Choice == '7':
-                    royalties_items_data, RoyaltiesID = input_royalties_items()
-                    table, placeholders = RoyaltiesItemsEntry()
-                    create_data(royalties_items_data, table, placeholders)
+                    royalty_items_data, RoyaltiesID = input_royalty_items()
+                    table, placeholders = RoyaltyItemsEntry()
+                    create_data(royalty_items_data, table, placeholders)
                     calculate_royalties(RoyaltiesID)
                     
 

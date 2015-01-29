@@ -70,12 +70,12 @@ class dbRoyaltiesAndInvoices(QDialog):
         self.setFixedSize(640, 220)
         self.vertical = QVBoxLayout(self)
         self.vertical.addWidget(self.table)
-        self.btnViewRoyaltiesItems.setFixedSize(100, 40)
+        self.btnViewRoyaltyItems.setFixedSize(100, 40)
         self.btnAddRoyalties.setFixedSize(100, 40)
         self.btnUpdateRoyalties.setFixedSize(100, 40)
         self.btnDeleteEntry.setFixedSize(100, 40)
         self.horizontal = QHBoxLayout()
-        self.horizontal.addWidget(self.btnViewRoyaltiesItems)
+        self.horizontal.addWidget(self.btnViewRoyaltyItems)
         self.horizontal.addStretch(1)
         self.horizontal.addWidget(self.btnAddRoyalties)
         self.horizontal.addStretch(1)
@@ -88,7 +88,7 @@ class dbRoyaltiesAndInvoices(QDialog):
         self.exec_()
         
     def RoyaltiesButtons(self):
-        self.btnViewRoyaltiesItems = QPushButton("View Royalties \n Items", self) 
+        self.btnViewRoyaltyItems = QPushButton("View Royalty \n Items", self) 
         self.btnAddRoyalties = QPushButton("Add \n Royalties", self)
         self.btnUpdateRoyalties = QPushButton("Update \n Royalties", self)
         self.btnDeleteEntry = QPushButton("Delete \n Entry", self)        
