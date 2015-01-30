@@ -69,28 +69,25 @@ class dbItems(QDialog):
 
 
 
-
-
-    def BookInvoiceItemsCalculation(self):
+    def CalculateBookInvoiceItems(self):
         
         with sqlite3.connect("PP.db") as db:
             cursor = db.cursor()
             cursor.execute("PRAGMA foreign_keys_ = ON")
 
-            BookInvoiceTemp = 0
             i = 1
             while i != 0:
 
                 try:
                     self.selection = "BookInvoiceQuantity, BookInvoiceDiscount, ShippingPrice, ISBN, Price"
                     self.tables = "BookInvoiceItems, Book"
-                    sql = "select {}, from {} where BookInvoiceID = {}, BookInvoiceItems = {}, ISBN = {}".format(self.selection, self.tables, self.selectedID, i, self.selectedISBN)
+                    sql = "select {}, from {} where BookInvoiceID = {}, BookInvoiceItemsID = {}, ISBN = {}".format(self.selection, self.tables, self.selectedID, i, self.selectedISBN)
                     cursor.execute(sql)
                     self.SelectionList = list(cursor.fetchall())
                     i += 1
-                    
+                    print(self.SelectionList) 
                 except:
-                    sql = "update BookInvoice set BookInvoicePayment = {} where BookInvoiceID = {}".format(BookInvoicePayment, BookInvoiceID)
-                    cursor.execute(sql)
-                    db.commit()
+                    #sql = "update BookInvoice set BookInvoicePayment = {} where BookInvoiceID = {}".format(BookInvoicePayment, BookInvoiceID)
+                    #cursor.execute(sql)
+                    #db.commit()
                     i = 0

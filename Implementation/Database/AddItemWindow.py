@@ -73,6 +73,18 @@ class dbAddItemWindow(QDialog):
                         
                         if count == 0:
                             self.input.setText(self.selectedID)
+                elif self.AddType == "BookInvoiceItems" and count in [0, 1, 4]:
+
+                    if count == 0:
+                        self.input = QLineEdit(self)
+                        self.input.setReadOnly(True)
+                        self.input.setText(self.selectedID)
+                    elif count == 1:
+                        self.input = QLineEdit(self)
+                        self.input.setReadOnly(True)
+                        self.input.setText(self.selectedISBN)
+                    elif count == 4:
+                        self.input = QComboBox(self)
                         
                 else:
                     self.input = QLineEdit(self) #new line edit #standard input method
@@ -84,7 +96,6 @@ class dbAddItemWindow(QDialog):
                 count += 1
                 
             else: #adding qlabels with the line edits
-############################################################################################################################# Need to make date more efficient
                 if self.AddType == "Book" and count == 10: #adding date button instead of qlabel
                     self.btnDate = QPushButton("Date", self)
                     self.qlabelList.append(self.btnDate)
@@ -121,8 +132,7 @@ class dbAddItemWindow(QDialog):
                     else:    
                         self.qlabel = QLabel(str(self.columnHeader), self)
                     self.qlabelList.append(self.qlabel)
-                    self.gridLayout.addWidget(self.qlabelList[count], *place)
-            
+                    self.gridLayout.addWidget(self.qlabelList[count], *place)       
 
         if self.AddType == "Book":
             self.inputList[4].addItem("Large")
@@ -134,12 +144,17 @@ class dbAddItemWindow(QDialog):
             self.inputList[7].addItem("White")
             self.inputList[7].addItem("Creme")
 
-        if self.AddType == "PubInvoice":
+        elif self.AddType == "PubInvoice":
             self.inputList[3].addItem("Standard")
             self.inputList[3].addItem("Enhanced")
             self.inputList[3].addItem("Colour Publishing")
             self.inputList[3].addItem("Reprint")
-
+        elif self.AddType == "BookInvoiceItems":
+            self.inputList[4].addItem("Rush")
+            self.inputList[4].addItem("Premium")
+            self.inputList[4].addItem("Standard")
+            self.inputList[4].addItem("Economy")
+            self.inputList[4].addItem("International")
         if self.Editing == True:
 
             if self.AddType == "Book":
@@ -167,10 +182,13 @@ class dbAddItemWindow(QDialog):
                     
 
         self.horizontal = QHBoxLayout()
+        if self.AddType == "BookInvoiceItems":
+            self.horizontal.addWidget(self.btnCalculate)
+            self.horizontal.addWidget(self.qleCalculation)
         self.horizontal.addStretch(1)
         self.horizontal.addWidget(self.btnCancel)
         self.horizontal.addWidget(self.btnConfirm)
-            
+
         self.vertical = QVBoxLayout()
         self.vertical.addLayout(self.gridLayout)
         self.vertical.addLayout(self.horizontal)
@@ -184,6 +202,9 @@ class dbAddItemWindow(QDialog):
     def AnswerButtons(self):
         self.btnConfirm = QPushButton("Confirm", self)
         self.btnCancel = QPushButton("Cancel", self)
+        if self.AddType == "BookInvoiceItems":
+            self.btnCalculate = QPushButton("Calculate", self)
+            self.qleCalculation = QLineEdit(self)
 
     def getDate(self):
         self.CalendarWidget.date = self.CalendarWidget.qle.text()

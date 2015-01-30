@@ -176,6 +176,7 @@ class MainWindow(QMainWindow):
     def AddItem(self): #initialising an add window
         self.AddWindow = dbAddItemWindow()
         self.AddWindow.setFixedSize(360,200)
+        self.AddWindow.AddType = self.CurrentTable
         self.AddWindow.AnswerButtons()
         self.AddWindow.btnConfirm.clicked.connect(self.AddToDB)
         self.AddWindow.Editing = False
@@ -196,14 +197,37 @@ class MainWindow(QMainWindow):
             self.AddWindow.sql = "select AuthorID, RoyaltiesDate from Royalties"
             self.AddWindow.setFixedSize(350,100)
             
-        self.AddWindow.AddType = self.CurrentTable
+        elif self.CurrentTable == "BookInvoiceItems":
+            self.AddWindow.sql = "select BookInvoiceID, ISBN, BookInvoiceQuantity, BookInvoiceDiscount, ShippingType, ShippingPrice from BookInvoiceItems"
+            self.AddWindow.setFixedSize(450, 150)
+            self.AddWindow.selectedISBN = self.SelectedISBN
+            self.AddWindow.btnCalculate.clicked.connect(self.ItemCalculation)
         self.AddWindow.selectedID = self.SelectedID
         self.AddWindow.CalendarWidget = dbCalendarWidget()
         self.AddWindow.CalendarWidget.Calendar()
         self.AddWindow.initAddItemWindow()
         self.RefreshTables()
 
+    def ItemCalculation(self):
+        if self.CurrentTable == "BookInvoiceItems":
 
+            self.Quantity = int(self.AddWindow.inputList[2].text()) #2q 3d 5p
+            self.Discount = float(self.AddWindow.inputList[3].text())
+            self.Discount /= 100
+            self.ShippingPrice = float(self.AddWindow.inputList[5].text())
+            self.ISBN = self.AddWindow.inputList[1].text()
+            
+            with sqlite3.connect("PP.db") as db: #fetching data from db
+                cursor = db.cursor()
+                cursor.execute("select Price from Book where ISBN = {}".format(self.ISBN))
+                self.Price = list(cursor.fetchone())[0]
+                db.commit()
+
+            self.BookInvoiceItemPayment = (self.Quantity * self.Price)
+            self.Discount = self.BookInvoiceItemPayment * self.Discount
+            self.BookInvoiceItemPayment -= self.Discount
+            self.BookInvoiceItemPayment += self.ShippingPrice
+            self.AddWindow.qleCalculation.setText("£{}".format(str(self.BookInvoiceItemPayment)))
             
     def ViewPubInvoice(self): #initialising the view publishing invoice window
         self.CurrentTable = "PubInvoice"
