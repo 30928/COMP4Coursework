@@ -33,13 +33,18 @@ class dbAddItemWindow(QDialog):
 
             if self.columnHeader == '': #replacing spaces with line edits
 
-                if self.AddType == "Book" and count in [1, 4, 5, 6, 7, 10]:
-
+                if self.AddType == "Book" and count in [1, 3, 4, 5, 6, 7, 9, 10, 11]:
+            
                     if count == 1: #exceptions for book
                         self.input = QLineEdit(self) #new line edit
                         self.input.setReadOnly(True)
                         self.input.setText(self.selectedID)
-            
+                    elif count in [3, 9, 11]:
+                        self.input = QLineEdit(self)
+                        if count == 3:
+                            self.input.setValidator(QIntValidator())
+                        else:
+                            self.input.setValidator(QDoubleValidator())
                     elif count in [4, 5, 6, 7]: #exceptions for book where combobox is needed
                         self.input = QComboBox(self) #new combo box
 
@@ -47,7 +52,7 @@ class dbAddItemWindow(QDialog):
                         self.input = QLineEdit(self)
                         self.input.setReadOnly(True)
 
-                elif self.AddType == "PubInvoice" and count in [0, 1, 2, 3]:
+                elif self.AddType == "PubInvoice" and count in [0, 1, 2, 3, 4]:
                     
                     if count == 0: #setting  isbn ineditable
                         self.input = QLineEdit(self)
@@ -65,6 +70,10 @@ class dbAddItemWindow(QDialog):
                     
                     elif count == 3:
                         self.input = QComboBox(self)
+
+                    elif count == 4:
+                        self.input = QLineEdit(self)
+                        self.input.setValidator(QDoubleValidator())
                 
                 elif self.AddType in ["BookInvoice", "Royalties"] and count in [0, 1]:
 
@@ -73,7 +82,7 @@ class dbAddItemWindow(QDialog):
                         
                         if count == 0:
                             self.input.setText(self.selectedID)
-                elif self.AddType == "BookInvoiceItems" and count in [0, 1, 4]:
+                elif self.AddType == "BookInvoiceItems" and count in [0, 1, 2, 3, 4, 5]:
 
                     if count == 0:
                         self.input = QLineEdit(self)
@@ -83,12 +92,58 @@ class dbAddItemWindow(QDialog):
                         self.input = QLineEdit(self)
                         self.input.setReadOnly(True)
                         self.input.setText(self.selectedISBN)
+                    elif count in [2, 3, 5]:
+                        self.input = QLineEdit(self)
+                        if count == 2:
+                            self.input.setValidator(QIntValidator())
+                        else:
+                            self.input.setValidator(QDoubleValidator())
                     elif count == 4:
                         self.input = QComboBox(self)
                         
+                elif self.AddType == "RoyaltyItems" and count in [0, 1, 3, 4, 5, 6, 7]:
+                    with sqlite3.connect("PP.db") as db:
+                        cursor = db.cursor()
+                        Selection = "NoOfPages, Size, Back"
+                        sql = "select {} from Book where ISBN = {}".format(Selection, self.selectedISBN)
+                        cursor.execute(sql)
+                        self.SelectionList = list(cursor.fetchone())
+                        self.NoOfPages = int(self.SelectionList[0])
+                        self.Size = self.SelectionList[1]
+                        self.Back = self.SelectionList[2]
+                        
+                        if self.Size == "Large":
+                            self.PagePrice = 0.015 * self.NoOfPages
+                            if self.Back == "Hard":
+                                self.CoverPrice = 5
+                            elif self.Back == "Soft":
+                                self.CoverPrice = 1
+                                
+                        elif self.Size == "Small":
+                            self.PagePrice = 0.01 * self.NoOfPages
+                            if self.Back == "Hard":
+                                self.CoverPrice = 4
+                            elif self.Back == "Soft":
+                                self.CoverPrice = 0.7
+
+                    self.input = QLineEdit(self)
+
+                    if count == 0:
+                        self.input.setText(self.selectedID)
+                        self.input.setReadOnly(True)
+                    elif count == 1:
+                        self.input.setText(self.selectedISBN)
+                        self.input.setReadOnly(True)
+                    elif count in [3, 4, 5, 6, 7]:
+                        if count == 5:
+                            self.input.setValidator(QIntValidator())
+                        elif count == 6:
+                            self.input.setReadOnly(True)
+                            self.input.setValidator(QDoubleValidator())
+                        else:
+                            self.input.setValidator(QDoubleValidator())
                 else:
                     self.input = QLineEdit(self) #new line edit #standard input method
-
 
                 self.inputList.append(self.input)   #line edits/combo boxes appended to list for further reference
                 self.gridLayout.addWidget(self.inputList[count], *place)
@@ -96,51 +151,58 @@ class dbAddItemWindow(QDialog):
                 count += 1
                 
             else: #adding qlabels with the line edits
+                self.DateEntry = False
                 if self.AddType == "Book" and count == 10: #adding date button instead of qlabel
-                    self.btnDate = QPushButton("Date", self)
-                    self.qlabelList.append(self.btnDate)
-                    self.gridLayout.addWidget(self.qlabelList[count], *place)
-                    self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
-                    self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
-
+                    self.DateEntry = True
                 elif self.AddType == "PubInvoice" and count == 2: #data button instead of qlabel
-                    self.btnDate = QPushButton("Date", self)
-                    self.qlabelList.append(self.btnDate)
-                    self.gridLayout.addWidget(self.qlabelList[count], *place)
-                    self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
-                    self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
-
+                    self.DateEntry = True
                 elif self.AddType == "BookInvoice" and count == 1:
-                    self.btnDate = QPushButton("Date", self)
-                    self.qlabelList.append(self.btnDate)
-                    self.gridLayout.addWidget(self.qlabelList[count], *place)
-                    self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
-                    self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
-
+                    self.DateEntry = True
                 elif self.AddType == "Royalties" and count == 1:
-                    self.btnDate = QPushButton("Date", self)
-                    self.qlabelList.append(self.btnDate)
-                    self.gridLayout.addWidget(self.qlabelList[count], *place)
-                    self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
-                    self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
-                
+                    self.DateEntry = True
+
                 else:
                     if str(self.columnHeader) == "PubInvoiceService":
                         self.qlabel = QLabel("Service", self)
                     elif str(self.columnHeader) in ["PubInvoicePayment", "BookInvoicePayment", "RoyaltyPayment"]:
                         self.qlabel = QLabel("Payment", self)
-                    else:    
+                    elif str(self.columnHeader) in ["BookInvoiceDiscount", "RoyaltyDiscount"]:
+                        self.qlabel = QLabel("Discount", self)
+                    elif str(self.columnHeader) in ["BookInvoiceQuantity", "RoyaltyQuantity"]:
+                        self.qlabel = QLabel("Quantity", self)
+                    elif str(self.columnHeader) == "ExcRateFromGBP":
+                        self.qlabel = QLabel("£1 = ", self)
+                    
+                    else:
+                        self.Label = str(self.columnHeader)
+                        for count2 in range(1, len(self.Label)):
+                            if self.Label[count2].isupper() == True:
+                                self.Label.split("[A-Z]")
+                                
+                                #self.Label += " ".join(str(self.columnHeader).split())
+                                #self.Letter = str(self.columnHeader)[count2]
+                                #self.Split = str(self.columnHeader).split(str(self.columnHeader)[count2])
+                                #self.Label += "{} {}{}".format(self.Split[0], self.Letter, self.Split[1])
+                            print(self.Label)
+                                
                         self.qlabel = QLabel(str(self.columnHeader), self)
                     self.qlabelList.append(self.qlabel)
-                    self.gridLayout.addWidget(self.qlabelList[count], *place)       
-
+                    self.gridLayout.addWidget(self.qlabelList[count], *place)
+                    
+                if self.DateEntry == True:
+                    self.btnDate = QPushButton("Date", self)
+                    self.qlabelList.append(self.btnDate)
+                    self.gridLayout.addWidget(self.qlabelList[count], *place)
+                    self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
+                    self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
+                    
         if self.AddType == "Book":
             self.inputList[4].addItem("Large")
             self.inputList[4].addItem("Small")
             self.inputList[5].addItem("Hard")
             self.inputList[5].addItem("Soft")
-            self.inputList[6].addItem("Colour")
-            self.inputList[6].addItem("Black/White")
+            self.inputList[6].addItem("Matte")
+            self.inputList[6].addItem("Gloss")
             self.inputList[7].addItem("White")
             self.inputList[7].addItem("Creme")
 
@@ -149,12 +211,14 @@ class dbAddItemWindow(QDialog):
             self.inputList[3].addItem("Enhanced")
             self.inputList[3].addItem("Colour Publishing")
             self.inputList[3].addItem("Reprint")
+            
         elif self.AddType == "BookInvoiceItems":
             self.inputList[4].addItem("Rush")
             self.inputList[4].addItem("Premium")
             self.inputList[4].addItem("Standard")
             self.inputList[4].addItem("Economy")
             self.inputList[4].addItem("International")
+            
         if self.Editing == True:
 
             if self.AddType == "Book":
@@ -179,10 +243,20 @@ class dbAddItemWindow(QDialog):
 
                 for count in range(0, 2):
                     self.inputList[count].setText(self.originalItemList[count])
-                    
+            elif self.AddType == "BookInvoiceItems":
+                for count in range(0, 6):
+                    try:
+                        self.inputList[count].setText(self.originalItemList[count])
+                    except:
+                        self.originalIndex = self.inputList[count].findText(self.originalItemList[count])
+                        self.inputList[count].setCurrentIndex(self.originalIndex)
+            elif self.AddType == "RoyaltyItems":
+                for count in range(0, 8):
+                    self.originalIndex = self.inputList[count].findText(self.originalItemList[count])
+                    self.inputList[count].setCurrentIndex(self.originalIndex)
 
         self.horizontal = QHBoxLayout()
-        if self.AddType == "BookInvoiceItems":
+        if self.AddType in ["BookInvoiceItems", "RoyaltyItems"]:
             self.horizontal.addWidget(self.btnCalculate)
             self.horizontal.addWidget(self.qleCalculation)
         self.horizontal.addStretch(1)
@@ -202,9 +276,10 @@ class dbAddItemWindow(QDialog):
     def AnswerButtons(self):
         self.btnConfirm = QPushButton("Confirm", self)
         self.btnCancel = QPushButton("Cancel", self)
-        if self.AddType == "BookInvoiceItems":
+        if self.AddType in ["BookInvoiceItems", "RoyaltyItems"]:
             self.btnCalculate = QPushButton("Calculate", self)
             self.qleCalculation = QLineEdit(self)
+            self.qleCalculation.setReadOnly(True)
 
     def getDate(self):
         self.CalendarWidget.date = self.CalendarWidget.qle.text()
@@ -216,5 +291,15 @@ class dbAddItemWindow(QDialog):
 
         elif self.AddType in ["BookInvoice", "Royalties"]:
             self.inputList[1].setText(self.CalendarWidget.date)
-        
-    
+
+    def keyReleaseEvent(self, QKeyEvent):
+        if self.AddType == "RoyaltyItems":
+            if self.inputList[2].text() == "£":
+                self.inputList[7].setText("N/A")
+                self.inputList[7].setReadOnly(True)
+            elif self.inputList[7].text() == "N/A": 
+                self.inputList[7].setText("")
+                self.inputList[7].setReadOnly(False)
+            if self.inputList[5].text() != "":
+                self.PrintCost = (self.PagePrice * int(self.inputList[5].text()))  + self.CoverPrice
+                self.inputList[6].setText(str(self.PrintCost))

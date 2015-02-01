@@ -60,34 +60,95 @@ class dbItems(QDialog):
         self.btnDeleteEntry = QPushButton("Delete \n Entry", self)        
 
 
-
-
-
-
-
-
-
-
-
     def CalculateBookInvoiceItems(self):
         
         with sqlite3.connect("PP.db") as db:
             cursor = db.cursor()
             cursor.execute("PRAGMA foreign_keys_ = ON")
-
+            self.BookInvoicePayment = 0
             i = 1
             while i != 0:
-
                 try:
-                    self.selection = "BookInvoiceQuantity, BookInvoiceDiscount, ShippingPrice, ISBN, Price"
-                    self.tables = "BookInvoiceItems, Book"
-                    sql = "select {}, from {} where BookInvoiceID = {}, BookInvoiceItemsID = {}, ISBN = {}".format(self.selection, self.tables, self.selectedID, i, self.selectedISBN)
+                    Selection = "BookInvoiceItems.BookInvoiceQuantity, BookInvoiceItems.BookInvoiceDiscount, BookInvoiceItems.ShippingPrice, Book.Price"
+                    Tables = "BookInvoiceItems, Book"
+                    sql = "select {} from {} where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and Book.ISBN = {}".format(Selection, Tables, self.selectedID, i, self.selectedISBN)
                     cursor.execute(sql)
-                    self.SelectionList = list(cursor.fetchall())
+                    self.SelectionList = list(cursor.fetchone())
                     i += 1
-                    print(self.SelectionList) 
+                    
+                    self.Quantity = self.SelectionList[0]
+                    self.Discount = self.SelectionList[1] / 100
+                    self.ShippingPrice = self.SelectionList[2]
+                    self.Price = self.SelectionList[3]
+                    
+                    self.TempPayment = (self.Quantity * self.Price)
+                    self.Discount = self.TempPayment * self.Discount
+                    self.TempPayment -= self.Discount
+                    self.TempPayment += self.ShippingPrice
+
+                    self.BookInvoicePayment += self.TempPayment
                 except:
-                    #sql = "update BookInvoice set BookInvoicePayment = {} where BookInvoiceID = {}".format(BookInvoicePayment, BookInvoiceID)
-                    #cursor.execute(sql)
-                    #db.commit()
+                    sql = "update BookInvoice set BookInvoicePayment = '{}' where BookInvoiceID = {}".format(self.BookInvoicePayment, self.selectedID)
+                    cursor.execute(sql)
+                    db.commit()
                     i = 0
+
+    def CalculateRoyaltyItems(self):
+        with sqlite3.connect("PP.db") as db:
+            cursor = db.cursor()
+            cursor.execute("PRAGMA foreign_keys = ON")
+
+            self.RoyaltyPayment = 0
+            i = 1
+            
+        while i != 0:
+            
+            try:
+                Select1 = "RoyaltyItems.Currency, RoyaltyItems.NetSales, RoyaltyItems.ExcRateFromGBP, RoyaltyItems.RoyaltyQuantity, "
+                Select2 = "Book.NoOfPages, Book.Size, Book.Cover, Book.Back"
+                Tables = "RoyaltyItems, Book"
+                sql = "select {}{} from {} where RoyaltiesID = {} and RoyaltyItemsID = {} and ISBN = {}".format(Select1, Select2, Tables, self.selectedID, i, self.SelectedISBN)
+                cursor.execute(sql)
+                self.SelectionList = list(cursor.fetchone())
+                self.Currency = self.SelectionList[0]                
+                self.NetSales = float(self.SelectionList[1])
+                self.Quantity = self.SelectionList[3]
+                self.NoOfPages = int(self.SelectionList[4])
+                self.Size = self.SelectionList[5]
+                self.Cover = self.SelectionList[6]
+                self.Back = self.Selection[7]
+
+                if self.Cover == "Colour":
+                    PagePrice = 0.06 * NoOfPages
+                    if self.Back == "Hard":
+                        self.CoverPrice = 5
+                    elif self.Back == "Soft":
+                        self.CoverPrice = 3
+                
+                elif self.Cover == "Black/White":
+                    if self.Size == "Large":
+                        self.PagePrice = 0.015 * self.NoOfPages
+                        if self.Back == "Hard":
+                            self.CoverPrice = 5
+                        elif self.Back == "Soft":
+                            self.CoverPrice = 1
+                    elif self.Size == "Small":
+                        self.PagePrice = 0.01 * self.NoOfPages
+                        if self.Back == "Hard":
+                            self.CoverPrice = 4
+                        elif self.Back == "Soft":
+                            self.CoverPrice = 0.7
+                self.PrintCost = (self.PagePrice + self.CoverPrice) * self.Quantity
+                
+                self.TempPayment= self.NetSales - self.PrintCost
+                i += 1
+                self.RoyaltyPayment += self.TempPayment
+            except:
+                self.RoyaltyPayment = self.TempPayment
+                if self.Currency != "£":
+                    self.ExcRateFromGBP = float(self.SelectionList[2])
+                    self.RoyaltyPayment /= self.ExcRateFromGBP
+                sql = "update Royalties set RoyaltyPayment = {} where RoyaltiesID = {}".format(self.RoyaltyPayment, self.selectedID)
+                cursor.execute(sql)
+                db.commit()
+                i = 0
