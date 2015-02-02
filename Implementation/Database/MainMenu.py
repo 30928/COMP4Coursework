@@ -23,8 +23,8 @@ class MainWindow(QMainWindow):
         super().__init__()
         
         self.setWindowTitle("Main Menu")
-        self.setFixedSize(735,400)
-        self.MenuBar = dbMenuBar()
+        self.setFixedSize(735,400) 
+        self.MenuBar = dbMenuBar()      
         self.setMenuBar(self.MenuBar)
         
         self.TableWidget = dbTableWidget()
@@ -313,7 +313,7 @@ class MainWindow(QMainWindow):
             self.PubInvoiceWindow.table.initTable()
             self.PubInvoiceWindow.table.setFixedSize(620, 150)
             self.PubInvoiceWindow.PubInvoice()
-            self.CurrentTable = "Book"
+        self.CurrentTable = "Book"
 
 
 
@@ -335,7 +335,7 @@ class MainWindow(QMainWindow):
             self.BookInvoiceWindow.table.initTable()
             self.BookInvoiceWindow.table.setFixedSize(620, 150)
             self.BookInvoiceWindow.BookInvoice()
-            self.CurrentTable = "Book"
+        self.CurrentTable = "Book"
 
 
 
@@ -359,8 +359,8 @@ class MainWindow(QMainWindow):
             self.BookInvoiceItemsWindow.table.initTable()
             self.BookInvoiceItemsWindow.table.setFixedSize(620, 150)
             self.BookInvoiceItemsWindow.BookInvoiceItems()
-            self.CurrentTable = "BookInvoice"
-            self.BookInvoiceWindow.table.initTable()
+        self.CurrentTable = "BookInvoice"
+        self.BookInvoiceWindow.table.initTable()
 
 
 
@@ -383,7 +383,7 @@ class MainWindow(QMainWindow):
             self.RoyaltiesWindow.table.initTable()
             self.RoyaltiesWindow.table.setFixedSize(620, 150)
             self.RoyaltiesWindow.Royalties()
-            self.CurrentTable = "Book"
+        self.CurrentTable = "Book"
 
 
 
@@ -406,7 +406,7 @@ class MainWindow(QMainWindow):
             self.RoyaltyItemsWindow.table.initTable()
             self.RoyaltyItemsWindow.table.setFixedSize(620, 150)
             self.RoyaltyItemsWindow.RoyaltiesItems()
-            self.CurrentTable = "Royalties"
+        self.CurrentTable = "Royalties"
 
 
         
@@ -460,7 +460,7 @@ class MainWindow(QMainWindow):
             self.UpdateEntryWindow.table.setFixedSize(617, 55)
             self.UpdateEntryWindow.Verify = dbConfirmationDialog()
             self.UpdateEntryWindow.initConfirmBtn()
-            self.UpdateEntryWindow.btnConfirm.clicked.connect(self.VerifyCustomerUpdate)
+            self.UpdateEntryWindow.btnConfirm.claicked.connect(self.VerifyCustomerUpdate)
             self.UpdateEntryWindow.initUpdateEntryWindowDlg()
         self.RefreshTables()
 

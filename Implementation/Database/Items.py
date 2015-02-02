@@ -118,26 +118,20 @@ class dbItems(QDialog):
                 self.Cover = self.SelectionList[6]
                 self.Back = self.Selection[7]
 
-                if self.Cover == "Colour":
-                    PagePrice = 0.06 * NoOfPages
+
+                if self.Size == "Large":
+                    self.PagePrice = 0.015 * self.NoOfPages
                     if self.Back == "Hard":
                         self.CoverPrice = 5
                     elif self.Back == "Soft":
-                        self.CoverPrice = 3
-                
-                elif self.Cover == "Black/White":
-                    if self.Size == "Large":
-                        self.PagePrice = 0.015 * self.NoOfPages
-                        if self.Back == "Hard":
-                            self.CoverPrice = 5
-                        elif self.Back == "Soft":
-                            self.CoverPrice = 1
-                    elif self.Size == "Small":
-                        self.PagePrice = 0.01 * self.NoOfPages
-                        if self.Back == "Hard":
-                            self.CoverPrice = 4
-                        elif self.Back == "Soft":
-                            self.CoverPrice = 0.7
+                        self.CoverPrice = 1
+                elif self.Size == "Small":
+                    self.PagePrice = 0.01 * self.NoOfPages
+                    if self.Back == "Hard":
+                        self.CoverPrice = 4
+                    elif self.Back == "Soft":
+                        self.CoverPrice = 0.7
+                        
                 self.PrintCost = (self.PagePrice + self.CoverPrice) * self.Quantity
                 
                 self.TempPayment= self.NetSales - self.PrintCost

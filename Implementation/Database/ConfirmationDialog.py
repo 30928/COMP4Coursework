@@ -23,7 +23,7 @@ class dbConfirmationDialog(QDialog):
         
         self.qlePasswordBox = QLineEdit(self)
         self.qlePasswordBox.setFixedSize(100, 25)
-
+        self.qlePasswordBox.setEchoMode(self.qlePasswordBox.Password)
         self.lblPassword = QLabel("Password: ", self)
         
         self.horizontal1 = QHBoxLayout()

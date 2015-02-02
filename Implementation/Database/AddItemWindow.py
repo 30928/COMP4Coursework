@@ -2,6 +2,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import sqlite3
 import sys
+import string
 
 class dbAddItemWindow(QDialog):
     """add entry window dialog"""
@@ -175,17 +176,21 @@ class dbAddItemWindow(QDialog):
                     
                     else:
                         self.Label = str(self.columnHeader)
-                        for count2 in range(1, len(self.Label)):
-                            if self.Label[count2].isupper() == True:
-                                self.Label.split("[A-Z]")
-                                
-                                #self.Label += " ".join(str(self.columnHeader).split())
-                                #self.Letter = str(self.columnHeader)[count2]
-                                #self.Split = str(self.columnHeader).split(str(self.columnHeader)[count2])
-                                #self.Label += "{} {}{}".format(self.Split[0], self.Letter, self.Split[1])
-                            print(self.Label)
-                                
-                        self.qlabel = QLabel(str(self.columnHeader), self)
+                        count2 = 0
+                        if self.Label != "ISBN":
+                            for count2 in range(1, len(self.Label)):
+
+
+                                self.Label = " ".join(str(self.columnHeader).split())
+                                self.Letter = str(self.columnHeader)[count2]
+                                strascii = str(string.ascii_uppercase)
+                                for i in range(0, 26):
+                                    
+                                    self.alphabet = strascii.split(strascii[i:i+1], 1)
+                                #self.Label = self.Label.split(, count2) s[i:i+2] for i in range(0, len(s), 2)
+                                print(self.alphabet)
+                                #print(self.Label)
+                        self.qlabel = QLabel(str(self.Label), self)
                     self.qlabelList.append(self.qlabel)
                     self.gridLayout.addWidget(self.qlabelList[count], *place)
                     
