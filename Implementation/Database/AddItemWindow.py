@@ -2,7 +2,8 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import sqlite3
 import sys
-import string
+import re
+
 
 class dbAddItemWindow(QDialog):
     """add entry window dialog"""
@@ -12,6 +13,8 @@ class dbAddItemWindow(QDialog):
     
     def initAddItemWindow(self):
         self.setWindowTitle("Add {}".format(self.AddType))
+        if self.Editing == True:
+            self.setWindowTitle("Edit {}".format(self.AddType))
         self.setModal(True) #modal window
         
         with sqlite3.connect("PP.db") as db: #fetching data from db
@@ -173,23 +176,27 @@ class dbAddItemWindow(QDialog):
                         self.qlabel = QLabel("Quantity", self)
                     elif str(self.columnHeader) == "ExcRateFromGBP":
                         self.qlabel = QLabel("£1 = ", self)
+                    elif str(self.columnHeader)[-2:] in ["ID", "BN"]:
+                        self.qlabel = QLabel(str(self.columnHeader))
                     
                     else:
                         self.Label = str(self.columnHeader)
-                        count2 = 0
-                        if self.Label != "ISBN":
-                            for count2 in range(1, len(self.Label)):
+                        self.LabelLength = len(self.Label)
+                        self.CamelCase = False
+                        for count2 in range(1, self.LabelLength):
+                            if self.CamelCase == True:
+                                pass
+                            else:
+                                self.CamelCase = False
+                            if self.Label[count2].isupper() == True:
+                                self.String1 = re.sub('(.)([A-Z][a-z]+)', r'\1 \2', self.Label[0:count2])
+                                self.String2 = re.sub('(.)([A-Z][a-z]+)', r'\1 \2', self.Label[count2:self.LabelLength])
+                                self.tempLabel = "{} {}".format(self.String1, self.String2)
+                                self.CamelCase = True
+                        
+                        if self.CamelCase == True:
+                            self.Label = self.tempLabel
 
-
-                                self.Label = " ".join(str(self.columnHeader).split())
-                                self.Letter = str(self.columnHeader)[count2]
-                                strascii = str(string.ascii_uppercase)
-                                for i in range(0, 26):
-                                    
-                                    self.alphabet = strascii.split(strascii[i:i+1], 1)
-                                #self.Label = self.Label.split(, count2) s[i:i+2] for i in range(0, len(s), 2)
-                                print(self.alphabet)
-                                #print(self.Label)
                         self.qlabel = QLabel(str(self.Label), self)
                     self.qlabelList.append(self.qlabel)
                     self.gridLayout.addWidget(self.qlabelList[count], *place)
@@ -257,8 +264,7 @@ class dbAddItemWindow(QDialog):
                         self.inputList[count].setCurrentIndex(self.originalIndex)
             elif self.AddType == "RoyaltyItems":
                 for count in range(0, 8):
-                    self.originalIndex = self.inputList[count].findText(self.originalItemList[count])
-                    self.inputList[count].setCurrentIndex(self.originalIndex)
+                    self.inputList[count].setText(self.originalItemList[count])
 
         self.horizontal = QHBoxLayout()
         if self.AddType in ["BookInvoiceItems", "RoyaltyItems"]:
@@ -308,3 +314,5 @@ class dbAddItemWindow(QDialog):
             if self.inputList[5].text() != "":
                 self.PrintCost = (self.PagePrice * int(self.inputList[5].text()))  + self.CoverPrice
                 self.inputList[6].setText(str(self.PrintCost))
+            elif self.inputList[5].text() == "":
+                self.inputList[6].clear()

@@ -14,7 +14,7 @@ class dbTableWidget(QTableWidget):
         self.clear()
         self.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        
+        self.setSortingEnabled(True)
         with sqlite3.connect("PP.db") as db: #fetching data from db
             cursor = db.cursor()
             cursor.execute(self.sql)

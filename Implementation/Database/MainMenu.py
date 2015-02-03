@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
         self.TableWidget = dbTableWidget()
         self.TableWidget.sql = "select * from Customer"
         self.TableWidget.initTable()
-        
+        self.TableWidget.setSortingEnabled(True)
         self.MainMenuButtons = initMainMenuButtons()
         self.MainMenuButtons.vertical.addLayout(self.MainMenuButtons.horizontalTop)
         self.MainMenuButtons.vertical.addWidget(self.TableWidget)
@@ -109,12 +109,14 @@ class MainWindow(QMainWindow):
             self.AddWindow.sql = "select BookInvoiceID, ISBN, BookInvoiceQuantity, BookInvoiceDiscount, ShippingType, ShippingPrice from BookInvoiceItems"
             self.AddWindow.setFixedSize(450, 150)
             self.AddWindow.selectedISBN = self.SelectedISBN
+            self.Editing = False
             self.AddWindow.btnCalculate.clicked.connect(self.BookInvoiceItemCalculation)
             
         elif self.CurrentTable == "RoyaltyItems":
             self.AddWindow.sql = "select RoyaltiesID, ISBN, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, PrintCost, ExcRateFromGBP from RoyaltyItems"
             self.AddWindow.setFixedSize(450, 250)
             self.AddWindow.selectedISBN = self.SelectedISBN
+            self.Editing = False
             self.AddWindow.btnCalculate.clicked.connect(self.RoyaltyItemCalculation)
             
         self.AddWindow.selectedID = self.SelectedID
@@ -126,11 +128,10 @@ class MainWindow(QMainWindow):
         self.RefreshTables()
 
     def RecalculateItems(self):
-
         if self.CurrentTable == "BookInvoiceItems": #recalculates after changes
             self.BookInvoiceItemsWindow.CalculateBookInvoiceItems()
             self.BookInvoiceWindow.table.initTable()
-            
+                
         elif self.CurrentTable == "RoyaltyItems" or self.BookEdited == True:
             self.RoyaltyItemsWindow.CalculateRoyaltyItems()
             self.RoyaltiesWindow.table.initTable()
@@ -343,7 +344,7 @@ class MainWindow(QMainWindow):
         self.CurrentTable = "BookInvoiceItems"
         self.BookInvoiceWindow.SelectedRow = self.BookInvoiceWindow.table.currentRow()
         self.SelectedAuthorID = self.SelectedID
-        #self.BookInvoiceWindow.selectedISBN = self.SelectedISBN
+        self.BookInvoiceWindow.selectedISBN = self.SelectedISBN
         self.SelectedID = QTableWidgetItem(self.BookInvoiceWindow.table.item(self.BookInvoiceWindow.SelectedRow, 0)).text()
 
         if self.SelectedID != "":
@@ -407,15 +408,22 @@ class MainWindow(QMainWindow):
             self.RoyaltyItemsWindow.table.setFixedSize(620, 150)
             self.RoyaltyItemsWindow.RoyaltiesItems()
         self.CurrentTable = "Royalties"
+        self.SelectedID = self.SelectedAuthorID
 
 
         
     def BookInvoiceItemCalculation(self): #calculating the bookinvoicepayment
-        self.Quantity = int(self.AddWindow.inputList[2].text())
-        self.Discount = float(self.AddWindow.inputList[3].text()) / 100
-        self.ShippingPrice = float(self.AddWindow.inputList[5].text())
-        self.ISBN = self.AddWindow.inputList[1].text()
-        
+        if self.Editing == False:
+            self.Quantity = int(self.AddWindow.inputList[2].text())
+            self.Discount = float(self.AddWindow.inputList[3].text()) / 100
+            self.ShippingPrice = float(self.AddWindow.inputList[5].text())
+            self.ISBN = self.AddWindow.inputList[1].text()
+        elif self.Editing == True:
+            self.Quantity = int(self.EditWindow.inputList[2].text())
+            self.Discount = float(self.EditWindow.inputList[3].text()) / 100
+            self.ShippingPrice = float(self.EditWindow.inputList[5].text())
+            self.ISBN = self.EditWindow.inputList[1].text()
+
         with sqlite3.connect("PP.db") as db: #fetching data from db
             cursor = db.cursor()
             cursor.execute("select Price from Book where ISBN = {}".format(self.ISBN))
@@ -426,22 +434,31 @@ class MainWindow(QMainWindow):
         self.Discount = self.BookInvoiceItemPayment * self.Discount
         self.BookInvoiceItemPayment -= self.Discount
         self.BookInvoiceItemPayment += self.ShippingPrice
-        self.BookInvoiceItemPayment = "{0:.2f}".format(self.BookInvoiceItemPayment)
-        self.AddWindow.qleCalculation.setText("£{}".format(self.BookInvoiceItemPayment))
-
-
+        self.BookInvoiceItemPayment = "£{0:.2f}".format(self.BookInvoiceItemPayment)
+        if self.Editing == False:
+            self.AddWindow.qleCalculation.setText(self.BookInvoiceItemPayment)
+        elif self.Editing == True:
+            self.EditWindow.qleCalculation.setText(self.BookInvoiceItemPayment)
 
     def RoyaltyItemCalculation(self): #calculating the royaltypayment
-        self.Currency = self.AddWindow.inputList[2].text()
-        self.WholesalePrice = float(self.AddWindow.inputList[4].text())
-        self.Quantity = int(self.AddWindow.inputList[5].text())
-        self.PrintCost = float(self.AddWindow.inputList[6].text())
-        
+        if self.Editing == False:
+            self.Currency = self.AddWindow.inputList[2].text()
+            self.WholesalePrice = float(self.AddWindow.inputList[4].text())
+            self.Quantity = int(self.AddWindow.inputList[5].text())
+            self.PrintCost = float(self.AddWindow.inputList[6].text())
+        elif self.Editing == True:
+            self.Currency = self.EditWindow.inputList[2].text()
+            self.WholesalePrice = float(self.EditWindow.inputList[4].text())
+            self.Quantity = int(self.EditWindow.inputList[5].text())
+            self.PrintCost = float(self.EditWindow.inputList[6].text())
+
         self.NetSales = self.WholesalePrice * self.Quantity
         self.RoyaltyItemPayment = self.NetSales - self.PrintCost
-        self.RoyaltyItemPayment = "{0:.2f}".format(self.RoyaltyItemPayment)       
-        self.AddWindow.qleCalculation.setText("{}{}".format(self.Currency, self.RoyaltyItemPayment))
-
+        self.RoyaltyItemPayment = "{0:.2f}".format(self.RoyaltyItemPayment)
+        if self.Editing == False:
+            self.AddWindow.qleCalculation.setText("{}{}".format(self.Currency, self.RoyaltyItemPayment))
+        elif self.Editing == True:
+            self.EditWindow.qleCalculation.setText("{}{}".format(self.Currency, self.RoyaltyItemPayment))
 
 
     def UpdateCustomerEntry(self): #updating customer entries only
@@ -517,6 +534,8 @@ class MainWindow(QMainWindow):
         elif self.CurrentTable == "BookInvoiceItems":
             self.EditWindow.setFixedSize(450, 150)
             self.EditWindow.selectedID = self.SelectedID
+            self.Editing = True
+            self.EditWindow.btnCalculate.clicked.connect(self.BookInvoiceItemCalculation)
             self.EditWindow.selectedISBN = self.SelectedISBN
             self.EditWindow.sql = "select BookInvoiceID, ISBN, BookInvoiceQuantity, BookInvoiceDiscount, ShippingType, ShippingPrice from BookInvoiceItems"
             for count in range(1, 7):
@@ -528,13 +547,16 @@ class MainWindow(QMainWindow):
         elif self.CurrentTable == "RoyaltyItems":
             self.EditWindow.setFixedSize(450, 250)
             self.EditWindow.selectedID = self.SelectedID
+            self.Editing = True
+            self.EditWindow.btnCalculate.clicked.connect(self.RoyaltyItemCalculation)
             self.EditWindow.selectedISBN = self.SelectedISBN
-            self.EditWindow.sql = "select RoyaltiesID, ISBN, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, NetSales, PrintCost, ExcRateFromGBP from RoyaltyItems"
-            for count in range(1, 9):
-                self.RoyaltyItemsWindow.SelectedRow = self.RoyaltyItemsWindow.table.currentRow()
-                self.EditWindow.originalItemList.append(QTableWidgetItem(self.RoyaltyItemsWindow.table.item(self.RoyaltyItemsWindow.SelectedRow, count)).text())
-                if self.RoyaltyItemsWindow.SelectedRow != -1:
-                    self.Selection = True
+            self.EditWindow.sql = "select RoyaltiesID, ISBN, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, PrintCost, ExcRateFromGBP from RoyaltyItems"
+            for count in range(1, 10):
+                if count != 7:
+                    self.RoyaltyItemsWindow.SelectedRow = self.RoyaltyItemsWindow.table.currentRow()
+                    self.EditWindow.originalItemList.append(QTableWidgetItem(self.RoyaltyItemsWindow.table.item(self.RoyaltyItemsWindow.SelectedRow, count)).text())
+                    if self.RoyaltyItemsWindow.SelectedRow != -1:
+                        self.Selection = True
 
         self.EditWindow.Editing = True
 
@@ -682,11 +704,11 @@ class MainWindow(QMainWindow):
             self.RoyaltiesWindow.table.initTable()
             
         elif self.CurrentTable == "BookInvoiceItems":
-            self.BookInvoiceItemsWindow.table.sql = "select * from BookInvoiceItems where ISBN = {}".format(self.SelectedISBN)
+            self.BookInvoiceItemsWindow.table.sql = "select * from BookInvoiceItems where BookInvoiceID = {}".format(self.SelectedID)
             self.BookInvoiceItemsWindow.table.initTable()
-            
+            #####################################################################################################################################################
         elif self.CurrentTable == "RoyaltyItems":
-            self.RoyaltyItemsWindow.table.sql = "select * from RoyaltyItems where ISBN = {}".format(self.SelectedISBN)
+            self.RoyaltyItemsWindow.table.sql = "select * from RoyaltyItems where RoyaltiesID = {}".format(self.SelectedID)
             self.RoyaltyItemsWindow.table.initTable()
 
 
@@ -697,7 +719,6 @@ class MainWindow(QMainWindow):
         self.StackedLayout.setCurrentIndex(0)
         self.MenuBar.setVisible(True)
 
-        
 
 def main():
     app = QApplication(sys.argv)
