@@ -69,22 +69,32 @@ class dbItems(QDialog):
             i = 1
             sql = "select * from BookInvoiceItems where BookInvoiceID = {}".format(self.selectedID)
             cursor.execute(sql)
-            try:
-                self.NoOfItems = len(list(cursor.fetchall()))
-            except:
-                self.NoOfItems = 0
+
+
+            self.IDList = []
+            sql = "select AuthorID from Customer"
+            cursor.execute(sql)
+            self.IDListTuple = list(cursor.fetchall())
+            for count in range(0, len(self.IDListTuple)): #conversion from tuple
+                self.IDList.append(list(self.IDListTuple[count])[0])
+                
+            self.currentID = 0
+            for count in range(0, len(self.IDList)):
+                if self.currentID < self.IDList[count]:
+                    self.currentID = self.IDList[count]
+
             
-            if self.NoOfItems != 0:
-                for count in range(0, self.NoOfItems + 1):#
+            if self.currentID != 0:
+                for count in range(1, self.currentID +1):
                     self.Empty = False
                     Selection = "BookInvoiceItems.BookInvoiceQuantity, BookInvoiceItems.BookInvoiceDiscount, BookInvoiceItems.ShippingPrice, Book.Price"
                     Tables = "BookInvoiceItems, Book"
-                    sql = "select {} from {} where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and Book.ISBN = {}".format(Selection, Tables, self.selectedID, count, self.selectedISBN)
+                    sql = "select {} from {} where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and BookInvoiceItems.ISBN = {} and BookInvoiceItems.ISBN = Book.ISBN".format(Selection, Tables, self.selectedID, count, self.selectedISBN)
                     cursor.execute(sql)
                     try:
                         self.SelectionList = list(cursor.fetchone())
                     except:
-                        self.Empty = True
+                            self.Empty = True
 
                     if self.Empty != True:
                         self.Quantity = self.SelectionList[0]
@@ -105,7 +115,7 @@ class dbItems(QDialog):
                 db.commit()
                 i = 0
 
-            if self.NoOfItems == 0:
+            if self.currentID == 0:
                 self.BookInvoicePayment = None
                 sql = "update BookInvoice set BookInvoicePayment = '{}' where BookInvoiceID = {}".format(self.BookInvoicePayment, self.selectedID)
                 cursor.execute(sql)
@@ -122,23 +132,25 @@ class dbItems(QDialog):
             sql = "select * from RoyaltyItems where RoyaltiesID = {}".format(self.selectedID)
             cursor.execute(sql)
 
-            try:
-                self.NoOfItems = len(list(cursor.fetchall()))
-            except:
-                self.NoOfItems = 0
-            #finding the biggest id
-            sql = "select RoyaltyItemsID from RoyaltyItems where RoyaltiesID = {}".format(self.selectedID)
+            self.IDList = []
+            sql = "select AuthorID from Customer"
             cursor.execute(sql)
-            self.IDs = list(cursor.fetchone())
-            print(self.IDs, "d")
-            print(list(cursor.fetchall()), "!")
-            if self.NoOfItems != 0:
-                for count in range(0, self.NoOfItems+1):#
+            self.IDListTuple = list(cursor.fetchall())
+            for count in range(0, len(self.IDListTuple)): #conversion from tuple
+                self.IDList.append(list(self.IDListTuple[count])[0])
+                
+            self.currentID = 0
+            for count in range(0, len(self.IDList)):
+                if self.currentID < self.IDList[count]:
+                    self.currentID = self.IDList[count]
+                    
+            if self.currentID != 0:
+                for count in range(0, self.currentID+1):#
                     self.Empty = False
                     Select1 = "RoyaltyItems.Currency, RoyaltyItems.NetSales, RoyaltyItems.ExcRateFromGBP, RoyaltyItems.RoyaltyQuantity, "
                     Select2 = "Book.NoOfPages, Book.Size, Book.Cover, Book.Back"
                     Tables = "RoyaltyItems, Book"
-                    sql = "select {}{} from {} where RoyaltiesID = {} and RoyaltyItemsID = {} and Book.ISBN = {}".format(Select1, Select2, Tables, self.selectedID, count+1, self.selectedISBN)
+                    sql = "select {}{} from {} where RoyaltiesID = {} and RoyaltyItemsID = {} and RoyaltyItems.ISBN = {} and Book.ISBN = RoyaltyItems.ISBN".format(Select1, Select2, Tables, self.selectedID, count+1, self.selectedISBN)
                     cursor.execute(sql)
                     try:
                         self.SelectionList = list(cursor.fetchone())
@@ -180,7 +192,7 @@ class dbItems(QDialog):
                 cursor.execute(sql)
                 db.commit()
 
-            if self.NoOfItems == 0:
+            if self.currentID == 0:
                 self.RoyaltyPayment = None
                 sql = "update Royalties set RoyaltyPayment = '{}' where RoyaltiesID = {}".format(self.RoyaltyPayment, self.selectedID)
                 cursor.execute(sql)

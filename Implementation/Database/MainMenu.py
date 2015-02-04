@@ -187,10 +187,10 @@ class MainWindow(QMainWindow):
             db.commit()
             
         self.RefreshTables()
-        try:
-            self.RecalculateItems()
-        except:
-            pass
+        
+        self.RecalculateItems()
+    #    except:
+     #       pass
         
     def RemoveEntry(self): #removing a customer
         self.SelectedRow = self.TableWidget.currentRow()
