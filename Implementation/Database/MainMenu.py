@@ -61,6 +61,7 @@ class MainWindow(QMainWindow):
         self.MainMenuButtons.btnRemoveEntry.clicked.connect(self.RemoveEntry)
         self.MainMenuButtons.btnView.clicked.connect(self.ViewCustomer)
         self.MainMenuButtons.btnUpdateEntry.clicked.connect(self.UpdateCustomerEntry)
+        self.MainMenuButtons.btnQuickSearch.clicked.connect(self.QuickSearch)
         self.MenuBar.add_entry.triggered.connect(self.AddEntry)
         self.MenuBar.remove_entry.triggered.connect(self.RemoveEntry)
         self.MenuBar.update_entry.triggered.connect(self.UpdateCustomerEntry)
@@ -718,6 +719,11 @@ class MainWindow(QMainWindow):
         self.CurrentTable = "Customer"
         self.StackedLayout.setCurrentIndex(0)
         self.MenuBar.setVisible(True)
+
+
+
+    def QuickSearch(self): # quick search from main menu
+        pass
 
 
 def main():

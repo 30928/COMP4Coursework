@@ -141,16 +141,15 @@ class dbItems(QDialog):
                 
             self.currentID = 0
             for count in range(0, len(self.IDList)):
-                if self.currentID < self.IDList[count]:
+                if self.currentID < self.IDList[count]: #finding biggest ID no. for iteration limit
                     self.currentID = self.IDList[count]
                     
             if self.currentID != 0:
-                for count in range(0, self.currentID+1):#
+                for count in range(0, self.currentID+1):
                     self.Empty = False
-                    Select1 = "RoyaltyItems.Currency, RoyaltyItems.NetSales, RoyaltyItems.ExcRateFromGBP, RoyaltyItems.RoyaltyQuantity, "
-                    Select2 = "Book.NoOfPages, Book.Size, Book.Cover, Book.Back"
+                    Selection = "RoyaltyItems.Currency, RoyaltyItems.NetSales, RoyaltyItems.ExcRateFromGBP, RoyaltyItems.RoyaltyQuantity, Book.NoOfPages, Book.Size, Book.Cover, Book.Back"
                     Tables = "RoyaltyItems, Book"
-                    sql = "select {}{} from {} where RoyaltiesID = {} and RoyaltyItemsID = {} and RoyaltyItems.ISBN = {} and Book.ISBN = RoyaltyItems.ISBN".format(Select1, Select2, Tables, self.selectedID, count+1, self.selectedISBN)
+                    sql = "select {}{} from {} where RoyaltiesID = {} and RoyaltyItemsID = {} and RoyaltyItems.ISBN = {} and Book.ISBN = RoyaltyItems.ISBN".format(Selection, Tables, self.selectedID, count+1, self.selectedISBN)
                     cursor.execute(sql)
                     try:
                         self.SelectionList = list(cursor.fetchone())
