@@ -316,3 +316,17 @@ class dbAddItemWindow(QDialog):
                 self.inputList[6].setText(str(self.PrintCost))
             elif self.inputList[5].text() == "":
                 self.inputList[6].clear()
+
+    def Validate(self):
+        self.Valid = True
+        for count in range(0, self.NoOfEntries):
+            if len(self.inputList[count].currentText()) == 0:
+                   self.Valid == False
+            try: #gathering the input data
+                self.input_data.append(str(self.inputList[count].currentText()))
+            except:
+                if count == 8 and self.CurrentTable == "RoyaltyItems":
+                    self.input_data.append(self.NetSales)
+                else:
+                    self.input_data.append(self.inputList[count].text())
+               
