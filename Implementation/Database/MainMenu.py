@@ -14,13 +14,14 @@ from ViewRoyaltiesAndInvoices import *
 from UpdateEntryWindow import *
 from CalendarWidget import *
 from Items import *
-
+from SearchDatabase import *
+from LoginDB import *
 class MainWindow(QMainWindow):
     """main window"""
 
-    def __init__(self):
+    def __init__(self, Username):
         super().__init__()
-        
+        self.Username = Username
         self.setWindowTitle("Main Menu")
         self.setFixedSize(735,400) 
         self.MenuBar = dbMenuBar()      
@@ -37,7 +38,7 @@ class MainWindow(QMainWindow):
         self.CurrentTable = "Customer"            
         self.MainMenuButtons.setLayout(self.MainMenuButtons.vertical)
 
-        self.StackedLayout = QStackedLayout()     
+        self.StackedLayout = QStackedLayout()
         
         self.centralWidget = QWidget()
         self.centralWidget.setLayout(self.StackedLayout)
@@ -54,16 +55,20 @@ class MainWindow(QMainWindow):
         self.ViewWindow.setLayout(self.ViewWindow.vertical)
         
         self.StackedLayout.addWidget(self.ViewWindow)
-        
+
         #connections
         self.MainMenuButtons.btnAddEntry.clicked.connect(self.AddEntry) 
         self.MainMenuButtons.btnRemoveEntry.clicked.connect(self.RemoveEntry)
         self.MainMenuButtons.btnView.clicked.connect(self.ViewCustomer)
         self.MainMenuButtons.btnUpdateEntry.clicked.connect(self.UpdateCustomerEntry)
         self.MainMenuButtons.btnQuickSearch.clicked.connect(self.QuickSearch)
+        self.MainMenuButtons.btnSearchdb.clicked.connect(self.Search)
+        self.MainMenuButtons.btnLogOut.clicked.connect(self.LogOut)
+        self.MenuBar.search_database.triggered.connect(self.Search)
         self.MenuBar.add_entry.triggered.connect(self.AddEntry)
         self.MenuBar.remove_entry.triggered.connect(self.RemoveEntry)
         self.MenuBar.update_entry.triggered.connect(self.UpdateCustomerEntry)
+        self.MenuBar.log_out.triggered.connect(self.LogOut)
         self.ViewWindow.btnBack.clicked.connect(self.Back)
         self.ViewWindow.btnAddBook.clicked.connect(self.AddItem)
         self.ViewWindow.btnUpdateBook.clicked.connect(self.UpdateEntry)
@@ -197,6 +202,7 @@ class MainWindow(QMainWindow):
     def RemoveEntry(self): #removing a customer
         self.SelectedRow = self.TableWidget.currentRow()
         self.ConfirmDialog = dbConfirmationDialog()
+        self.ConfirmDialog.Username = self.Username
         self.ConfirmDialog.SelectedAuthorID = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 0)).text() #getting AuthorID of a row
         if self.ConfirmDialog.SelectedAuthorID != "":
             self.Firstname = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 1)).text()
@@ -220,6 +226,7 @@ class MainWindow(QMainWindow):
     def RemoveFromDB(self): #removing other entries
         #getting primary key of the row
         self.ConfirmDialog = dbConfirmationDialog()
+        self.ConfirmDialog.Username = self.Username
         self.ConfirmDialog.DeleteMsg = self.CurrentTable
         self.SelectedAuthorID = self.SelectedID
         
@@ -307,17 +314,17 @@ class MainWindow(QMainWindow):
         self.SelectedISBN = QTableWidgetItem(self.ViewWindow.table.item(self.ViewWindow.SelectedRow, 0)).text()
         self.SelectedID = QTableWidgetItem(self.TableWidget.item(self.TableWidget.currentRow(), 0)).text()
         self.SelectedAuthorID = self.SelectedID
-        
-        self.PubInvoiceWindow = dbRoyaltiesAndInvoices()
-        self.PubInvoiceWindow.PubInvoiceButtons()
-        self.PubInvoiceWindow.btnAddPubInvoice.clicked.connect(self.AddItem)
-        self.PubInvoiceWindow.btnUpdatePubInvoice.clicked.connect(self.UpdateEntry)
-        self.PubInvoiceWindow.btnDeleteEntry.clicked.connect(self.RemoveFromDB)
-        self.PubInvoiceWindow.table = dbTableWidget()
-        self.PubInvoiceWindow.table.sql = "select * from PubInvoice where AuthorID = {}".format(self.SelectedAuthorID)
-        self.PubInvoiceWindow.table.initTable()
-        self.PubInvoiceWindow.table.setFixedSize(620, 150)
-        self.PubInvoiceWindow.PubInvoice()
+        if self.SelectedISBN != "":
+            self.PubInvoiceWindow = dbRoyaltiesAndInvoices()
+            self.PubInvoiceWindow.PubInvoiceButtons()
+            self.PubInvoiceWindow.btnAddPubInvoice.clicked.connect(self.AddItem)
+            self.PubInvoiceWindow.btnUpdatePubInvoice.clicked.connect(self.UpdateEntry)
+            self.PubInvoiceWindow.btnDeleteEntry.clicked.connect(self.RemoveFromDB)
+            self.PubInvoiceWindow.table = dbTableWidget()
+            self.PubInvoiceWindow.table.sql = "select * from PubInvoice where AuthorID = {}".format(self.SelectedAuthorID)
+            self.PubInvoiceWindow.table.initTable()
+            self.PubInvoiceWindow.table.setFixedSize(620, 150)
+            self.PubInvoiceWindow.PubInvoice()
         self.CurrentTable = "Book"
 
 
@@ -479,8 +486,9 @@ class MainWindow(QMainWindow):
             self.UpdateEntryWindow.table.initTable()
             self.UpdateEntryWindow.table.setFixedSize(617, 55)
             self.UpdateEntryWindow.Verify = dbConfirmationDialog()
+            self.UpdateEntryWindow.Verify.Username = self.Username
             self.UpdateEntryWindow.initConfirmBtn()
-            self.UpdateEntryWindow.btnConfirm.claicked.connect(self.VerifyCustomerUpdate)
+            self.UpdateEntryWindow.btnConfirm.clicked.connect(self.VerifyCustomerUpdate)
             self.UpdateEntryWindow.initUpdateEntryWindowDlg()
         self.RefreshTables()
 
@@ -742,6 +750,26 @@ class MainWindow(QMainWindow):
             self.TableWidget.initTable()
 
 
+
+    def Search(self):
+        self.SearchDatabase = dbSearchDatabase()
+        self.SearchDatabase.initLayout()
+
+
+
+    def keyReleaseEvent(self, QKeyEvent):
+        if self.MainMenuButtons.leQuickSearch.text() == "":
+            self.TableWidget.sql = "select * from Customer"
+            self.TableWidget.initTable()
+
+
+
+    def LogOut(self):
+        self.close()
+        os.system("LoginDB.py")
+        ##########################reopen login window
+
+    
         
 def main():
     app = QApplication(sys.argv)

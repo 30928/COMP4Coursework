@@ -16,8 +16,11 @@ class dbConfirmationDialog(QDialog):
         self.setModal(True)
 
         self.lblWarningMsg = QLabel(self.Msg, self)
-        self.lblWarningMsg.move(50,50)
-        self.lblWarningMsg.setFixedSize(250,50)
+        self.horizontal = QHBoxLayout()
+        self.horizontal.addStretch(1)
+        self.horizontal.addWidget(self.lblWarningMsg)
+        self.horizontal.addStretch(1)
+        self.lblWarningMsg.setFixedSize(250,30)
         self.lblWarningMsg.setWordWrap(True)
         self.lblWarningMsg.setAlignment(Qt.AlignHCenter)
         
@@ -39,21 +42,54 @@ class dbConfirmationDialog(QDialog):
         self.horizontal2.addWidget(self.btnConfirm)
 
         self.vertical = QVBoxLayout()
-        self.vertical.addWidget(self.lblWarningMsg)
+        self.vertical.addLayout(self.horizontal)
         self.vertical.addLayout(self.horizontal1)
         self.vertical.addLayout(self.horizontal2)
+        self.vertical.addStretch(1)
         self.setLayout(self.vertical)
         
-        self.btnConfirm.clicked.connect(self.accept)
+
         self.btnCancel.clicked.connect(self.reject)
         self.ConfirmedDialog = dbConfirmationDialog()
         self.ConfirmedDialog.ConfirmedMsg = self.ConfirmedMsg
-
-        self.btnConfirm.clicked.connect(self.ConfirmedDialog.Confirmed)                
+        self.lblInvalid = None
+        self.btnConfirm.clicked.connect(self.PasswordCheck)                
         
         self.ConfirmedDialog.Accepted = False
         self.exec_()
 
+        
+    def PasswordCheck(self):
+        with sqlite3.connect("dbLogin") as db:
+            cursor = db.cursor()
+            cursor.execute("select Username from LoginDetails")
+            self.Username = list(cursor.fetchall())
+            cursor.execute("select Password from LoginDetails")
+            self.Password = list(cursor.fetchall())
+            self.Valid = False
+            
+            for count in range(0, len(self.Password)):
+                if self.qlePasswordBox.text() == list(self.Password[count])[0]:
+                    self.accept()
+                    self.ConfirmedDialog.Confirmed()
+                    break
+                else:
+                    self.Valid = False
+                    
+            if self.Valid == False:
+                if self.lblInvalid == None:
+                    self.lblInvalid = QLabel("Invalid Username or Password - Please try again.", self)
+                    self.lblInvalid.setWordWrap(True)
+                    self.lblInvalid.setAlignment(Qt.AlignHCenter)
+                    self.horizontalInvalid = QHBoxLayout()
+                    self.horizontalInvalid.addStretch(1)
+                    self.horizontalInvalid.addWidget(self.lblInvalid)
+                    self.horizontalInvalid.addStretch(1)
+                    self.vertical.addLayout(self.horizontalInvalid)
+                else:
+                    self.lblInvalid.show()
+
+                    
     def Confirmed(self):
         self.setWindowTitle("Confirmation")
         self.setFixedSize(275, 100)
@@ -80,6 +116,9 @@ class dbConfirmationDialog(QDialog):
         self.setLayout(self.vertical)
         self.Accepted = True
         self.exec_()
-        
+
+    def keyReleaseEvent(self, QKeyEvent):
+        if self.lblInvalid != None:
+            self.lblInvalid.hide()
 
         
