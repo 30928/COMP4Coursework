@@ -60,10 +60,8 @@ class dbConfirmationDialog(QDialog):
 
         
     def PasswordCheck(self):
-        with sqlite3.connect("dbLogin") as db:
+        with sqlite3.connect("dbLogin.db") as db:
             cursor = db.cursor()
-            cursor.execute("select Username from LoginDetails")
-            self.Username = list(cursor.fetchall())
             cursor.execute("select Password from LoginDetails")
             self.Password = list(cursor.fetchall())
             self.Valid = False

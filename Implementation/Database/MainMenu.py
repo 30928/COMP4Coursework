@@ -92,7 +92,6 @@ class MainWindow(QMainWindow):
         self.AddWindow.setFixedSize(360,200)
         self.AddWindow.AddType = self.CurrentTable
         self.AddWindow.AnswerButtons()
-        self.AddWindow.btnConfirm.clicked.connect(self.AddWindow.Validate)
         self.AddWindow.btnConfirm.clicked.connect(self.AddToDB)
         self.AddWindow.Editing = False
 
@@ -185,15 +184,15 @@ class MainWindow(QMainWindow):
                     self.input_data.append(self.NetSales)
                 else:
                     self.input_data.append(self.AddWindow.inputList[count].text())
-        if self.AddWindow.Valid == True: 
-            with sqlite3.connect("PP.db") as db:
-                cursor = db.cursor()
-                cursor.execute("PRAGMA foreign_keys = ON")
-                self.sql = "insert into {} values {}".format(self.TableValues, self.Placeholders)
-                cursor.execute(self.sql, self.input_data)
-                db.commit()
-                
-            self.RefreshTables()
+
+        with sqlite3.connect("PP.db") as db:
+            cursor = db.cursor()
+            cursor.execute("PRAGMA foreign_keys = ON")
+            self.sql = "insert into {} values {}".format(self.TableValues, self.Placeholders)
+            cursor.execute(self.sql, self.input_data)
+            db.commit()
+            
+        self.RefreshTables()
             
         try:   
             self.RecalculateItems()
@@ -754,8 +753,39 @@ class MainWindow(QMainWindow):
 
     def Search(self):
         self.SearchDatabase = dbSearchDatabase()
+        self.SearchDatabase.CalendarWidget = dbCalendarWidget()
+        self.SearchDatabase.CalendarWidget.Calendar()
         self.SearchDatabase.initLayout()
+        
+        if self.SearchDatabase.Table == "Book":
+            for count in range(2, len(list(self.SearchDatabase.Results)[0])):
+                try:
+                    if count == 2:
+                        self.TableWidget.sql = "select * from {} where ISBN = '{}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[0])[count])
+                    else:
+                        self.TableWidget.sql += " or ISBN = '{}'".format(list(self.SearchDatabase.Results[count - 2])[2])
+                    self.TableWidget.initTable()
+                except IndexError:
+                    self.TableWidget.initTable()
 
+        if self.SearchDatabase.Table in ["RoyaltyItems", "BookInvoiceItems"]:
+            start = 4
+            step = 5
+        else:
+            start = 1
+            step = 2
+        if self.SearchDatabase.Table != "Book":
+            for count in range(start, (len(list(self.SearchDatabase.Results)[0] * len(self.SearchDatabase.Results)))):
+                try:
+                    if count == start:
+                        self.TableWidget.sql = "select * from {0} where {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[0])[count])
+                    else:
+                        self.TableWidget.sql += " or {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[count-4])[4])
+                    self.TableWidget.initTable()
+                    
+                except IndexError:
+                    self.TableWidget.initTable()         
+            
 
 
     def keyReleaseEvent(self, QKeyEvent):
@@ -767,7 +797,7 @@ class MainWindow(QMainWindow):
 
     def LogOut(self):
         self.close()
-        os.system("LoginDB.pyw")
+        os.system("LoginDB.py")
         ##########################reopen login window
 
     

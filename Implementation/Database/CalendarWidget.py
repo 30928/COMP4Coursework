@@ -8,7 +8,7 @@ class dbCalendarWidget(QDialog):
         super().__init__()
     
     def Calendar(self):
-        #self.setFixedSize(265, 275)
+        self.setFixedSize(265, 275)
         self.setWindowTitle('Calendar')
         calendar = QCalendarWidget(self)
         calendar.setGridVisible(True)

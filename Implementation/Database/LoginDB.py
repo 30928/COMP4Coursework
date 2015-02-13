@@ -12,21 +12,8 @@ class dbLogin(QMainWindow):
         super().__init__()
         self.setWindowTitle("Login")
         self.setFixedSize(300, 150)
-        self.initLoginDB()
+
         self.initLoginScreen()
-        
-    def initLoginDB(self):
-        with sqlite3.connect("dbLogin") as db:
-            cursor = db.cursor()
-            cursor.execute("drop table if exists LoginDetails")
-            sql = """create table LoginDetails
-                     (Username text,
-                     Password text,
-                     primary key(Username))"""
-            cursor.execute(sql)
-            self.data = "Username", "Password"
-            cursor.execute("insert into LoginDetails (Username, Password) values (?, ?)", self.data)
-            db.commit()
 
     def initLoginScreen(self):
         self.lblLogin = QLabel("Please Log In", self)
@@ -70,7 +57,7 @@ class dbLogin(QMainWindow):
         self.lblInvalid = None
 
     def Login(self):
-        with sqlite3.connect("dbLogin") as db:
+        with sqlite3.connect("dbLogin.db") as db:
             cursor = db.cursor()
             cursor.execute("select Username from LoginDetails")
             self.Username = list(cursor.fetchall())
@@ -81,7 +68,6 @@ class dbLogin(QMainWindow):
             for count in range(0, len(self.Username)):
                 if self.leUsername.text() == list(self.Username[count])[0]:
                     if self.lePassword.text() == list(self.Password[count])[0]:
-                        print("Login successful")
                         self.Valid = True
                         self.MainProgram = MainWindow(list(self.Username[count])[0])
                         self.MainProgram.show()

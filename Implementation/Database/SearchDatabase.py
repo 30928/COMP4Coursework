@@ -12,6 +12,8 @@ class dbSearchDatabase(QDialog):
         
     def initLayout(self):
         self.gridLayout = QGridLayout()
+        self.gridLayout.setVerticalSpacing(10)
+        self.gridLayout.setHorizontalSpacing(10)
         self.setFixedSize(400, 200)
         self.leFirstname = QLineEdit(self)
         self.leLastname = QLineEdit(self)
@@ -21,7 +23,7 @@ class dbSearchDatabase(QDialog):
         self.leSearch = QLineEdit(self)
         self.btnCancel = QPushButton("Cancel", self)
         self.btnSearch = QPushButton("Search", self)
-        self.btnDate.setFixedSize(60, 25)
+        self.btnDate.setFixedSize(75, 20)
         self.lblFirstname = QLabel("Author Firstname:")
         self.lblLastname = QLabel("Author Lastname:")
         self.gridLayout.addWidget(self.leFirstname, 0, 3)
@@ -30,8 +32,8 @@ class dbSearchDatabase(QDialog):
         self.gridLayout.addWidget(self.lblLastname, 1, 2, Qt.AlignRight)
         self.gridLayout.addWidget(self.cbTable, 0, 0)
         self.gridLayout.addWidget(self.cbCategory, 2, 0)
-        self.gridLayout.addWidget(self.btnDate, 2, 1, Qt.AlignHCenter)
-        self.gridLayout.addWidget(self.leSearch, 2, 2, 1, 2)
+        self.gridLayout.addWidget(self.btnDate, 2, 2, Qt.AlignHCenter)
+        self.gridLayout.addWidget(self.leSearch, 2, 3)
         self.gridLayout.addWidget(self.btnCancel, 3, 2)
         self.gridLayout.addWidget(self.btnSearch, 3, 3)
         self.setLayout(self.gridLayout)
@@ -43,20 +45,104 @@ class dbSearchDatabase(QDialog):
         self.cbTable.addItem("Royalties")
         self.cbTable.addItem("Royalty Items")
         self.cbTable.activated[str].connect(self.ChangeCategories)
+        self.cbCategory.activated[str].connect(self.DateButton)
+        self.btnDate.hide()
+        self.leSearch.hide()
+        self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
+        self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
+        self.leSearch.setFixedSize(self.leSearch.sizeHint())
+        self.leFirstname.setFixedSize(self.leFirstname.sizeHint())
+        self.leLastname.setFixedSize(self.leLastname.sizeHint())
+        self.btnSearch.clicked.connect(self.getSearchData)
         self.exec_()
         
     def ChangeCategories(self):
-        if self.cbTable.currentText() == "Customer":
-            pass
+        self.btnDate.hide()
+        self.leSearch.show()
+        self.cbCategory.clear()
+        if self.cbTable.currentText() == "Author":
+            self.leSearch.hide()
         elif self.cbTable.currentText() == "Book":
-            pass
-        elif self.cbTable.currentText() == "PubInvoice":
-            pass
-        elif self.cbTable.currentText() == "BookInvoice":
-            pass
-        elif self.cbTable.currentText() == "BookInvoiceItems":
-            pass
+            self.cbCategory.addItem("Book Title")
+            self.cbCategory.addItem("Price")
+            self.cbCategory.addItem("Date Published")
+            
+        elif self.cbTable.currentText() == "Publishing Invoice":
+            self.cbCategory.addItem("Service")
+            self.cbCategory.addItem("Date")
+            
+        elif self.cbTable.currentText() == "Book Invoice":
+            self.cbCategory.addItem("Date")
+            self.btnDate.show()
+            
+        elif self.cbTable.currentText() == "Book Invoice Items":
+            self.cbCategory.addItem("Quantity")
+            self.cbCategory.addItem("Discount")
+            self.cbCategory.addItem("Shipping Type")
+            
         elif self.cbTable.currentText() == "Royalties":
-            pass
-        elif self.cbTable.currentText() == "RoyaltyItems":
-            pass
+            self.cbCategory.addItem("Date")
+            self.btnDate.show()
+            
+        elif self.cbTable.currentText() == "Royalty Items":
+            self.cbCategory.addItem("Quantity")
+            self.cbCategory.addItem("Discount")
+            self.cbCategory.addItem("Currency")
+
+    def DateButton(self):
+        if self.cbCategory.currentText()[:4] == "Date":
+            self.btnDate.show()
+            self.leSearch.setReadOnly(True)
+        else:
+            self.btnDate.hide()
+            self.leSearch.setReadOnly(False)
+            
+    def getDate(self):
+        self.CalendarWidget.date = self.CalendarWidget.qle.text()
+        self.leSearch.setText(self.CalendarWidget.date)
+
+    def getSearchData(self):
+        self.Firstname = self.leFirstname.text()
+        self.Lastname = self.leLastname.text()
+        self.Table = self.cbTable.currentText().replace(" ", "")
+        
+        if self.Table == "PublishingInvoice":
+            self.Table = "PubInvoice"
+            
+        if self.Table != "Author":
+            self.Category = self.cbCategory.currentText().replace(" ", "")
+            
+            if self.Category in ["Discount", "Quantity"]:
+
+                if self.Table == "RoyaltyItems":
+                    self.Category = "Royalty{}".format(self.Category)
+                    
+                elif self.Table == "BookInvoiceItems":
+                    self.Category = "BookInvoice{}".format(self.Category)
+                    
+            elif self.Category == "Date":
+                self.Category = "{}Date".format(self.Table)
+                
+            elif self.Category == "Service":
+                self.Category = "PubInvoiceService"
+                
+            self.Search = self.leSearch.text()
+            
+            if self.Table not in ["BookInvoiceItems", "RoyaltyItems"]:
+                if self.Table in ["PubInvoice", "Royalties", "BookInvoice"]:
+                    self.sql = "select Customer.AuthorID, {0}ID from Customer, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and Customer.AuthorID = {0}.AuthorID".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
+                elif self.Table == "Book":
+                    self.sql = "select Customer.AuthorID, Book.AuthorID, Book.ISBN from Customer, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and Customer.AuthorID = {0}.AuthorID".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
+
+            else:
+                self.sql = "select Customer.AuthorID, Book.AuthorID, Book.ISBN, {0}.ISBN, {0}ID from Customer, Book, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and Customer.AuthorID = Book.AuthorID and Book.ISBN = {0}.ISBN".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
+
+        else:
+            self.Table = "Customer" #Author table is referred to as 'Customer'
+            self.sql = "select * from Customer where Firstname like '{0}%' or Lastname like '{1}%'".format(self.Firstname, self.Lastname)
+
+        with sqlite3.connect("PP.db") as db:
+            cursor = db.cursor()
+            cursor.execute(self.sql)
+            self.Results = list(cursor.fetchall())
+        self.accept()
