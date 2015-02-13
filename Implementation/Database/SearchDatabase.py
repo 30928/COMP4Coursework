@@ -46,4 +46,17 @@ class dbSearchDatabase(QDialog):
         self.exec_()
         
     def ChangeCategories(self):
-        print(self.cbTable.currentText())
+        if self.cbTable.currentText() == "Customer":
+            pass
+        elif self.cbTable.currentText() == "Book":
+            pass
+        elif self.cbTable.currentText() == "PubInvoice":
+            pass
+        elif self.cbTable.currentText() == "BookInvoice":
+            pass
+        elif self.cbTable.currentText() == "BookInvoiceItems":
+            pass
+        elif self.cbTable.currentText() == "Royalties":
+            pass
+        elif self.cbTable.currentText() == "RoyaltyItems":
+            pass

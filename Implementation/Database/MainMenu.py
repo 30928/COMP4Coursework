@@ -16,6 +16,7 @@ from CalendarWidget import *
 from Items import *
 from SearchDatabase import *
 from LoginDB import *
+
 class MainWindow(QMainWindow):
     """main window"""
 
@@ -766,7 +767,7 @@ class MainWindow(QMainWindow):
 
     def LogOut(self):
         self.close()
-        os.system("LoginDB.py")
+        os.system("LoginDB.pyw")
         ##########################reopen login window
 
     
