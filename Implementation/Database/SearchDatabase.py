@@ -54,6 +54,7 @@ class dbSearchDatabase(QDialog):
         self.leFirstname.setFixedSize(self.leFirstname.sizeHint())
         self.leLastname.setFixedSize(self.leLastname.sizeHint())
         self.btnSearch.clicked.connect(self.getSearchData)
+        self.btnCancel.clicked.connect(self.reject)
         self.exec_()
         
     def ChangeCategories(self):
@@ -102,16 +103,25 @@ class dbSearchDatabase(QDialog):
         self.leSearch.setText(self.CalendarWidget.date)
 
     def getSearchData(self):
+        self.Valid = True
         self.Firstname = self.leFirstname.text()
         self.Lastname = self.leLastname.text()
         self.Table = self.cbTable.currentText().replace(" ", "")
-        
         if self.Table == "PublishingInvoice":
             self.Table = "PubInvoice"
             
         if self.Table != "Author":
             self.Category = self.cbCategory.currentText().replace(" ", "")
+            self.Search = self.leSearch.text()
             
+            if self.Firstname.replace(" ", "") == "" or self.Lastname.replace(" ", "") == "" or self.Category == "" or self.Search.replace(" ", "") == "":
+                self.Msg = QMessageBox()
+                self.Msg.setWindowTitle("Invalid Entry")
+                self.Msg.setText("You must fill in all fields.")
+                self.Msg.exec_()
+                self.Valid = False
+
+
             if self.Category in ["Discount", "Quantity"]:
 
                 if self.Table == "RoyaltyItems":
@@ -126,7 +136,7 @@ class dbSearchDatabase(QDialog):
             elif self.Category == "Service":
                 self.Category = "PubInvoiceService"
                 
-            self.Search = self.leSearch.text()
+
             
             if self.Table not in ["BookInvoiceItems", "RoyaltyItems"]:
                 if self.Table in ["PubInvoice", "Royalties", "BookInvoice"]:
@@ -138,11 +148,20 @@ class dbSearchDatabase(QDialog):
                 self.sql = "select Customer.AuthorID, Book.AuthorID, Book.ISBN, {0}.ISBN, {0}ID from Customer, Book, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and Customer.AuthorID = Book.AuthorID and Book.ISBN = {0}.ISBN".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
 
         else:
+            
+            if self.Firstname.replace(" ", "") == "" or self.Lastname.replace(" ", "") == "":
+                self.Msg = QMessageBox()
+                self.Msg.setWindowTitle("Invalid Entry")
+                self.Msg.setText("You must fill enter the Firstname and Lastname")
+                self.Msg.exec_()
+                self.Valid = False
+                
             self.Table = "Customer" #Author table is referred to as 'Customer'
-            self.sql = "select * from Customer where Firstname like '{0}%' or Lastname like '{1}%'".format(self.Firstname, self.Lastname)
+            self.sql = "select AuthorID from Customer where Firstname like '{0}%' or Lastname like '{1}%'".format(self.Firstname, self.Lastname)
 
-        with sqlite3.connect("PP.db") as db:
-            cursor = db.cursor()
-            cursor.execute(self.sql)
-            self.Results = list(cursor.fetchall())
-        self.accept()
+        if self.Valid == True:
+            with sqlite3.connect("PP.db") as db:
+                cursor = db.cursor()
+                cursor.execute(self.sql)
+                self.Results = list(cursor.fetchall())
+            self.accept()

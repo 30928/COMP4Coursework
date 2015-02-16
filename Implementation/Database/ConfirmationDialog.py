@@ -2,7 +2,6 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import sqlite3
 import sys
-from MainMenu import *
 
 class dbConfirmationDialog(QDialog):
     """creating confirmation modal dialogs"""

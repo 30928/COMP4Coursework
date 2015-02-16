@@ -12,7 +12,7 @@ class dbMenuBar(QMenuBar):
         self.add_entry = QAction("Add Entry", self)
         self.update_entry = QAction("Update Entry", self)
         self.remove_entry = QAction("Remove Entry", self)
-        self.change_password = QAction("Change Password", self)
+        self.change_password = QAction("Change Username/Password", self)
         self.log_out = QAction("Log Out", self)
         
         self.database_menu = self.addMenu("Database") #adding menus

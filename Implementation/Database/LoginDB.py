@@ -2,20 +2,46 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import sqlite3
 import sys
-import os
+import smtplib
+import email
 from MainMenu import *
 
 class dbLogin(QMainWindow):
     """db for login"""
 
     def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Login")
-        self.setFixedSize(300, 150)
+        self.initDetails()
+        if self.details == ("Username", "Password"):
+            self.MainProgram = MainWindow("Username")
+            self.MainProgram.show()
+        else:
+            super().__init__()
+            self.initLoginScreen()
 
-        self.initLoginScreen()
+    def initDetails(self):
+        with sqlite3.connect("dbLogin.db") as db:
+            cursor = db.cursor()
+
+            self.sql = "select name from sqlite_master WHERE type='table' and name='LoginDetails'"
+            cursor.execute(self.sql)
+            try:
+                self.Exists = list(cursor.fetchone())[0]
+            except:
+                self.Exists = False
+            
+            self.sql = "create table if not exists LoginDetails (Username text, Password text)"
+            cursor.execute(self.sql)
+            
+            if self.Exists == False:
+                self.details = "Username", "Password"
+                self.sql = "insert into LoginDetails (Username, Password) values (?, ?)"
+                cursor.execute(self.sql, self.details)
+            else:
+                self.details = True
 
     def initLoginScreen(self):
+        self.setWindowTitle("Login")
+        self.setFixedSize(300, 170)
         self.lblLogin = QLabel("Please Log In", self)
 
         self.lblLogin.setAlignment(Qt.AlignHCenter)
@@ -28,6 +54,9 @@ class dbLogin(QMainWindow):
         self.lePassword = QLineEdit(self)
         self.lePassword.setEchoMode(self.lePassword.Password)
         self.lePassword.setPlaceholderText("Password")
+        self.lblForgot = QLabel("Help/Forgotten Password?", self)
+        self.lblForgot.setAlignment(Qt.AlignHCenter)
+        self.lblForgot.mousePressEvent = self.getEmail
         self.lblVertical = QVBoxLayout()
         self.leVertical = QVBoxLayout()
         self.horizontalLogin = QHBoxLayout()
@@ -44,6 +73,7 @@ class dbLogin(QMainWindow):
         self.horizontalEntry.addLayout(self.lblVertical)
         self.horizontalEntry.addLayout(self.leVertical)
         self.vertical.addLayout(self.horizontalEntry)
+        self.vertical.addWidget(self.lblForgot)
         self.vertical.addLayout(self.horizontalLogin)
         self.vertical.addStretch(1)
         self.horizontal = QHBoxLayout()
@@ -88,7 +118,53 @@ class dbLogin(QMainWindow):
                     self.vertical.addLayout(self.horizontalInvalid)
                 else:
                     self.lblInvalid.show()
+
+    def getEmail(self, QMouseEvent):
+        with sqlite3.connect("dbLogin.db") as db:
+            cursor = db.cursor()
+            cursor.execute("select Username from LoginDetails")
+            self.Username = list(cursor.fetchone())[0]
             
+        if self.Username == "Username":
+            self.Msg = QMessageBox()
+            self.Msg.setWindowTitle("First Time")
+            self.Msg.setText("This is your first time using this application.\n Your Username is 'Username' and your Password is 'Password'.\n Please change these once logged in.")
+            self.Msg.exec_()
+        else:
+            self.Email, ok = QInputDialog.getText(self, 'Forgotten Password', 'Enter your Email:')
+
+            if self.Email == self.Username:
+                with sqlite3.connect("dbLogin.db") as db:
+                    cursor = db.cursor()
+                    cursor.execute("select Password from LoginDetails")
+                    self.CurrentPassword = list(cursor.fetchone())[0]
+                self.sender = "pp.loginhelp@gmail.com"
+                self.recipient = [str(self.Email)]
+                self.server = smtplib.SMTP('smtp.gmail.com', 587)
+                self.server.ehlo()
+                self.server.starttls()
+                self.server.ehlo()
+                self.server.login("pp.loginhelp@gmail.com", "DB1061NH31P")
+                
+                self.Subject = "Forgotten Login Details"
+                self.message = "From: {}\r\nTo: {}\r\nSubject: {}\r\n\r\n".format(self.sender, ", ".join(self.recipient), self.Subject)
+                self.message += "Your Password is: {}\nPlease change this upon login for security reasons.".format(self.CurrentPassword)
+
+                self.server.sendmail(self.sender, self.recipient, self.message)
+                self.server.close()               
+                
+                self.Msg = QMessageBox()
+                self.Msg.setWindowTitle("Email Sent")
+                self.Msg.setText("You have been sent an email with the corresponding password details")
+                self.Msg.exec_()
+                
+            else:
+                
+                self.Msg = QMessageBox()
+                self.Msg.setWindowTitle("No Match found")
+                self.Msg.setText("No matching Email was found")
+                self.Msg.exec_()
+        
     def keyReleaseEvent(self, QKeyEvent):
         if self.lblInvalid != None:
             self.lblInvalid.hide()
@@ -96,8 +172,11 @@ class dbLogin(QMainWindow):
 def main():
     app = QApplication(sys.argv)
     launcher = dbLogin()
-    launcher.raise_()
-    launcher.show()
+    try:
+        launcher.raise_()
+        launcher.show()
+    except RuntimeError:
+        pass
     app.exec_()
 
 

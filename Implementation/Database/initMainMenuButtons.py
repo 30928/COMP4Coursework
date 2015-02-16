@@ -45,7 +45,7 @@ class initMainMenuButtons(QWidget):
         self.btnRemoveEntry = QPushButton("Remove Entry", self)
         self.btnRemoveEntry.setFixedSize(100, 40)
         
-        self.btnChangePassword = QPushButton("Change Password", self)
+        self.btnChangePassword = QPushButton("Change Username/\nPassword", self)
         self.btnChangePassword.setFixedSize(100, 40)
     
         self.horizontalBottom = QHBoxLayout()

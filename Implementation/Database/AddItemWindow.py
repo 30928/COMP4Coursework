@@ -273,7 +273,7 @@ class dbAddItemWindow(QDialog):
         self.horizontal.addStretch(1)
         self.horizontal.addWidget(self.btnCancel)
         self.horizontal.addWidget(self.btnConfirm)
-
+        self.btnConfirm.clicked.connect(self.Validate)
         self.vertical = QVBoxLayout()
         self.vertical.addLayout(self.gridLayout)
         self.vertical.addLayout(self.horizontal)
@@ -317,4 +317,42 @@ class dbAddItemWindow(QDialog):
             elif self.inputList[5].text() == "":
                 self.inputList[6].clear()
 
-               
+
+
+    def Validate(self):
+        self.input_data = []
+        self.Valid = True
+        for count in range(0, len(self.inputList)):
+            try: #gathering the input data
+                self.input_data.append(str(self.inputList[count].currentText()))
+            except:
+                if count == 8 and self.AddType == "RoyaltyItems":
+                    self.input_data.append(self.NetSales)
+                else:
+                    self.input_data.append(self.inputList[count].text())
+                    
+        for count in range(0, len(self.input_data)):
+            
+            if str(self.input_data[count]).replace(" ", "") == "": #presence check
+                self.Valid = False
+                self.ErrorMessage = "All Fields must be filled."
+                
+            try:
+                if self.input_data[count] < 0: #range check
+                    self.Valid = False
+                    self.ErrorMessage = "Invalid Entry - Please check the fields."
+            except:
+                pass
+            
+            if self.qlabelList[count].text() == "ISBN":
+                if len(self.input_data[count]) > 13: #isbn cannot be bigger than 13
+                    self.Valid = False
+                    self.ErrorMessage = "Invalid ISBN - Cannot be bigger than 13 digits."
+            elif self.qlabelList[count].text() == "Discount": #%'s must be between 0 and 100
+                if self.input_data[count] > 100 or self.input_data[count] < 0:
+                    self.Valid = False
+        if self.Valid == False:
+            self.Msg = QMessageBox()
+            self.Msg.setWindowTitle("Invalid Entry")
+            self.Msg.setText(self.ErrorMessage)
+            self.Msg.exec_()
