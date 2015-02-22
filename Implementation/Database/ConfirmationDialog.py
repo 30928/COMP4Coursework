@@ -8,12 +8,12 @@ class dbConfirmationDialog(QDialog):
 
     def __init__(self):
         super().__init__()
+        self.Prevention = False
         
     def VerifyDlg(self):
         self.setWindowTitle("Verification")
         self.setFixedSize(275, 150)
         self.setModal(True)
-
         self.lblWarningMsg = QLabel(self.Msg, self)
         self.horizontal = QHBoxLayout()
         self.horizontal.addStretch(1)
@@ -68,7 +68,9 @@ class dbConfirmationDialog(QDialog):
             for count in range(0, len(self.Password)):
                 if self.qlePasswordBox.text() == list(self.Password[count])[0]:
                     self.accept()
-                    self.ConfirmedDialog.Confirmed()
+                    self.ConfirmedDialog.Accepted = True
+                    if self.Prevention == False:
+                        self.ConfirmedDialog.Confirmed()
                     break
                 else:
                     self.Valid = False
@@ -111,7 +113,6 @@ class dbConfirmationDialog(QDialog):
         self.vertical.addStretch(1)
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
-        self.Accepted = True
         self.exec_()
 
     def keyReleaseEvent(self, QKeyEvent):

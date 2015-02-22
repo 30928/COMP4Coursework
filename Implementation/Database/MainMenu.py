@@ -36,7 +36,6 @@ class MainWindow(QMainWindow):
         self.TableWidget = dbTableWidget()
         self.TableWidget.sql = "select * from Customer"
         self.TableWidget.initTable()
-        self.TableWidget.setSortingEnabled(True)
         self.MainMenuButtons = initMainMenuButtons()
         self.MainMenuButtons.vertical.addLayout(self.MainMenuButtons.horizontalTop)
         self.MainMenuButtons.vertical.addWidget(self.TableWidget)
@@ -52,7 +51,7 @@ class MainWindow(QMainWindow):
 
         self.StackedLayout.addWidget(self.MainMenuButtons)   
     
-        self.ViewWindow = dbViewWindow()
+        self.ViewWindow = dbViewWindow() #instantiating view window
         self.ViewWindow.View()
         self.ViewWindow.vertical.addLayout(self.ViewWindow.horizontalTop)
         self.ViewWindow.table = dbTableWidget()
@@ -66,7 +65,6 @@ class MainWindow(QMainWindow):
         self.StackedLayout.addWidget(self.SearchResults)
         self.SearchTable = dbTableWidget()
         self.SearchResults.vertical.addWidget(self.SearchTable)
-        self.SearchTable.setSortingEnabled(True)
 
         #connections
         self.MainMenuButtons.btnAddEntry.clicked.connect(self.AddEntry) 
@@ -93,14 +91,16 @@ class MainWindow(QMainWindow):
         self.SearchResults.btnBack.clicked.connect(self.Back)
 
 
-    def AddEntry(self): #adding customer entry
+    def AddEntry(self): #adding customer entry 
         self.AddEntryWindow = dbAddEntryWindow()
+        self.AddEntryWindow.Added = False
         self.AddEntryWindow.initAddEntryWindow()
-        self.RefreshTables()
+        if self.AddEntryWindow == True:
+            self.RefreshTables()
 
 
-    
-    def AddItem(self): #initialising an add window for getting inputs
+
+    def AddItem(self): #initialising an add window for getting inputs for other entries
         self.AddWindow = dbAddItemWindow()
         self.AddWindow.setFixedSize(360,200)
         self.AddWindow.AddType = self.CurrentTable
@@ -142,12 +142,15 @@ class MainWindow(QMainWindow):
         self.AddWindow.CalendarWidget.Calendar()
         
         self.AddWindow.initAddItemWindow()
-        if self.AddWindow.Valid == True:
-            self.AddToDB()
+        try:
+            if self.AddWindow.Valid == True: #inputs must pass validation before being added
+                self.AddToDB()
+        except AttributeError:
+            pass #exception of window being closed
         self.RefreshTables()
 
-    def RecalculateItems(self):
-        if self.CurrentTable == "BookInvoiceItems": #recalculates after changes
+    def RecalculateItems(self): #recalculates after changes
+        if self.CurrentTable == "BookInvoiceItems": 
             self.BookInvoiceItemsWindow.CalculateBookInvoiceItems()
             self.CurrentTable = "BookInvoice"
             self.RefreshTables()
@@ -162,7 +165,7 @@ class MainWindow(QMainWindow):
 
         
     def AddToDB(self): #Adding Entries to database
-        self.input_data = [] #input data list
+        self.input_data = []
         if self.CurrentTable == "Book":
             self.TableValues = "Book (ISBN, AuthorID, BookTitle, NoOfPages, Size, Back, Cover, Paper, Font, FontSize, DatePublished, Price)"
             self.Placeholders = "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
@@ -194,11 +197,11 @@ class MainWindow(QMainWindow):
             self.NoOfEntries = 9
             
         for count in range(0, self.NoOfEntries):
-            try: #gathering the input data
+            try: #putting the input data in a list
                 self.input_data.append(str(self.AddWindow.inputList[count].currentText()))
             except:
                 if count == 8 and self.CurrentTable == "RoyaltyItems":
-                    self.input_data.append(self.NetSales)
+                    self.input_data.append(self.NetSales) #Net sales are calculated, as opposed to being entered
                 else:
                     self.input_data.append(self.AddWindow.inputList[count].text())
 
@@ -211,10 +214,10 @@ class MainWindow(QMainWindow):
             
         self.RefreshTables()
             
-        try:   
+        try:
             self.RecalculateItems()
         except:
-                pass
+            pass
         
     def RemoveEntry(self): #removing a customer
         self.SelectedRow = self.TableWidget.currentRow()
@@ -233,10 +236,26 @@ class MainWindow(QMainWindow):
                 with sqlite3.connect("PP.db") as db:
                     cursor = db.cursor()
                     cursor.execute("PRAGMA foreign_keys = ON")
+                    sql = "select ISBN from Book where AuthorID = {}".format(self.ConfirmDialog.SelectedAuthorID)
+                    cursor.execute(sql)
+                    self.ISBNDeletion = list(cursor.fetchall())
+                    for count in range(0, len(self.ISBNDeletion)): #removes all customer details, starting with foreign keys for referential integrity
+                        sql = "delete from BookInvoiceItems where ISBN = {}".format(list(list(self.ISBNDeletion)[count])[0])
+                        cursor.execute(sql)
+                        sql = "delete from RoyaltyItems where ISBN = {}".format(list(list(self.ISBNDeletion)[count])[0])
+                        cursor.execute(sql)
+                    sql = "delete from PubInvoice where AuthorID = {}".format(self.ConfirmDialog.SelectedAuthorID)
+                    cursor.execute(sql)
+                    sql = "delete from BookInvoice where AuthorID = {}".format(self.ConfirmDialog.SelectedAuthorID)
+                    cursor.execute(sql)
+                    sql = "delete from Royalties where AuthorID = {}".format(self.ConfirmDialog.SelectedAuthorID)
+                    cursor.execute(sql)
+                    sql = "delete from Book where AuthorID = {}".format(self.ConfirmDialog.SelectedAuthorID)
+                    cursor.execute(sql)
                     sql = "delete from Customer where AuthorID = {}".format(self.ConfirmDialog.SelectedAuthorID)
                     cursor.execute(sql)
                     db.commit()
-        self.RefreshTables()
+                    self.RefreshTables()
 
 
 
@@ -248,6 +267,7 @@ class MainWindow(QMainWindow):
         self.SelectedAuthorID = self.SelectedID
         
         if self.CurrentTable == "Book":
+            self.ForeignKeyMsg = "Royalties and Invoices"
             self.SelectedRow = self.ViewWindow.table.currentRow()
             self.SelectedID = QTableWidgetItem(self.ViewWindow.table.item(self.SelectedRow, 0)).text()
             self.SelectedIDName = "ISBN"
@@ -262,6 +282,7 @@ class MainWindow(QMainWindow):
             self.ConfirmDialog.ConfirmedMsg = "Invoice was successfully deleted"
 
         elif self.CurrentTable == "BookInvoice":
+            self.ForeignKeyMsg = "Book Invoice Items"
             self.SelectedRow = self.BookInvoiceWindow.table.currentRow()
             self.SelectedID = QTableWidgetItem(self.BookInvoiceWindow.table.item(self.SelectedRow, 0)).text()
             self.SelectedIDName = "BookInvoiceID"
@@ -269,6 +290,7 @@ class MainWindow(QMainWindow):
             self.ConfirmDialog.ConfirmedMsg = "Invoice was successfully deleted"
 
         elif self.CurrentTable == "Royalties":
+            self.ForeignKeyMsg = "Royalty Items"
             self.SelectedRow = self.RoyaltiesWindow.table.currentRow()
             self.SelectedID = QTableWidgetItem(self.RoyaltiesWindow.table.item(self.SelectedRow, 0)).text()
             self.SelectedIDName = "RoyaltiesID"
@@ -288,17 +310,22 @@ class MainWindow(QMainWindow):
             self.SelectedIDName = "RoyaltyItemsID"
             self.ConfirmDialog.Msg = "Are you sure you want to delete this Item?"
             self.ConfirmDialog.ConfirmedMsg = "Item was successfully deleted"
-
+        self.ConfirmDialog.Prevention = True #deletion may be prevented if integrity error occurs
         self.ConfirmDialog.VerifyDlg() #verification
-            
-        if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
-            with sqlite3.connect("PP.db") as db:
-                cursor = db.cursor()
-                cursor.execute("PRAGMA foreign_keys = ON")
-                sql = "delete from {} where {} = '{}'".format(self.CurrentTable, self.SelectedIDName, self.SelectedID)
-                cursor.execute(sql)
-                db.commit()
-
+        try:
+            if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
+                with sqlite3.connect("PP.db") as db:
+                    cursor = db.cursor()
+                    cursor.execute("PRAGMA foreign_keys = ON")
+                    sql = "delete from {} where {} = '{}'".format(self.CurrentTable, self.SelectedIDName, self.SelectedID)
+                    cursor.execute(sql)
+                    db.commit()
+                    self.ConfirmDialog.ConfirmedDialog.Confirmed()
+        except sqlite3.IntegrityError:
+            self.Msg = QMessageBox()
+            self.Msg.setWindowTitle("Error")
+            self.Msg.setText("You must delete all the {} first.".format(self.ForeignKeyMsg))
+            self.Msg.exec_() #informs user that selected entry cannot be deleted and what must be done for it to be deleted
         self.SelectedID = self.SelectedAuthorID
         self.RefreshTables()
 
@@ -339,7 +366,6 @@ class MainWindow(QMainWindow):
             self.PubInvoiceWindow.table = dbTableWidget()
             self.RefreshTables()
             self.PubInvoiceWindow.table.setFixedSize(620, 150)
-
             self.PubInvoiceWindow.PubInvoice()
         self.CurrentTable = "Book"
 
@@ -351,22 +377,22 @@ class MainWindow(QMainWindow):
         self.SelectedISBN = QTableWidgetItem(self.ViewWindow.table.item(self.ViewWindow.SelectedRow, 0)).text()
         self.SelectedID = QTableWidgetItem(self.TableWidget.item(self.TableWidget.currentRow(), 0)).text()
         self.SelectedAuthorID = self.SelectedID
-        
-        self.BookInvoiceWindow = dbRoyaltiesAndInvoices()
-        self.BookInvoiceWindow.BookInvoiceButtons()
-        self.BookInvoiceWindow.btnViewBookInvoiceItems.clicked.connect(self.ViewBookInvoiceItems)
-        self.BookInvoiceWindow.btnAddBookInvoice.clicked.connect(self.AddItem)
-        self.BookInvoiceWindow.btnUpdateBookInvoice.clicked.connect(self.UpdateEntry)
-        self.BookInvoiceWindow.btnDeleteEntry.clicked.connect(self.RemoveFromDB)
-        self.BookInvoiceWindow.table = dbTableWidget()
-        self.RefreshTables()
-        self.BookInvoiceWindow.table.setFixedSize(620, 150)
-        self.BookInvoiceWindow.BookInvoice()
+        if self.SelectedISBN != "":
+            self.BookInvoiceWindow = dbRoyaltiesAndInvoices()
+            self.BookInvoiceWindow.BookInvoiceButtons()
+            self.BookInvoiceWindow.btnViewBookInvoiceItems.clicked.connect(self.ViewBookInvoiceItems)
+            self.BookInvoiceWindow.btnAddBookInvoice.clicked.connect(self.AddItem)
+            self.BookInvoiceWindow.btnUpdateBookInvoice.clicked.connect(self.UpdateEntry)
+            self.BookInvoiceWindow.btnDeleteEntry.clicked.connect(self.RemoveFromDB)
+            self.BookInvoiceWindow.table = dbTableWidget()
+            self.RefreshTables()
+            self.BookInvoiceWindow.table.setFixedSize(620, 150)
+            self.BookInvoiceWindow.BookInvoice()
         self.CurrentTable = "Book"
 
 
 
-    def ViewBookInvoiceItems(self):
+    def ViewBookInvoiceItems(self): #initialising the view book invoice items window
         self.CurrentTable = "BookInvoiceItems"
         self.BookInvoiceWindow.SelectedRow = self.BookInvoiceWindow.table.currentRow()
         self.SelectedAuthorID = self.SelectedID
@@ -385,8 +411,8 @@ class MainWindow(QMainWindow):
             self.RefreshTables()
             self.BookInvoiceItemsWindow.table.setFixedSize(620, 150)
             self.BookInvoiceItemsWindow.BookInvoiceItems()
+        self.SelectedID = self.SelectedAuthorID
         self.CurrentTable = "BookInvoice"
-        self.SelectedAuthorID = self.SelectedID
         self.RefreshTables()
 
 
@@ -397,22 +423,24 @@ class MainWindow(QMainWindow):
         self.SelectedISBN = QTableWidgetItem(self.ViewWindow.table.item(self.ViewWindow.SelectedRow, 0)).text()
         self.SelectedID = QTableWidgetItem(self.TableWidget.item(self.TableWidget.currentRow(), 0)).text()
         self.SelectedAuthorID = self.SelectedID
-        self.RoyaltiesWindow = dbRoyaltiesAndInvoices()
-        self.RoyaltiesWindow.RoyaltiesButtons()
-        self.RoyaltiesWindow.btnViewRoyaltyItems.clicked.connect(self.ViewRoyaltyItems)
-        self.RoyaltiesWindow.btnAddRoyalties.clicked.connect(self.AddItem)
-        self.RoyaltiesWindow.btnUpdateRoyalties.clicked.connect(self.UpdateEntry)
-        self.RoyaltiesWindow.btnDeleteEntry.clicked.connect(self.RemoveFromDB)
-        self.RoyaltiesWindow.table = dbTableWidget()
-        self.RefreshTables()
-        self.RoyaltiesWindow.table.setFixedSize(620, 150)
-        self.RoyaltiesWindow.Royalties()
+        if self.SelectedISBN != "":
+            self.RoyaltiesWindow = dbRoyaltiesAndInvoices()
+            self.RoyaltiesWindow.RoyaltiesButtons()
+            self.RoyaltiesWindow.btnViewRoyaltyItems.clicked.connect(self.ViewRoyaltyItems)
+            self.RoyaltiesWindow.btnAddRoyalties.clicked.connect(self.AddItem)
+            self.RoyaltiesWindow.btnUpdateRoyalties.clicked.connect(self.UpdateEntry)
+            self.RoyaltiesWindow.btnDeleteEntry.clicked.connect(self.RemoveFromDB)
+            self.RoyaltiesWindow.table = dbTableWidget()
+            self.RefreshTables()
+            self.RoyaltiesWindow.table.setFixedSize(620, 150)
+            self.RoyaltiesWindow.Royalties()
         self.CurrentTable = "Book"
-
-    def ViewRoyaltyItems(self):
+        
+    def ViewRoyaltyItems(self): #initialising the view royalty items window
         self.CurrentTable = "RoyaltyItems"
         self.RoyaltiesWindow.SelectedRow = self.RoyaltiesWindow.table.currentRow()
         self.SelectedAuthorID = self.SelectedID
+        self.RoyaltiesWindow.selectedISBN = self.SelectedISBN
         self.SelectedID = QTableWidgetItem(self.RoyaltiesWindow.table.item(self.RoyaltiesWindow.SelectedRow, 0)).text()
 
         if self.SelectedID != "":
@@ -427,62 +455,79 @@ class MainWindow(QMainWindow):
             self.RefreshTables()
             self.RoyaltyItemsWindow.table.setFixedSize(620, 150)
             self.RoyaltyItemsWindow.RoyaltiesItems()
-        self.CurrentTable = "Royalties"
         self.SelectedID = self.SelectedAuthorID
+        self.CurrentTable = "Royalties"
         self.RefreshTables()
 
 
         
     def BookInvoiceItemCalculation(self): #calculating the bookinvoicepayment
-        if self.Editing == False:
-            self.Quantity = int(self.AddWindow.inputList[2].text())
-            self.Discount = float(self.AddWindow.inputList[3].text()) / 100
-            self.ShippingPrice = float(self.AddWindow.inputList[5].text())
-            self.ISBN = self.AddWindow.inputList[1].text()
-        elif self.Editing == True:
-            self.Quantity = int(self.EditWindow.inputList[2].text())
-            self.Discount = float(self.EditWindow.inputList[3].text()) / 100
-            self.ShippingPrice = float(self.EditWindow.inputList[5].text())
-            self.ISBN = self.EditWindow.inputList[1].text()
+        try:
+            if self.Editing == False:
+                self.Quantity = int(self.AddWindow.inputList[2].text())
+                self.Discount = float(self.AddWindow.inputList[3].text()) / 100
+                self.ShippingPrice = float(self.AddWindow.inputList[5].text())
+                self.ISBN = self.AddWindow.inputList[1].text()
+            elif self.Editing == True:
+                self.Quantity = int(self.EditWindow.inputList[2].text())
+                self.Discount = float(self.EditWindow.inputList[3].text()) / 100
+                self.ShippingPrice = float(self.EditWindow.inputList[5].text())
+                self.ISBN = self.EditWindow.inputList[1].text()
 
-        with sqlite3.connect("PP.db") as db: #fetching data from db
-            cursor = db.cursor()
-            cursor.execute("select Price from Book where ISBN = {}".format(self.ISBN))
-            self.Price = list(cursor.fetchone())[0]
-            db.commit()
+            with sqlite3.connect("PP.db") as db: #fetching data from db
+                cursor = db.cursor()
+                cursor.execute("select Price from Book where ISBN = {}".format(self.ISBN))
+                self.Price = list(cursor.fetchone())[0]
+                db.commit()
 
-        self.BookInvoiceItemPayment = (self.Quantity * self.Price)
-        self.Discount = self.BookInvoiceItemPayment * self.Discount
-        self.BookInvoiceItemPayment -= self.Discount
-        self.BookInvoiceItemPayment += self.ShippingPrice
-        self.BookInvoiceItemPayment = "£{0:.2f}".format(self.BookInvoiceItemPayment)
-        if self.Editing == False:
-            self.AddWindow.qleCalculation.setText(self.BookInvoiceItemPayment)
-        elif self.Editing == True:
-            self.EditWindow.qleCalculation.setText(self.BookInvoiceItemPayment)
+            self.BookInvoiceItemPayment = (self.Quantity * self.Price)
+            self.Discount = self.BookInvoiceItemPayment * self.Discount
+            self.BookInvoiceItemPayment -= self.Discount
+            self.BookInvoiceItemPayment += self.ShippingPrice
+            self.BookInvoiceItemPayment = "£{0:.2f}".format(self.BookInvoiceItemPayment)
+            if self.Editing == False:
+                self.AddWindow.btnConfirm.clicked.connect(self.AddWindow.accept)
+                self.AddWindow.qleCalculation.setText(self.BookInvoiceItemPayment)
+            elif self.Editing == True:
+                self.EditWindow.btnConfirm.clicked.connect(self.VerifyUpdate)
+                self.EditWindow.qleCalculation.setText(self.BookInvoiceItemPayment)
+        except:
+            self.Msg = QMessageBox()
+            self.Msg.setWindowTitle("Error")
+            self.Msg.setText("You must fill all fields before clicking 'Calculate'.")
+            self.Msg.exec_()
 
-    def RoyaltyItemCalculation(self): #calculating the royaltypayment
-        if self.Editing == False:
-            self.Currency = self.AddWindow.inputList[2].text()
-            self.WholesalePrice = float(self.AddWindow.inputList[4].text())
-            self.Quantity = int(self.AddWindow.inputList[5].text())
-            self.PrintCost = float(self.AddWindow.inputList[6].text())
-        elif self.Editing == True:
-            self.Currency = self.EditWindow.inputList[2].text()
-            self.WholesalePrice = float(self.EditWindow.inputList[4].text())
-            self.Quantity = int(self.EditWindow.inputList[5].text())
-            self.PrintCost = float(self.EditWindow.inputList[6].text())
+    def RoyaltyItemCalculation(self): #calculating the royalty payment
+        try:
+            if self.Editing == False:
+                self.Currency = self.AddWindow.inputList[2].text()
+                self.WholesalePrice = float(self.AddWindow.inputList[4].text())
+                self.Quantity = int(self.AddWindow.inputList[5].text())
+                self.PrintCost = float(self.AddWindow.inputList[6].text())
+            elif self.Editing == True:
+                self.Currency = self.EditWindow.inputList[2].text()
+                self.WholesalePrice = float(self.EditWindow.inputList[4].text())
+                self.Quantity = int(self.EditWindow.inputList[5].text())
+                self.PrintCost = float(self.EditWindow.inputList[6].text())
 
-        self.NetSales = self.WholesalePrice * self.Quantity
-        self.RoyaltyItemPayment = self.NetSales - self.PrintCost
-        self.RoyaltyItemPayment = "{0:.2f}".format(self.RoyaltyItemPayment)
-        if self.Editing == False:
-            self.AddWindow.qleCalculation.setText("{}{}".format(self.Currency, self.RoyaltyItemPayment))
-            self.AddWindow.NetSales == self.NetSales
-        elif self.Editing == True:
-            self.EditWindow.qleCalculation.setText("{}{}".format(self.Currency, self.RoyaltyItemPayment))
-            self.EditWindow.NetSales == self.NetSales
+            self.NetSales = self.WholesalePrice * self.Quantity
+            self.RoyaltyItemPayment = self.NetSales - self.PrintCost
+            self.RoyaltyItemPayment = "{0:.2f}".format(self.RoyaltyItemPayment)
+            if self.Editing == False:
+                self.AddWindow.btnConfirm.clicked.connect(self.AddWindow.accept)
+                self.AddWindow.qleCalculation.setText("{}{}".format(self.Currency, self.RoyaltyItemPayment))
+                self.AddWindow.NetSales = self.NetSales
+            elif self.Editing == True:
+                self.EditWindow.btnConfirm.clicked.connect(self.VerifyUpdate)
+                self.EditWindow.qleCalculation.setText("{}{}".format(self.Currency, self.RoyaltyItemPayment))
+                self.EditWindow.NetSales = self.NetSales
+        except:
+            self.Msg = QMessageBox()
+            self.Msg.setWindowTitle("Error")
+            self.Msg.setText("You must fill all fields before clicking 'Calculate'.")
+            self.Msg.exec_()
 
+            
     def UpdateCustomerEntry(self): #updating customer entries only
         self.SelectedRow = self.TableWidget.currentRow()
         self.SelectedAuthorID = QTableWidgetItem(self.TableWidget.item(self.SelectedRow, 0)).text()
@@ -502,7 +547,8 @@ class MainWindow(QMainWindow):
             self.UpdateEntryWindow.initConfirmBtn()
             self.UpdateEntryWindow.btnConfirm.clicked.connect(self.VerifyCustomerUpdate)
             self.UpdateEntryWindow.initUpdateEntryWindowDlg()
-        self.RefreshTables()
+            self.TableWidget.sql = "select * from Customer"
+            self.RefreshTables()
 
 
 
@@ -512,48 +558,59 @@ class MainWindow(QMainWindow):
         self.EditWindow.setFixedSize(360, 200)
         self.EditWindow.AddType = self.CurrentTable
         self.EditWindow.AnswerButtons()
-
-        self.EditWindow.btnConfirm.clicked.connect(self.VerifyUpdate)
+        self.EditWindow.ReadyToVerify = False
         self.EditWindow.originalItemList = []
         
         if self.CurrentTable == "Book":
             self.EditWindow.sql = "select * from Book"
-            for count in range(0, 12): #fetching existing data from table
-                self.ViewWindow.SelectedRow = self.ViewWindow.table.currentRow()
-                self.EditWindow.originalItemList.append(QTableWidgetItem(self.ViewWindow.table.item(self.ViewWindow.SelectedRow, count)).text())
-                if self.ViewWindow.SelectedRow != -1:
-                    self.Selection = True
+            self.ViewWindow.SelectedRow = self.ViewWindow.table.currentRow()
+            if self.ViewWindow.SelectedRow != -1:
+                self.Selection = True
+                with sqlite3.connect("PP.db") as db:
+                    cursor = db.cursor() #fetching data from database for the edit window
+                    sql = "select * from Book where ISBN = {}".format(self.ViewWindow.table.item(self.ViewWindow.SelectedRow, 0).text())
+                    cursor.execute(sql)
+                    self.EditWindow.originalItemList = list(cursor.fetchone())
                     
         elif self.CurrentTable == "PubInvoice":
             self.EditWindow.setFixedSize(400,150)
             self.EditWindow.selectedISBN = self.SelectedISBN
             self.EditWindow.sql = "select ISBN, AuthorID, PubInvoiceDate, PubInvoiceService, PubInvoicePayment from PubInvoice"
-            for count in range(1, 6):
-                self.PubInvoiceWindow.SelectedRow = self.PubInvoiceWindow.table.currentRow()
-                self.EditWindow.originalItemList.append(QTableWidgetItem(self.PubInvoiceWindow.table.item(self.PubInvoiceWindow.SelectedRow, count)).text())
-                if self.PubInvoiceWindow.SelectedRow != -1:
-                    self.Selection = True
-                    
+            self.PubInvoiceWindow.SelectedRow = self.PubInvoiceWindow.table.currentRow()
+            if self.PubInvoiceWindow.SelectedRow != -1:
+                self.Selection = True
+                with sqlite3.connect("PP.db") as db:
+                    cursor = db.cursor() #fetching data from database for the edit window
+                    sql = "select ISBN, AuthorID, PubInvoiceDate, PubInvoiceService, PubInvoicePayment from PubInvoice where PubInvoiceID = {}".format(self.PubInvoiceWindow.table.item(self.PubInvoiceWindow.SelectedRow, 0).text())
+                    cursor.execute(sql)
+                    self.EditWindow.originalItemList = list(cursor.fetchone())
+                
         elif self.CurrentTable == "BookInvoice":
             self.EditWindow.setFixedSize(350, 100)
             self.EditWindow.selectedID = self.SelectedID
             self.EditWindow.sql = "select AuthorID, BookInvoiceDate from BookInvoice"
-            for count in range(1, 3):
-                self.BookInvoiceWindow.SelectedRow = self.BookInvoiceWindow.table.currentRow()
-                self.EditWindow.originalItemList.append(QTableWidgetItem(self.BookInvoiceWindow.table.item(self.BookInvoiceWindow.SelectedRow, count)).text())
-                if self.BookInvoiceWindow.SelectedRow != -1:
-                    self.Selection = True
-                    
+            self.BookInvoiceWindow.SelectedRow = self.BookInvoiceWindow.table.currentRow()
+            if self.BookInvoiceWindow.SelectedRow != -1:
+                self.Selection = True
+                with sqlite3.connect("PP.db") as db:
+                    cursor = db.cursor() #fetching data from database for the edit window
+                    sql = "select AuthorID, BookInvoiceDate from PubInvoice where BookInvoiceID = {}".format(self.BookInvoiceWindow.table.item(self.BookInvoiceWindow.SelectedRow, 0).text())
+                    cursor.execute(sql)
+                    self.EditWindow.originalItemList = list(cursor.fetchone())
+                
         elif self.CurrentTable == "Royalties":
             self.EditWindow.setFixedSize(350, 100)
             self.EditWindow.selectedID = self.SelectedID
             self.EditWindow.sql = "select AuthorID, RoyaltiesDate from Royalties"
-            for count in range(1, 3):
-                self.RoyaltiesWindow.SelectedRow = self.RoyaltiesWindow.table.currentRow()
-                self.EditWindow.originalItemList.append(QTableWidgetItem(self.RoyaltiesWindow.table.item(self.RoyaltiesWindow.SelectedRow, count)).text())
-                if self.RoyaltiesWindow.SelectedRow != -1:
-                    self.Selection = True
-                    
+            self.RoyaltiesWindow.SelectedRow = self.RoyaltiesWindow.table.currentRow()
+            if self.RoyaltiesWindow.SelectedRow != -1:
+                self.Selection = True
+                with sqlite3.connect("PP.db") as db:
+                    cursor = db.cursor() #fetching data from database for the edit window
+                    sql = "select AuthorID, RoyaltiesDate from Royalties where RoyaltiesID = {}".format(self.RoyaltiesWindow.table.item(self.RoyaltiesWindow.SelectedRow, 0).text())
+                    cursor.execute(sql)
+                    self.EditWindow.originalItemList = list(cursor.fetchone())
+                
         elif self.CurrentTable == "BookInvoiceItems":
             self.EditWindow.setFixedSize(450, 150)
             self.EditWindow.selectedID = self.SelectedID
@@ -561,12 +618,15 @@ class MainWindow(QMainWindow):
             self.EditWindow.btnCalculate.clicked.connect(self.BookInvoiceItemCalculation)
             self.EditWindow.selectedISBN = self.SelectedISBN
             self.EditWindow.sql = "select BookInvoiceID, ISBN, BookInvoiceQuantity, BookInvoiceDiscount, ShippingType, ShippingPrice from BookInvoiceItems"
-            for count in range(1, 7):
-                self.BookInvoiceItemsWindow.SelectedRow = self.BookInvoiceItemsWindow.table.currentRow()
-                self.EditWindow.originalItemList.append(QTableWidgetItem(self.BookInvoiceItemsWindow.table.item(self.BookInvoiceItemsWindow.SelectedRow, count)).text())
-                if self.BookInvoiceItemsWindow.SelectedRow != -1:
-                    self.Selection = True
-                    
+            self.BookInvoiceItemsWindow.SelectedRow = self.BookInvoiceItemsWindow.table.currentRow()
+            if self.BookInvoiceItemsWindow.SelectedRow != -1:
+                self.Selection = True
+                with sqlite3.connect("PP.db") as db:
+                    cursor = db.cursor() #fetching data from database for the edit window
+                    sql = "select BookInvoiceID, ISBN, BookInvoiceQuantity, BookInvoiceDiscount, ShippingType, ShippingPrice from BookInvoiceItems where BookInvoiceItemsID = {}".format(self.BookInvoiceItemsWindow.table.item(self.BookInvoiceItemsWindow.SelectedRow, 0).text())
+                    cursor.execute(sql)
+                    self.EditWindow.originalItemList = list(cursor.fetchone())
+
         elif self.CurrentTable == "RoyaltyItems":
             self.EditWindow.setFixedSize(450, 250)
             self.EditWindow.selectedID = self.SelectedID
@@ -574,17 +634,24 @@ class MainWindow(QMainWindow):
             self.EditWindow.btnCalculate.clicked.connect(self.RoyaltyItemCalculation)
             self.EditWindow.selectedISBN = self.SelectedISBN
             self.EditWindow.sql = "select RoyaltiesID, ISBN, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, PrintCost, ExcRateFromGBP from RoyaltyItems"
-            for count in range(1, 10):
-                if count != 7:
-                    self.RoyaltyItemsWindow.SelectedRow = self.RoyaltyItemsWindow.table.currentRow()
-                    self.EditWindow.originalItemList.append(QTableWidgetItem(self.RoyaltyItemsWindow.table.item(self.RoyaltyItemsWindow.SelectedRow, count)).text())
-                    if self.RoyaltyItemsWindow.SelectedRow != -1:
-                        self.Selection = True
+            self.RoyaltyItemsWindow.SelectedRow = self.RoyaltyItemsWindow.table.currentRow()
+            if self.RoyaltyItemsWindow.SelectedRow != -1:
+                self.Selection = True
+                with sqlite3.connect("PP.db") as db:
+                    cursor = db.cursor() #fetching data from database for the edit window
+                    sql = "select RoyaltiesID, ISBN, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, PrintCost, ExcRateFromGBP from RoyaltyItems where RoyaltyItemsID = {}".format(self.RoyaltyItemsWindow.table.item(self.RoyaltyItemsWindow.SelectedRow, 0).text())
+                    cursor.execute(sql)
+                    self.EditWindow.originalItemList = list(cursor.fetchone())
 
         self.EditWindow.Editing = True
 
         if self.Selection == True: #initialising the edit window
-                
+            self.EditWindow.btnConfirm.clicked.connect(self.EditWindow.Validate)
+            if self.CurrentTable not in ["RoyaltyItems", "BookInvoiceItems"]:
+                self.EditWindow.btnConfirm.clicked.connect(self.VerifyUpdate)
+            else:
+                self.EditWindow.btnConfirm.clicked.connect(self.EditWindow.CheckCalculated)
+                self.EditWindow.btnConfirm.clicked.connect(self.VerifyUpdate)
             self.EditWindow.AddType = self.CurrentTable
             self.EditWindow.selectedID = self.SelectedID
             self.EditWindow.CalendarWidget = dbCalendarWidget()
@@ -600,50 +667,60 @@ class MainWindow(QMainWindow):
         
 
     def VerifyUpdate(self): #verification dialog
-        self.EditWindow.Verify = dbConfirmationDialog()
-        self.EditWindow.Verify.Msg = "Insert Password to confirm all changes"
-        self.EditWindow.Verify.ConfirmedMsg = "Update successful"
-        self.EditWindow.Verify.VerifyDlg()
-        if self.EditWindow.Verify.ConfirmedDialog.Accepted == True:
-            self.UpdateChanges()
-            self.EditWindow.accept()
+        if self.EditWindow.ReadyToVerify == True:
+            self.EditWindow.Verify = dbConfirmationDialog()
+            self.EditWindow.Verify.Msg = "Insert Password to confirm all changes"
+            self.EditWindow.Verify.ConfirmedMsg = "Update successful"
+            self.EditWindow.Verify.VerifyDlg()
+            if self.EditWindow.Verify.ConfirmedDialog.Accepted == True:
+                self.UpdateChanges()
+                self.EditWindow.accept()
             
 
-        
+ 
     def UpdateChanges(self): #committing changes
         self.UpdateList = []
         self.SelectedAuthorID = self.SelectedID
-        if self.CurrentTable == "Book":
-            self.NoOfEntries = 12
-            self.ID = "ISBN"
-            self.SelectedISBN = QTableWidgetItem(self.ViewWindow.table.item(self.ViewWindow.SelectedRow, 0)).text()
-            self.SelectedID = self.SelectedISBN
-            self.BookEdited = True
 
-        elif self.CurrentTable == "PubInvoice":
-            self.NoOfEntries = 5
-            self.ID = "PubInvoiceID"
-            self.SelectedID = QTableWidgetItem(self.PubInvoiceWindow.table.item(self.PubInvoiceWindow.SelectedRow, 0)).text()
+        with sqlite3.connect("PP.db") as db:
+            cursor = db.cursor()
+            if self.CurrentTable == "Book":
+                self.NoOfEntries = 12
+                cursor.execute("select * from Book")
+                self.ID = "ISBN"
+                self.SelectedISBN = QTableWidgetItem(self.ViewWindow.table.item(self.ViewWindow.SelectedRow, 0)).text()
+                self.SelectedID = self.SelectedISBN
+                self.BookEdited = True
 
-        elif self.CurrentTable == "BookInvoice":
-            self.NoOfEntries = 2
-            self.ID = "BookInvoiceID"
-            self.SelectedID = QTableWidgetItem(self.BookInvoiceWindow.table.item(self.BookInvoiceWindow.SelectedRow, 0)).text()
+            elif self.CurrentTable == "PubInvoice":
+                cursor.execute("select ISBN, AuthorID, PubInvoiceDate, PubInvoiceService, PubInvoicePayment from PubInvoice")
+                self.NoOfEntries = 5
+                self.ID = "PubInvoiceID"
+                self.SelectedID = QTableWidgetItem(self.PubInvoiceWindow.table.item(self.PubInvoiceWindow.SelectedRow, 0)).text()
 
-        elif self.CurrentTable == "Royalties":
-            self.NoOfEntries = 2
-            self.ID = "RoyaltiesID"
-            self.SelectedID = QTableWidgetItem(self.RoyaltiesWindow.table.item(self.RoyaltiesWindow.SelectedRow, 0)).text()
-            
-        elif self.CurrentTable == "BookInvoiceItems":
-            self.NoOfEntries = 6
-            self.ID = "BookInvoiceItemsID"
-            self.SelectedID = QTableWidgetItem(self.BookInvoiceItemsWindow.table.item(self.BookInvoiceItemsWindow.SelectedRow, 0)).text()
+            elif self.CurrentTable == "BookInvoice":
+                cursor.execute("select AuthorID, BookInvoiceDate from BookInvoice")
+                self.NoOfEntries = 2
+                self.ID = "BookInvoiceID"
+                self.SelectedID = QTableWidgetItem(self.BookInvoiceWindow.table.item(self.BookInvoiceWindow.SelectedRow, 0)).text()
 
-        elif self.CurrentTable == "RoyaltyItems":
-            self.NoOfEntries = 6
-            self.ID = "RoyaltyItemsID"
-            self.SelectedID = QTableWidgetItem(self.RoyaltyItemsWindow.table.item(self.RoyaltyItemsWindow.SelectedRow, 0)).text()
+            elif self.CurrentTable == "Royalties":
+                cursor.execute("select AuthorID, RoyaltiesDate from Royalties")
+                self.NoOfEntries = 2
+                self.ID = "RoyaltiesID"
+                self.SelectedID = QTableWidgetItem(self.RoyaltiesWindow.table.item(self.RoyaltiesWindow.SelectedRow, 0)).text()
+                
+            elif self.CurrentTable == "BookInvoiceItems":
+                cursor.execute("select BookInvoiceID, ISBN, BookInvoiceQuantity, BookInvoiceDiscount, ShippingType, ShippingPrice from BookInvoiceItems")
+                self.NoOfEntries = 6
+                self.ID = "BookInvoiceItemsID"
+                self.SelectedID = QTableWidgetItem(self.BookInvoiceItemsWindow.table.item(self.BookInvoiceItemsWindow.SelectedRow, 0)).text()
+
+            elif self.CurrentTable == "RoyaltyItems":
+                cursor.execute("select RoyaltiesID, ISBN, Currency, RoyaltyDiscount, WholesalePrice, RoyaltyQuantity, PrintCost, ExcRateFromGBP from RoyaltyItems")
+                self.NoOfEntries = 6
+                self.ID = "RoyaltyItemsID"
+                self.SelectedID = QTableWidgetItem(self.RoyaltyItemsWindow.table.item(self.RoyaltyItemsWindow.SelectedRow, 0)).text()
         
         for count in range(0, self.NoOfEntries): #creating the update string for sql
             try:
@@ -652,47 +729,26 @@ class MainWindow(QMainWindow):
                 self.UpdateList.append(self.EditWindow.inputList[count].text())
                 
         self.Update = ""
-        
-        if self.CurrentTable == "Book":
-            for count in range(0, len(self.UpdateList)):
-                self.Update += "{} = '{}'".format(self.ViewWindow.table.horizontalHeaderItem(count).text(), self.UpdateList[count])
-                if count != len(self.UpdateList) - 1:
-                    self.Update += ", "
+                
+        self.Headers = list(cursor.description)
+        for count in range(0, len(self.UpdateList)):
+            self.Update += "{} = '{}'".format(list(self.Headers[count])[0], self.UpdateList[count])
+            if count != len(self.UpdateList) - 1:
+                self.Update += ", "
                     
-        elif self.CurrentTable == "PubInvoice":
-            for count in range(0, len(self.UpdateList)):
-                self.Update += "{} = '{}'".format(self.PubInvoiceWindow.table.horizontalHeaderItem(count + 1).text(), self.UpdateList[count])
-                if count != len(self.UpdateList) - 1:
-                    self.Update += ", "
-
-        elif self.CurrentTable == "BookInvoice":
-            for count in range(0, len(self.UpdateList)):
-                self.Update += "{} = '{}'".format(self.BookInvoiceWindow.table.horizontalHeaderItem(count + 1).text(), self.UpdateList[count])
-                if count != len(self.UpdateList) - 1:
-                    self.Update += ", "
-
-        elif self.CurrentTable == "Royalties":
-            for count in range(0, len(self.UpdateList)):
-                self.Update += "{} = '{}'".format(self.RoyaltiesWindow.table.horizontalHeaderItem(count + 1).text(), self.UpdateList[count])
-                if count != len(self.UpdateList) - 1:
-                    self.Update += ", "
-
-        elif self.CurrentTable == "BookInvoiceItems":
-            for count in range(0, len(self.UpdateList)):
-                self.Update += "{} = '{}'".format(self.BookInvoiceItemsWindow.table.horizontalHeaderItem(count + 1).text(), self.UpdateList[count])
-                if count != len(self.UpdateList) - 1:
-                    self.Update += ", "
-
-        elif self.CurrentTable == "RoyaltyItems":
-            for count in range(0, len(self.UpdateList)):
-                self.Update += "{} = '{}'".format(self.RoyaltyItemsWindow.table.horizontalHeaderItem(count + 1).text(), self.UpdateList[count])
-                if count != len(self.UpdateList) - 1:
-                    self.Update += ", "
-
-        
         with sqlite3.connect("PP.db") as db: #update
             cursor = db.cursor()
             cursor.execute("PRAGMA foreign_keys = ON")
+            if self.CurrentTable == "Book": #ISBN is primary key which may be changed, so all foreign keys will change first for it
+                try:
+                    sql = "update PubInvoice set ISBN = {0} where ISBN = {1}".format(self.UpdateList[0], self.SelectedID)
+                    cursor.execute(sql)
+                    sql = "update BookInvoiceItems set ISBN = {0} where ISBN = {1}".format(self.UpdateList[0], self.SelectedID)
+                    cursor.execute(sql)
+                    sql = "update RoyaltyItems set ISBN = {0} where ISBN = {1}".format(self.UpdateList[0], self.SelectedID)
+                    cursor.execute(sql)
+                except:
+                    pass # error if no entry is there for pubinvoice/bookinvoiceitems/royaltyitems
             sql = "update {} set {} where {} = {}".format(self.CurrentTable, self.Update, self.ID, self.SelectedID)
             cursor.execute(sql)
             db.commit()
@@ -710,6 +766,7 @@ class MainWindow(QMainWindow):
 
     def RefreshTables(self): #refreshing tables
         if self.CurrentTable == "Customer":
+            self.TableWidget.sql = "select * from Customer"
             self.TableWidget.initTable()
             
         if self.CurrentTable == "Book": 
@@ -720,7 +777,7 @@ class MainWindow(QMainWindow):
                 cursor.execute("select Firstname, Lastname from Customer where AuthorID = {}".format(self.SelectedAuthorID))
                 self.Name = list(cursor.fetchone())
                 self.Name = "{}, {}".format(self.Name[1], self.Name[0])
-                for count in range(0, self.TableWidget.rowCount()):
+                for count in range(0, self.TableWidget.rowCount()+1):
                     self.ViewWindow.table.setItem(count, 1, QTableWidgetItem(self.Name))
                 self.ViewWindow.table.setHorizontalHeaderItem(1, QTableWidgetItem("Author"))
                 
@@ -731,13 +788,13 @@ class MainWindow(QMainWindow):
                 cursor = db.cursor()
                 cursor.execute("select BookTitle from Book where ISBN = {}".format(self.SelectedISBN))
                 self.Title = "{}".format(list(cursor.fetchone())[0])
-                for count in range(0, self.TableWidget.rowCount()):
+                for count in range(0, self.TableWidget.rowCount()+1):
                     self.PubInvoiceWindow.table.setItem(count, 1, QTableWidgetItem(self.Title))
                 self.PubInvoiceWindow.table.setHorizontalHeaderItem(1, QTableWidgetItem("BookTitle"))
                 cursor.execute("select Firstname, Lastname from Customer where AuthorID = {}".format(self.SelectedAuthorID))
                 self.Name = list(cursor.fetchone())
                 self.Name = "{}, {}".format(self.Name[1], self.Name[0])
-                for count in range(0, self.TableWidget.rowCount()):
+                for count in range(0, self.TableWidget.rowCount()+1):
                     self.PubInvoiceWindow.table.setItem(count, 2, QTableWidgetItem(self.Name))
                 self.PubInvoiceWindow.table.setHorizontalHeaderItem(2, QTableWidgetItem("Author"))
             
@@ -750,7 +807,7 @@ class MainWindow(QMainWindow):
                 cursor.execute("select Firstname, Lastname from Customer where AuthorID = {}".format(self.SelectedAuthorID))
                 self.Name = list(cursor.fetchone())
                 self.Name = "{}, {}".format(self.Name[1], self.Name[0])
-                for count in range(0, self.TableWidget.rowCount()):
+                for count in range(0, self.TableWidget.rowCount()+1):
                     self.BookInvoiceWindow.table.setItem(count, 1, QTableWidgetItem(self.Name))
                 self.BookInvoiceWindow.table.setHorizontalHeaderItem(1, QTableWidgetItem("Author"))
             
@@ -763,7 +820,7 @@ class MainWindow(QMainWindow):
                 cursor.execute("select Firstname, Lastname from Customer where AuthorID = {}".format(self.SelectedAuthorID))
                 self.Name = list(cursor.fetchone())
                 self.Name = "{}, {}".format(self.Name[1], self.Name[0])
-                for count in range(0, self.TableWidget.rowCount()):
+                for count in range(0, self.TableWidget.rowCount()+1):
                     self.RoyaltiesWindow.table.setItem(count, 1, QTableWidgetItem(self.Name))
                 self.RoyaltiesWindow.table.setHorizontalHeaderItem(1, QTableWidgetItem("Author"))
             
@@ -772,22 +829,45 @@ class MainWindow(QMainWindow):
             self.BookInvoiceItemsWindow.table.initTable()
             with sqlite3.connect("PP.db") as db:
                 cursor = db.cursor()
-                cursor.execute("select BookTitle from Book where ISBN = {}".format(self.SelectedISBN))
-                self.Title = "{}".format(list(cursor.fetchone())[0])
-                for count in range(0, self.TableWidget.rowCount()):
-                    self.BookInvoiceItemsWindow.table.setItem(count, 2, QTableWidgetItem(self.Title))
-                self.BookInvoiceItemsWindow.table.setHorizontalHeaderItem(2, QTableWidgetItem("BookTitle"))
+                self.ID = []
+                sql = "select BookInvoiceItemsID from BookInvoiceItems where BookInvoiceID = {}".format(self.SelectedID)
+                cursor.execute(sql)
+                self.IDList = list(cursor.fetchall())
+                for count in range(0, len(self.IDList)):
+                    self.temp = list(self.IDList[count])[0]
+                    self.ID.append(self.temp)
+                                   
+                for count in range(0, len(self.ID)):
+                    try:
+                        cursor.execute("select Book.BookTitle, BookInvoiceItems.ISBN from Book, BookInvoiceItems where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and Book.ISBN = BookInvoiceItems.ISBN".format(self.SelectedID, self.ID[count]))
+                        self.Title = list(cursor.fetchone())[0]
+                        self.BookInvoiceItemsWindow.table.setItem(count, 2, QTableWidgetItem(str(self.Title)))
+                    except:
+                        pass
+                self.BookInvoiceItemsWindow.table.setHorizontalHeaderItem(0, QTableWidgetItem("BookTitle"))
                 self.BookInvoiceItemsWindow.table.removeColumn(1)
+                
         elif self.CurrentTable == "RoyaltyItems":
             self.RoyaltyItemsWindow.table.sql = "select * from RoyaltyItems where RoyaltiesID = {}".format(self.SelectedID)
             self.RoyaltyItemsWindow.table.initTable()
             with sqlite3.connect("PP.db") as db:
                 cursor = db.cursor()
-                cursor.execute("select BookTitle from Book where ISBN = {}".format(self.SelectedISBN))
-                self.Title = "{}".format(list(cursor.fetchone())[0])
-                for count in range(0, self.TableWidget.rowCount()):
-                    self.RoyaltyItemsWindow.table.setItem(count, 2, QTableWidgetItem(self.Title))
-                self.RoyaltyItemsWindow.table.setHorizontalHeaderItem(2, QTableWidgetItem("BookTitle"))
+                self.ID = []
+                sql = "select RoyaltyItemsID from RoyaltyItems where RoyaltiesID = {}".format(self.SelectedID)
+                cursor.execute(sql)
+                self.IDList = list(cursor.fetchall())
+                for count in range(0, len(self.IDList)):
+                    self.temp = list(self.IDList[count])[0]
+                    self.ID.append(self.temp)
+                                   
+                for count in range(0, len(self.ID)):
+                    try:
+                        cursor.execute("select Book.BookTitle, RoyaltyItems.ISBN from Book, RoyaltyItems where RoyaltyItems.RoyaltiesID = {} and RoyaltyItems.RoyaltyItemsID = {} and Book.ISBN = RoyaltyItems.ISBN".format(self.SelectedID, self.ID[count]))
+                        self.Title = list(cursor.fetchone())[0]
+                        self.RoyaltyItemsWindow.table.setItem(count, 2, QTableWidgetItem(str(self.Title)))
+                    except:
+                        pass
+                self.RoyaltyItemsWindow.table.setHorizontalHeaderItem(0, QTableWidgetItem("BookTitle"))
                 self.RoyaltyItemsWindow.table.removeColumn(1)
 
 
@@ -816,65 +896,66 @@ class MainWindow(QMainWindow):
 
 
 
-    def Search(self):
-        self.MenuBar.setVisible(False)
+    def Search(self): #main search interface
         self.SearchDatabase = dbSearchDatabase()
         self.SearchDatabase.Table = None
         self.SearchDatabase.CalendarWidget = dbCalendarWidget()
         self.SearchDatabase.CalendarWidget.Calendar()
         self.SearchDatabase.initLayout()
-        if self.SearchDatabase.Table != None:
-            try:
-                if self.SearchDatabase.Table == "Book":
-                    for count in range(2, len(list(self.SearchDatabase.Results)[0])):
-                        try:
-                            if count == 2:
-                                self.SearchTable.sql = "select * from {} where ISBN = '{}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[0])[count])
-                            else:
-                                self.SearchTable.sql += " or ISBN = '{}'".format(list(self.SearchDatabase.Results[count - 2])[2])
-                            self.SearchTable.initTable()
-                        except IndexError:
-                            self.SearchTable.initTable()
+        if self.SearchDatabase.Valid == True:
+            if self.SearchDatabase.Table != None:
+                try:
+                    if self.SearchDatabase.Table == "Book":
+                        for count in range(2, len(list(self.SearchDatabase.Results)[0])):
+                            try:
+                                if count == 2:
+                                    self.SearchTable.sql = "select * from {} where ISBN = '{}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[0])[count])
+                                else:
+                                    self.SearchTable.sql += " or ISBN = '{}'".format(list(self.SearchDatabase.Results[count - 2])[2])
+                                self.SearchTable.initTable()
+                            except IndexError:
+                                self.SearchTable.initTable()
 
-                if self.SearchDatabase.Table in ["RoyaltyItems", "BookInvoiceItems"]:
-                    start = 4
-                else:
-                    start = 1
+                    if self.SearchDatabase.Table in ["RoyaltyItems", "BookInvoiceItems"]:
+                        start = 4
+                    else:
+                        start = 1
+                        
+                    if self.SearchDatabase.Table == "Customer":
+                        start = 0
+                        for count in range(start, (len(list(self.SearchDatabase.Results)[0]) * len(self.SearchDatabase.Results))):
+                            try:
+                                if count == start:
+                                    self.SearchTable.sql = "select * from Customer where AuthorID = '{}'".format(list(self.SearchDatabase.Results[0])[count])
+                                else:
+                                    self.SearchTable.sql += " or AuthorID = '{}'".format(list(self.SearchDatabase.Results[count])[0])
+                                self.SearchTable.initTable()
+                                
+                            except IndexError:
+                                self.SearchTable.initTable()
                     
-                if self.SearchDatabase.Table == "Customer":
-                    start = 0
-                    for count in range(start, (len(list(self.SearchDatabase.Results)[0]) * len(self.SearchDatabase.Results))):
-                        try:
-                            if count == start:
-                                self.SearchTable.sql = "select * from Customer where AuthorID = '{}'".format(list(self.SearchDatabase.Results[0])[count])
-                            else:
-                                self.SearchTable.sql += " or AuthorID = '{}'".format(list(self.SearchDatabase.Results[count])[0])
-                            self.SearchTable.initTable()
-                            
-                        except IndexError:
-                            self.SearchTable.initTable()
-                
-                elif self.SearchDatabase.Table != "Book" and self.SearchDatabase.Table != None:
-                    for count in range(start, (len(list(self.SearchDatabase.Results)[0]) * len(self.SearchDatabase.Results))):
-                        try:
-                            if count == start:
-                                self.SearchTable.sql = "select * from {0} where {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[0])[count])
-                            else:
-                                self.SearchTable.sql += " or {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[count-4])[4])
-                            self.SearchTable.initTable()
-                            
-                        except IndexError:
-                            self.SearchTable.initTable()
+                    elif self.SearchDatabase.Table != "Book" and self.SearchDatabase.Table != None:
+                        for count in range(start, (len(list(self.SearchDatabase.Results)[0]) * len(self.SearchDatabase.Results))):
+                            try:
+                                if count == start:
+                                    self.SearchTable.sql = "select * from {0} where {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[0])[count])
+                                else:
+                                    self.SearchTable.sql += " or {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[count-4])[4])
+                                self.SearchTable.initTable()
+                                
+                            except IndexError:
+                                self.SearchTable.initTable()
 
 
-                self.StackedLayout.setCurrentIndex(2)
+                    self.StackedLayout.setCurrentIndex(2)
+                    self.MenuBar.setVisible(False)
                     
-            except IndexError:
-                self.Msg = QMessageBox()
-                self.Msg.setWindowTitle("No Results Found")
-                self.Msg.setText("No data matches your search")
-                self.Msg.exec_()
-                self.SearchTable.initTable()
+                except IndexError:
+                    self.Msg = QMessageBox()
+                    self.Msg.setWindowTitle("No Results Found")
+                    self.Msg.setText("No data matches your search")
+                    self.Msg.exec_()
+                    self.SearchTable.initTable()
 
 
     def keyReleaseEvent(self, QKeyEvent):
@@ -899,18 +980,7 @@ class MainWindow(QMainWindow):
 
     def LogOut(self):
         self.hide()
-        subprocess.call("LoginDB.py", shell=True)
-
-    
-        
-def main():
-    app = QApplication(sys.argv)
-    launcher = MainWindow()
-    launcher.raise_()
-    launcher.show()
-    app.exec_()
+        subprocess.call("LoginDB.py", shell=True) #login window is reinitialised
 
 
 
-if __name__ == "__main__":
-    main()

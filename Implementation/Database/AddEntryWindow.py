@@ -54,3 +54,4 @@ class dbAddEntryWindow(QDialog):
             sql = "insert into Customer (FirstName, LastName, Email, PhoneNumber, Address, Postcode) values (?, ?, ?, ?, ?, ?)"
             cursor.execute(sql, self.input_data)
             db.commit()
+            self.Added = True

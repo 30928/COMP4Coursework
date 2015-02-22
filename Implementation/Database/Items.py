@@ -66,13 +66,9 @@ class dbItems(QDialog):
             cursor.execute("PRAGMA foreign_keys_ = ON")
             self.Empty = False
             self.BookInvoicePayment = 0
-            i = 1
-            sql = "select * from BookInvoiceItems where BookInvoiceID = {}".format(self.selectedID)
-            cursor.execute(sql)
-
-
+            
             self.IDList = []
-            sql = "select AuthorID from Customer"
+            sql = "select BookInvoiceItemsID from BookInvoiceItems where BookInvoiceID = {}".format(self.selectedID)
             cursor.execute(sql)
             self.IDListTuple = list(cursor.fetchall())
             for count in range(0, len(self.IDListTuple)): #conversion from tuple
@@ -89,12 +85,12 @@ class dbItems(QDialog):
                     self.Empty = False
                     Selection = "BookInvoiceItems.BookInvoiceQuantity, BookInvoiceItems.BookInvoiceDiscount, BookInvoiceItems.ShippingPrice, Book.Price"
                     Tables = "BookInvoiceItems, Book"
-                    sql = "select {} from {} where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and BookInvoiceItems.ISBN = {} and BookInvoiceItems.ISBN = Book.ISBN".format(Selection, Tables, self.selectedID, count, self.selectedISBN)
+                    sql = "select {} from {} where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and BookInvoiceItems.ISBN = {} and BookInvoiceItems.ISBN = Book.ISBN".format(Selection, Tables, self.selectedID, count+1, self.selectedISBN)
                     cursor.execute(sql)
                     try:
                         self.SelectionList = list(cursor.fetchone())
                     except:
-                            self.Empty = True
+                        self.Empty = True
 
                     if self.Empty != True:
                         self.Quantity = self.SelectionList[0]
@@ -113,9 +109,8 @@ class dbItems(QDialog):
                 sql = "update BookInvoice set BookInvoicePayment = '{}' where BookInvoiceID = {}".format(self.BookInvoicePayment, self.selectedID)
                 cursor.execute(sql)
                 db.commit()
-                i = 0
 
-            if self.currentID == 0:
+            elif self.currentID == 0:
                 self.BookInvoicePayment = None
                 sql = "update BookInvoice set BookInvoicePayment = '{}' where BookInvoiceID = {}".format(self.BookInvoicePayment, self.selectedID)
                 cursor.execute(sql)
@@ -127,13 +122,9 @@ class dbItems(QDialog):
             cursor.execute("PRAGMA foreign_keys = ON")
             self.Empty = False
             self.RoyaltyPayment = 0
-            i = 1
             self.Currency = ""
-            sql = "select * from RoyaltyItems where RoyaltiesID = {}".format(self.selectedID)
-            cursor.execute(sql)
-
             self.IDList = []
-            sql = "select AuthorID from Customer"
+            sql = "select RoyaltyItemsID from RoyaltyItems where RoyaltiesID = {}".format(self.selectedID)
             cursor.execute(sql)
             self.IDListTuple = list(cursor.fetchall())
             for count in range(0, len(self.IDListTuple)): #conversion from tuple
@@ -149,15 +140,15 @@ class dbItems(QDialog):
                     self.Empty = False
                     Selection = "RoyaltyItems.Currency, RoyaltyItems.NetSales, RoyaltyItems.ExcRateFromGBP, RoyaltyItems.RoyaltyQuantity, Book.NoOfPages, Book.Size, Book.Cover, Book.Back"
                     Tables = "RoyaltyItems, Book"
-                    sql = "select {}{} from {} where RoyaltiesID = {} and RoyaltyItemsID = {} and RoyaltyItems.ISBN = {} and Book.ISBN = RoyaltyItems.ISBN".format(Selection, Tables, self.selectedID, count+1, self.selectedISBN)
+                    sql = "select {} from {} where RoyaltyItems.RoyaltiesID = {} and RoyaltyItems.RoyaltyItemsID = {} and RoyaltyItems.ISBN = {} and Book.ISBN = RoyaltyItems.ISBN".format(Selection, Tables, self.selectedID, count+1, self.selectedISBN)
                     cursor.execute(sql)
                     try:
                         self.SelectionList = list(cursor.fetchone())
                     except:
                         self.Empty = True
-
+                        
                     if self.Empty != True:
-                        self.Currency = self.SelectionList[0]                
+                        self.Currency = self.SelectionList[0] 
                         self.NetSales = float(self.SelectionList[1])
                         self.Quantity = self.SelectionList[3]
                         self.NoOfPages = int(self.SelectionList[4])
@@ -191,7 +182,7 @@ class dbItems(QDialog):
                 cursor.execute(sql)
                 db.commit()
 
-            if self.currentID == 0:
+            elif self.currentID == 0:
                 self.RoyaltyPayment = None
                 sql = "update Royalties set RoyaltyPayment = '{}' where RoyaltiesID = {}".format(self.RoyaltyPayment, self.selectedID)
                 cursor.execute(sql)

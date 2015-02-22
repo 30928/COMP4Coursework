@@ -237,34 +237,34 @@ class dbAddItemWindow(QDialog):
 
                 for count in range(0, 12):
                     try: #for line edits
-                        self.inputList[count].setText(self.originalItemList[count])
+                        self.inputList[count].setText(str(self.originalItemList[count]))
                     except: #for comboboxes
-                        self.originalIndex = self.inputList[count].findText(self.originalItemList[count])
+                        self.originalIndex = self.inputList[count].findText(str(self.originalItemList[count]))
                         self.inputList[count].setCurrentIndex(self.originalIndex)
 
             elif self.AddType == "PubInvoice":
                 
                 for count in range(0, 5):
                     try:
-                        self.inputList[count].setText(self.originalItemList[count])
+                        self.inputList[count].setText(str(self.originalItemList[count]))
                     except:
-                        self.originalIndex = self.inputList[count].findText(self.originalItemList[count])
+                        self.originalIndex = self.inputList[count].findText(str(self.originalItemList[count]))
                         self.inputList[count].setCurrentIndex(self.originalIndex)
                         
             elif self.AddType in ["BookInvoice", "Royalties"]:
 
                 for count in range(0, 2):
-                    self.inputList[count].setText(self.originalItemList[count])
+                    self.inputList[count].setText(str(self.originalItemList[count]))
             elif self.AddType == "BookInvoiceItems":
                 for count in range(0, 6):
                     try:
-                        self.inputList[count].setText(self.originalItemList[count])
+                        self.inputList[count].setText(str(self.originalItemList[count]))
                     except:
-                        self.originalIndex = self.inputList[count].findText(self.originalItemList[count])
+                        self.originalIndex = self.inputList[count].findText(str(self.originalItemList[count]))
                         self.inputList[count].setCurrentIndex(self.originalIndex)
             elif self.AddType == "RoyaltyItems":
                 for count in range(0, 8):
-                    self.inputList[count].setText(self.originalItemList[count])
+                    self.inputList[count].setText(str(self.originalItemList[count]))
 
         self.horizontal = QHBoxLayout()
         if self.AddType in ["BookInvoiceItems", "RoyaltyItems"]:
@@ -273,18 +273,29 @@ class dbAddItemWindow(QDialog):
         self.horizontal.addStretch(1)
         self.horizontal.addWidget(self.btnCancel)
         self.horizontal.addWidget(self.btnConfirm)
-        self.btnConfirm.clicked.connect(self.Validate)
+        if self.Editing == False:
+            self.btnConfirm.clicked.connect(self.Validate)
         self.vertical = QVBoxLayout()
         self.vertical.addLayout(self.gridLayout)
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
-        if self.Editing == False:
-            self.btnConfirm.clicked.connect(self.accept) #accept on clicking confirm
-
+        if self.AddType in ["BookInvoiceItems", "RoyaltyItems"]:
+            if self.Editing == False:
+                self.btnConfirm.clicked.connect(self.CheckCalculated)
+                
         self.btnCancel.clicked.connect(self.reject) #reject on clicking cancel
         self.exec_()
-        
-    def AnswerButtons(self):
+
+    def CheckCalculated(self):
+        if len(self.qleCalculation.text()) == 0 and self.Valid == True:
+            self.Msg = QMessageBox()
+            self.Msg.setWindowTitle("Calculation")
+            self.Msg.setText("You must fill all fields and click 'Calculate' before attempting to add to the database.")
+            self.Msg.exec_()
+        elif self.Valid == True and len(self.qleCalculation.text()) != 0:
+            self.ReadyToVerify = True
+
+    def AnswerButtons(self): #so connections can be made outside of this class
         self.btnConfirm = QPushButton("Confirm", self)
         self.btnCancel = QPushButton("Cancel", self)
         if self.AddType in ["BookInvoiceItems", "RoyaltyItems"]:
@@ -336,11 +347,12 @@ class dbAddItemWindow(QDialog):
             if str(self.input_data[count]).replace(" ", "") == "": #presence check
                 self.Valid = False
                 self.ErrorMessage = "All Fields must be filled."
-                
+                break
             try:
                 if self.input_data[count] < 0: #range check
                     self.Valid = False
                     self.ErrorMessage = "Invalid Entry - Please check the fields."
+                    break
             except:
                 pass
             
@@ -348,11 +360,20 @@ class dbAddItemWindow(QDialog):
                 if len(self.input_data[count]) > 13: #isbn cannot be bigger than 13
                     self.Valid = False
                     self.ErrorMessage = "Invalid ISBN - Cannot be bigger than 13 digits."
+                    break
             elif self.qlabelList[count].text() == "Discount": #%'s must be between 0 and 100
-                if self.input_data[count] > 100 or self.input_data[count] < 0:
+                if int(self.input_data[count]) > 100 or int(self.input_data[count]) < 0:
                     self.Valid = False
+                    break
+                
         if self.Valid == False:
             self.Msg = QMessageBox()
             self.Msg.setWindowTitle("Invalid Entry")
             self.Msg.setText(self.ErrorMessage)
             self.Msg.exec_()
+        else:
+            if self.AddType not in ["BookInvoiceItems", "RoyaltyItems"]:
+                if self.Editing == False:
+                    self.accept()
+                else:
+                    self.ReadyToVerify = True

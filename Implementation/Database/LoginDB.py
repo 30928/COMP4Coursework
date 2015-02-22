@@ -4,18 +4,28 @@ import sqlite3
 import sys
 import smtplib
 import email
+import time
 from MainMenu import *
 
 class dbLogin(QMainWindow):
     """db for login"""
 
     def __init__(self):
+        self.initSplashScreen()
         self.initDetails()
         if self.details == ("Username", "Password"):
-            self.MainProgram = MainWindow("Username")
+            self.customer_table()
+            self.book_table()
+            self.pub_invoice_table()
+            self.book_invoice_table()
+            self.book_invoice_items_table()
+            self.royalties_table()
+            self.royalty_items_table()
+            self.hide()
+            self.MainProgram = MainWindow("Username") #runs main window if Username/Password haven't been changed before
             self.MainProgram.show()
         else:
-            super().__init__()
+            super().__init__() #runs login screen if they have been changed
             self.initLoginScreen()
 
     def initDetails(self):
@@ -23,19 +33,19 @@ class dbLogin(QMainWindow):
             cursor = db.cursor()
 
             self.sql = "select name from sqlite_master WHERE type='table' and name='LoginDetails'"
-            cursor.execute(self.sql)
+            cursor.execute(self.sql) #checking whether the login table exists
             try:
                 self.Exists = list(cursor.fetchone())[0]
             except:
                 self.Exists = False
             
             self.sql = "create table if not exists LoginDetails (Username text, Password text)"
-            cursor.execute(self.sql)
+            cursor.execute(self.sql) #creates login table if it doesn't exist
             
-            if self.Exists == False:
+            if self.Exists == False: 
                 self.details = "Username", "Password"
                 self.sql = "insert into LoginDetails (Username, Password) values (?, ?)"
-                cursor.execute(self.sql, self.details)
+                cursor.execute(self.sql, self.details) #adds default Username and Password
             else:
                 self.details = True
 
@@ -90,24 +100,31 @@ class dbLogin(QMainWindow):
         with sqlite3.connect("dbLogin.db") as db:
             cursor = db.cursor()
             cursor.execute("select Username from LoginDetails")
-            self.Username = list(cursor.fetchall())
+            self.Username = list(cursor.fetchall()) #fetches original username and password
             cursor.execute("select Password from LoginDetails")
             self.Password = list(cursor.fetchall())
             self.Valid = False
             
             for count in range(0, len(self.Username)):
-                if self.leUsername.text() == list(self.Username[count])[0]:
+                if self.leUsername.text().lower() == list(self.Username[count])[0].lower():
                     if self.lePassword.text() == list(self.Password[count])[0]:
                         self.Valid = True
+                        self.customer_table() #checking all tables to see if they're existent
+                        self.book_table()
+                        self.pub_invoice_table()
+                        self.book_invoice_table()
+                        self.book_invoice_items_table()
+                        self.royalties_table()
+                        self.royalty_items_table()
+                        self.hide() #Username and password match, so the user is logged in
                         self.MainProgram = MainWindow(list(self.Username[count])[0])
                         self.MainProgram.show()
-                        self.hide()
                         break
                 else:
                     self.Valid = False
                     
             if self.Valid == False:
-                if self.lblInvalid == None:
+                if self.lblInvalid == None: #Username and password do not match, user is rejected
                     self.lblInvalid = QLabel("Invalid Username or Password - Please try again.", self)
                     self.lblInvalid.setWordWrap(True)
                     self.lblInvalid.setAlignment(Qt.AlignHCenter)
@@ -129,15 +146,15 @@ class dbLogin(QMainWindow):
             self.Msg = QMessageBox()
             self.Msg.setWindowTitle("First Time")
             self.Msg.setText("This is your first time using this application.\n Your Username is 'Username' and your Password is 'Password'.\n Please change these once logged in.")
-            self.Msg.exec_()
+            self.Msg.exec_() #default username and password is shown to the user
         else:
             self.Email, ok = QInputDialog.getText(self, 'Forgotten Password', 'Enter your Email:')
-
+            self.Email = self.Email.lower() #email is received from the user
             if self.Email == self.Username:
                 with sqlite3.connect("dbLogin.db") as db:
                     cursor = db.cursor()
                     cursor.execute("select Password from LoginDetails")
-                    self.CurrentPassword = list(cursor.fetchone())[0]
+                    self.CurrentPassword = list(cursor.fetchone())[0] #gets password from database
                 self.sender = "pp.loginhelp@gmail.com"
                 self.recipient = [str(self.Email)]
                 self.server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -154,20 +171,145 @@ class dbLogin(QMainWindow):
                 self.server.close()               
                 
                 self.Msg = QMessageBox()
-                self.Msg.setWindowTitle("Email Sent")
+                self.Msg.setWindowTitle("Email Sent") #email is sent if email is existent in the database, with password details
                 self.Msg.setText("You have been sent an email with the corresponding password details")
                 self.Msg.exec_()
                 
-            else:
-                
+            elif self.Email != self.Username and ok == True:
                 self.Msg = QMessageBox()
-                self.Msg.setWindowTitle("No Match found")
+                self.Msg.setWindowTitle("No Match found") #email is not found, so email is not sent
                 self.Msg.setText("No matching Email was found")
                 self.Msg.exec_()
         
     def keyReleaseEvent(self, QKeyEvent):
         if self.lblInvalid != None:
             self.lblInvalid.hide()
+
+    def create_table(self):
+        with sqlite3.connect("PP.db") as db:
+            cursor = db.cursor()
+            cursor.execute("PRAGMA foreign_keys = ON")
+            self.Exists = True
+            self.FindTable = "select name from sqlite_master WHERE type='table' and name='{}'".format(self.TableName)
+            cursor.execute(self.FindTable) #checks if the tables exist
+            try:
+                self.Exists = list(cursor.fetchone())
+            except:
+                self.Exists = False
+                
+            if self.Exists == False: #creates tables for the database if they don't already exist
+                cursor.execute(self.sql)
+                db.commit()
+
+    def customer_table(self):
+        self.sql = """create table Customer 
+                 (AuthorID integer,
+                 FirstName text,
+                 LastName text,
+                 Email text,
+                 PhoneNumber text,
+                 Address text,
+                 Postcode text,
+                 primary key(AuthorID))"""
+        self.TableName = "Customer"
+        self.create_table()
+            
+    def book_table(self):
+        self.sql = """create table Book 
+                 (ISBN text,
+                 AuthorID integer,
+                 BookTitle text,
+                 NoOfPages integer,
+                 Size text,
+                 Back text,
+                 Cover text,
+                 Paper text,
+                 Font text,
+                 FontSize real,
+                 DatePublished date,
+                 Price real,
+                 primary key(ISBN),
+                 foreign key(AuthorID) references Customer(AuthorID))"""
+        self.TableName = "Book"
+        self.create_table()
+
+    def pub_invoice_table(self):
+        self.sql = """create table PubInvoice 
+                 (PubInvoiceID integer,
+                 ISBN text,
+                 AuthorID integer,
+                 PubInvoiceDate date,
+                 PubInvoiceService text,
+                 PubInvoicePayment real,
+                 primary key(PubInvoiceID),
+                 foreign key(AuthorID) references Customer(AuthorID),
+                 foreign key(ISBN) references Book(ISBN))"""
+        self.TableName = "PubInvoice"
+        self.create_table()
+
+    def book_invoice_table(self):
+        self.sql = """create table BookInvoice
+                 (BookInvoiceID integer,
+                 AuthorID integer,
+                 BookInvoiceDate date,
+                 BookInvoicePayment real,
+                 primary key(BookInvoiceID),
+                 foreign key(AuthorID) references Customer(AuthorID))"""
+        self.TableName = "BookInvoice"
+        self.create_table()
+
+    def book_invoice_items_table(self):
+        self.sql = """create table BookInvoiceItems
+                 (BookInvoiceItemsID integer,
+                 BookInvoiceID integer,
+                 ISBN text,
+                 BookInvoiceQuantity integer,
+                 BookInvoiceDiscount real,
+                 ShippingType text,
+                 ShippingPrice real,
+                 primary key(BookInvoiceItemsID),
+                 foreign key(BookInvoiceID) references BookInvoice(BookInvoiceID),
+                 foreign key(ISBN) references Book(ISBN))"""
+        self.TableName = "BookInvoiceItems"
+        self.create_table()
+
+    def royalties_table(self):
+        self.sql = """create table Royalties
+                 (RoyaltiesID integer,
+                 AuthorID integer,
+                 RoyaltiesDate date,
+                 RoyaltyPayment real,
+                 primary key(RoyaltiesID),
+                 foreign key(AuthorID) references Customer(AuthorID))"""
+        self.TableName = "Royalties"
+        self.create_table()
+
+    def royalty_items_table(self):
+        self.sql = """create table RoyaltyItems
+                 (RoyaltyItemsID integer,
+                 RoyaltiesID integer,
+                 ISBN text,
+                 Currency text,
+                 RoyaltyDiscount real,
+                 WholesalePrice real,
+                 RoyaltyQuantity integer,
+                 NetSales real,
+                 PrintCost real,
+                 ExcRateFromGBP real,
+                 primary key(RoyaltyItemsID),
+                 foreign key(RoyaltiesID) references Royalties(RoyaltiesID),
+                 foreign key(ISBN) references Book(ISBN))"""
+        self.TableName = "RoyaltyItems"
+        self.create_table()
+        
+    def initSplashScreen(self):
+        self.pixmap = QPixmap("PerfectPublishersLtd.png")
+        self.Splashscreen = QSplashScreen(self.pixmap, Qt.WindowStaysOnTopHint)
+        self.Splashscreen.setMask(self.pixmap.mask())
+        self.Splashscreen.show()
+        time.sleep(5)
+        self.Splashscreen.finish(self.Splashscreen)
+
 
 def main():
     app = QApplication(sys.argv)

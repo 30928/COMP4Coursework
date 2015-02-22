@@ -103,6 +103,7 @@ class dbSearchDatabase(QDialog):
         self.leSearch.setText(self.CalendarWidget.date)
 
     def getSearchData(self):
+
         self.Valid = True
         self.Firstname = self.leFirstname.text()
         self.Lastname = self.leLastname.text()
@@ -148,7 +149,6 @@ class dbSearchDatabase(QDialog):
                 self.sql = "select Customer.AuthorID, Book.AuthorID, Book.ISBN, {0}.ISBN, {0}ID from Customer, Book, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and Customer.AuthorID = Book.AuthorID and Book.ISBN = {0}.ISBN".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
 
         else:
-            
             if self.Firstname.replace(" ", "") == "" or self.Lastname.replace(" ", "") == "":
                 self.Msg = QMessageBox()
                 self.Msg.setWindowTitle("Invalid Entry")
@@ -158,7 +158,6 @@ class dbSearchDatabase(QDialog):
                 
             self.Table = "Customer" #Author table is referred to as 'Customer'
             self.sql = "select AuthorID from Customer where Firstname like '{0}%' or Lastname like '{1}%'".format(self.Firstname, self.Lastname)
-
         if self.Valid == True:
             with sqlite3.connect("PP.db") as db:
                 cursor = db.cursor()

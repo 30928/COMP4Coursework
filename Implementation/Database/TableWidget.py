@@ -12,9 +12,11 @@ class dbTableWidget(QTableWidget):
 
     def initTable(self):
         self.clear()
+        self.row = 0
+        self.column = 0
         self.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.setSortingEnabled(True)
+        self.setSortingEnabled(False)
         with sqlite3.connect("PP.db") as db: #fetching data from db
             cursor = db.cursor()
             cursor.execute(self.sql)
@@ -22,7 +24,8 @@ class dbTableWidget(QTableWidget):
         self.setRowCount(0)
         self.setColumnCount(len(self.columns))
         self.setHorizontalHeaderLabels(self.columns)
-        for self.row, form in enumerate(cursor):
-            self.insertRow(self.row)
-            for self.column, item in enumerate(form):
-                self.setItem(self.row, self.column, QTableWidgetItem(str(item)))
+        for row, form in enumerate(cursor):
+            self.insertRow(row)
+            for column, item in enumerate(form):
+                self.setItem(row, column, QTableWidgetItem(str(item)))
+        self.setSortingEnabled(True)
