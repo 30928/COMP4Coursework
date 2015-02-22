@@ -349,7 +349,7 @@ class dbAddItemWindow(QDialog):
                 self.ErrorMessage = "All Fields must be filled."
                 break
             try:
-                if self.input_data[count] < 0: #range check
+                if float(self.input_data[count]) < 0: #range check
                     self.Valid = False
                     self.ErrorMessage = "Invalid Entry - Please check the fields."
                     break
