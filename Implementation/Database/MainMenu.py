@@ -95,8 +95,7 @@ class MainWindow(QMainWindow):
         self.AddEntryWindow = dbAddEntryWindow()
         self.AddEntryWindow.Added = False
         self.AddEntryWindow.initAddEntryWindow()
-        if self.AddEntryWindow == True:
-            self.RefreshTables()
+        self.RefreshTables()
 
 
 
@@ -311,28 +310,29 @@ class MainWindow(QMainWindow):
             self.ConfirmDialog.Msg = "Are you sure you want to delete this Item?"
             self.ConfirmDialog.ConfirmedMsg = "Item was successfully deleted"
         self.ConfirmDialog.Prevention = True #deletion may be prevented if integrity error occurs
-        self.ConfirmDialog.VerifyDlg() #verification
-        try:
-            if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
-                with sqlite3.connect("PP.db") as db:
-                    cursor = db.cursor()
-                    cursor.execute("PRAGMA foreign_keys = ON")
-                    sql = "delete from {} where {} = '{}'".format(self.CurrentTable, self.SelectedIDName, self.SelectedID)
-                    cursor.execute(sql)
-                    db.commit()
-                    self.ConfirmDialog.ConfirmedDialog.Confirmed()
-        except sqlite3.IntegrityError:
-            self.Msg = QMessageBox()
-            self.Msg.setWindowTitle("Error")
-            self.Msg.setText("You must delete all the {} first.".format(self.ForeignKeyMsg))
-            self.Msg.exec_() #informs user that selected entry cannot be deleted and what must be done for it to be deleted
-        self.SelectedID = self.SelectedAuthorID
-        self.RefreshTables()
+        if self.SelectedRow != -1:
+            self.ConfirmDialog.VerifyDlg() #verification
+            try:
+                if self.ConfirmDialog.ConfirmedDialog.Accepted == True:
+                    with sqlite3.connect("PP.db") as db:
+                        cursor = db.cursor()
+                        cursor.execute("PRAGMA foreign_keys = ON")
+                        sql = "delete from {} where {} = '{}'".format(self.CurrentTable, self.SelectedIDName, self.SelectedID)
+                        cursor.execute(sql)
+                        db.commit()
+                        self.ConfirmDialog.ConfirmedDialog.Confirmed()
+            except sqlite3.IntegrityError:
+                self.Msg = QMessageBox()
+                self.Msg.setWindowTitle("Error")
+                self.Msg.setText("You must delete all the {} first.".format(self.ForeignKeyMsg))
+                self.Msg.exec_() #informs user that selected entry cannot be deleted and what must be done for it to be deleted
+            self.SelectedID = self.SelectedAuthorID
+            self.RefreshTables()
 
-        try:
-            self.RecalculateItems()
-        except:
-            pass
+            try:
+                self.RecalculateItems()
+            except:
+                pass
 
 
         
@@ -594,7 +594,7 @@ class MainWindow(QMainWindow):
                 self.Selection = True
                 with sqlite3.connect("PP.db") as db:
                     cursor = db.cursor() #fetching data from database for the edit window
-                    sql = "select AuthorID, BookInvoiceDate from PubInvoice where BookInvoiceID = {}".format(self.BookInvoiceWindow.table.item(self.BookInvoiceWindow.SelectedRow, 0).text())
+                    sql = "select AuthorID, BookInvoiceDate from BookInvoice where BookInvoiceID = {}".format(self.BookInvoiceWindow.table.item(self.BookInvoiceWindow.SelectedRow, 0).text())
                     cursor.execute(sql)
                     self.EditWindow.originalItemList = list(cursor.fetchone())
                 
@@ -886,12 +886,15 @@ class MainWindow(QMainWindow):
             cursor = db.cursor()
             
             if len(self.QSText) == 1:
-                self.TableWidget.sql = "select * from Customer where Firstname like '{}%'".format(self.QSText[0])
+                self.TableWidget.sql = "select * from Customer where Firstname like '{0}%' or Lastname like '{0}%'".format(self.QSText[0])
             elif len(self.QSText) == 0:
                 self.TableWidget.sql = "select * from Customer"
             else:
-                self.TableWidget.sql = "select * from Customer where Firstname like '{}%' AND Lastname like '{}%'".format(self.QSText[0], self.QSText[1:])
-
+                for count in range(1, len(self.QSText)):
+                    if count != 1:
+                        self.QSText[1] += " {}".format(self.QSText[count])
+                self.TableWidget.sql = "select * from Customer where Firstname like '{0}%' or Lastname like '{1}%'".format(self.QSText[0], self.QSText[1])
+                print(self.TableWidget.sql)
             self.TableWidget.initTable()
 
 
@@ -899,6 +902,7 @@ class MainWindow(QMainWindow):
     def Search(self): #main search interface
         self.SearchDatabase = dbSearchDatabase()
         self.SearchDatabase.Table = None
+        self.SearchDatabase.Valid = False
         self.SearchDatabase.CalendarWidget = dbCalendarWidget()
         self.SearchDatabase.CalendarWidget.Calendar()
         self.SearchDatabase.initLayout()
@@ -955,7 +959,6 @@ class MainWindow(QMainWindow):
                     self.Msg.setWindowTitle("No Results Found")
                     self.Msg.setText("No data matches your search")
                     self.Msg.exec_()
-                    self.SearchTable.initTable()
 
 
     def keyReleaseEvent(self, QKeyEvent):

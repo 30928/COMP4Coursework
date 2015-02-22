@@ -141,8 +141,10 @@ class dbLogin(QMainWindow):
             cursor = db.cursor()
             cursor.execute("select Username from LoginDetails")
             self.Username = list(cursor.fetchone())[0]
+            cursor.execute("select Password from LoginDetails")
+            self.Password = list(cursor.fetchone())[0]
             
-        if self.Username == "Username":
+        if self.Username == "Username" and self.Password == "Password":
             self.Msg = QMessageBox()
             self.Msg.setWindowTitle("First Time")
             self.Msg.setText("This is your first time using this application.\n Your Username is 'Username' and your Password is 'Password'.\n Please change these once logged in.")
@@ -307,7 +309,7 @@ class dbLogin(QMainWindow):
         self.Splashscreen = QSplashScreen(self.pixmap, Qt.WindowStaysOnTopHint)
         self.Splashscreen.setMask(self.pixmap.mask())
         self.Splashscreen.show()
-        time.sleep(5)
+        time.sleep(2)
         self.Splashscreen.finish(self.Splashscreen)
 
 

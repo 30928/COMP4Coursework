@@ -18,7 +18,7 @@ class initMainMenuButtons(QWidget):
         self.btnLogOut.setFixedSize(100, 30)
         
         self.leQuickSearch = QLineEdit(self)
-        self.leQuickSearch.setPlaceholderText("Author Surname")
+        self.leQuickSearch.setPlaceholderText("Author Name")
         self.leQuickSearch.setFixedSize(100, 25)
         
         self.btnQuickSearch = QPushButton("Quick Search", self)
