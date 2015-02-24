@@ -8,6 +8,21 @@ class dbAddEntryWindow(QDialog):
 
     def __init__(self):
         super().__init__()
+        self.setStyleSheet("""QTableWidget{
+                                        gridline-color: #A8A800;
+                                        border-color: #A8A800;
+                                        selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                        stop: 0 #A8A800, stop: 1 #8F8F00 )}
+                            QPushButton{
+                                min-height: 2em;
+                                min-width: 5em;
+                                color: black;
+                                background-color: #FFFFFF;
+                                padding: 1px;
+                                border-style: outset;
+                                border-width: 1px;
+                                border-color: #8F8F00;}
+                            }""")
 
     def initAddEntryWindow(self):
         self.setWindowTitle("Add Entry")
