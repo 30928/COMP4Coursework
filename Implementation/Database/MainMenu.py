@@ -27,8 +27,11 @@ class MainWindow(QMainWindow):
 
     def __init__(self, Username):
         super().__init__()
+
+                    
         self.Username = Username
         self.setWindowTitle("Main Menu")
+        self.setWindowIcon(QIcon("PPIcon.png"))
         self.setFixedSize(735,400) 
         self.MenuBar = dbMenuBar()      
         self.setMenuBar(self.MenuBar)
