@@ -26,25 +26,6 @@ class dbLogin(QMainWindow):
             self.MainProgram.show()
         else:
             super().__init__() #runs login screen if they have been changed
-            self.setStyleSheet("""QMainWindow{
-                                       background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
-                                       stop: 0 #CCC000, stop: 1 white);}
-                                  QPushButton{
-                                    min-height: 1.5em;
-                                    min-width: 3em;
-                                    border-style: outset;
-                                    border-width: 1px;
-                                    border-color: #8F8F00;
-                                    font: 14px;
-                                    color: black;
-                                    background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
-                                    stop: 0 #E8E85D, stop: 1 white);
-                                    padding: 1px;}
-                                  QPushButton:pressed {
-                                    background-color: lightgray}
-                            
-
-                                }""")
             self.initLoginScreen()
 
     def initDetails(self):

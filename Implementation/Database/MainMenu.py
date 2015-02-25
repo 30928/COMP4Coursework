@@ -27,28 +27,6 @@ class MainWindow(QMainWindow):
 
     def __init__(self, Username):
         super().__init__()
-        self.setStyleSheet("""QMainWindow{
-                                   background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
-                                stop: 0 #CCC000, stop: 1 white);}
-                            QTableWidget{
-                                        gridline-color: #A8A800;
-                                        border-color: #A8A800;
-                                        selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
-                                        stop: 0 #A8A800, stop: 1 #8F8F00 )}
-                            QPushButton{
-                                min-height: 2em;
-                                min-width: 5em;
-                                color: black;
-                                background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
-                                stop: 0 #E8E85D, stop: 1 white);
-                                padding: 1px;
-                                border-style: outset;
-                                border-width: 1px;
-                                border-color: #8F8F00;}
-                            QPushButton:pressed {
-                                background-color: lightgray}
-                            }""")
-                    
         self.Username = Username
         self.setWindowTitle("Main Menu")
         self.setWindowIcon(QIcon("PPIcon.png"))

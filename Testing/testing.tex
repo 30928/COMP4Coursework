@@ -88,7 +88,7 @@
     \begin{longtable}{|p{1.5cm}|p{2cm}|p{2.5cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test} & \textbf{Test Description} & \textbf{Test Data} & \textbf{Test Data Type (Normal/ Erroneous/ Boundary)} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Evidence}\\ \hline
-        1.1 & Test the Log in button on the log in screen & This should check whether the password and email match and exist in a record & Click the log in button & Normal & If the email and password match, the main menu should open, else the program should prompt the user with an error & & \\ \hline
+        1.1 & Test the Log in button on the log in screen & This should check whether the password and email match and exist in a record & Click the log in button & Normal & If the email and password match, the main menu should open, else the program should prompt the user with an error & Works as expected & Figure \ref{fig:LoginTestFail} on page \pageref{fig:LoginTestFail}, and Figure \ref{fig:LoginTest} on page \pageref{fig:LoginTest}. \\ \hline
         1.2 & Test the View button on the main menu & This button links the main menu to the view menu. & Click the View Button & Normal & The program should open the View Menu in a new window, displaying the selected Customer's Books. & & \\ \hline
         1.3 & Testing the Log Out button on the Main Menu & This button links to the Login screen, where the user is required to log in again & Click the Log out button & Normal & The screen should switch to the log out screen & & \\ \hline
         1.4 & Testing the Search Database button on the Main Menu & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button & Normal & The program should open a new window consisting of the Search Database screen & & \\ \hline
@@ -118,20 +118,19 @@ Verification window, asking the user for confirmation and verification on removi
 \rowcolor{lightgray} 1.28 & Testing the Confirm button on the Search window & This button checks whether the entries are valid then conducts the search if they are, presenting results in the main window & Click the Confirm button on the search window & Normal & The program should validate the entries then conduct the search and present search results in the main menu, or prompt the user with an error. & & \\ \hline
 \rowcolor{lightgray} 1.29 & Testing the Cancel button on the Add Entry window & This button should reject and close the window & Click the cancel button on the add entry window & Normal & The program should reject the window and close it & & \\ \hline
 \rowcolor{lightgray} 1.30 & Testing the Cancel button on the Search window & This button should reject and close the window & Click the cancel button on the Search window & Normal & The program should reject the window and close it & & \\ \hline
-\rowcolor{lightgray} 1.31 & Testing the Cancel button on the Add book window & This button should reject and close the window & Click the cancel button on the Add Book window & Normal & The program should reject the window and close it & & \\ \hline
-\rowcolor{lightgray} 1.32 & Testing the Cancel button on the change Username/Password selection window & This button should reject and close the window & Click the cancel button on the change Username/Password selection window & Normal & The program should reject the window and close it & & \\ \hline
         2.1 & Verify that some criteria has been entered when using the search & At least one set of the input boxes and dropdown lists must have been filled in or selected from, else the program will prompt the user about the error & Selected from list with names and values entered \newline Selected from list, values enteredand no names entered \newline Just values entered \newline Nothing   & Normal \newline Normal \newline Erroneous \newline Erroneous & Accept \newline Accept \newline Error \newline Error & & \\ \hline
-        2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com \newline helloworld \newline test @testmail.com \newline test.com@testmail & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
+        2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com \newline helloworld \newline test \newline @testmail.com \newline test.com@testmail & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
         2.3 & Verify that a valid Firstname has been entered when adding an entry & The user will be prompted with an error & John \newline Jo hn \newline Jo?hn \newline Jo2n & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
         2.4 & Verify that a valid Lastname has been entered when adding an entry & The user will be prompted with an error & Smith \newline Sm ith \newline Smi!th \newline Smi1th & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
         2.5 & Verify that a valid Phonenumber has been entered when adding an entry & The user will be prompted with an error & 07123456789 \newline 07123123.3 \newline 071CO2 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
-        2.7 & Verify that a valid Address has been entered when adding an entry & The user will be prompted with an error & 1 Example road \newline @@~£! \newline 1231231 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
-\rowcolor{lightgray} 2.8 & Verify that a valid ISBN has been entered when adding a book & The user will be prompted with an error & 1234567890123 \newline @@~£! \newline 1234567890123456 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
-        2.9 & Verify that a valid NoOfPages has been entered when adding a book & The user will be prompted with an error & 123 \newline 123456789 \newline 2.3 \newline @! \newline HelloWorld & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error& & \\ \hline
-\rowcolor{lightgray} 2.10 & Verify that a valid Discount has been entered when adding Book Invoice items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Erroneous \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & & \\ \hline
-\rowcolor{lightgray}  2.11 & Verify that a valid Discount has been entered when adding Royalty items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Erroneous \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & & \\ \hline
+        2.6 & Verify that a valid Address has been entered when adding an entry & The user will be prompted with an error & 1 Example road \newline @@~£! \newline 1231231 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
+\rowcolor{lightgray} 2.7 & Verify that a valid ISBN has been entered when adding a book & The user will be prompted with an error & 1234567890123 \newline @@~£! \newline 1234567890123456 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
+        2.8 & Verify that a valid NoOfPages has been entered when adding a book & The user will be prompted with an error & 123 \newline 123456789 \newline 2.3 \newline @! \newline
+HelloWorld & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error& & \\ \hline
+\rowcolor{lightgray} 2.9 & Verify that a valid Discount has been entered when adding Book Invoice items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Erroneous \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & & \\ \hline
+\rowcolor{lightgray}  2.10 & Verify that a valid Discount has been entered when adding Royalty items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Erroneous \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & & \\ \hline
         3.1 & Verify that all fields required are entered when adding a book & If all fields are filled in correctly, a book will be successfully added to the database & Fill all Fields Correctly and then click Add to Database \newline Leave Fields Blank and then click Add to Database & Normal \newline Erroneous & Verification screen should open \newline User will be prompted with an error & & \\ \hline
-        3.2 & Verify that all fields required are entered and calculations are complete when adding an Invoice Item & If all fields are filled in correctly and the calculations are complete, then the invoice item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneuos \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted with an error & & \\ \hline
+        3.2 & Verify that all fields required are entered and calculations are complete when adding an Invoice Item & If all fields are filled in correctly and the calculations are complete, then the invoice item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneous \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted with an error & & \\ \hline
         3.3 & Verify that all fields required are entered and calculations are complete when adding a Royalty Item & If all fields are filled in correctly and the calculations are complete, then the royalty item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneous \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted to click Calculate & & \\ \hline
 \rowcolor{lightgray} 3.4 & Verify that the calculations function for working out the print cost & The calculations should be conducted and the result should be displayed & Enter values for the Royalty Items \newline Leave fields blank \newline Enter negative numbers into the required fields. & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline 
 \rowcolor{lightgray} 3.5 & Verify that the calculations function for working out the total Royalty Payment for a set of payments. & The calculations should be conducted and the result should be displayed in the Royalties table & Enter values for the Royalty Items and add it to the database \newline Leave fields blank \newline Enter negative numbers into the required fields. & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline 
@@ -166,13 +165,29 @@ Verification window, asking the user for confirmation and verification on removi
 
 \subsection{Original Test Data}
 
+The data is shown in the previous table.
+
 \subsection{Changes to Test Data}
+
+The data is shown in the previous table.
 
 \section{Annotated Samples}
 
 \subsection{Actual Results}
 
+The data is shown in the previous table.
+
 \subsection{Evidence}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/LoginTestFail.png}
+    \caption{Test 1.1}  \label{fig:LoginTestFail}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/LoginTestSucceed.png}
+    \caption{Test 1.2}  \label{fig:LoginTestSucceed}
+\end{figure}
 
 \end{landscape}
 
