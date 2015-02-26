@@ -11,8 +11,9 @@ class dbLogin(QMainWindow):
     """db for login"""
 
     def __init__(self):
-        self.initSplashScreen()
+        #self.initSplashScreen()
         self.initDetails()
+        self.details = ("Username", "Password")
         if self.details == ("Username", "Password"):
             self.customer_table()
             self.book_table()
@@ -21,7 +22,6 @@ class dbLogin(QMainWindow):
             self.book_invoice_items_table()
             self.royalties_table()
             self.royalty_items_table()
-            self.hide()
             self.MainProgram = MainWindow("Username") #runs main window if Username/Password haven't been changed before
             self.MainProgram.show()
         else:

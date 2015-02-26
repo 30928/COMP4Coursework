@@ -79,18 +79,20 @@ class dbItems(QDialog):
                 if self.currentID < self.IDList[count]:
                     self.currentID = self.IDList[count]
 
-            
+
             if self.currentID != 0:
-                for count in range(1, self.currentID +1):
+
+                for count in range(0, self.currentID +1):
                     self.Empty = False
                     Selection = "BookInvoiceItems.BookInvoiceQuantity, BookInvoiceItems.BookInvoiceDiscount, BookInvoiceItems.ShippingPrice, Book.Price"
                     Tables = "BookInvoiceItems, Book"
-                    sql = "select {} from {} where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and BookInvoiceItems.ISBN = {} and BookInvoiceItems.ISBN = Book.ISBN".format(Selection, Tables, self.selectedID, count+1, self.selectedISBN)
+                    sql = "select {} from {} where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and BookInvoiceItems.ISBN = {} and Book.ISBN = BookInvoiceItems.ISBN".format(Selection, Tables, self.selectedID, count+1, self.selectedISBN)
                     cursor.execute(sql)
-                    try:
+                    try:                    
                         self.SelectionList = list(cursor.fetchone())
                     except:
                         self.Empty = True
+
 
                     if self.Empty != True:
                         self.Quantity = self.SelectionList[0]
@@ -99,7 +101,7 @@ class dbItems(QDialog):
                         self.Price = self.SelectionList[3]
                         
                         self.TempPayment = (self.Quantity * self.Price)
-                        self.Discount = self.TempPayment * self.Discount
+                        self.Discount *= self.TempPayment
                         self.TempPayment -= self.Discount
                         self.TempPayment += self.ShippingPrice
 

@@ -10,6 +10,7 @@ class dbChangePassword(QDialog):
         super().__init__()
 
     def initChangePasswordScreen(self):
+        self.setWindowTitle("Change Password")
         self.setModal(True)
         self.leOldPassword = QLineEdit(self)
         self.leNewPassword = QLineEdit(self)
@@ -44,24 +45,31 @@ class dbChangePassword(QDialog):
         
     def Check(self):
         if self.leNewPassword.text() == self.leRetype.text():
-            with sqlite3.connect("dbLogin.db") as db:
-                cursor = db.cursor()
-                cursor.execute("select Password from LoginDetails")
-                self.OldPassword = list(cursor.fetchone())[0]
-                if self.leOldPassword.text() == self.OldPassword:
-                    self.Password = self.leNewPassword.text()
-                    cursor.execute("update LoginDetails set Password = '{}' where Username = '{}'".format(self.Password, self.Username))
-                    self.Msg = QMessageBox()
-                    self.Msg.setWindowTitle("Password")
-                    self.Msg.setText("Password was successfully changed")
-                    self.Msg.exec_()
-                    self.accept()
+            
+            if len(self.leNewPassword.text()) < 5:
+                self.Msg = QMessageBox()
+                self.Msg.setWindowTitle("Password")
+                self.Msg.setText("New Password was too short")
+                self.Msg.exec_()
+            else:
+                with sqlite3.connect("dbLogin.db") as db:
+                    cursor = db.cursor()
+                    cursor.execute("select Password from LoginDetails")
+                    self.OldPassword = list(cursor.fetchone())[0]
+                    if self.leOldPassword.text() == self.OldPassword:
+                        self.Password = self.leNewPassword.text()
+                        cursor.execute("update LoginDetails set Password = '{}' where Username = '{}'".format(self.Password, self.Username))
+                        self.Msg = QMessageBox()
+                        self.Msg.setWindowTitle("Password")
+                        self.Msg.setText("Password was successfully changed")
+                        self.Msg.exec_()
+                        self.accept()
 
-                else:
-                    self.Msg = QMessageBox()
-                    self.Msg.setWindowTitle("Password")
-                    self.Msg.setText("Old Password was incorrect")
-                    self.Msg.exec_()
+                    else:
+                        self.Msg = QMessageBox()
+                        self.Msg.setWindowTitle("Password")
+                        self.Msg.setText("Old Password was incorrect")
+                        self.Msg.exec_()
         else:
             self.Msg = QMessageBox()
             self.Msg.setWindowTitle("Password")

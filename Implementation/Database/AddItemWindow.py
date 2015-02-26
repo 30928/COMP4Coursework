@@ -16,29 +16,39 @@ class dbAddItemWindow(QDialog):
         if self.Editing == True:
             self.setWindowTitle("Edit {}".format(self.AddType))
         self.setModal(True) #modal window
-        
+        self.Calculated = False
         with sqlite3.connect("PP.db") as db: #fetching data from db
             cursor = db.cursor()
             cursor.execute(self.sql)
             db.commit()
-
             
-        self.columns = [tuple[0] for tuple in cursor.description] #column names
+        self.Columns = []
+        self.ColumnNames = cursor.description    
         
-        places = [(count,count2) for count in range (int(round(len(self.columns)/2,1)+1)) for count2 in range(4)]
-        self.columns = sum([[count,''] for count in self.columns],[])
+        for count in range(0, len(self.ColumnNames)):
+            self.Columns.append(list(list(self.ColumnNames)[count])[0])
+        self.coordinates = []
+        
+        for count in range(int(round(len(self.Columns)/2, 1) + 1)):
+            for count2 in range(4):
+                   self.coordinates.append((count, count2))
+                   
+        self.ColumnLength = len(self.Columns)              
+        for count in range(0, self.ColumnLength):
+            self.Columns.insert((count * 2) + 1, "")
+
         db.close()
         self.inputList = []
         self.qlabelList = []
         self.gridLayout = QGridLayout()
         count = 0
 
-        for place, self.columnHeader in zip(places, self.columns):
-
-            if self.columnHeader == '': #replacing spaces with line edits
+        for self.coordinate, self.columnHeader in zip(self.coordinates, self.Columns):
+            
+            if self.columnHeader == "": #replacing spaces with line edits
 
                 if self.AddType == "Book" and count in [1, 3, 4, 5, 6, 7, 9, 10, 11]:
-            
+                    
                     if count == 1: #exceptions for book
                         self.input = QLineEdit(self) #new line edit
                         self.input.setReadOnly(True)
@@ -150,7 +160,7 @@ class dbAddItemWindow(QDialog):
                     self.input = QLineEdit(self) #new line edit #standard input method
 
                 self.inputList.append(self.input)   #line edits/combo boxes appended to list for further reference
-                self.gridLayout.addWidget(self.inputList[count], *place)
+                self.gridLayout.addWidget(self.inputList[count], *self.coordinate)
 
                 count += 1
                 
@@ -199,12 +209,12 @@ class dbAddItemWindow(QDialog):
 
                         self.qlabel = QLabel(str(self.Label), self)
                     self.qlabelList.append(self.qlabel)
-                    self.gridLayout.addWidget(self.qlabelList[count], *place)
+                    self.gridLayout.addWidget(self.qlabelList[count], *self.coordinate)
                     
                 if self.DateEntry == True:
                     self.btnDate = QPushButton("Date", self)
                     self.qlabelList.append(self.btnDate)
-                    self.gridLayout.addWidget(self.qlabelList[count], *place)
+                    self.gridLayout.addWidget(self.qlabelList[count], *self.coordinate)
                     self.btnDate.clicked.connect(self.CalendarWidget.DisplayCalendar)
                     self.CalendarWidget.btnSelect.clicked.connect(self.getDate)
                     
@@ -362,8 +372,9 @@ class dbAddItemWindow(QDialog):
                     self.ErrorMessage = "Invalid ISBN - Cannot be bigger than 13 digits."
                     break
             elif self.qlabelList[count].text() == "Discount": #%'s must be between 0 and 100
-                if int(self.input_data[count]) > 100 or int(self.input_data[count]) < 0:
+                if float(self.input_data[count]) > 100 or float(self.input_data[count]) < 0:
                     self.Valid = False
+                    self.ErrorMessage = "Invalid Entry - Please check the fields."
                     break
                 
         if self.Valid == False:

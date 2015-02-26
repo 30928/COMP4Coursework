@@ -11,6 +11,7 @@ class dbSearchDatabase(QDialog):
         super().__init__()
         
     def initLayout(self):
+        self.setWindowTitle("Search")
         self.gridLayout = QGridLayout()
         self.gridLayout.setVerticalSpacing(10)
         self.gridLayout.setHorizontalSpacing(10)

@@ -10,6 +10,8 @@ class dbChangeUsername(QDialog):
         super().__init__()
 
     def initChangeUsernameScreen(self):
+        self.setWindowTitle("Change Username")
+        self.setModal(True)
         self.leOldUsername = QLineEdit(self)
         self.leNewUsername = QLineEdit(self)
         self.leNewUsername.setValidator(QRegExpValidator(QRegExp("[a-zA-Z\d\_\-\.]+@([a-zA-Z\d\_\-\.])+\.([a-zA-Z\_\-\.])+")))
@@ -42,24 +44,32 @@ class dbChangeUsername(QDialog):
         
     def Check(self):
         if self.leNewUsername.text() == self.leRetype.text():
-            with sqlite3.connect("dbLogin.db") as db:
-                cursor = db.cursor()
-                cursor.execute("select Username from LoginDetails")
-                self.OldUsername = list(cursor.fetchone())[0]
-                if self.leOldUsername.text() == self.OldUsername:
-                    self.NewUsername = self.leNewUsername.text()
-                    cursor.execute("update LoginDetails set Username = '{}' where Username = '{}'".format(self.NewUsername, self.Username))
-                    self.Msg = QMessageBox()
-                    self.Msg.setWindowTitle("Username")
-                    self.Msg.setText("Username was successfully changed")
-                    self.Msg.exec_()
-                    self.accept()
+            
+            if len(self.leNewUsername.text()) < 5:
+                self.Msg = QMessageBox()
+                self.Msg.setWindowTitle("Username")
+                self.Msg.setText("New Username was too short")
+                self.Msg.exec_()
+            else:
+                
+                with sqlite3.connect("dbLogin.db") as db:
+                    cursor = db.cursor()
+                    cursor.execute("select Username from LoginDetails")
+                    self.OldUsername = list(cursor.fetchone())[0]
+                    if self.leOldUsername.text() == self.OldUsername:
+                        self.NewUsername = self.leNewUsername.text()
+                        cursor.execute("update LoginDetails set Username = '{}' where Username = '{}'".format(self.NewUsername, self.Username))
+                        self.Msg = QMessageBox()
+                        self.Msg.setWindowTitle("Username")
+                        self.Msg.setText("Username was successfully changed")
+                        self.Msg.exec_()
+                        self.accept()
 
-                else:
-                    self.Msg = QMessageBox()
-                    self.Msg.setWindowTitle("Username")
-                    self.Msg.setText("Old Username was incorrect")
-                    self.Msg.exec_()
+                    else:
+                        self.Msg = QMessageBox()
+                        self.Msg.setWindowTitle("Username")
+                        self.Msg.setText("Old Username was incorrect")
+                        self.Msg.exec_()
         else:
             self.Msg = QMessageBox()
             self.Msg.setWindowTitle("Username")

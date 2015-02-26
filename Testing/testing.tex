@@ -44,7 +44,7 @@
         1.3 & Testing the Log Out button on the Main Menu & This button links to the Login screen, where the user is required to log in again & Click the Log out button & Normal & The screen should switch to the log out screen & & \\ \hline
         1.4 & Testing the Search Database button on the Main Menu & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button & Normal & The program should open a new window consisting of the Search Database screen & & \\ \hline
         1.5 & Testing the Add Entry button on the Main Menu & This button should prompt a seperate interface to open and show the Add Entry screen & Click the Add Entry button & Normal & The program should open the Add Entry screen in a new window & & \\ \hline
-        1.6 & Testing the Edit Entry button from the Main Menu & This button links to the Editing screen & Click the Edit Entry button & Normal & The program should switch to the Editing screen from the Main Menu &  & \\ \hline
+\rowcolor{gray} 1.6 (removed) & Testing the Edit Entry button from the Main Menu & This button links to the Editing screen & Click the Edit Entry button & Normal & The program should switch to the Editing screen from the Main Menu &  & \\ \hline
         1.7 & Testing the Edit Entry button after an entry has been selected beforehand & These conditions should open the Edit Entry screen upon clicking Edit Entry, with data on the selected entry already filled in on the grid & Click on an entry, and then click Edit Entry & Normal & The program should open the Edit Entry screen in a new window & & \\ \hline
         1.8 & Testing the Remove Entry Button after an entry has been selected beforehand & These conditions should prompt the user for verification on deleting a selected customer record & Click on an entry and then click Remove Entry & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & & \\ \hline
         1.9 & Testing the Change Password Button on the Main Menu & This button prompts the Change Password window to open & Click the Change Password button & Normal & The program should open the Change Password window, with fields required to be filled in in order to change the password & & \\ \hline
@@ -89,35 +89,32 @@
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test} & \textbf{Test Description} & \textbf{Test Data} & \textbf{Test Data Type (Normal/ Erroneous/ Boundary)} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Evidence}\\ \hline
         1.1 & Test the Log in button on the log in screen & This should check whether the password and email match and exist in a record & Click the log in button & Normal & If the email and password match, the main menu should open, else the program should prompt the user with an error & Works as expected & Figure \ref{fig:LoginTestFail} on page \pageref{fig:LoginTestFail}, and Figure \ref{fig:LoginTest} on page \pageref{fig:LoginTest}. \\ \hline
-        1.2 & Test the View button on the main menu & This button links the main menu to the view menu. & Click the View Button & Normal & The program should open the View Menu in a new window, displaying the selected Customer's Books. & & \\ \hline
-        1.3 & Testing the Log Out button on the Main Menu & This button links to the Login screen, where the user is required to log in again & Click the Log out button & Normal & The screen should switch to the log out screen & & \\ \hline
-        1.4 & Testing the Search Database button on the Main Menu & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button & Normal & The program should open a new window consisting of the Search Database screen & & \\ \hline
-        1.5 & Testing the Add Entry button on the Main Menu & This button should prompt a seperate interface to open and show the Add Entry screen & Click the Add Entry button & Normal & The program should open the Add Entry screen in a new window & & \\ \hline
-        1.7 & Testing the Edit Entry button after an entry has been selected beforehand & These conditions should open the Edit Entry screen upon clicking Edit Entry, with data on the selected entry already filled in on the grid & Click on an entry, and then click Edit Entry & Normal & The program should open the Edit Entry screen in a new window & & \\ \hline
-        1.8 & Testing the Remove Entry Button after an entry has been selected beforehand & These conditions should prompt the user for verification on deleting a selected customer record & Click on an entry and then click Remove Entry & Normal & The program should open a
-Verification window, asking the user for confirmation and verification on removing the selected customer record & & \\ \hline
-        1.9 & Testing the Change Password/Username Button on the Main Menu & This button prompts a window to open, with a set of buttons asking what the user wishes to changes & Click the Change Password/Username button & Normal & The program should open the Change Password/Username window, with buttons asking what is needed to be changed. & & \\ \hline
-\rowcolor{lightgray} 1.10 & Testing the Quick Search button on the Main Menu & This button returns the customer that matches the entered Name & Type in a Firstname, Lastname or both and click QuickSearch & Normal & The program should return any customers that match the entered name(s) and show it in the grid & & \\ \hline
-        1.11 & Testing the back button on the View Menu & This button returns back to the main menu & Click Back & Normal & The program should return back to the main menu & & \\ \hline
-        1.12 & Testing the Add Book Button on the View Menu & This button opens up a new window for adding a book & Click Add Book & Normal & The program should open a new window for adding a book & & \\ \hline
-        1.13 & Testing the View Publishing Invoice button on the View Menu & This button opens up a new window displaying details about the selected book's publishing invoice & Click View Publishing invoice & Normal & The program should open a new window containing details about the selected book's publishing invoice & & \\ \hline
-        1.14 & Testing the View Royalties button on the View Menu & This button opens up a new window displaying details about the selected book's royalties & Click View Royalties & Normal & The program should open a new window containing details about the selected book's royalties & & \\ \hline
-        1.15 & Testing the View Book Invoice button on the View Menu & This button opens up a new window displaying details about the selected book's book invoices & Click View Book Invoices & Normal & The program should open a new window containing details about the selected book's book invoices & & \\ \hline
-        1.16 & Testing the Delete book button on the View Menu & This button opens up a new window asking for verification on deleting a selected book record & Click Delete book & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & & \\ \hline
-\rowcolor{lightgray} 1.17 & Testing the 'Forgotten Password' label on the log in screen & This opens a window, giving the user the default username and password if it's the first time of usage, or it opens an input box where an email is asked for, if the default credentials have been changed. & Click 'Forgotten Password' & Normal & This should open a window, giving the user the default username and password if it's the first time of usage, or it will open a input box where an email is asked for, if the default credentials have been changed & & \\ \hline
-\rowcolor{lightgray} 1.18 & Testing the Change Password Button & This button opens a new window, where the user is presented with fields required for changing their password & Click Change Password & Normal & The program should open the Change Password window and present the necessary fields to the user & & \\ \hline
-\rowcolor{lightgray} 1.19 & Testing the Confirm button for changing passwords & This button should accept the entries the user has entered if the old password matches, and the new and retyped passwords matches otherwise the user will be prompted with an error. & Fill the necessary fields and click Confirm & Normal & This should accept the user's input, successfully changing the password if the criteria is met, else the user is prompted with an error & & \\ \hline
-\rowcolor{lightgray} 1.20 & Testing the Change Username Button & This button opens a new window, where the user is presented with fields required for changing their Username & Click Change Username & Normal & The program should open the Change Username window and present the necessary fields to the username & & \\ \hline
-\rowcolor{lightgray} 1.21 & Testing the Confirm button for changing Username & This button should accept the entries the user has entered if the old Username matches, and the new and retyped Usernames match otherwise the user will be prompted with an error. & Fill the necessary fields and click Confirm & Normal & This should accept the user's input, successfully changing the Userna e if the criteria is met, else the user is prompted with an error & & \\ \hline
+        1.2 & Test the View button on the main menu & This button links the main menu to the view menu. & Click the View Button after selecting an author. & Normal & The program should open the View Menu in a new window, displaying the selected Customer's Books. & Works as expected & Figure \ref{fig:ViewButtonTest} on page \pageref{fig:ViewButtonTest} \\ \hline
+        1.3 & Testing the Log Out button on the Main Menu & This button links to the Login screen, where the user is required to log in again & Click the Log out button & Normal & The screen should switch to the log out screen & Works as expected & \\ \hline
+        1.4 & Testing the Search Database button on the Main Menu & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button & Normal & The program should open a new window consisting of the Search Database screen & Works as expected & Figure \ref{fig:SearchDatbaseButtonTest} on page \pageref{fig:SearchDatbaseButtonTest} \\ \hline
+        1.5 & Testing the Add Entry button on the Main Menu & This button should prompt a seperate interface to open and show the Add Entry screen & Click the Add Entry button & Normal & The program should open the Add Entry screen in a new window & Works as expected & Figure \ref{fig:AddEntryButtonTest} on page \pageref{fig:AddEntryButtonTest} \\ \hline
+        1.7 & Testing the Update Entry button after an entry has been selected beforehand & These conditions should open the Update Entry screen upon clicking Update Entry, with data on the selected entry already filled in on the grid & Click on an entry, and then click Update Entry & Normal & The program should open the Update Entry screen in a new window & Works as expected & Figure \ref{fig:UpdateEntryButtonTest} on page \pageref{fig:UpdateEntryButtonTest} \\ \hline
+        1.8 & Testing the Remove Entry Button after an entry has been selected beforehand & These conditions should prompt the user for verification on deleting a selected customer record & Click on an entry and then click Remove Entry & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & Works as expected & Figure \ref{fig:RemoveEntryButtonTest} on page \pageref{fig:RemoveEntryButtonTest} \\ \hline
+\rowcolor{lightgray} 1.9 & Testing the Change Password/Username Button on the Main Menu & This button prompts a window to open, with a set of buttons asking what the user wishes to changes & Click the Change Password/Username button & Normal & The program should open the Change Password/Username window, with buttons giving options of what is needed to be changed. & Works as expected & Figure \ref{fig:ChangeButtonTest} on page \pageref{fig:ChangeButtonTest} \\ \hline
+\rowcolor{lightgray} 1.10 & Testing the Quick Search button on the Main Menu & This button returns the customer that matches the entered Name & Type in a Firstname, Lastname or both and click QuickSearch & Normal & The program should return any customers that match the entered name(s) and show it in the grid & Works as expected & Figure \ref{fig:QuickSearchButtonTest} on page \pageref{fig:QuickSearchButtonTest} \\ \hline
+        1.11 & Testing the back button on the View Menu & This button returns back to the main menu & Click Back & Normal & The program should return back to the main menu & Works as expected & \\ \hline
+        1.12 & Testing the Add Book Button on the View Menu & This button opens up a new window for adding a book & Click Add Book & Normal & The program should open a new window for adding a book & Works as expected & Figure \ref{fig:AddBookButtonTest} on page \pageref{fig:AddBookButtonTest} \\ \hline
+        1.13 & Testing the View Publishing Invoice button on the View Menu & This button opens up a new window displaying details about the selected book's publishing invoice & Click View Publishing invoice & Normal & The program should open a new window containing details about the selected book's publishing invoice & Works as expected & Figure \ref{fig:ViewPubInvoiceButtonTest} on page \pageref{fig:ViewPubInvoiceButtonTest} \\ \hline
+        1.14 & Testing the View Royalties button on the View Menu & This button opens up a new window displaying details about the selected book's royalties & Click View Royalties & Normal & The program should open a new window containing details about the selected book's royalties & Works as expected & Figure \ref{fig:ViewRoyaltiesButtonTest} on page \pageref{fig:ViewRoyaltiesButtonTest} \\ \hline
+        1.15 & Testing the View Book Invoice button on the View Menu & This button opens up a new window displaying details about the selected book's book invoices & Click View Book Invoices & Normal & The program should open a new window containing details about the selected book's book invoices & Works as expected & Figure \ref{fig:ViewBookInvoiceButtonTest} on page \pageref{fig:ViewBookInvoiceButtonTest} \\ \hline
+        1.16 & Testing the Delete book button on the View Menu & This button opens up a new window asking for verification on deleting a selected book record & Click Delete book & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & Works as expected & Figure \ref{fig:DeleteBookButtonTest} on page \pageref{fig:DeleteBookButtonTest} \\ \hline
+\rowcolor{lightgray} 1.17 & Testing the 'Forgotten Password' label on the log in screen & This opens a window, giving the user the default username and password if it's the first time of usage, or it opens an input box where an email is asked for, if the default credentials have been changed. & Click 'Forgotten Password' & Normal & This should open a window, giving the user the default username and password if it's the first time of usage, or it will open a input box where an email is asked for, if the default credentials have been changed & Works as expected & Figure \ref{fig:ForgotPasswordLabelTest} on page \pageref{fig:ForgotPasswordLabelTest} \\ \hline
+\rowcolor{lightgray} 1.18 & Testing the Change Password Button & This button opens a new window, where the user is presented with fields required for changing their password & Click Change Password & Normal & The program should open the Change Password window and present the necessary fields to the user & Works as expected & Figure \ref{fig:ChangePasswordButtonTest} on page \pageref{fig:ChangePasswordButtonTest} \\ \hline
+\rowcolor{lightgray} 1.19 & Testing the Confirm button for changing passwords & This button should accept the entries the user has entered if the old password matches, and the new and retyped passwords matches otherwise the user will be prompted with an error. & Fill the necessary fields and click Confirm & Normal & This should accept the user's input, successfully changing the password if the criteria is met, else the user is prompted with an error & Works as expected & Figure \ref{fig:ConfirmPasswordButtonTest} on page \pageref{fig:ConfirmPasswordButtonTest} \\ \hline
+\rowcolor{lightgray} 1.20 & Testing the View Royalty Items button on the Royalties Menu & This button opens up a new window displaying details about the selected Royalty's items & Select a Royalty and click View Royalty Items & Normal & The program should open a new window containing details about the selected Royalty's Items & Works as expected & Figure \ref{fig:ViewRoyaltyItemsButtonTest} on page \pageref{fig:ViewRoyaltyItemsButtonTest} \\ \hline
+\rowcolor{lightgray} 1.21 & Testing the View Book Invoice Items button on the Book Invoice Menu & This button opens up a new window displaying details about the selected Book Invoice's items & Select a Book Invoice and click View Book Invoice Items & Normal & The program should open a new window containing details about the selected Book Invoice's Items & Works as expected & Figure \ref{fig:ViewBookInvoiceItemsButtonTest} on page \pageref{fig:ViewBookInvoiceItemsButtonTest} \\ \hline
 \rowcolor{lightgray} 1.22 & Testing the Log Out button on the Menubar & This button links to the Login screen, where the user is required to log in again & Click the Log out button on the Menubar & Normal & The screen should switch to the log out screen & & \\ \hline
 \rowcolor{lightgray} 1.23 & Testing the Search Database button on the Menubar & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button on the Menubar & Normal & The program should open a new window consisting of the Search Database screen & & \\ \hline
 \rowcolor{lightgray} 1.24 & Testing the Add Entry button on the Menubar & This button should prompt a seperate interface to open and show the Add Entry screen & Click the Add Entry button on the Menubar& Normal & The program should open the Add Entry screen in a new window & & \\ \hline
-\rowcolor{lightgray} 1.25 & Testing the Edit Entry button after an entry has been selected beforehand & These conditions should open the Edit Entry screen upon clicking Edit Entry, with data on the selected entry already filled in on the grid & Click on an entry, and then click Edit Entry on the Menubar & Normal & The program should open the Edit Entry screen in a new window & & \\ \hline
-\rowcolor{lightgray} 1.26 & Testing the Remove Entry Button after an entry has been selected beforehand on the Menubar & These conditions should prompt the user for verification on deleting a selected customer record & Click on an entry and then click Remove Entry on the Menubar & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & & \\ \hline
-\rowcolor{lightgray} 1.27 & Testing the Change Password/Username Button on the Menubar & This button prompts a window to open, with a set of buttons asking what the user wishes to changes & Click the Change Password/Username button on the Menubar& Normal & The program should open the Change Password/Username window, with buttons asking what is needed to be changed. & & \\ \hline
-\rowcolor{lightgray} 1.28 & Testing the Confirm button on the Search window & This button checks whether the entries are valid then conducts the search if they are, presenting results in the main window & Click the Confirm button on the search window & Normal & The program should validate the entries then conduct the search and present search results in the main menu, or prompt the user with an error. & & \\ \hline
-\rowcolor{lightgray} 1.29 & Testing the Cancel button on the Add Entry window & This button should reject and close the window & Click the cancel button on the add entry window & Normal & The program should reject the window and close it & & \\ \hline
-\rowcolor{lightgray} 1.30 & Testing the Cancel button on the Search window & This button should reject and close the window & Click the cancel button on the Search window & Normal & The program should reject the window and close it & & \\ \hline
+\rowcolor{lightgray} 1.25 & Testing the Confirm button on the Search window & This button checks whether the entries are valid then conducts the search if they are, presenting results in the main window & Click the Confirm button on the search window & Normal & The program should validate the entries then conduct the search and present search results in the main menu, or prompt the user with an error. & & \\ \hline
+\rowcolor{lightgray} 1.26 & Testing the Cancel button on the Add Entry window & This button should reject and close the window & Click the cancel button on the add entry window & Normal & The program should reject the window and close it & & \\ \hline
+\rowcolor{lightgray} 1.27 & Testing the Cancel button on the Search window & This button should reject and close the window & Click the cancel button on the Search window & Normal & The program should reject the window and close it & & \\ \hline
+\rowcolor{lightgray} 1.28 & Testing the Update book button on the View Menu & This button opens up a new window with entries already filled in with the selected book's data. & Select an entry then click Update book & Normal & The program should open a window for updating the entry, with the selected data already filled in the entry boxes & Works as expected & Figure \ref{fig:UpdateBookButtonTest} on page \pageref{fig:UpdateBookButtonTest} \\ \hline
         2.1 & Verify that some criteria has been entered when using the search & At least one set of the input boxes and dropdown lists must have been filled in or selected from, else the program will prompt the user about the error & Selected from list with names and values entered \newline Selected from list, values enteredand no names entered \newline Just values entered \newline Nothing   & Normal \newline Normal \newline Erroneous \newline Erroneous & Accept \newline Accept \newline Error \newline Error & & \\ \hline
         2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com \newline helloworld \newline test \newline @testmail.com \newline test.com@testmail & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
         2.3 & Verify that a valid Firstname has been entered when adding an entry & The user will be prompted with an error & John \newline Jo hn \newline Jo?hn \newline Jo2n & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
@@ -186,7 +183,97 @@ The data is shown in the previous table.
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{./Testing/Evidence/LoginTestSucceed.png}
-    \caption{Test 1.2}  \label{fig:LoginTestSucceed}
+    \caption{Test 1.1}  \label{fig:LoginTestSucceed}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/LoginTestSucceed2.png}
+    \caption{Test 1.1}  \label{fig:LoginTestSucceed2}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ViewButtonTest.png}
+    \caption{Test 1.2}  \label{fig:ViewButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/SearchDatabaseButtonTest.png}
+    \caption{Test 1.4}  \label{fig:SearchDatabaseButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/AddEntryButtonTest.png}
+    \caption{Test 1.5}  \label{fig:AddEntryButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/UpdateEntryButtonTest.png}
+    \caption{Test 1.7}  \label{fig:UpdateEntryButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/RemoveEntryButtonTest.png}
+    \caption{Test 1.8}  \label{fig:RemoveEntryButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ChangeButtonTest.png}
+    \caption{Test 1.9}  \label{fig:ChangeButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/QuickSearchButtonTest.png}
+    \caption{Test 1.10}  \label{fig:QuickSearchButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/AddBookButtonTest.png}
+    \caption{Test 1.12}  \label{fig:AddBookButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ViewPubInvoiceButtonTest.png}
+    \caption{Test 1.13}  \label{fig:ViewPubInvoiceButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/{ViewRoyaltiesButtonTest}.png}
+    \caption{Test 1.14}  \label{fig:ViewRoyaltiesButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ViewBookInvoiceButtonTest.png}
+    \caption{Test 1.15}  \label{fig:ViewBookInvoiceButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/DeleteBookButtonTest.png}
+    \caption{Test 1.16}  \label{fig:DeleteBookButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ForgotPasswordLabelTest.png}
+    \caption{Test 1.17}  \label{fig:ForgotPasswordLabelTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ChangePasswordButtonTest.png}
+    \caption{Test 1.18}  \label{fig:ChangePasswordButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/{ConfirmPasswordButtonTest}.png}
+    \caption{Test 1.19}  \label{fig:ConfirmPasswordButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ViewRoyaltyItemsButtonTest.png}
+    \caption{Test 1.20}  \label{fig:ViewRoyaltyItemsButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ViewBookInvoiceItemsButtonTest.png}
+    \caption{Test 1.21}  \label{fig:ViewBookInvoiceItemsButtonTest}
 \end{figure}
 
 \end{landscape}
