@@ -732,7 +732,7 @@ class MainWindow(QMainWindow):
             try:
                 self.UpdateList.append(str(self.EditWindow.inputList[count].currentText()))
             except:
-                if count == 8 and self.AddType == "RoyaltyItems":
+                if count == 8 and self.CurrentTable == "RoyaltyItems":
                     self.UpdateList.append(str(self.NetSales))
                 else:
                     self.UpdateList.append(self.EditWindow.inputList[count].text())
@@ -847,13 +847,16 @@ class MainWindow(QMainWindow):
                                    
                 for count in range(0, len(self.ID)):
                     try:
-                        cursor.execute("select Book.BookTitle, BookInvoiceItems.ISBN from Book, BookInvoiceItems where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and Book.ISBN = BookInvoiceItems.ISBN".format(self.SelectedID, self.ID[count]))
-                        self.Title = list(cursor.fetchone())[0]
+                        cursor.execute("select Book.BookTitle, BookInvoiceItems.ISBN, Firstname, Lastname, BookInvoiceItems.BookInvoiceID from Book, BookInvoiceItems, Customer, BookInvoice where BookInvoiceItems.BookInvoiceID = {} and BookInvoiceItems.BookInvoiceItemsID = {} and Book.ISBN = BookInvoiceItems.ISBN and BookInvoice.BookInvoiceID = BookInvoiceItems.BookInvoiceID and Customer.AuthorID = BookInvoice.AuthorID".format(self.SelectedID, self.ID[count]))
+                        self.Title = list(cursor.fetchone())
+                        self.Name = "{}, {}".format(self.Title[3], self.Title[2])
+                        self.Title = self.Title[0]
                         self.BookInvoiceItemsWindow.table.setItem(count, 2, QTableWidgetItem(str(self.Title)))
+                        self.BookInvoiceItemsWindow.table.setItem(count, 1, QTableWidgetItem(str(self.Name)))
                     except:
                         pass
-                self.BookInvoiceItemsWindow.table.setHorizontalHeaderItem(0, QTableWidgetItem("BookTitle"))
-                self.BookInvoiceItemsWindow.table.removeColumn(1)
+                self.BookInvoiceItemsWindow.table.setHorizontalHeaderItem(2, QTableWidgetItem("BookTitle"))
+                self.BookInvoiceItemsWindow.table.setHorizontalHeaderItem(1, QTableWidgetItem("Author"))
                 
         elif self.CurrentTable == "RoyaltyItems":
             self.RoyaltyItemsWindow.table.sql = "select * from RoyaltyItems where RoyaltiesID = {}".format(self.SelectedID)
@@ -870,13 +873,16 @@ class MainWindow(QMainWindow):
                                    
                 for count in range(0, len(self.ID)):
                     try:
-                        cursor.execute("select Book.BookTitle, RoyaltyItems.ISBN from Book, RoyaltyItems where RoyaltyItems.RoyaltiesID = {} and RoyaltyItems.RoyaltyItemsID = {} and Book.ISBN = RoyaltyItems.ISBN".format(self.SelectedID, self.ID[count]))
-                        self.Title = list(cursor.fetchone())[0]
+                        cursor.execute("select Book.BookTitle, RoyaltyItems.ISBN, Firstname, Lastname, RoyaltyItems.RoyaltiesID from Book, RoyaltyItems, Customer, Royalties where RoyaltyItems.RoyaltiesID = {} and RoyaltyItems.RoyaltyItemsID = {} and Book.ISBN = RoyaltyItems.ISBN and Royalties.RoyaltiesID = RoyaltyItems.RoyaltiesID and Customer.AuthorID = Royalties.AuthorID".format(self.SelectedID, self.ID[count]))
+                        self.Title = list(cursor.fetchone())
+                        self.Name = "{}, {}".format(self.Title[3], self.Title[2])
+                        self.Title = self.Title[0]
                         self.RoyaltyItemsWindow.table.setItem(count, 2, QTableWidgetItem(str(self.Title)))
+                        self.RoyaltyItemsWindow.table.setItem(count, 1, QTableWidgetItem(str(self.Name)))
                     except:
                         pass
-                self.RoyaltyItemsWindow.table.setHorizontalHeaderItem(0, QTableWidgetItem("BookTitle"))
-                self.RoyaltyItemsWindow.table.removeColumn(1)
+                self.RoyaltyItemsWindow.table.setHorizontalHeaderItem(2, QTableWidgetItem("BookTitle"))
+                self.RoyaltyItemsWindow.table.setHorizontalHeaderItem(1, QTableWidgetItem("Author"))
 
 
     def Back(self): #going back from the view window to the main menu
@@ -913,50 +919,98 @@ class MainWindow(QMainWindow):
         self.SearchDatabase.CalendarWidget = dbCalendarWidget()
         self.SearchDatabase.CalendarWidget.Calendar()
         self.SearchDatabase.initLayout()
+        
         if self.SearchDatabase.Valid == True:
             if self.SearchDatabase.Table != None:
                 try:
                     if self.SearchDatabase.Table == "Book":
-                        for count in range(2, len(list(self.SearchDatabase.Results)[0])):
-                            try:
-                                if count == 2:
-                                    self.SearchTable.sql = "select * from {} where ISBN = '{}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[0])[count])
+                        for count in range(0, len(self.SearchDatabase.Results) +1):
+                            try:#using the results to fetch the correct data
+                                if count == 0: 
+                                    self.SearchTable.sql = "select * from {} where ISBN = '{}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[count])[2])
                                 else:
-                                    self.SearchTable.sql += " or ISBN = '{}'".format(list(self.SearchDatabase.Results[count - 2])[2])
+                                    self.SearchTable.sql += " or ISBN = '{}'".format(list(self.SearchDatabase.Results[count])[2])
                                 self.SearchTable.initTable()
                             except IndexError:
-                                self.SearchTable.initTable()
+                                self.SearchTable.setHorizontalHeaderItem(1, QTableWidgetItem("Author"))
+                                with sqlite3.connect("PP.db") as db:
+                                    cursor = db.cursor() #fetching firstname and lastname using foreign key
+                                    for count2 in range(0, self.SearchTable.rowCount()): 
+                                        cursor.execute("select Firstname, Lastname, Book.AuthorID, Customer.AuthorID from Customer, Book where Book.ISBN = {} and Customer.AuthorID = Book.AuthorID".format(list(self.SearchDatabase.Results[count2])[2]))
+                                        self.Name = list(cursor.fetchone())
+                                        self.Name = "{}, {}".format(self.Name[1], self.Name[0])
+                                        self.SearchTable.setItem(count2, 1, QTableWidgetItem(self.Name))
+                                    db.commit()
 
+                                    
                     if self.SearchDatabase.Table in ["RoyaltyItems", "BookInvoiceItems"]:
-                        start = 4
+                        index = 4
                     else:
-                        start = 1
+                        index = 1
                         
                     if self.SearchDatabase.Table == "Customer":
-                        start = 0
-                        for count in range(start, (len(list(self.SearchDatabase.Results)[0]) * len(self.SearchDatabase.Results))):
-                            try:
-                                if count == start:
-                                    self.SearchTable.sql = "select * from Customer where AuthorID = '{}'".format(list(self.SearchDatabase.Results[0])[count])
+                        for count in range(0, len(self.SearchDatabase.Results)+1):
+                            try: #using the results to fetch the correct data
+                                if count == 0:
+                                    self.SearchTable.sql = "select * from Customer where AuthorID = '{}'".format(list(self.SearchDatabase.Results[count])[0])
                                 else:
                                     self.SearchTable.sql += " or AuthorID = '{}'".format(list(self.SearchDatabase.Results[count])[0])
                                 self.SearchTable.initTable()
-                                
+
+                                                            
                             except IndexError:
                                 self.SearchTable.initTable()
                     
                     elif self.SearchDatabase.Table != "Book" and self.SearchDatabase.Table != None:
-                        for count in range(start, (len(list(self.SearchDatabase.Results)[0]) * len(self.SearchDatabase.Results))):
-                            try:
-                                if count == start:
-                                    self.SearchTable.sql = "select * from {0} where {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[0])[count])
+                        for count in range(0, len(self.SearchDatabase.Results)+1):
+                            try: #using the results to fetch the correct data
+                                if count == 0:
+                                    self.SearchTable.sql = "select * from {0} where {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[count])[index])
                                 else:
-                                    self.SearchTable.sql += " or {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[count-4])[4])
+                                    self.SearchTable.sql += " or {0}ID = '{1}'".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[count])[index])
                                 self.SearchTable.initTable()
-                                
+                                    
                             except IndexError:
-                                self.SearchTable.initTable()
+                                with sqlite3.connect("PP.db") as db:
+                                    cursor = db.cursor() #fetching firstnames and lastnames and book titles using foreign keys
+                                    if self.SearchDatabase.Table in ["Royalties", "BookInvoice"]:
+                                        self.SearchTable.setHorizontalHeaderItem(1, QTableWidgetItem("Author"))
+                                        for count2 in range(0, self.SearchTable.rowCount()):
+                                            cursor.execute("select Firstname, Lastname, {0}.AuthorID, Customer.AuthorID from Customer, {0} where Customer.AuthorID = {1} and {0}.AuthorID = Customer.AuthorID".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[count2])[0]))
+                                            self.Name = list(cursor.fetchone())
+                                            self.Name = "{}, {}".format(self.Name[1], self.Name[0])
+                                            self.SearchTable.setItem(count2, 1, QTableWidgetItem(self.Name))
+                                            
+                                    elif self.SearchDatabase.Table in ["RoyaltyItems", "BookInvoiceItems"]:
+                                        self.SearchTable.setHorizontalHeaderItem(1, QTableWidgetItem("Author"))
+                                        self.SearchTable.setHorizontalHeaderItem(2, QTableWidgetItem("Book Title"))
+                                        if self.SearchDatabase.Table == "RoyaltyItems":
+                                            self.IDType = "Royalties"
+                                        else:
+                                            self.IDType = "BookInvoice"
+                                        for count2 in range(0, self.SearchTable.rowCount()):
+                                            cursor.execute("select BookTitle, Book.ISBN, {0}.ISBN, {1}.AuthorID, Firstname, LastName from Book, {0}, {1}, Customer where Book.ISBN = {2} and {0}.ISBN = Book.ISBN and {1}.{1}ID = {0}.{1}ID and Customer.AuthorID = {1}.AuthorID".format(self.SearchDatabase.Table, self.IDType, list(self.SearchDatabase.Results[count2])[2]))
+                                            self.Title = cursor.fetchone()
+                                            self.Name = "{}, {}".format(self.Title[5], self.Title[4])
+                                            self.Title = "{}".format(list(self.Title)[0])
+                                            self.SearchTable.setItem(count2, 2, QTableWidgetItem(self.Title))
+                                            self.SearchTable.setItem(count2, 1, QTableWidgetItem(self.Name))                                             
+                                    elif self.SearchDatabase.Table == "PubInvoice":
+                                        self.SearchTable.setHorizontalHeaderItem(1, QTableWidgetItem("Book Title"))
+                                        self.SearchTable.setHorizontalHeaderItem(2, QTableWidgetItem("Author"))
+                                        for count2 in range(0, self.SearchTable.rowCount()):
+                                            cursor.execute("select Firstname, Lastname, BookTitle, {0}.AuthorID, Customer.AuthorID, Book.ISBN, {0}.ISBN from Customer, {0}, Book where Customer.AuthorID = {1} and {0}.AuthorID = Customer.AuthorID and Book.AuthorID = Customer.AuthorID and {0}.ISBN = Book.ISBN".format(self.SearchDatabase.Table, list(self.SearchDatabase.Results[count2])[0]))
+                                            self.Name = list(cursor.fetchone())
+                                            self.Title = "{}".format(self.Name[2])
+                                            self.Name = "{}, {}".format(self.Name[1], self.Name[0])
+                                   
+                                            self.SearchTable.setItem(count2, 2, QTableWidgetItem(self.Name))
+                                            self.SearchTable.setItem(count2, 1, QTableWidgetItem(self.Title))                                    
 
+
+                                    db.commit()                                                                             
+                                                                             
+                                                                             
 
                     self.StackedLayout.setCurrentIndex(2)
                     self.MenuBar.setVisible(False)

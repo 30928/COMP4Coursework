@@ -15,6 +15,7 @@ class dbAddItemWindow(QDialog):
         self.setWindowTitle("Add {}".format(self.AddType))
         if self.Editing == True:
             self.setWindowTitle("Edit {}".format(self.AddType))
+        self.ReadyToVerify = True
         self.setModal(True) #modal window
         self.Calculated = False
         with sqlite3.connect("PP.db") as db: #fetching data from db
@@ -47,9 +48,11 @@ class dbAddItemWindow(QDialog):
             
             if self.columnHeader == "": #replacing spaces with line edits
 
-                if self.AddType == "Book" and count in [1, 3, 4, 5, 6, 7, 9, 10, 11]:
-                    
-                    if count == 1: #exceptions for book
+                if self.AddType == "Book" and count in [0, 1, 3, 4, 5, 6, 7, 9, 10, 11]:
+                    if count == 0:
+                        self.input = QLineEdit(self)
+                        self.input.setValidator(QRegExpValidator(QRegExp("[\w]+")))
+                    elif count == 1: #exceptions for book
                         self.input = QLineEdit(self) #new line edit
                         self.input.setReadOnly(True)
                         self.input.setText(self.selectedID)
@@ -283,26 +286,28 @@ class dbAddItemWindow(QDialog):
         self.horizontal.addStretch(1)
         self.horizontal.addWidget(self.btnCancel)
         self.horizontal.addWidget(self.btnConfirm)
+        if self.AddType in ["BookInvoiceItems", "RoyaltyItems"]:
+            if self.Editing == False:
+                self.btnConfirm.clicked.connect(self.CheckCalculated)
         if self.Editing == False:
             self.btnConfirm.clicked.connect(self.Validate)
         self.vertical = QVBoxLayout()
         self.vertical.addLayout(self.gridLayout)
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
-        if self.AddType in ["BookInvoiceItems", "RoyaltyItems"]:
-            if self.Editing == False:
-                self.btnConfirm.clicked.connect(self.CheckCalculated)
+
                 
         self.btnCancel.clicked.connect(self.reject) #reject on clicking cancel
         self.exec_()
 
     def CheckCalculated(self):
-        if len(self.qleCalculation.text()) == 0 and self.Valid == True:
+        self.ReadyToVerify = False
+        if len(self.qleCalculation.text()) == 0:
             self.Msg = QMessageBox()
             self.Msg.setWindowTitle("Calculation")
             self.Msg.setText("You must fill all fields and click 'Calculate' before attempting to add to the database.")
             self.Msg.exec_()
-        elif self.Valid == True and len(self.qleCalculation.text()) != 0:
+        else:
             self.ReadyToVerify = True
 
     def AnswerButtons(self): #so connections can be made outside of this class
@@ -341,50 +346,56 @@ class dbAddItemWindow(QDialog):
 
 
     def Validate(self):
-        self.input_data = []
-        self.Valid = True
-        for count in range(0, len(self.inputList)):
-            try: #gathering the input data
-                self.input_data.append(str(self.inputList[count].currentText()))
-            except:
-                if count == 8 and self.AddType == "RoyaltyItems":
-                    self.input_data.append(self.NetSales)
-                else:
-                    self.input_data.append(self.inputList[count].text())
-                    
-        for count in range(0, len(self.input_data)):
-            
-            if str(self.input_data[count]).replace(" ", "") == "": #presence check
-                self.Valid = False
-                self.ErrorMessage = "All Fields must be filled."
-                break
-            try:
-                if float(self.input_data[count]) < 0: #range check
-                    self.Valid = False
-                    self.ErrorMessage = "Invalid Entry - Please check the fields."
-                    break
-            except:
-                pass
-            
-            if self.qlabelList[count].text() == "ISBN":
-                if len(self.input_data[count]) > 13: #isbn cannot be bigger than 13
-                    self.Valid = False
-                    self.ErrorMessage = "Invalid ISBN - Cannot be bigger than 13 digits."
-                    break
-            elif self.qlabelList[count].text() == "Discount": #%'s must be between 0 and 100
-                if float(self.input_data[count]) > 100 or float(self.input_data[count]) < 0:
-                    self.Valid = False
-                    self.ErrorMessage = "Invalid Entry - Please check the fields."
-                    break
+        if self.ReadyToVerify == True:
+            self.input_data = []
+            self.Valid = True
+            for count in range(0, len(self.inputList)):
+                try: #gathering the input data
+                    self.input_data.append(str(self.inputList[count].currentText()))
+                except:
+                    if count == 8 and self.AddType == "RoyaltyItems":
+                        self.input_data.append(self.NetSales)
+                    else:
+                        self.input_data.append(self.inputList[count].text())
+                        
+            for count in range(0, len(self.input_data)):
                 
-        if self.Valid == False:
-            self.Msg = QMessageBox()
-            self.Msg.setWindowTitle("Invalid Entry")
-            self.Msg.setText(self.ErrorMessage)
-            self.Msg.exec_()
-        else:
-            if self.AddType not in ["BookInvoiceItems", "RoyaltyItems"]:
-                if self.Editing == False:
-                    self.accept()
-                else:
-                    self.ReadyToVerify = True
+                if str(self.input_data[count]).replace(" ", "") == "": #presence check
+                    self.Valid = False
+                    self.ErrorMessage = "All Fields must be filled."
+                    break
+                try:
+                    if float(self.input_data[count]) < 0: #range check
+                        self.Valid = False
+                        self.ErrorMessage = "Invalid Entry - Please check the fields."
+                        break
+                except:
+                    pass
+                
+                if self.qlabelList[count].text() == "ISBN":
+                    if len(self.input_data[count]) != 13 and len(self.input_data[count]) != 10: #isbn must be 10 or 13 digits
+                        self.Valid = False
+                        self.ErrorMessage = "Invalid ISBN - Must be 10 or 13 digits."
+                        break
+                elif self.qlabelList[count].text() == "No Of Pages":
+                    if int(self.input_data[count]) > 2000:
+                        self.Valid = False
+                        self.ErrorMessage = "Invalid Entry - Please check the fields."
+                        break
+                elif self.qlabelList[count].text() == "Discount": #%'s must be between 0 and 100
+                    if float(self.input_data[count]) > 100 or float(self.input_data[count]) < 0:
+                        self.Valid = False
+                        self.ErrorMessage = "Invalid Entry - Please check the fields."
+                        break
+                    
+            if self.Valid == False:
+                self.Msg = QMessageBox()
+                self.Msg.setWindowTitle("Invalid Entry")
+                self.Msg.setText(self.ErrorMessage)
+                self.Msg.exec_()
+            else:
+                if self.AddType not in ["BookInvoiceItems", "RoyaltyItems"]:
+                    if self.Editing == False:
+                        self.accept()
+                    else:
+                        self.ReadyToVerify = True

@@ -142,10 +142,9 @@ class dbSearchDatabase(QDialog):
             
             if self.Table not in ["BookInvoiceItems", "RoyaltyItems"]:
                 if self.Table in ["PubInvoice", "Royalties", "BookInvoice"]:
-                    self.sql = "select Customer.AuthorID, {0}ID from Customer, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and Customer.AuthorID = {0}.AuthorID".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
+                    self.sql = "select Customer.AuthorID, {0}ID from Customer, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and {0}.AuthorID = Customer.AuthorID".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
                 elif self.Table == "Book":
-                    self.sql = "select Customer.AuthorID, Book.AuthorID, Book.ISBN from Customer, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and Customer.AuthorID = {0}.AuthorID".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
-
+                    self.sql = "select Customer.AuthorID, Book.AuthorID, Book.ISBN from Customer, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and {0}.AuthorID = Customer.AuthorID".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
             else:
                 self.sql = "select Customer.AuthorID, Book.AuthorID, Book.ISBN, {0}.ISBN, {0}ID from Customer, Book, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and Customer.AuthorID = Book.AuthorID and Book.ISBN = {0}.ISBN".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)
 

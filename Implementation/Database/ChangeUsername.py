@@ -14,8 +14,9 @@ class dbChangeUsername(QDialog):
         self.setModal(True)
         self.leOldUsername = QLineEdit(self)
         self.leNewUsername = QLineEdit(self)
-        self.leNewUsername.setValidator(QRegExpValidator(QRegExp("[a-zA-Z\d\_\-\.]+@([a-zA-Z\d\_\-\.])+\.([a-zA-Z\_\-\.])+")))
-        self.leOldUsername.setValidator(QRegExpValidator(QRegExp("[a-zA-Z\d\_\-\.]+@([a-zA-Z\d\_\-\.])+\.([a-zA-Z\_\-\.])+")))
+        self.leNewUsername.setValidator(QRegExpValidator(QRegExp("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")))
+        self.leOldUsername.setValidator(QRegExpValidator(QRegExp("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")))
+        #reg ex from www.regexlib.com
         self.leRetype = QLineEdit(self)
         self.lblOld = QLabel("Old Username:", self)
         self.lblNew = QLabel("New Username:", self)

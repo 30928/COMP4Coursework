@@ -58,7 +58,7 @@
         2.1 & Verify that some criteria has been entered when using the search & At least one set of the input boxes and dropdown lists must have been filled in or selected from, else the program will prompt the user about the error & Selected from list with names and values entered \newline Selected from list, values enteredand no names entered \newline Just values entered \newline Nothing   & Normal \newline Normal \newline Erroneous \newline Erroneous & Accept \newline Accept \newline Error \newline Error & & \\ \hline
         2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com \newline helloworld \newline test @testmail.com \newline test.com@testmail & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
         2.3 & Verify that a valid Firstname has been entered when adding an entry & The user will be prompted with an error & John \newline Jo hn \newline Jo?hn \newline Jo2n & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
-        2.4 & Verify that a valid Lastname has been entered when adding an entry & The user will be prompted with an error & Smith \newline Sm ith \newline Smi!th \newline Smi1th & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
+        2.4 & Verify that a valid Lastname has been entered when adding an entry & The user will be prompted with an error & Smith \newline Sm ith \newline Smi?th \newline Smi1th & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
         2.5 & Verify that a valid Phonenumber has been entered when adding an entry & The user will be prompted with an error & 07123456789 \newline 07123123.3 \newline 071CO2 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
         2.7 & Verify that a valid Address has been entered when adding an entry & The user will be prompted with an error & 1 Example road \newline @@~£! \newline 1231231 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
         2.8 & Verify that a valid ISBN has been entered when adding a book & The user will be prompted with an error & 1234567890123 \newline @@~£! \newline 123 \newline HelloWorld & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
@@ -108,24 +108,22 @@
 \rowcolor{lightgray} 1.19 & Testing the Confirm button for changing passwords & This button should accept the entries the user has entered if the old password matches, and the new and retyped passwords matches otherwise the user will be prompted with an error. & Fill the necessary fields and click Confirm & Normal & This should accept the user's input, successfully changing the password if the criteria is met, else the user is prompted with an error & Works as expected & Figure \ref{fig:ConfirmPasswordButtonTest} on page \pageref{fig:ConfirmPasswordButtonTest} \\ \hline
 \rowcolor{lightgray} 1.20 & Testing the View Royalty Items button on the Royalties Menu & This button opens up a new window displaying details about the selected Royalty's items & Select a Royalty and click View Royalty Items & Normal & The program should open a new window containing details about the selected Royalty's Items & Works as expected & Figure \ref{fig:ViewRoyaltyItemsButtonTest} on page \pageref{fig:ViewRoyaltyItemsButtonTest} \\ \hline
 \rowcolor{lightgray} 1.21 & Testing the View Book Invoice Items button on the Book Invoice Menu & This button opens up a new window displaying details about the selected Book Invoice's items & Select a Book Invoice and click View Book Invoice Items & Normal & The program should open a new window containing details about the selected Book Invoice's Items & Works as expected & Figure \ref{fig:ViewBookInvoiceItemsButtonTest} on page \pageref{fig:ViewBookInvoiceItemsButtonTest} \\ \hline
-\rowcolor{lightgray} 1.22 & Testing the Log Out button on the Menubar & This button links to the Login screen, where the user is required to log in again & Click the Log out button on the Menubar & Normal & The screen should switch to the log out screen & & \\ \hline
-\rowcolor{lightgray} 1.23 & Testing the Search Database button on the Menubar & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button on the Menubar & Normal & The program should open a new window consisting of the Search Database screen & & \\ \hline
-\rowcolor{lightgray} 1.24 & Testing the Add Entry button on the Menubar & This button should prompt a seperate interface to open and show the Add Entry screen & Click the Add Entry button on the Menubar& Normal & The program should open the Add Entry screen in a new window & & \\ \hline
-\rowcolor{lightgray} 1.25 & Testing the Confirm button on the Search window & This button checks whether the entries are valid then conducts the search if they are, presenting results in the main window & Click the Confirm button on the search window & Normal & The program should validate the entries then conduct the search and present search results in the main menu, or prompt the user with an error. & & \\ \hline
-\rowcolor{lightgray} 1.26 & Testing the Cancel button on the Add Entry window & This button should reject and close the window & Click the cancel button on the add entry window & Normal & The program should reject the window and close it & & \\ \hline
-\rowcolor{lightgray} 1.27 & Testing the Cancel button on the Search window & This button should reject and close the window & Click the cancel button on the Search window & Normal & The program should reject the window and close it & & \\ \hline
-\rowcolor{lightgray} 1.28 & Testing the Update book button on the View Menu & This button opens up a new window with entries already filled in with the selected book's data. & Select an entry then click Update book & Normal & The program should open a window for updating the entry, with the selected data already filled in the entry boxes & Works as expected & Figure \ref{fig:UpdateBookButtonTest} on page \pageref{fig:UpdateBookButtonTest} \\ \hline
-        2.1 & Verify that some criteria has been entered when using the search & At least one set of the input boxes and dropdown lists must have been filled in or selected from, else the program will prompt the user about the error & Selected from list with names and values entered \newline Selected from list, values enteredand no names entered \newline Just values entered \newline Nothing   & Normal \newline Normal \newline Erroneous \newline Erroneous & Accept \newline Accept \newline Error \newline Error & & \\ \hline
-        2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com \newline helloworld \newline test \newline @testmail.com \newline test.com@testmail & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
-        2.3 & Verify that a valid Firstname has been entered when adding an entry & The user will be prompted with an error & John \newline Jo hn \newline Jo?hn \newline Jo2n & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
-        2.4 & Verify that a valid Lastname has been entered when adding an entry & The user will be prompted with an error & Smith \newline Sm ith \newline Smi!th \newline Smi1th & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
-        2.5 & Verify that a valid Phonenumber has been entered when adding an entry & The user will be prompted with an error & 07123456789 \newline 07123123.3 \newline 071CO2 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
-        2.6 & Verify that a valid Address has been entered when adding an entry & The user will be prompted with an error & 1 Example road \newline @@~£! \newline 1231231 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
-\rowcolor{lightgray} 2.7 & Verify that a valid ISBN has been entered when adding a book & The user will be prompted with an error & 1234567890123 \newline @@~£! \newline 1234567890123456 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline
-        2.8 & Verify that a valid NoOfPages has been entered when adding a book & The user will be prompted with an error & 123 \newline 123456789 \newline 2.3 \newline @! \newline
-HelloWorld & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error& & \\ \hline
-\rowcolor{lightgray} 2.9 & Verify that a valid Discount has been entered when adding Book Invoice items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Erroneous \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & & \\ \hline
-\rowcolor{lightgray}  2.10 & Verify that a valid Discount has been entered when adding Royalty items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Erroneous \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & & \\ \hline
+\rowcolor{lightgray} 1.22 & Testing the Log Out button on the Menubar & This button links to the Login screen, where the user is required to log in again & Click the Log out button on the Menubar & Normal & The screen should switch to the log out screen & Works as expected & \\ \hline
+\rowcolor{lightgray} 1.23 & Testing the Add Entry button on the Menubar & This button should prompt a seperate interface to open and show the Add Entry screen & Click the Add Entry button on the Menubar & Normal & The program should open the Add Entry screen in a new window & Works as expected & Figure \ref{fig:AddEntryMenuTest} on page \pageref{fig:AddEntryMenuTest}  \\ \hline
+\rowcolor{lightgray} 1.24 & Testing the Confirm button on the Search window & This button checks whether the entries are valid then conducts the search if they are, presenting results in the main window & Click the Confirm button on the search window & Normal & The program should validate the entries then conduct the search and present search results in the main menu, or prompt the user with an error. & Works as expected & Figure \ref{fig:ConfirmSearchButtonTest} on page \pageref{fig:ConfirmSearchButtonTest}  \\ \hline
+\rowcolor{lightgray} 1.25 & Testing the Cancel button on the Add Entry window & This button should reject and close the window & Click the cancel button on the add entry window & Normal & The program should reject the window and close it & Works as expected & \\ \hline
+\rowcolor{lightgray} 1.26 & Testing the Cancel button on the Search window & This button should reject and close the window & Click the cancel button on the Search window & Normal & The program should reject the window and close it & Works as expected & \\ \hline
+\rowcolor{lightgray} 1.27 & Testing the Update book button on the View Menu & This button opens up a new window with entries already filled in with the selected book's data. & Select an entry then click Update book & Normal & The program should open a window for updating the entry, with the selected data already filled in the entry boxes & Works as expected & Figure \ref{fig:UpdateBookButtonTest} on page \pageref{fig:UpdateBookButtonTest} \\ \hline
+\rowcolor{lightgray} 2.1 & Verify that some criteria has been entered when using the search & Firstname and surname must be filled in, and if a different category has been selected, the final input box must also be filled in. & Author selected, Firstname and Surname entered. \newline Author Selected, boxes left blank \newline Publishing Invoice selected, Service selected, boxes filled with appropriate data \newline Publishing Invoice selected, No boxes filled. & Normal \newline Erroneous \newline Normal \newline Erroneous & Accept \newline Error \newline Accept \newline Error & Works as expected & Figure \ref{fig:SearchValidation} on page \pageref{fig:SearchValidation} \\ \hline
+\rowcolor{gray} 2.2 (removed) & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com \newline helloworld \newline test \newline @testmail.com \newline test.com@testmail & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
+        2.3 & Verify that a valid Firstname has been entered when adding an entry & The user will be prompted with an error & John \newline Jo hn \newline Jo?hn \newline Jo2n & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & Works as expected - User is unable to enter 'Jo?hn', 'Jo hn' or 'Jo2n' & Figure \ref{fig:AddEntryValidation} on page \pageref{fig:AddEntryValidation} \\ \hline
+        2.4 & Verify that a valid Lastname has been entered when adding an entry & The user will be prompted with an error & Smith \newline Sm ith \newline Smi?th \newline Smi1th & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & Works as expected - User is unable to enter 'Sm ith', 'Smi?th', or 'Smi1th'. & Figure \ref{fig:AddEntryValidation} on page \pageref{fig:AddEntryValidation} \\ \hline
+        2.5 & Verify that a valid Phonenumber has been entered when adding an entry & The user will be prompted with an error & 07123456789 \newline 07123123.3 \newline 071CO2 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & Works as expected - User is unable to enter '07123123.3' or '071CO2' & Figure \ref{fig:AddEntryValidation} on page \pageref{fig:AddEntryValidation} \\ \hline
+        2.6 & Verify that a valid Address has been entered when adding an entry & The user will be prompted with an error & 1 Example road \newline @@~£! \newline 1231231 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & Works as expected - User is unable to enter '@@~£!', but is prompted with an error when entering '1231231'. & Figure \ref{fig:AddEntryValidation} on page \pageref{fig:AddEntryValidation} and Figure \ref{fig:InvalidAddress} on page \pageref{fig:InvalidAddress} \\ \hline
+\rowcolor{lightgray} 2.7 & Verify that a valid ISBN has been entered when adding a book & The user will be prompted with an error & 1234567890123 \newline @@~£! \newline 1234567890123456 \newline 0123 & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & Works as expected - unable to enter '@@~£!'. '1234567890123456' and '0123' are rejected and the user is prompted with an error. & Figure \ref{fig:ISBNRejection} on page \pageref{fig:ISBNRejection} \\ \hline
+        2.8 & Verify that a valid NoOfPages has been entered when adding a book & The user will be prompted with an error & 123 \newline 123456789 \newline 2.3 \newline @! \newline HelloWorld & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & Works as expected - User is unable to type '2.3', '@!' and 'HelloWorld'. User is prompted with an error when entering '123456789'. & Figure \ref{fig:PagesRejection} on page \pageref{fig:PagesRejection} \\ \hline
+\rowcolor{lightgray} 2.9 & Verify that a valid Discount has been entered when adding Book Invoice items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Normal \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & Accept \newline Error \newline Accept \newline Error \newline Accept \newline Error \newline Error & Works mostly - User is unable to type 'abc'. User is prompted with an error if '-1', or '101' is entered, but when calculate has been clicked and user clicks confirm, window is unexpectedly closed straight after the error prompt. & Figure \ref{fig:BookInvoiceDiscountValidation} on page \pageref{fig:BookInvoiceDiscountValidation} \\ \hline
+\rowcolor{lightgray}  2.10 & Verify that a valid Discount has been entered when adding Royalty items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Normal \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & Accept \newline Error \newline Accept \newline Error \newline Accept \newline Error \newline Error & Works mostly - User is unable to type 'abc'. User is prompted with an error if '-1', or '101' is entered, but when calculate has been clicked and user clicks confirm, window is unexpectedly closed straight after the error prompt. & Figure \ref{fig:RoyaltyDiscountValidation} on page \pageref{fig:RoyaltyDiscountValidation} \\ \hline
         3.1 & Verify that all fields required are entered when adding a book & If all fields are filled in correctly, a book will be successfully added to the database & Fill all Fields Correctly and then click Add to Database \newline Leave Fields Blank and then click Add to Database & Normal \newline Erroneous & Verification screen should open \newline User will be prompted with an error & & \\ \hline
         3.2 & Verify that all fields required are entered and calculations are complete when adding an Invoice Item & If all fields are filled in correctly and the calculations are complete, then the invoice item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneous \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted with an error & & \\ \hline
         3.3 & Verify that all fields required are entered and calculations are complete when adding a Royalty Item & If all fields are filled in correctly and the calculations are complete, then the royalty item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneous \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted to click Calculate & & \\ \hline
@@ -262,7 +260,7 @@ The data is shown in the previous table.
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Testing/Evidence/{ConfirmPasswordButtonTest}.png}
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ConfirmPasswordButtonTest.png}
     \caption{Test 1.19}  \label{fig:ConfirmPasswordButtonTest}
 \end{figure}
 
@@ -275,6 +273,57 @@ The data is shown in the previous table.
     \includegraphics[width=\textwidth]{./Testing/Evidence/ViewBookInvoiceItemsButtonTest.png}
     \caption{Test 1.21}  \label{fig:ViewBookInvoiceItemsButtonTest}
 \end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/AddEntryMenuTest.png}
+    \caption{Test 1.23}  \label{fig:AddEntryMenuTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/ConfirmSearchButtonTest.png}
+    \caption{Test 1.24}  \label{fig:ConfirmSearchButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/UpdateBookButtonTest.png}
+    \caption{Test 1.27}  \label{fig:UpdateBookButtonTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series2/SearchValidation.png}
+    \caption{Test 2.1}  \label{fig:SearchValidation}
+\end{figure}
+
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series2/AddEntryValidation.png}
+    \caption{Test 2.3, 2.4, 2.5, 2.6}  \label{fig:AddEntryValidation}
+\end{figure}
+
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series2/ISBNRejection.png}
+    \caption{Test 2.7}  \label{fig:ISBNRejection}
+\end{figure}
+
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series2/PagesRejection.png}
+    \caption{Test 2.8}  \label{fig:PagesRejection}
+\end{figure}
+
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series2/BookInvoiceDiscountValidation.png}
+    \caption{Test 2.9}  \label{fig:BookInvoiceDiscountValidation}
+\end{figure}
+
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series2/RoyaltyDiscountValidation.png}
+    \caption{Test 2.10}  \label{fig:RoyaltyDiscountValidation}
+\end{figure}
+
 
 \end{landscape}
 
