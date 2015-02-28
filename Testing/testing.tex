@@ -1,8 +1,9 @@
+\begin{landscape}
+
 \chapter{Testing}
 
 \section{Test Plan}
 
-\begin{landscape}
 \subsection{Original Outline Plan}
 
 \begin{center}
@@ -124,35 +125,27 @@
         2.8 & Verify that a valid NoOfPages has been entered when adding a book & The user will be prompted with an error & 123 \newline 123456789 \newline 2.3 \newline @! \newline HelloWorld & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & Works as expected - User is unable to type '2.3', '@!' and 'HelloWorld'. User is prompted with an error when entering '123456789'. & Figure \ref{fig:PagesRejection} on page \pageref{fig:PagesRejection} \\ \hline
 \rowcolor{lightgray} 2.9 & Verify that a valid Discount has been entered when adding Book Invoice items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Normal \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & Accept \newline Error \newline Accept \newline Error \newline Accept \newline Error \newline Error & Works mostly - User is unable to type 'abc'. User is prompted with an error if '-1', or '101' is entered, but when calculate has been clicked and user clicks confirm, window is unexpectedly closed straight after the error prompt. & Figure \ref{fig:BookInvoiceDiscountValidation} on page \pageref{fig:BookInvoiceDiscountValidation} \\ \hline
 \rowcolor{lightgray}  2.10 & Verify that a valid Discount has been entered when adding Royalty items & The user will be prompted with an error & 50 \newline 5.5 \newline 0 \newline -1 \newline 100 \newline 101 \newline abc & Normal \newline Normal \newline Boundary \newline Erroneous \newline Boundary \newline Erroneous \newline Erroneous & Accept \newline Error \newline Accept \newline Error \newline Accept \newline Error \newline Error & Works mostly - User is unable to type 'abc'. User is prompted with an error if '-1', or '101' is entered, but when calculate has been clicked and user clicks confirm, window is unexpectedly closed straight after the error prompt. & Figure \ref{fig:RoyaltyDiscountValidation} on page \pageref{fig:RoyaltyDiscountValidation} \\ \hline
-        3.1 & Verify that all fields required are entered when adding a book & If all fields are filled in correctly, a book will be successfully added to the database & Fill all Fields Correctly and then click Add to Database \newline Leave Fields Blank and then click Add to Database & Normal \newline Erroneous & Verification screen should open \newline User will be prompted with an error & & \\ \hline
-        3.2 & Verify that all fields required are entered and calculations are complete when adding an Invoice Item & If all fields are filled in correctly and the calculations are complete, then the invoice item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneous \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted with an error & & \\ \hline
-        3.3 & Verify that all fields required are entered and calculations are complete when adding a Royalty Item & If all fields are filled in correctly and the calculations are complete, then the royalty item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneous \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted to click Calculate & & \\ \hline
-\rowcolor{lightgray} 3.4 & Verify that the calculations function for working out the print cost & The calculations should be conducted and the result should be displayed & Enter values for the Royalty Items \newline Leave fields blank \newline Enter negative numbers into the required fields. & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline 
-\rowcolor{lightgray} 3.5 & Verify that the calculations function for working out the total Royalty Payment for a set of payments. & The calculations should be conducted and the result should be displayed in the Royalties table & Enter values for the Royalty Items and add it to the database \newline Leave fields blank \newline Enter negative numbers into the required fields. & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline 
-\rowcolor{lightgray} 3.6 & Verify that the calculations function for working out the total Book Invoice Payment & The calculations should be conducted and the result should be displayed in the Book Invoice table & Enter values for the Book Invoice Items and add them to the database \newline Leave fields blank \newline Enter negative numbers into the required fields. & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & & \\ \hline 
-        4.1 & Verify that all author data has been added to the author database & All the information should be added to the correct fields in the author table & Author Information & Normal & Added to the Author Table & & \\ \hline
-        4.2 & Verify that all book data has been added to the book database & All the information should be added to the correct fields in the book table & Book Information & Normal & Added to the Book Table & & \\ \hline
-        4.3 & Verify that all royalty item data has been added to the book database & All the information should be added to the correct fields in the royalty item table & Royalty Items Information & Normal & Added to the Royalty Items Table & & \\ \hline
-        4.4 & Verify that all invoice items data has been added to the Invoice Items database & All the information should be added to the correct fields in the Book Invoice Items table & Invoice Items Information & Normal & Added to the Invoice Items Table & & \\ \hline
-        4.5 & Verify that all publishing invoice data has been added to the publishing invoice database & All the information should be added to the correct fields in the Publishing Invoice table & Publishing Invoice Information & Normal & Added to the Publishing Invoice Table & & \\ \hline
-        4.6 & Verify that all Royalties data has been added to the Royalties database & All the information should be added to the correct fields in the Royalties table & Royalties Information & Normal & Added to the Royalties Table & & \\ \hline
-        4.7 & Verify that all Book Invoice data has been added to the Book Invoice database & All the information should be added to the correct fields in the Book Invoice table & Book Invoice Information & Normal & Added to the Book Invoice Table & & \\ \hline
-\rowcolor{lightgray} 4.8 & Verify that all author data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Author Table &  Author Information & Normal & Changes made to the Author Table & & \\ \hline
-\rowcolor{lightgray} 4.8 & Verify that all author data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Author Table &  Author Information & Normal & Changes made to the Author Table & & \\ \hline
-\rowcolor{lightgray} 4.9 & Verify that all book data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Book Table & Book Information & Normal & Changes made to the Book Table & & \\ \hline
-\rowcolor{lightgray} 4.10 & Verify that all Royalties data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Royalties Table &  Royalties Information & Normal & Changes made to the Royalties Table & & \\ \hline
-\rowcolor{lightgray} 4.11 & Verify that all Royalty Items data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Royalty Items Table &  Royalty Items Information & Normal & Changes made to the Royalty Items Table & & \\ \hline
-\rowcolor{lightgray} 4.12 & Verify that all Publishing Invoice data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Publishing Invoice Table &  Publishing Invoice Information & Normal & Changes made to the Publishing Invoice Table & & \\ \hline
-\rowcolor{lightgray} 4.13 & Verify that all Book Invoice data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Book Invoice Table &  Book Invoice Information & Normal & Changes made to the Book Invoice Table & & \\ \hline
-\rowcolor{lightgray} 4.14 & Verify that all Book Invoice Items data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Book Invoice Items Table &  Book Invoice Items Information & Normal & Changes made to the Book Invoice Items Table & & \\ \hline
-\rowcolor{lightgray} 4.15 & Verify that all data linked with an author is deleted when a deletion is requested by the user & All data linked with the user is deleted, and should no longer be in the table & Deleting the data & Normal & The data linked with that athor shoiuld no longer be in their respective tables & & \\ \hline
-\rowcolor{lightgray} 4.16 & Verify that a book is deleted when a deletion is requested by the user & The book is deleted, and should no longer be in the table & Deleting the data & Normal & The book should no longer exist in the database & & \\ \hline
-\rowcolor{lightgray} 4.17 & Verify that a publishing invoice is deleted when a deletion is requested by the user & The publishing invoice is deleted, and should no longer be in the table & Deleting the data & Normal & The publishing invoice should no longer exist in the database & & \\ \hline
-\rowcolor{lightgray} 4.18 & Verify that a book invoice is deleted when a deletion is requested by the user & The book invoice is deleted, and should no longer be in the table & Deleting the data & Normal & The book invoice should no longer exist in the database & & \\ \hline
-\rowcolor{lightgray} 4.19 & Verify that a set of book invoice items is deleted when a deletion is requested by the user & The book invoice items are deleted, and should no longer be in the table & Deleting the data & Normal & The book invoice items should no longer exist in the database & & \\ \hline
-\rowcolor{lightgray} 4.20 & Verify that a royalty payment is deleted when a deletion is requested by the user & The royalty payment is deleted, and should no longer be in the table & Deleting the data & Normal & The royalty payment should no longer exist in the database & & \\ \hline
-\rowcolor{lightgray} 4.21 & Verify that a set of royalty item is deleted when a deletion is requested by the user & The royalty items are deleted, and should no longer be in the table & Deleting the data & Normal & The royalty items should no longer exist in the database & & \\ \hline
-        5 & Verify that the program meets the requirements given & Run the program testing all parts to make sure they meet all of the requirements & Add entries for all possible inputs in order to test them all, update all entries, remove the entries, conduct a search, view all windows, change password and log out. & Normal & Program is up to the required standards & & \\ \hline
+        3.1 & Verify that all fields required are entered when adding a book & If all fields are filled in correctly, a book will be successfully added to the database & Fill all Fields Correctly and then click Add to Database \newline Leave Fields Blank and then click Add to Database & Normal \newline Erroneous & Data is added to the database. \newline User will be prompted with an error & Works as expected & Figure \ref{fig:AddBookValidation} on page \pageref{fig:AddBookValidation} \\ \hline
+        3.2 & Verify that all fields required are entered and calculations are complete when adding an Invoice Item & If all fields are filled in correctly and the calculations are complete, then the invoice item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneous \newline Erroneous & Data should be successfully added to the database. \newline User will be prompted with an error \newline User will be prompted with an error & Works mostly as expected - when calculate has been clicked with the invalid entry, and user clicks confirm, window is unexpectedly closed straight after the error prompt. & Figure \ref{fig:AddInvoiceItemTest} on page \pageref{fig:AddInvoiceItemTest} and Figure \ref{fig:BookInvoiceDiscountValidation} on page \pageref{fig:BookInvoiceDiscountValidation} \\ \hline
+        3.3 & Verify that all fields required are entered and calculations are complete when adding a Royalty Item & If all fields are filled in correctly and the calculations are complete, then the royalty item will be added to the database & Fill all fields correctly and click calculate and then click Add to Database \newline Leave Fields Blank and click Calculate \newline Fill all fields correctly and click add to database & Normal \newline Erroneous \newline Erroneous & Verification screen should open \newline User will be prompted with an error \newline User will be prompted to click Calculate & Works mostly as expected - when calculate has been clicked with the invalid entry, and user clicks confirm, window is unexpectedly closed straight after the error prompt. & Figure \ref{fig:AddRoyaltyItemTest} on page \pageref{fig:AddRoyaltyItemTest} and Figure \ref{fig:RoyaltyDiscountValidation} on page \pageref{fig:RoyaltyDiscountValidation} \\ \hline
+\rowcolor{lightgray} 3.4 & Verify that the calculations function for working out the print cost & The calculations should be conducted and the result should be displayed & Enter values for the Royalty Items \newline Leave fields blank \newline Enter negative numbers into the required fields. & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & Calculations are correct, but when a negative number is entered, the calculation is still conducted. User is prompted with the error when they wish to confirm entry, and then the window is unexpectedly closed afterwards. & Figure \ref{fig:PrintCostValidation} on page \pageref{fig:PrintCostValidation} \\ \hline
+\rowcolor{lightgray} 3.5 & Verify that the calculations function for working out the total Royalty Payment for a set of payments. & The calculations should be conducted and the result should be displayed in the Royalties table & Enter values for the Royalty Items and add it to the database \newline Leave fields blank \newline Enter negative numbers into the required fields. & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & Works as expected - User is prompted when Fields are invalid/blank. & Figure \ref{fig:RoyaltyPaymentValidation} on page \pageref{fig:RoyaltyPaymentValidation} \\ \hline
+\rowcolor{lightgray} 3.6 & Verify that the calculations function for working out the total Book Invoice Payment & The calculations should be conducted and the result should be displayed in the Book Invoice table & Enter values for the Book Invoice Items and add them to the database \newline Leave fields blank \newline Enter negative numbers into the required fields. & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & Works as expected - User is prompted when Fields are invalid/blank. & Figure \ref{fig:BookInvoicePaymentValidation} on page \pageref{fig:BookInvoicePaymentValidation} \\ \hline 
+        4.1 & Verify that all author data has been added to the author database & All the information should be added to the correct fields in the author table & Author Information & Normal & Added to the Author Table & Works as expected & Figure \ref{fig:AddAuthorTest} on page \pageref{fig:AddAuthorTest} \\ \hline 
+        4.2 & Verify that all book data has been added to the book database & All the information should be added to the correct fields in the book table & Book Information & Normal & Added to the Book Table & Works as expected & Figure \ref{fig:AddBookTest} on page \pageref{fig:AddBookTest} \\ \hline 
+        4.3 & Verify that all publishing invoice data has been added to the publishing invoice database & All the information should be added to the correct fields in the Publishing Invoice table & Publishing Invoice Information & Normal & Added to the Publishing Invoice Table & Works as expected & Figure \ref{fig:AddPubInvoiceTest} on page \pageref{fig:AddPubInvoiceTest} \\ \hline 
+        4.4 & Verify that all Royalties data has been added to the Royalties database & All the information should be added to the correct fields in the Royalties table & Royalties Information & Normal & Added to the Royalties Table & Works as expected & Figure \ref{fig:AddRoyaltiesTest} on page \pageref{fig:AddRoyaltiesTest} \\ \hline 
+        4.5 & Verify that all Book Invoice data has been added to the Book Invoice database & All the information should be added to the correct fields in the Book Invoice table & Book Invoice Information & Normal & Added to the Book Invoice Table & Works as expected & Figure \ref{fig:AddBookInvoiceTest} on page \pageref{fig:AddBookInvoiceTest} \\ \hline 
+        4.6 & Verify that all royalty item data has been added to the book database & All the information should be added to the correct fields in the royalty item table & Royalty Items Information & Normal & Added to the Royalty Items Table & Works as expected & Figure \ref{fig:AddRoyaltyItemsTest} on page \pageref{fig:AddRoyaltyItemsTest} \\ \hline 
+        4.7 & Verify that all invoice items data has been added to the Invoice Items database & All the information should be added to the correct fields in the Book Invoice Items table & Invoice Items Information & Normal & Added to the Invoice Items Table & Works as expected & Figure \ref{fig:AddBookInvoiceItemsTest} on page \pageref{fig:AddBookInvoiceItemsTest} \\ \hline 
+\rowcolor{lightgray} 4.8 & Verify that all author data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Author Table &  Author Information & Normal & Changes made to the Author Table & Works as expected & Figure \ref{fig:UpdateAuthorTest} on page \pageref{fig:UpdateAuthorTest} \\ \hline 
+\rowcolor{lightgray} 4.9 & Verify that all book data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Book Table & Book Information & Normal & Changes made to the Book Table & Works as expected & Figure \ref{fig:UpdateBookTest} on page \pageref{fig:UpdateBookTest} \\ \hline 
+\rowcolor{lightgray} 4.10 & Verify that all Book Invoice data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Book Invoice Table &  Book Invoice Information & Normal & Changes made to the Book Invoice Table & Works as expected & Figure \ref{fig:UpdateBookInvoiceTest} on page \pageref{fig:UpdateBookInvoiceTest} \\ \hline 
+\rowcolor{lightgray} 4.11 & Verify that all Book Invoice Items data has been successfully edited afted editing and saving changes & All the data should be changed to what the user's inputs were, and should still be in the correct fields in the Book Invoice Items Table &  Book Invoice Items Information & Normal & Changes made to the Book Invoice Items Table & Works as expected & Figure \ref{fig:UpdateBookInvoiceItemsTest} on page \pageref{fig:UpdateBookInvoiceItemsTest} \\ \hline 
+\rowcolor{lightgray} 4.12 & Verify that a set of royalty items are deleted when a deletion is requested by the user & The royalty items are deleted, and should no longer be in the table & Deleting the data & Normal & The royalty items should no longer exist in the database & Works as expected & Figure \ref{fig:DeleteRoyaltyItemsDataTest} on page \pageref{fig:DeleteRoyaltyItemsDataTest} \\ \hline 
+\rowcolor{lightgray} 4.13 & Verify that a royalty payment is deleted when a deletion is requested by the user & The royalty payment is deleted, and should no longer be in the table & Deleting the data & Normal & The royalty payment should no longer exist in the database & Works as expected & Figure \ref{fig:DeleteRoyaltiesDataTest} on page \pageref{fig:DeleteRoyaltiesDataTest} \\ \hline 
+\rowcolor{lightgray} 4.14 & Verify that all data linked with an author is deleted when a deletion is requested by the user & All data linked with the user is deleted, and should no longer be in the table & Deleting the data & Normal & The data linked with that athor shoiuld no longer be in their respective tables & Works as expected & Figure \ref{fig:DeleteAuthorDataTest} on page \pageref{fig:DeleteAuthorDataTest} \\ \hline 
+        5 & Verify that the program meets the requirements given & Run the program testing all parts to make sure they meet all of the requirements & Add entries for all possible inputs in order to test them all, update all entries, remove the entries, conduct a search, view all windows, change password and log out. & Normal & Program is up to the required standards & Program is up to the required standards. Minor exception of Add Royalties/BookInvoice Items window closing when an invalid entry is entered. & \\ \hline
     \end{longtable}
 \end{center}
 
@@ -164,7 +157,7 @@ The data is shown in the previous table.
 
 \subsection{Changes to Test Data}
 
-The data is shown in the previous table.
+Some changes were made to the plan, as the implementation of the program made me decide to change some aspects of the system. The tests removed are highlighted in the changed table in grey, and the tests that were modified are highlighted in light grey.
 
 \section{Annotated Samples}
 
@@ -324,6 +317,106 @@ The data is shown in the previous table.
     \caption{Test 2.10}  \label{fig:RoyaltyDiscountValidation}
 \end{figure}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series3/AddBookValidation.png}
+    \caption{Test 3.1}  \label{fig:AddBookValidation}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series3/AddInvoiceItemTest.png}
+    \caption{Test 3.2}  \label{fig:AddInvoiceItemTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series3/AddRoyaltyItemTest.png}
+    \caption{Test 3.3}  \label{fig:AddRoyaltyItemTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series3/PrintcostValidation.png}
+    \caption{Test 3.4}  \label{fig:PrintcostValidation}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series3/RoyaltyPaymentValidation.png}
+    \caption{Test 3.5}  \label{fig:RoyaltyPaymentValidation}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series3/BookInvoicePaymentValidation.png}
+    \caption{Test 3.6}  \label{fig:BookInvoicePaymentValidation}
+\end{figure}
+
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/AddAuthorTest.png}
+    \caption{Test 4.1}  \label{fig:AddAuthorTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/AddBookTest.png}
+    \caption{Test 4.2}  \label{fig:AddBookTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/AddPubInvoiceTest.png}
+    \caption{Test 4.3}  \label{fig:AddPubInvoiceTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/AddBookInvoiceTest.png}
+    \caption{Test 4.4}  \label{fig:AddBookInvoiceTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/AddBookInvoiceItemsTest.png}
+    \caption{Test 4.5}  \label{fig:AddBookInvoiceItemsTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/AddRoyaltiesTest.png}
+    \caption{Test 4.6}  \label{fig:AddRoyaltiesTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/AddRoyaltyItemsTest.png}
+    \caption{Test 4.7}  \label{fig:AddRoyaltyItemsTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/UpdateAuthorTest.png}
+    \caption{Test 4.8}  \label{fig:UpdateAuthorTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/UpdateBookTest.png}
+    \caption{Test 4.9}  \label{fig:UpdateBookTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/UpdateBookInvoiceTest.png}
+    \caption{Test 4.10}  \label{fig:UpdateBookInvoiceTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/UpdateBookInvoiceItemsTest.png}
+    \caption{Test 4.11}  \label{fig:UpdateBookInvoiceItemsTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/DeleteRoyaltiesItemsDataTest.png}
+    \caption{Test 4.12}  \label{fig:DeleteRoyaltiesItemsDataTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/DeleteRoyaltiesDataTest.png}
+    \caption{Test 4.13}  \label{fig:DeleteRoyaltiesDataTest}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/DeleteAuthorDataTest.png}
+    \caption{Test 4.14}  \label{fig:DeleteAuthorDataTest}
+\end{figure}
 
 \end{landscape}
 
@@ -331,12 +424,31 @@ The data is shown in the previous table.
 
 \subsection{Approach to Testing}
 
+I have chosen to use a range of testing strategies. For instance, series 1 of of the tests is testing the flow of control, making sure that the user navigates to the correct areas of the interface. Series 2 of the tests ensures that the validation of user inputs is performed correctly, whilst series 3 certifies that the calculations and algorithms in the system function correctly. Series 4 makes sure that the added data is stored correctly, updated data is saved to the correct tables and fields, and the deletion of data is performed on the correct data. 
+
 \subsection{Problems Encountered}
+
+I encountered a few minor problems whilst testing my program.
+
+\underline{Tests 2.9 and 2.10:}
+
+These tests encountered a minor problem, where if the user were to enter an invalid value for an entry, proceed to calculate using their inputs and confirm that they wish to add it to the database, the user would be correctly prompted with an error. However, upon dismissing the error, the window that they were using to add data to the database would close, forcing them to reopen the window and start entering data again. I have a vague idea of where the problem is,  but as it isn't a serious problem for the user, this will be considered as an area for future updates. 
+
+This is the only problem my tests encountered, which also affected a few of the tests in series 3, causing the same issue.
+
 
 \subsection{Strengths of Testing}
 
+The strengths of my testing program consisted mainly of the consistency of the flow of data, and the flow of control. This proved that there wouldn't be any problem with the navigation of the user interface, and also no problems would be encountered when interacting with the data. Also, the testing program concluded that the user was limited to certain inputs for certain fields. For example, the user was required to enter a quantity for the Book Invoice Item, and was limited to being able to enter integers alone. Also, dropdown lists were used to prevent the user from incorrectly spelling certain inputs. This showed that the testing program would not be limited to identifying specific errors as the user was prevented from entering incorrect data in some parts of the program.
+
 \subsection{Weaknesses of Testing}
+
+A weakness of my testing program was that it did not test every single component of the system. because most of the program used similar coding for its functionality. Therefore, after testing a few of the components, others were not tested because of the similar functionality. This means that I am unable to establish that the system is entirely robust.
 
 \subsection{Reliability of Application}
 
+All inputs, outputs and changes function as the should do, and as they were planned to. The system mostly prevents te user from entering inaccurate data, so that the inputs and outputs would not malfunction. Although, test 3.4 shows that a calculation would still be conducted if the user had entered a negative number, which is invalid. This happened because the calculation is conducted immediately after the user types. However, the program would not allow the user to confirm their entry with this invalid data, despite the calculations being conducted. Consequently, the system is generally reliable as it is moderately effective in preventing invalid entries.
+
 \subsection{Robustness of Application}
+
+The testing program used proves that the system is fairly robust. The program never encounters runtime errors or index errors, which were carefully prevented. Also, the system prevents invalid entries so that the program doesn't crash, and my test program did not cause my program to crash once.

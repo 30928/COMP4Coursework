@@ -338,8 +338,8 @@ class dbAddItemWindow(QDialog):
                 self.inputList[7].setText("")
                 self.inputList[7].setReadOnly(False)
             if self.inputList[5].text() != "":
-                self.PrintCost = (self.PagePrice * int(self.inputList[5].text()))  + self.CoverPrice
-                self.inputList[6].setText(str(self.PrintCost))
+                self.PrintCost = (self.PagePrice + self.CoverPrice) * int(self.inputList[5].text())
+                self.inputList[6].setText("{0:.2f}".format(self.PrintCost))
             elif self.inputList[5].text() == "":
                 self.inputList[6].clear()
 
