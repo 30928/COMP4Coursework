@@ -12,7 +12,7 @@ class dbViewWindow(QWidget):
     def View(self):
         self.setWindowTitle("View Menu")
         self.setFixedSize(735,400)
-        
+
         self.btnBack = QPushButton("Back", self)
         self.btnBack.setFixedSize(100, 30)
         self.btnViewRoyalties = QPushButton("View Royalties", self)
@@ -28,11 +28,10 @@ class dbViewWindow(QWidget):
         self.btnDeleteBook = QPushButton("Delete Book", self)
         self.btnDeleteBook.setFixedSize(100, 40)
 
-
         self.horizontalTop = QHBoxLayout()
         self.horizontalTop.addStretch(1)
         self.horizontalTop.addWidget(self.btnBack)
-        
+
         self.horizontalBottom = QHBoxLayout()
         self.horizontalBottom.addWidget(self.btnViewPubInvoice)
         self.horizontalBottom.addWidget(self.btnViewBookInvoices)

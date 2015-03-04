@@ -8,7 +8,7 @@ class dbUsernameOrPassword(QDialog):
 
     def __init__(self):
         super().__init__()
-        
+
     def ChangeSelection(self):
         self.setModal(True)
         self.setFixedSize(400, 50)
@@ -25,7 +25,7 @@ class dbUsernameOrPassword(QDialog):
         self.gridLayout.addWidget(self.btnCancel, 0, 2)
         self.setLayout(self.gridLayout)
         self.exec_()
-        
+
     def UsernameSelected(self):
         self.Selection = "Username"
         self.accept()
