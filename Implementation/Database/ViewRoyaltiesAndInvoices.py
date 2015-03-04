@@ -26,14 +26,12 @@ class dbRoyaltiesAndInvoices(QDialog):
         self.horizontal.addWidget(self.btnDeleteEntry)
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
-        
         self.exec_()
-        
+
     def PubInvoiceButtons(self):
         self.btnAddPubInvoice = QPushButton("Add Publishing \n Invoice", self)
         self.btnUpdatePubInvoice = QPushButton("Update Publishing \n Invoice", self)
-        self.btnDeleteEntry = QPushButton("Delete \n Entry", self)        
-
+        self.btnDeleteEntry = QPushButton("Delete \n Entry", self)
 
     def BookInvoice(self):
         self.setWindowTitle("View Book Invoices")
@@ -55,15 +53,14 @@ class dbRoyaltiesAndInvoices(QDialog):
         self.horizontal.addWidget(self.btnDeleteEntry)
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
-        
         self.exec_()
-        
+
     def BookInvoiceButtons(self):
-        self.btnViewBookInvoiceItems = QPushButton("View Book \n Invoice Items", self) 
+        self.btnViewBookInvoiceItems = QPushButton("View Book \n Invoice Items", self)
         self.btnAddBookInvoice = QPushButton("Add Book \n Invoice", self)
         self.btnUpdateBookInvoice = QPushButton("Update Book \n Invoice", self)
         self.btnDeleteEntry = QPushButton("Delete \n Entry", self)
-        
+
     def Royalties(self):
         self.setWindowTitle("View Royalties")
         self.setModal(True)
@@ -84,12 +81,10 @@ class dbRoyaltiesAndInvoices(QDialog):
         self.horizontal.addWidget(self.btnDeleteEntry)
         self.vertical.addLayout(self.horizontal)
         self.setLayout(self.vertical)
-        
         self.exec_()
-        
+
     def RoyaltiesButtons(self):
-        self.btnViewRoyaltyItems = QPushButton("View Royalty \n Items", self) 
+        self.btnViewRoyaltyItems = QPushButton("View Royalty \n Items", self)
         self.btnAddRoyalties = QPushButton("Add \n Royalties", self)
         self.btnUpdateRoyalties = QPushButton("Update \n Royalties", self)
-        self.btnDeleteEntry = QPushButton("Delete \n Entry", self)        
-
+        self.btnDeleteEntry = QPushButton("Delete \n Entry", self)
