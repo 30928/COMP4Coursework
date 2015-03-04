@@ -94,78 +94,78 @@
 \contentsline {section}{\numberline {4.1}Environment}{188}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Software}{188}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Usage Explanation}{188}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Features Used}{190}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}System Overview}{190}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}System Component}{190}{subsection.4.2.1}
-\contentsline {section}{\numberline {4.3}Code Structure}{190}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Particular Code Section}{190}{subsection.4.3.1}
-\contentsline {section}{\numberline {4.4}Variable Listing}{190}{section.4.4}
-\contentsline {section}{\numberline {4.5}System Evidence}{190}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}User Interface}{190}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}ER Diagram}{190}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Database Table Views}{190}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Database SQL}{190}{subsection.4.5.4}
-\contentsline {subsection}{\numberline {4.5.5}SQL Queries}{190}{subsection.4.5.5}
-\contentsline {section}{\numberline {4.6}Testing}{190}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Summary of Results}{190}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Known Issues}{190}{subsection.4.6.2}
-\contentsline {section}{\numberline {4.7}Code Explanations}{190}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Difficult Sections}{190}{subsection.4.7.1}
-\contentsline {subsection}{\numberline {4.7.2}Self-created Algorithms}{190}{subsection.4.7.2}
-\contentsline {section}{\numberline {4.8}Settings}{190}{section.4.8}
-\contentsline {section}{\numberline {4.9}Acknowledgements}{190}{section.4.9}
+\contentsline {subsection}{\numberline {4.1.3}Features Used}{189}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}System Overview}{191}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}System Component}{191}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Code Structure}{191}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Particular Code Section}{191}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Variable Listing}{191}{section.4.4}
+\contentsline {section}{\numberline {4.5}System Evidence}{191}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}User Interface}{191}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}ER Diagram}{191}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Database Table Views}{191}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Database SQL}{191}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}SQL Queries}{191}{subsection.4.5.5}
+\contentsline {section}{\numberline {4.6}Testing}{191}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Summary of Results}{191}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Known Issues}{191}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}Code Explanations}{191}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Difficult Sections}{191}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Self-created Algorithms}{191}{subsection.4.7.2}
+\contentsline {section}{\numberline {4.8}Settings}{191}{section.4.8}
+\contentsline {section}{\numberline {4.9}Acknowledgements}{191}{section.4.9}
 \contentsline {section}{\numberline {4.10}Code Listing}{192}{section.4.10}
-\contentsline {subsection}{\numberline {4.10.1}Module 1}{192}{subsection.4.10.1}
-\contentsline {subsection}{\numberline {4.10.2}Module 2}{193}{subsection.4.10.2}
-\contentsline {subsection}{\numberline {4.10.3}Module 3}{232}{subsection.4.10.3}
-\contentsline {subsection}{\numberline {4.10.4}Module 4}{233}{subsection.4.10.4}
-\contentsline {subsection}{\numberline {4.10.5}Module 5}{234}{subsection.4.10.5}
-\contentsline {subsection}{\numberline {4.10.6}Module 6}{235}{subsection.4.10.6}
-\contentsline {subsection}{\numberline {4.10.7}Module 7}{237}{subsection.4.10.7}
-\contentsline {subsection}{\numberline {4.10.8}Module 8}{240}{subsection.4.10.8}
-\contentsline {subsection}{\numberline {4.10.9}Module 9}{241}{subsection.4.10.9}
-\contentsline {subsection}{\numberline {4.10.10}Module 10}{253}{subsection.4.10.10}
-\contentsline {subsection}{\numberline {4.10.11}Module 11}{254}{subsection.4.10.11}
-\contentsline {subsection}{\numberline {4.10.12}Module 12}{257}{subsection.4.10.12}
-\contentsline {subsection}{\numberline {4.10.13}Module 13}{264}{subsection.4.10.13}
-\contentsline {subsection}{\numberline {4.10.14}Module 14}{267}{subsection.4.10.14}
-\contentsline {subsection}{\numberline {4.10.15}Module 15}{272}{subsection.4.10.15}
-\contentsline {subsection}{\numberline {4.10.16}Module 16}{273}{subsection.4.10.16}
-\contentsline {subsection}{\numberline {4.10.17}Module 17}{273}{subsection.4.10.17}
-\contentsline {subsection}{\numberline {4.10.18}Module 18}{276}{subsection.4.10.18}
-\contentsline {chapter}{\numberline {5}User Manual}{279}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{280}{section.5.1}
-\contentsline {section}{\numberline {5.2}Installation}{280}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Prerequisite Installation}{280}{subsection.5.2.1}
-\contentsline {subsubsection}{Installing Python}{280}{section*.13}
-\contentsline {subsubsection}{Installing PyQt}{280}{section*.14}
-\contentsline {subsubsection}{Etc.}{280}{section*.15}
-\contentsline {subsection}{\numberline {5.2.2}System Installation}{280}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Running the System}{280}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Tutorial}{280}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Introduction}{280}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Assumptions}{280}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Tutorial Questions}{280}{subsection.5.3.3}
-\contentsline {subsubsection}{Question 1}{280}{section*.16}
-\contentsline {subsubsection}{Question 2}{280}{section*.17}
-\contentsline {subsection}{\numberline {5.3.4}Saving}{280}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Limitations}{280}{subsection.5.3.5}
-\contentsline {section}{\numberline {5.4}Error Recovery}{280}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Error 1}{280}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Error 2}{280}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}System Recovery}{280}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Backing-up Data}{280}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Restoring Data}{280}{subsection.5.5.2}
-\contentsline {chapter}{\numberline {6}Evaluation}{281}{chapter.6}
-\contentsline {section}{\numberline {6.1}Customer Requirements}{282}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Objective Evaluation}{282}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Effectiveness}{282}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{282}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Learnability}{282}{section.6.3}
-\contentsline {section}{\numberline {6.4}Usability}{282}{section.6.4}
-\contentsline {section}{\numberline {6.5}Maintainability}{282}{section.6.5}
-\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{282}{section.6.6}
-\contentsline {section}{\numberline {6.7}End User Evidence}{282}{section.6.7}
-\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{282}{subsection.6.7.1}
-\contentsline {subsection}{\numberline {6.7.2}Graphs}{282}{subsection.6.7.2}
-\contentsline {subsection}{\numberline {6.7.3}Written Statements}{282}{subsection.6.7.3}
+\contentsline {subsection}{\numberline {4.10.1}Module 1}{193}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}Module 2}{206}{subsection.4.10.2}
+\contentsline {subsection}{\numberline {4.10.3}Module 3}{252}{subsection.4.10.3}
+\contentsline {subsection}{\numberline {4.10.4}Module 4}{255}{subsection.4.10.4}
+\contentsline {subsection}{\numberline {4.10.5}Module 5}{256}{subsection.4.10.5}
+\contentsline {subsection}{\numberline {4.10.6}Module 6}{257}{subsection.4.10.6}
+\contentsline {subsection}{\numberline {4.10.7}Module 7}{260}{subsection.4.10.7}
+\contentsline {subsection}{\numberline {4.10.8}Module 8}{264}{subsection.4.10.8}
+\contentsline {subsection}{\numberline {4.10.9}Module 9}{266}{subsection.4.10.9}
+\contentsline {subsection}{\numberline {4.10.10}Module 10}{281}{subsection.4.10.10}
+\contentsline {subsection}{\numberline {4.10.11}Module 11}{283}{subsection.4.10.11}
+\contentsline {subsection}{\numberline {4.10.12}Module 12}{288}{subsection.4.10.12}
+\contentsline {subsection}{\numberline {4.10.13}Module 13}{296}{subsection.4.10.13}
+\contentsline {subsection}{\numberline {4.10.14}Module 14}{299}{subsection.4.10.14}
+\contentsline {subsection}{\numberline {4.10.15}Module 15}{306}{subsection.4.10.15}
+\contentsline {subsection}{\numberline {4.10.16}Module 16}{307}{subsection.4.10.16}
+\contentsline {subsection}{\numberline {4.10.17}Module 17}{308}{subsection.4.10.17}
+\contentsline {subsection}{\numberline {4.10.18}Module 18}{311}{subsection.4.10.18}
+\contentsline {chapter}{\numberline {5}User Manual}{315}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{316}{section.5.1}
+\contentsline {section}{\numberline {5.2}Installation}{316}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Prerequisite Installation}{316}{subsection.5.2.1}
+\contentsline {subsubsection}{Installing Python}{316}{section*.13}
+\contentsline {subsubsection}{Installing PyQt}{316}{section*.14}
+\contentsline {subsubsection}{Etc.}{316}{section*.15}
+\contentsline {subsection}{\numberline {5.2.2}System Installation}{316}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Running the System}{316}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Tutorial}{316}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Introduction}{316}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Assumptions}{316}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Tutorial Questions}{316}{subsection.5.3.3}
+\contentsline {subsubsection}{Question 1}{316}{section*.16}
+\contentsline {subsubsection}{Question 2}{316}{section*.17}
+\contentsline {subsection}{\numberline {5.3.4}Saving}{316}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Limitations}{316}{subsection.5.3.5}
+\contentsline {section}{\numberline {5.4}Error Recovery}{316}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Error 1}{316}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Error 2}{316}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}System Recovery}{316}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Backing-up Data}{316}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Restoring Data}{316}{subsection.5.5.2}
+\contentsline {chapter}{\numberline {6}Evaluation}{317}{chapter.6}
+\contentsline {section}{\numberline {6.1}Customer Requirements}{318}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Objective Evaluation}{318}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}Effectiveness}{318}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{318}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Learnability}{318}{section.6.3}
+\contentsline {section}{\numberline {6.4}Usability}{318}{section.6.4}
+\contentsline {section}{\numberline {6.5}Maintainability}{318}{section.6.5}
+\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{318}{section.6.6}
+\contentsline {section}{\numberline {6.7}End User Evidence}{318}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{318}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Graphs}{318}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {6.7.3}Written Statements}{318}{subsection.6.7.3}
