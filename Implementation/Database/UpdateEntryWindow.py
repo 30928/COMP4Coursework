@@ -91,4 +91,3 @@ class dbUpdateEntryWindow(QDialog):
             sql = "update {} set {} where {} = {}".format(self.TableName, self.Update, self.ID, self.selectedID)
             cursor.execute(sql)
             db.commit()
-

@@ -38,7 +38,6 @@ class dbChangeUsername(QDialog):
         self.gridLayout.addWidget(self.leRetype, 2, 1)
         self.gridLayout.addLayout(self.horizontal, 3, 2)
         self.setLayout(self.gridLayout)
-
         self.btnCancel.clicked.connect(self.reject)
         self.btnConfirm.clicked.connect(self.Check)
         self.exec_()

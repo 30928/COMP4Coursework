@@ -188,6 +188,7 @@ class dbItems(QDialog):
                                 self.ExcRateFromGBP = float(self.SelectionList[2])
                                 self.TempPayment /= self.ExcRateFromGBP
                             self.RoyaltyPayment += self.TempPayment
+                            
                 elif self.currentID == 0:
                     self.BookInvoicePayment = None
                     sql = "update Royalties set RoyaltyPayment = '{}' where RoyaltiesID = {}".format(self.RoyaltyPayment, self.selectedID)

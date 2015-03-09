@@ -138,8 +138,6 @@ class dbSearchDatabase(QDialog):
             elif self.Category == "Service":
                 self.Category = "PubInvoiceService"
                 
-
-            
             if self.Table not in ["BookInvoiceItems", "RoyaltyItems"]:
                 if self.Table in ["PubInvoice", "Royalties", "BookInvoice"]:
                     self.sql = "select Customer.AuthorID, {0}ID from Customer, {0} where (Customer.Firstname like '{1}%' or Customer.Lastname like '{2}%') and {0}.{3} like '{4}%' and {0}.AuthorID = Customer.AuthorID".format(self.Table, self.Firstname, self.Lastname, self.Category, self.Search)

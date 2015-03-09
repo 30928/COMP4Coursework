@@ -29,7 +29,9 @@ class dbAddEntryWindow(QDialog):
         self.inputList[0].setValidator(QRegExpValidator(QRegExp("[a-zA-Z\-\!]+")))
         self.inputList[1].setValidator(QRegExpValidator(QRegExp("[a-zA-Z\-\!]+")))
         self.inputList[2].setValidator(QRegExpValidator(QRegExp("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")))
-        self.inputList[3].setValidator(QRegExpValidator(QRegExp("^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$")))
+        self.regexp = "^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|"
+        self.regexp2 = "((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$"
+        self.inputList[3].setValidator(QRegExpValidator(QRegExp("{}{}".format(self.regexp, self.regexp2))))
         self.inputList[4].setValidator(QRegExpValidator(QRegExp("[a-zA-Z \d\-\.]+")))
         self.inputList[5].setValidator(QRegExpValidator(QRegExp("^[a-zA-Z]{1,2}[0-9][0-9A-Za-z]{0,1} {0,1}[0-9][A-Za-z]{2}$")))
         #2, 3 & 5 from www.regexlib.com

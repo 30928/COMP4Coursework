@@ -85,71 +85,78 @@
 \BOOKMARK [2][-]{subsection.4.1.2}{Usage Explanation}{section.4.1}% 85
 \BOOKMARK [2][-]{subsection.4.1.3}{Features Used}{section.4.1}% 86
 \BOOKMARK [1][-]{section.4.2}{System Overview}{chapter.4}% 87
-\BOOKMARK [2][-]{subsection.4.2.1}{System Component}{section.4.2}% 88
-\BOOKMARK [1][-]{section.4.3}{Code Structure}{chapter.4}% 89
-\BOOKMARK [2][-]{subsection.4.3.1}{Particular Code Section}{section.4.3}% 90
-\BOOKMARK [1][-]{section.4.4}{Variable Listing}{chapter.4}% 91
-\BOOKMARK [1][-]{section.4.5}{System Evidence}{chapter.4}% 92
-\BOOKMARK [2][-]{subsection.4.5.1}{User Interface}{section.4.5}% 93
-\BOOKMARK [2][-]{subsection.4.5.2}{ER Diagram}{section.4.5}% 94
-\BOOKMARK [2][-]{subsection.4.5.3}{Database Table Views}{section.4.5}% 95
-\BOOKMARK [2][-]{subsection.4.5.4}{Database SQL}{section.4.5}% 96
-\BOOKMARK [2][-]{subsection.4.5.5}{SQL Queries}{section.4.5}% 97
-\BOOKMARK [1][-]{section.4.6}{Testing}{chapter.4}% 98
-\BOOKMARK [2][-]{subsection.4.6.1}{Summary of Results}{section.4.6}% 99
-\BOOKMARK [2][-]{subsection.4.6.2}{Known Issues}{section.4.6}% 100
-\BOOKMARK [1][-]{section.4.7}{Code Explanations}{chapter.4}% 101
-\BOOKMARK [2][-]{subsection.4.7.1}{Difficult Sections}{section.4.7}% 102
-\BOOKMARK [2][-]{subsection.4.7.2}{Self-created Algorithms}{section.4.7}% 103
-\BOOKMARK [1][-]{section.4.8}{Settings}{chapter.4}% 104
-\BOOKMARK [1][-]{section.4.9}{Acknowledgements}{chapter.4}% 105
-\BOOKMARK [1][-]{section.4.10}{Code Listing}{chapter.4}% 106
-\BOOKMARK [2][-]{subsection.4.10.1}{Module 1}{section.4.10}% 107
-\BOOKMARK [2][-]{subsection.4.10.2}{Module 2}{section.4.10}% 108
-\BOOKMARK [2][-]{subsection.4.10.3}{Module 3}{section.4.10}% 109
-\BOOKMARK [2][-]{subsection.4.10.4}{Module 4}{section.4.10}% 110
-\BOOKMARK [2][-]{subsection.4.10.5}{Module 5}{section.4.10}% 111
-\BOOKMARK [2][-]{subsection.4.10.6}{Module 6}{section.4.10}% 112
-\BOOKMARK [2][-]{subsection.4.10.7}{Module 7}{section.4.10}% 113
-\BOOKMARK [2][-]{subsection.4.10.8}{Module 8}{section.4.10}% 114
-\BOOKMARK [2][-]{subsection.4.10.9}{Module 9}{section.4.10}% 115
-\BOOKMARK [2][-]{subsection.4.10.10}{Module 10}{section.4.10}% 116
-\BOOKMARK [2][-]{subsection.4.10.11}{Module 11}{section.4.10}% 117
-\BOOKMARK [2][-]{subsection.4.10.12}{Module 12}{section.4.10}% 118
-\BOOKMARK [2][-]{subsection.4.10.13}{Module 13}{section.4.10}% 119
-\BOOKMARK [2][-]{subsection.4.10.14}{Module 14}{section.4.10}% 120
-\BOOKMARK [2][-]{subsection.4.10.15}{Module 15}{section.4.10}% 121
-\BOOKMARK [2][-]{subsection.4.10.16}{Module 16}{section.4.10}% 122
-\BOOKMARK [2][-]{subsection.4.10.17}{Module 17}{section.4.10}% 123
-\BOOKMARK [2][-]{subsection.4.10.18}{Module 18}{section.4.10}% 124
-\BOOKMARK [0][-]{chapter.5}{User Manual}{}% 125
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 126
-\BOOKMARK [1][-]{section.5.2}{Installation}{chapter.5}% 127
-\BOOKMARK [2][-]{subsection.5.2.1}{Prerequisite Installation}{section.5.2}% 128
-\BOOKMARK [2][-]{subsection.5.2.2}{System Installation}{section.5.2}% 129
-\BOOKMARK [2][-]{subsection.5.2.3}{Running the System}{section.5.2}% 130
-\BOOKMARK [1][-]{section.5.3}{Tutorial}{chapter.5}% 131
-\BOOKMARK [2][-]{subsection.5.3.1}{Introduction}{section.5.3}% 132
-\BOOKMARK [2][-]{subsection.5.3.2}{Assumptions}{section.5.3}% 133
-\BOOKMARK [2][-]{subsection.5.3.3}{Tutorial Questions}{section.5.3}% 134
-\BOOKMARK [2][-]{subsection.5.3.4}{Saving}{section.5.3}% 135
-\BOOKMARK [2][-]{subsection.5.3.5}{Limitations}{section.5.3}% 136
-\BOOKMARK [1][-]{section.5.4}{Error Recovery}{chapter.5}% 137
-\BOOKMARK [2][-]{subsection.5.4.1}{Error 1}{section.5.4}% 138
-\BOOKMARK [2][-]{subsection.5.4.2}{Error 2}{section.5.4}% 139
-\BOOKMARK [1][-]{section.5.5}{System Recovery}{chapter.5}% 140
-\BOOKMARK [2][-]{subsection.5.5.1}{Backing-up Data}{section.5.5}% 141
-\BOOKMARK [2][-]{subsection.5.5.2}{Restoring Data}{section.5.5}% 142
-\BOOKMARK [0][-]{chapter.6}{Evaluation}{}% 143
-\BOOKMARK [1][-]{section.6.1}{Customer Requirements}{chapter.6}% 144
-\BOOKMARK [2][-]{subsection.6.1.1}{Objective Evaluation}{section.6.1}% 145
-\BOOKMARK [1][-]{section.6.2}{Effectiveness}{chapter.6}% 146
-\BOOKMARK [2][-]{subsection.6.2.1}{Objective Evaluation}{section.6.2}% 147
-\BOOKMARK [1][-]{section.6.3}{Learnability}{chapter.6}% 148
-\BOOKMARK [1][-]{section.6.4}{Usability}{chapter.6}% 149
-\BOOKMARK [1][-]{section.6.5}{Maintainability}{chapter.6}% 150
-\BOOKMARK [1][-]{section.6.6}{Suggestions for Improvement}{chapter.6}% 151
-\BOOKMARK [1][-]{section.6.7}{End User Evidence}{chapter.6}% 152
-\BOOKMARK [2][-]{subsection.6.7.1}{Questionnaires}{section.6.7}% 153
-\BOOKMARK [2][-]{subsection.6.7.2}{Graphs}{section.6.7}% 154
-\BOOKMARK [2][-]{subsection.6.7.3}{Written Statements}{section.6.7}% 155
+\BOOKMARK [2][-]{subsection.4.2.1}{Main window}{section.4.2}% 88
+\BOOKMARK [2][-]{subsection.4.2.2}{Adding Entries}{section.4.2}% 89
+\BOOKMARK [2][-]{subsection.4.2.3}{Updating Entries}{section.4.2}% 90
+\BOOKMARK [2][-]{subsection.4.2.4}{Deleting Entries}{section.4.2}% 91
+\BOOKMARK [2][-]{subsection.4.2.5}{Calculations}{section.4.2}% 92
+\BOOKMARK [2][-]{subsection.4.2.6}{Detailed Searches}{section.4.2}% 93
+\BOOKMARK [1][-]{section.4.3}{Code Structure}{chapter.4}% 94
+\BOOKMARK [2][-]{subsection.4.3.1}{Function - Adding an Item}{section.4.3}% 95
+\BOOKMARK [2][-]{subsection.4.3.2}{Function - Removing an Item}{section.4.3}% 96
+\BOOKMARK [2][-]{subsection.4.3.3}{Function - Generating an update window}{section.4.3}% 97
+\BOOKMARK [1][-]{section.4.4}{Variable Listing}{chapter.4}% 98
+\BOOKMARK [1][-]{section.4.5}{System Evidence}{chapter.4}% 99
+\BOOKMARK [2][-]{subsection.4.5.1}{User Interface}{section.4.5}% 100
+\BOOKMARK [2][-]{subsection.4.5.2}{ER Diagram}{section.4.5}% 101
+\BOOKMARK [2][-]{subsection.4.5.3}{Database Table Views}{section.4.5}% 102
+\BOOKMARK [2][-]{subsection.4.5.4}{Database SQL}{section.4.5}% 103
+\BOOKMARK [2][-]{subsection.4.5.5}{SQL Queries}{section.4.5}% 104
+\BOOKMARK [1][-]{section.4.6}{Testing}{chapter.4}% 105
+\BOOKMARK [2][-]{subsection.4.6.1}{Summary of Results}{section.4.6}% 106
+\BOOKMARK [2][-]{subsection.4.6.2}{Known Issues}{section.4.6}% 107
+\BOOKMARK [1][-]{section.4.7}{Code Explanations}{chapter.4}% 108
+\BOOKMARK [2][-]{subsection.4.7.1}{Difficult Sections}{section.4.7}% 109
+\BOOKMARK [2][-]{subsection.4.7.2}{Self-created Algorithms}{section.4.7}% 110
+\BOOKMARK [1][-]{section.4.8}{Settings}{chapter.4}% 111
+\BOOKMARK [1][-]{section.4.9}{Acknowledgements}{chapter.4}% 112
+\BOOKMARK [1][-]{section.4.10}{Code Listing}{chapter.4}% 113
+\BOOKMARK [2][-]{subsection.4.10.1}{Module 1 - Login Window and Database Creation}{section.4.10}% 114
+\BOOKMARK [2][-]{subsection.4.10.2}{Module 2 - Main Window and functionality for majority of system}{section.4.10}% 115
+\BOOKMARK [2][-]{subsection.4.10.3}{Module 3 - Initialising Main Menu Layout}{section.4.10}% 116
+\BOOKMARK [2][-]{subsection.4.10.4}{Module 4 - Initialising Menu Bar}{section.4.10}% 117
+\BOOKMARK [2][-]{subsection.4.10.5}{Module 5 - Initialising a Table Widget}{section.4.10}% 118
+\BOOKMARK [2][-]{subsection.4.10.6}{Module 6 - Initialising Add Customer Entry Window}{section.4.10}% 119
+\BOOKMARK [2][-]{subsection.4.10.7}{Module 7 - Initialising Update Customer Entry Window}{section.4.10}% 120
+\BOOKMARK [2][-]{subsection.4.10.8}{Module 8 - Initialising View Menu Layout}{section.4.10}% 121
+\BOOKMARK [2][-]{subsection.4.10.9}{Module 9 - Initialising Add Entry Window for non-customer entries}{section.4.10}% 122
+\BOOKMARK [2][-]{subsection.4.10.10}{Module 10 - Initialising Calendar Widget}{section.4.10}% 123
+\BOOKMARK [2][-]{subsection.4.10.11}{Module 11 - Initialising a Confirmation Dialog}{section.4.10}% 124
+\BOOKMARK [2][-]{subsection.4.10.12}{Module 12 - Initialising a dialog for viewing the Items, and creating calculations for the payments.}{section.4.10}% 125
+\BOOKMARK [2][-]{subsection.4.10.13}{Module 13 - Initialising a dialog for viewing Royalties and Invoices}{section.4.10}% 126
+\BOOKMARK [2][-]{subsection.4.10.14}{Module 14 - Initialising a Search Window}{section.4.10}% 127
+\BOOKMARK [2][-]{subsection.4.10.15}{Module 15 - Creating a layout for displaying Search Results in the Main Window}{section.4.10}% 128
+\BOOKMARK [2][-]{subsection.4.10.16}{Module 16 - Creating a dialog for the User to choose to change Username or Password}{section.4.10}% 129
+\BOOKMARK [2][-]{subsection.4.10.17}{Module 17 - Initialising a dialog for changing the Username}{section.4.10}% 130
+\BOOKMARK [2][-]{subsection.4.10.18}{Module 18 - Initialising a dialog for changing the Password}{section.4.10}% 131
+\BOOKMARK [0][-]{chapter.5}{User Manual}{}% 132
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 133
+\BOOKMARK [1][-]{section.5.2}{Installation}{chapter.5}% 134
+\BOOKMARK [2][-]{subsection.5.2.1}{Prerequisite Installation}{section.5.2}% 135
+\BOOKMARK [2][-]{subsection.5.2.2}{System Installation}{section.5.2}% 136
+\BOOKMARK [2][-]{subsection.5.2.3}{Running the System}{section.5.2}% 137
+\BOOKMARK [1][-]{section.5.3}{Tutorial}{chapter.5}% 138
+\BOOKMARK [2][-]{subsection.5.3.1}{Introduction}{section.5.3}% 139
+\BOOKMARK [2][-]{subsection.5.3.2}{Assumptions}{section.5.3}% 140
+\BOOKMARK [2][-]{subsection.5.3.3}{Tutorial Questions}{section.5.3}% 141
+\BOOKMARK [2][-]{subsection.5.3.4}{Saving}{section.5.3}% 142
+\BOOKMARK [2][-]{subsection.5.3.5}{Limitations}{section.5.3}% 143
+\BOOKMARK [1][-]{section.5.4}{Error Recovery}{chapter.5}% 144
+\BOOKMARK [2][-]{subsection.5.4.1}{Error 1}{section.5.4}% 145
+\BOOKMARK [2][-]{subsection.5.4.2}{Error 2}{section.5.4}% 146
+\BOOKMARK [1][-]{section.5.5}{System Recovery}{chapter.5}% 147
+\BOOKMARK [2][-]{subsection.5.5.1}{Backing-up Data}{section.5.5}% 148
+\BOOKMARK [2][-]{subsection.5.5.2}{Restoring Data}{section.5.5}% 149
+\BOOKMARK [0][-]{chapter.6}{Evaluation}{}% 150
+\BOOKMARK [1][-]{section.6.1}{Customer Requirements}{chapter.6}% 151
+\BOOKMARK [2][-]{subsection.6.1.1}{Objective Evaluation}{section.6.1}% 152
+\BOOKMARK [1][-]{section.6.2}{Effectiveness}{chapter.6}% 153
+\BOOKMARK [2][-]{subsection.6.2.1}{Objective Evaluation}{section.6.2}% 154
+\BOOKMARK [1][-]{section.6.3}{Learnability}{chapter.6}% 155
+\BOOKMARK [1][-]{section.6.4}{Usability}{chapter.6}% 156
+\BOOKMARK [1][-]{section.6.5}{Maintainability}{chapter.6}% 157
+\BOOKMARK [1][-]{section.6.6}{Suggestions for Improvement}{chapter.6}% 158
+\BOOKMARK [1][-]{section.6.7}{End User Evidence}{chapter.6}% 159
+\BOOKMARK [2][-]{subsection.6.7.1}{Questionnaires}{section.6.7}% 160
+\BOOKMARK [2][-]{subsection.6.7.2}{Graphs}{section.6.7}% 161
+\BOOKMARK [2][-]{subsection.6.7.3}{Written Statements}{section.6.7}% 162

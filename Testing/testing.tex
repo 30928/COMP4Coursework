@@ -45,7 +45,7 @@
         1.3 & Testing the Log Out button on the Main Menu & This button links to the Login screen, where the user is required to log in again & Click the Log out button & Normal & The screen should switch to the log out screen & & \\ \hline
         1.4 & Testing the Search Database button on the Main Menu & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button & Normal & The program should open a new window consisting of the Search Database screen & & \\ \hline
         1.5 & Testing the Add Entry button on the Main Menu & This button should prompt a seperate interface to open and show the Add Entry screen & Click the Add Entry button & Normal & The program should open the Add Entry screen in a new window & & \\ \hline
-\rowcolor{gray} 1.6 (removed) & Testing the Edit Entry button from the Main Menu & This button links to the Editing screen & Click the Edit Entry button & Normal & The program should switch to the Editing screen from the Main Menu &  & \\ \hline
+        1.6 & Testing the Edit Entry button from the Main Menu & This button links to the Editing screen & Click the Edit Entry button & Normal & The program should switch to the Editing screen from the Main Menu &  & \\ \hline
         1.7 & Testing the Edit Entry button after an entry has been selected beforehand & These conditions should open the Edit Entry screen upon clicking Edit Entry, with data on the selected entry already filled in on the grid & Click on an entry, and then click Edit Entry & Normal & The program should open the Edit Entry screen in a new window & & \\ \hline
         1.8 & Testing the Remove Entry Button after an entry has been selected beforehand & These conditions should prompt the user for verification on deleting a selected customer record & Click on an entry and then click Remove Entry & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & & \\ \hline
         1.9 & Testing the Change Password Button on the Main Menu & This button prompts the Change Password window to open & Click the Change Password button & Normal & The program should open the Change Password window, with fields required to be filled in in order to change the password & & \\ \hline
@@ -84,16 +84,18 @@
 
 \subsection{Changes to Detailed Plan}
 
+The tests that have been removed are highlighted in gray. These were removed because they were not included in the sytem, The tests that were changed/added are highlighted in light gray.
 
 \begin{center}
     \begin{longtable}{|p{1.5cm}|p{2cm}|p{2.5cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test} & \textbf{Test Description} & \textbf{Test Data} & \textbf{Test Data Type (Normal/ Erroneous/ Boundary)} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Evidence}\\ \hline
-        1.1 & Test the Log in button on the log in screen & This should check whether the password and email match and exist in a record & Click the log in button & Normal & If the email and password match, the main menu should open, else the program should prompt the user with an error & Works as expected & Figure \ref{fig:LoginTestFail} on page \pageref{fig:LoginTestFail}, and Figure \ref{fig:LoginTest} on page \pageref{fig:LoginTest}. \\ \hline
+        1.1 & Test the Log in button on the log in screen & This should check whether the password and email match and exist in a record & Click the log in button & Normal & If the email and password match, the main menu should open, else the program should prompt the user with an error & Works as expected & Figure \ref{fig:LoginTestFail} on page \pageref{fig:LoginTestFail}, Figure \ref{fig:LoginTestSucceed} on page \pageref{fig:LoginTestSucceed} and Figure \ref{fig:LoginTestSucceed2} on page \pageref{fig:LoginTestSucceed2} . \\ \hline
         1.2 & Test the View button on the main menu & This button links the main menu to the view menu. & Click the View Button after selecting an author. & Normal & The program should open the View Menu in a new window, displaying the selected Customer's Books. & Works as expected & Figure \ref{fig:ViewButtonTest} on page \pageref{fig:ViewButtonTest} \\ \hline
         1.3 & Testing the Log Out button on the Main Menu & This button links to the Login screen, where the user is required to log in again & Click the Log out button & Normal & The screen should switch to the log out screen & Works as expected & \\ \hline
-        1.4 & Testing the Search Database button on the Main Menu & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button & Normal & The program should open a new window consisting of the Search Database screen & Works as expected & Figure \ref{fig:SearchDatbaseButtonTest} on page \pageref{fig:SearchDatbaseButtonTest} \\ \hline
+        1.4 & Testing the Search Database button on the Main Menu & This button should prompt a seperate interface to open, and show details which can be used to search for specific items in the database & Click the Search Database button & Normal & The program should open a new window consisting of the Search Database screen & Works as expected & Figure \ref{fig:SearchDatabaseButtonTest} on page \pageref{fig:SearchDatabaseButtonTest} \\ \hline
         1.5 & Testing the Add Entry button on the Main Menu & This button should prompt a seperate interface to open and show the Add Entry screen & Click the Add Entry button & Normal & The program should open the Add Entry screen in a new window & Works as expected & Figure \ref{fig:AddEntryButtonTest} on page \pageref{fig:AddEntryButtonTest} \\ \hline
+\rowcolor{gray} 1.6 & Testing the Edit Entry button from the Main Menu & This button links to the Editing screen & Click the Edit Entry button & Normal & The program should switch to the Editing screen from the Main Menu &  & \\ \hline
         1.7 & Testing the Update Entry button after an entry has been selected beforehand & These conditions should open the Update Entry screen upon clicking Update Entry, with data on the selected entry already filled in on the grid & Click on an entry, and then click Update Entry & Normal & The program should open the Update Entry screen in a new window & Works as expected & Figure \ref{fig:UpdateEntryButtonTest} on page \pageref{fig:UpdateEntryButtonTest} \\ \hline
         1.8 & Testing the Remove Entry Button after an entry has been selected beforehand & These conditions should prompt the user for verification on deleting a selected customer record & Click on an entry and then click Remove Entry & Normal & The program should open a Verification window, asking the user for confirmation and verification on removing the selected customer record & Works as expected & Figure \ref{fig:RemoveEntryButtonTest} on page \pageref{fig:RemoveEntryButtonTest} \\ \hline
 \rowcolor{lightgray} 1.9 & Testing the Change Password/Username Button on the Main Menu & This button prompts a window to open, with a set of buttons asking what the user wishes to changes & Click the Change Password/Username button & Normal & The program should open the Change Password/Username window, with buttons giving options of what is needed to be changed. & Works as expected & Figure \ref{fig:ChangeButtonTest} on page \pageref{fig:ChangeButtonTest} \\ \hline
@@ -116,7 +118,7 @@
 \rowcolor{lightgray} 1.26 & Testing the Cancel button on the Search window & This button should reject and close the window & Click the cancel button on the Search window & Normal & The program should reject the window and close it & Works as expected & \\ \hline
 \rowcolor{lightgray} 1.27 & Testing the Update book button on the View Menu & This button opens up a new window with entries already filled in with the selected book's data. & Select an entry then click Update book & Normal & The program should open a window for updating the entry, with the selected data already filled in the entry boxes & Works as expected & Figure \ref{fig:UpdateBookButtonTest} on page \pageref{fig:UpdateBookButtonTest} \\ \hline
 \rowcolor{lightgray} 2.1 & Verify that some criteria has been entered when using the search & Firstname and surname must be filled in, and if a different category has been selected, the final input box must also be filled in. & Author selected, Firstname and Surname entered. \newline Author Selected, boxes left blank \newline Publishing Invoice selected, Service selected, boxes filled with appropriate data \newline Publishing Invoice selected, No boxes filled. & Normal \newline Erroneous \newline Normal \newline Erroneous & Accept \newline Error \newline Accept \newline Error & Works as expected & Figure \ref{fig:SearchValidation} on page \pageref{fig:SearchValidation} \\ \hline
-\rowcolor{gray} 2.2 (removed) & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com \newline helloworld \newline test \newline @testmail.com \newline test.com@testmail & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
+\rowcolor{gray} 2.2 & Verify that a valid email has been entered on the log in screen &  The program will prompt the user telling them they have inputted an error & test@testmail.com \newline helloworld \newline test \newline @testmail.com \newline test.com@testmail & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & & \\ \hline
         2.3 & Verify that a valid Firstname has been entered when adding an entry & The user will be prompted with an error & John \newline Jo hn \newline Jo?hn \newline Jo2n & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & Works as expected - User is unable to enter 'Jo?hn', 'Jo hn' or 'Jo2n' & Figure \ref{fig:AddEntryValidation} on page \pageref{fig:AddEntryValidation} \\ \hline
         2.4 & Verify that a valid Lastname has been entered when adding an entry & The user will be prompted with an error & Smith \newline Sm ith \newline Smi?th \newline Smi1th & Normal \newline Erroneous \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error \newline Error & Works as expected - User is unable to enter 'Sm ith', 'Smi?th', or 'Smi1th'. & Figure \ref{fig:AddEntryValidation} on page \pageref{fig:AddEntryValidation} \\ \hline
         2.5 & Verify that a valid Phonenumber has been entered when adding an entry & The user will be prompted with an error & 07123456789 \newline 07123123.3 \newline 071CO2 & Normal \newline Erroneous \newline Erroneous & Accept \newline Error \newline Error & Works as expected - User is unable to enter '07123123.3' or '071CO2' & Figure \ref{fig:AddEntryValidation} on page \pageref{fig:AddEntryValidation} \\ \hline
@@ -293,6 +295,10 @@ The data is shown in the previous table.
     \caption{Test 2.3, 2.4, 2.5, 2.6}  \label{fig:AddEntryValidation}
 \end{figure}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series2/InvalidAddress.png}
+    \caption{Test 2.6}  \label{fig:InvalidAddress}
+\end{figure}
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{./Testing/Evidence/Series2/ISBNRejection.png}
@@ -333,8 +339,8 @@ The data is shown in the previous table.
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Testing/Evidence/Series3/PrintcostValidation.png}
-    \caption{Test 3.4}  \label{fig:PrintcostValidation}
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series3/PrintCostValidation.png}
+    \caption{Test 3.4}  \label{fig:PrintCostValidation}
 \end{figure}
 
 \begin{figure}[H]
@@ -404,8 +410,8 @@ The data is shown in the previous table.
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/DeleteRoyaltiesItemsDataTest.png}
-    \caption{Test 4.12}  \label{fig:DeleteRoyaltiesItemsDataTest}
+    \includegraphics[width=\textwidth]{./Testing/Evidence/Series4/DeleteRoyaltyItemsDataTest.png}
+    \caption{Test 4.12}  \label{fig:DeleteRoyaltyItemsDataTest}
 \end{figure}
 
 \begin{figure}[H]
@@ -430,7 +436,7 @@ I have chosen to use a range of testing strategies. For instance, series 1 of of
 
 I encountered a few minor problems whilst testing my program.
 
-\underline{Tests 2.9 and 2.10:}
+\underline{Tests 2.9 and 2.10:, Figures \ref{fig:BookInvoiceDiscountValidation} and \ref{fig:RoyaltyDiscountValidation} on pages \pageref{fig:BookInvoiceDiscountValidation} and \pageref{fig:RoyaltyDiscountValidation} respectively}
 
 These tests encountered a minor problem, where if the user were to enter an invalid value for an entry, proceed to calculate using their inputs and confirm that they wish to add it to the database, the user would be correctly prompted with an error. However, upon dismissing the error, the window that they were using to add data to the database would close, forcing them to reopen the window and start entering data again. I have a vague idea of where the problem is,  but as it isn't a serious problem for the user, this will be considered as an area for future updates. 
 

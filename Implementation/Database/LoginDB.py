@@ -11,9 +11,8 @@ class dbLogin(QMainWindow):
     """db for login"""
 
     def __init__(self):
-        #self.initSplashScreen()
+        self.initSplashScreen()
         self.initDetails()
-        self.details = ("Username", "Password")
         if self.details == ("Username", "Password"):
             self.customer_table()
             self.book_table()
