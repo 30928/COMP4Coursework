@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  6 MAR 2015 22:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  12 MAR 2015 01:07
 entering extended mode
 **C:/Users/Imran*Rahman/Documents/Year*13/Computing/COMP4Coursework/coursework.
 tex
@@ -685,7 +685,11 @@ LaTeX Warning: Label `ER_Diagram.pdf' multiply defined.
 
 )
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\COMP4Coursework\Manual\manu
-al.aux")
+al.aux"
+
+LaTeX Warning: Label `fig:BrowseFile' multiply defined.
+
+)
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\COMP4Coursework\Evaluation\
 evaluation.aux"))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -13039,20 +13043,148 @@ ion\Database\ChangePassword.py" [318] [319]) [320])
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\COMP4Coursework\Manual\manu
 al.tex"
 Chapter 5.
-) [321
+[321
 
 
 
 
-]
-Overfull \vbox (248.63841pt too high) has occurred while \output is active []
+] <./Manual/Installation/MyComputer.png, id=6842, 55.70813pt x 73.77562pt>
+File: ./Manual/Installation/MyComputer.png Graphic file (type png)
 
+<use ./Manual/Installation/MyComputer.png>
+Package pdftex.def Info: ./Manual/Installation/MyComputer.png used on input lin
+e 33.
+(pdftex.def)             Requested size: 345.0pt x 457.05952pt.
+ [322]
+<./Manual/Installation/OpenCDR.png, id=6847, 590.205pt x 444.91219pt>
+File: ./Manual/Installation/OpenCDR.png Graphic file (type png)
 
-[322]
+<use ./Manual/Installation/OpenCDR.png>
+Package pdftex.def Info: ./Manual/Installation/OpenCDR.png used on input line 3
+9.
+(pdftex.def)             Requested size: 345.0pt x 260.0723pt.
+ [323 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/MyComputer.png>]
+<./Manual/Installation/Install.png, id=6852, 517.18219pt x 446.41782pt>
+File: ./Manual/Installation/Install.png Graphic file (type png)
+
+<use ./Manual/Installation/Install.png>
+Package pdftex.def Info: ./Manual/Installation/Install.png used on input line 4
+5.
+(pdftex.def)             Requested size: 345.0pt x 297.80414pt.
+ [324 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/OpenCDR.png>]
+<./Manual/Installation/PrepareInstall.png, id=6859, 307.1475pt x 121.20282pt>
+File: ./Manual/Installation/PrepareInstall.png Graphic file (type png)
+
+<use ./Manual/Installation/PrepareInstall.png>
+Package pdftex.def Info: ./Manual/Installation/PrepareInstall.png used on input
+ line 51.
+(pdftex.def)             Requested size: 345.0pt x 136.14754pt.
+
+<./Manual/Installation/Setup.png, id=6860, 383.18156pt x 330.48468pt>
+File: ./Manual/Installation/Setup.png Graphic file (type png)
+
+<use ./Manual/Installation/Setup.png>
+Package pdftex.def Info: ./Manual/Installation/Setup.png used on input line 55.
+
+(pdftex.def)             Requested size: 345.0pt x 297.56961pt.
+ [325 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/Install.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing/C
+OMP4Coursework/Manual/Installation/PrepareInstall.png>]
+<./Manual/Installation/Setup2.png, id=6866, 383.18156pt x 330.48468pt>
+File: ./Manual/Installation/Setup2.png Graphic file (type png)
+
+<use ./Manual/Installation/Setup2.png>
+Package pdftex.def Info: ./Manual/Installation/Setup2.png used on input line 59
+.
+(pdftex.def)             Requested size: 345.0pt x 297.56961pt.
+ [326 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/Setup.png>]
+<./Manual/Installation/PleaseWaitScreen.png, id=6872, 383.18156pt x 330.48468pt
+>
+File: ./Manual/Installation/PleaseWaitScreen.png Graphic file (type png)
+ <use ./Manual/Installation/PleaseWaitScreen.png>
+Package pdftex.def Info: ./Manual/Installation/PleaseWaitScreen.png used on inp
+ut line 65.
+(pdftex.def)             Requested size: 345.0pt x 297.56961pt.
+ [327 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/Setup2.png>]
+<./Manual/Installation/Permission.png, id=6877, 45.16875pt x 30.1125pt>
+File: ./Manual/Installation/Permission.png Graphic file (type png)
+
+<use ./Manual/Installation/Permission.png>
+Package pdftex.def Info: ./Manual/Installation/Permission.png used on input lin
+e 71.
+(pdftex.def)             Requested size: 345.0pt x 230.06293pt.
+ [328 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/PleaseWaitScreen.png>]
+<./Manual/Installation/Installing.png, id=6882, 383.18156pt x 330.48468pt>
+File: ./Manual/Installation/Installing.png Graphic file (type png)
+
+<use ./Manual/Installation/Installing.png>
+Package pdftex.def Info: ./Manual/Installation/Installing.png used on input lin
+e 78.
+(pdftex.def)             Requested size: 345.0pt x 297.56961pt.
+ [329pdfTeX warning (ext4): destination with the same identifier (name{figure.5
+.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.80 
+      <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/Permission.png>]
+<./Manual/Installation/Installed.png, id=6888, 383.18156pt x 330.48468pt>
+File: ./Manual/Installation/Installed.png Graphic file (type png)
+
+<use ./Manual/Installation/Installed.png>
+Package pdftex.def Info: ./Manual/Installation/Installed.png used on input line
+ 82.
+(pdftex.def)             Requested size: 345.0pt x 297.56961pt.
+ [330 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/Installing.png>]
+<./Manual/Installation/Shortcut.png, id=6894, 393.72093pt x 264.23718pt>
+File: ./Manual/Installation/Shortcut.png Graphic file (type png)
+
+<use ./Manual/Installation/Shortcut.png>
+Package pdftex.def Info: ./Manual/Installation/Shortcut.png used on input line 
+93.
+(pdftex.def)             Requested size: 345.0pt x 231.53757pt.
+ [331 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/Installed.png>]
+<./Manual/Installation/CreateShortcut.png, id=6899, 472.76625pt x 350.81062pt>
+File: ./Manual/Installation/CreateShortcut.png Graphic file (type png)
+
+<use ./Manual/Installation/CreateShortcut.png>
+Package pdftex.def Info: ./Manual/Installation/CreateShortcut.png used on input
+ line 97.
+(pdftex.def)             Requested size: 345.0pt x 256.00932pt.
+
+<./Manual/Installation/BrowseFile.png, id=6901, 251.43938pt x 246.1697pt>
+File: ./Manual/Installation/BrowseFile.png Graphic file (type png)
+
+<use ./Manual/Installation/BrowseFile.png>
+Package pdftex.def Info: ./Manual/Installation/BrowseFile.png used on input lin
+e 103.
+(pdftex.def)             Requested size: 345.0pt x 337.7688pt.
+ [332 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/Shortcut.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing/
+COMP4Coursework/Manual/Installation/CreateShortcut.png>]
+<./Manual/Installation/NameShortcut.png, id=6906, 472.76625pt x 350.81062pt>
+File: ./Manual/Installation/NameShortcut.png Graphic file (type png)
+
+<use ./Manual/Installation/NameShortcut.png>
+Package pdftex.def Info: ./Manual/Installation/NameShortcut.png used on input l
+ine 110.
+(pdftex.def)             Requested size: 345.0pt x 256.00932pt.
+ [333 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
+/Installation/BrowseFile.png>])
+[334 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual/
+Installation/NameShortcut.png>] [335]
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\COMP4Coursework\Evaluation\
 evaluation.tex"
 Chapter 6.
-) [323
+) [336
 
 
 
@@ -13060,7 +13192,7 @@ Chapter 6.
 Overfull \vbox (6.61086pt too high) has occurred while \output is active []
 
 
-[324]
+[337]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 17.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 17.
 
@@ -13089,10 +13221,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 17.
  ) 
 Here is how much of TeX's memory you used:
- 17482 strings out of 493921
- 294136 string characters out of 3144855
- 408337 words of memory out of 3000000
- 15731 multiletter control sequences out of 15000+200000
+ 17565 strings out of 493921
+ 296723 string characters out of 3144855
+ 408391 words of memory out of 3000000
+ 15788 multiletter control sequences out of 15000+200000
  12483 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  40i,12n,45p,1577b,2522s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -13121,9 +13253,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX
 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmu10.pfb>
-Output written on coursework.pdf (325 pages, 5440370 bytes).
+Output written on coursework.pdf (338 pages, 5594771 bytes).
 PDF statistics:
- 7811 PDF objects out of 8907 (max. 8388607)
- 4423 named destinations out of 5155 (max. 500000)
- 1937 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7883 PDF objects out of 8907 (max. 8388607)
+ 4434 named destinations out of 5155 (max. 500000)
+ 2007 words of extra memory for PDF output out of 10000 (max. 10000000)
 
