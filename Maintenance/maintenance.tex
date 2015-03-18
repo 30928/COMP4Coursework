@@ -11,7 +11,7 @@ I have used the following software in the creation of my system:
     \item IDLE
     \item PyQt4
     \item SQLite 3
-    \item cx_Freeze
+    \item cx\_Freeze
     \item SQLite Inspector
 \end{itemize}
 
@@ -45,7 +45,7 @@ SQLite 3:
 \end{itemize}
 
 
-cx_Freeze:
+cx\_Freeze:
 \begin{itemize}
     \item Makes an executable file of my system
     \item I'm now able to distribute my python scripts where needed
@@ -60,8 +60,6 @@ SQLite Inspector:
 
 
 \subsection{Features Used}
-
-
 
 Python 3.4:
 \begin{itemize}
@@ -88,7 +86,7 @@ SQLite 3:
     \item Helped to impose referential integrity
 \end{itemize}
 
-cx_Freeze:
+cx\_Freeze:
 \begin{itemize}
     \item Allowed me to create an executable file for my system
     \item Creating an executable file meant that the client would not need to install all required packages
@@ -102,8 +100,6 @@ SQLite Inspector:
 \end{itemize}
 
 
-
-
 \section{System Overview}
 
 \subsection{Main window}
@@ -112,23 +108,23 @@ The main window consists of a table, including data about all the company's cust
 
 \subsection{Adding Entries}
 
-The user is able to add entries for each entity, dependent on where in the interface they had clicked "Add Entry". On the main menu, the user can add a customer. A dialog opens upon clicking the button, displaying a table with the details required as column headers. If "Add Entry" is clicked elsewhere in the interface, the user is presented with a dialog, where a number of line edits are displayed, variant on how many attributes of the entity are required to be entered. On all of these windows, are a confirm and cancel button, to  validate and add the entries and to cancel and close the window respectively. When adding a Book, Publishing Invoice, Book Invoice or a Royalty Payment, one of the line edits will have a date button, where a calendar opens upon clicking it. Here, the user can select a date to enter into the line edit, to complete the entry to the database.
+The user is able to add entries for each entity, dependent on where in the interface they had clicked "Add Entry". On the main menu, the user can add a customer. A dialog opens upon clicking the button, displaying a table with the details required as column headers. If "Add Entry" is clicked elsewhere in the interface, the user is presented with a dialog, where a number of line edits are displayed, variant on how many attributes of the entity are required to be entered. On all of these windows, are a confirm and cancel button, to  validate and add the entries and to cancel and close the window respectively. When adding a Book, Publishing Invoice, Book Invoice or a Royalty Payment, one of the line edits will have a date button, where a calendar opens upon clicking it. Here, the user can select a date to enter into the line edit, to complete the entry to the database. I utilised the regular expression module in order to be able to set a validator on line edits used in the dialogs for adding entries, so that when the user enters data, they will be limited to only be able to type in certain characters that are accepted by the regular expression.
 
 \subsection{Updating Entries}
 
-The user is able to update or delete entries for each entity. If the user has chosen to update a customer entry, the user will be presented with a dialog with a table, similar to when adding a customer entry. The table will be filled in with the selected customer's details. The user then selects a field, and clicks edit, and a new dialog opens asking the user to type in their new entry for the selected field. Once finished, the user can click confirm in order to verify their username and password to confirm changes. If the user is updating a different entity, the user is presented with a dialog with a number of line edits, similar to when adding an entry elsewhere in the interface. However, the line edits will be filled with the data which was selected by the user, and the user can freely edit data where desired. Upon clicking confirm, the user is required to type in their username and password to confirm the update. If the user wishes to update the ISBN of a book, which is the only primary key which can be edited, system will automatically update the ISBN in all parts of the system where it is used as a foreign key.
+The user is able to update or delete entries for each entity. If the user has chosen to update a customer entry, the user will be presented with a dialog with a table, similar to when adding a customer entry. The table will be filled in with the selected customer's details. The user then selects a field, and clicks edit, and a new dialog opens asking the user to type in their new entry for the selected field. Once finished, the user can click confirm in order to verify their username and password to confirm changes. If the user is updating a different entity, the user is presented with a dialog with a number of line edits, similar to when adding an entry elsewhere in the interface. However, the line edits will be filled with the data which was selected by the user, and the user can freely edit data where desired. Upon clicking confirm, the user is required to type in their username and password to confirm the update. If the user wishes to update the ISBN of a book, which is the only primary key which can be edited, system will automatically update the ISBN in all parts of the system where it is used as a foreign key. Similar to Adding Entries, I utilised the regular expression module in order to also be able to set a validator on line edits used in the dialogs for editing entries, so that when the user enters data, they will be limited to only be able to type in certain characters that are accepted by the regular expression.
 
 \subsection{Deleting Entries}
 
-The user can select an entry and click "Delete Entry", when they wish to delete a certain entry. When deleting a customer entry, all data about the customer is deleted with it, but a username and password is required from the user to verify the action. If the user wishes to delete a different entity, the user must navigate to where the data is, select it and click delete. The user will be asked for their username and password. However, if the data cannot be deleted due to the enforced referential integrity, the user will be prompted with an error, and will be told what to delete first in order to delete the entry.
+The user can select an entry and click "Delete Entry", when they wish to delete a certain entry. When deleting a customer entry, all data about the customer is deleted with it, but a username and password is required from the user to verify the action. If the user wishes to delete a different from an entity, the user must navigate to where the data is, select it and click delete. The user will be asked for their username and password. However, if the data cannot be deleted due to the enforced referential integrity, the user will be prompted with an error via a message box, and will be told what to delete first in order to delete the entry in order to maintain referential integrity.
 
 \subsection{Calculations}
 
-Upon addition of Royalty/Book Invoice Items, calculations are conducted to find the print cost, and full payments. The print cost is calculated by using the company's standard printing prices, which depends on the attributes of the book, such as whether it is hard back or paper back. The print cost is used with the entered quantity and wholesale price to calculate the payment for that set of items. The items are totalled for the full invoice/royalty payment. If a book is updated, any of it's attributes which determine the print cost could have changed, therefore the calculations are reconducted.
+Upon addition of Royalty/Book Invoice Items, calculations are conducted to find the print cost, and full payments. The print cost is calculated by using the company's standard printing prices, which depends on the attributes of the book, such as whether it is hard back or paper back. These values are fetched using SQL statements so that all data required for calculations is collected before commencing the calculations. The print cost is used with the entered quantity and wholesale price to calculate the payment for that set of items. The items are totalled for the full invoice/royalty payment using arithmetic functions in the system. If a book is updated, any of its attributes which determine the print cost could have been changed, therefore the calculations are reconducted.
 
 \subsection{Detailed Searches}
 
-The user has the option to click "Search database" on the main menu to open up a window for filling in and selecting criteria for a search. The user enters the firstname and surname of the author, and then selects which entity to search for and which category to search. The user then enters the values where required, and they click confirm to validate their entries and conduct the search. The results will show in the main window table, where the user can freely see them. If there aren't any matching searches, the user is prompted with a dialog box.
+The user has the option to click "Search database" on the main menu to open up a dialog window for filling in and selecting criteria for a search. The user enters the firstname and surname of the author, and then selects from the first combo box which entity to search for and the second combo box which category to search. The user then enters the values where required, and they click confirm which is connected to a function which validates their entries and conduct the search. The results will show in the main window table widget, where the layout index has been changed with the use of a stacked layout. The user can then freely see them. If there aren't any matching searches, the user is prompted with a dialog box.
 
 \section{Code Structure}
 
@@ -148,11 +144,48 @@ Lines 262-344 of Module 2, subsection \ref{ssec:MainMenu.py}. Removing a selecte
 This is a function because it needs to be called whenever the user wishes to delete in entry. Dependent on the table that has been selected from, the appropriate ID is retrieved, and is used to delete that entry. The function keeps referential integrity, and the function informs the user what is needed to be deleted in order to delete what they had desired to delete. This can be seen in line 81 of the function.
 
 \subsection{Function - Generating an update window}
-Lines 571-675 of Module 2, subsection \ref{ssec:MainMenu.py}. Generating and update window after having selected an entry.
+Lines 571-675 of Module 2, subsection \ref{ssec:MainMenu.py}. Generating an update window after having selected an entry.
 \begin{tiny}
 \pythonfile[firstline=571,lastline=675]{./Implementation/Database/MainMenu.py}
 \end{tiny}
 This uses the basis of the add entry layout to create an update entry layout, as the required layout is using the feature of adding entries, but filling in the data in the appropriate line edits. Depending on the entity which the user is updating in, an SQL statement is defined to fetch the data that has been selected using the selected row to find the primary key. After fetching the data, it instantiates the class and sets the values as an attribute of the window, so that the window can display the values in the respective line edits.
+
+\subsection{Function - Updating an Item}
+Lines 697-787 of Module 2, subsection \ref{ssec:MainMenu.py}. Updating a selected item with the entries receieved.
+\begin{tiny}
+\pythonfile[firstline=697,lastline=787]{./Implementation/Database/MainMenu.py}
+\end{tiny}
+This Function is called whenever the user has entered the correct password to confirm that they wish to commit the given updates. The ID of the item used is fetched so that it can be referenced when committing the update. Lines 49-56 of the function accummulate a list, consisting of the validated updates that the user wishes to commit.
+
+\subsection{Function - Creating a Table Widget}
+Lines 13-32 of Module 5, subsection \ref{ssec:TableWidget.py}. Creating a table widget and fetching data to display in it.
+\begin{tiny}
+\pythonfile[firstline=13,lastline=32]{./Implementation/Database/TableWidget.py}
+\end{tiny}
+This has been made as a function so that it can be called whenever I need to generate a new table in my system. Using a given SQL statement which has been passed into this function, the table finds the column names in lines 9-10 of the function. The SQL statement is passed through this way so that this table can be used for all select statements which are fetching data from the database. The horizontal header labels of the table widget are then set in line 15 of the function. After this, the results are placed into the correct cells in the table in lines 16-19 of the function. This has also been made in a seperate module so that they can be instantiated when it is needed for another layout.
+
+\subsection{Function - Quick Search}
+Lines 915-930 of Module 2, subsection \ref{ssec:MainMenu.py}. Conducting a customer search using user inputs.
+\begin{tiny}
+\pythonfile[firstline=915,lastline=930]{./Implementation/Database/MainMenu.py}
+\end{tiny}
+This function takes the user input and splits the string wherever a space is found. This is because if the user has entered a firstname and a lastname, the system will be able to identify this through splitting the string where a space is found, so that once the splitted values are put into a list, the system can check how long the list is to determine whether a firstname and a lastname were entered, or just a firstname was entered. Lines 7-11 of the function show a set of selection statements that are used to check the length of the newly created list to determine this. The iteration on line 12 make the first splitted section of the string into a firstname, and the rest of the string is combined into a lastname. After the string has been determined as a firstname/lastname, or both, an SQL statement is created and passed through the table widget function so that a table is initiated in the main window with the results of the search.
+
+
+\subsection{Modules - View Window and Search Results Window.}
+Modules 8, subsection \ref{ssec:ViewWindow.py}. Creating the layout for displaying books of a customer.
+\begin{tiny}
+\pythonfile[firstline=1]{./Implementation/Database/ViewWindow.py}
+\end{tiny}
+
+Module 15, subsection \ref{ssec:SearchResults.py}. Creating the layout for displaying search results.
+\begin{tiny}
+\pythonfile[firstline=1]{./Implementation/Database/SearchResults.py}
+\end{tiny}
+
+These modules are designed to be instantiated by the main program, and then added to a stacked layout. These are made as seperate modules to the main program so that the layouts can be clearly created. These are also placed in a stacked layout so that they can be indexed when they are needed, as opposed to having to reinstantiating them when necessary.
+
+
 
 \section{Variable Listing}
 
@@ -179,6 +212,12 @@ The data dictionary can be found in the Design Section \ref{ssec:DesignDataDicti
     self.ISBNDeletion & Used to delete certain Royalty Items and Invoice Items when deleting all of a customer's records. & Module 2: Line 241, 242, 243, 245 \\ \hline
     self.Results & Holds relevant ID numbers of search results & Module 2: Line 946, 949, 951, 959, 974, 977, 979, 988, 991, 993, 1003, 1016, 1026 \newline Module 14: Line 13 \\ \hline
     self.SelectedRow & Used to find the row of the table that has been selected. & Module 2: Line 223, 226, 228, 229, 271, 272, 278, 280, 287, 289, 296, 298, 304, 306, 312, 314, 349, 350, 351, 352, 548, 549 \\ \hline
+    self.Quantity & Used to hold the value for the book invoice/royalty quantity & Module 2: 479, 484, 495, 519, 524, 527 \newline Module 12: Line 100, 105, 165, 184 \\ \hline
+    self.Discount & Used to hold the value for the book invoice discount & Module 2: Line 480, 485, 496, 497 \newline Module 12: Line 101, 106, 107 \\ \hline
+    self.ShippingPrice & Used to hold the value for the shipping price & Module 2: Line 475, 486, 498 \newline Module 12: Line 102, 108 \\ \hline
+    self.Price & Used to hold the value for the book price & Module 2: Line 492, 495 \newline Module 12: Line 103, 105 \\ \hline
+    self.TempPayment & Used to hold the value for the payment which would accumulate during calculations & Module 12: Line 105, 106, 107, 108, 110, 186, 189, 190 \\ \hline
+    self.BookInvoicePayment & Used to hold the value for the full book invoice payment & Module 12: Line 
     \hline
 \end{tabular}
 \end{center}
@@ -735,7 +774,6 @@ Fetching the existing book invoice items details of the selected book invoice it
 \pythonfile[firstline=643, lastline=643]{./Implementation/Database/MainMenu.py}
 \end{tiny}
 Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 643.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%python line still sticks out
 
 \
 
@@ -872,20 +910,32 @@ A minor problem was encountered during the testing, where if the user entered an
 
 \subsection{Difficult Sections}
 
+\subsubsection{Calculating the Full Book Invoice Payment}
 The following function from Module 12, subsection \ref{ssec:Items.py}, calculates the full payment for all the book invoice items in a single invoice.
 \begin{tiny}
 \pythonfile[firstline=63, lastline=123]{./Implementation/Database/Items.py}
 \end{tiny} 
-Lines 74 to 80 find the biggest ID no., so that the program can loop through each item ID, accummalating the total payment for each ID of each item that is in the invoice. Line 92 defines the sql statement to fetch all the necessary data to conduct the calculations. Then, upto line 110, the program is checking whether the set of items is in the invoice, and then calculates the payment. The payment for the single set items is then added on to the current total, which starts at £0. Lines 119-123 format the full final payment into a string, and update the payment in the invoice entry with the newly calculated payment.
+Lines 12 to 18 of the extract find the biggest ID no., so that the program can loop through each item ID, accummalating the total payment for each ID of each item that is in the invoice. Line 30 defines the sql statement to fetch all the necessary data to conduct the calculations. Then, upto line 48, the program is checking whether the set of items is in the invoice, and then calculates the payment. The payment for the single set items is then added on to the current total, which starts at £0. Lines 119-123 format the full final payment into a string, and update the payment in the invoice entry with the newly calculated payment.
 
+
+\subsubsection{Calculating the Full Royalty Payment}
 The following function from Module 12, subsection \ref{ssec:Items.py}, calculates the full payment for all the royalty items in a single payment.
 \begin{tiny}
 \pythonfile[firstline=125, lastline=202]{./Implementation/Database/Items.py}
 \end{tiny}
-Lines 139 to 143 find the biggest ID no., so that the program can loop through each item ID, accummalating the total payment for each ID of each item that is in the royalty payment. Line 154 defines the sql statement to fetch all the necessary data to conduct the calculations. Then, upto line 110, the program is checking whether the set of items is in the invoice, and then calculates the payment, starting with the print cost in lines 171-184. The payment for the single set items is then added on to the current total, which starts at £0. Lines 198-202 format the full final payment into a string, and update the payment in the royalty entry with the newly calculated payment.
+Lines 15 to 19 find the biggest ID no., so that the program can loop through each item ID, accummalating the total payment for each ID of each item that is in the royalty payment. Line 30 defines the sql statement to fetch all the necessary data to conduct the calculations. Then, upto line 66, the program is checking whether the set of items is in the invoice, and then calculates the payment, starting with the print cost in lines 47-60. The payment for the single set items is then added on to the current total, which starts at £0. Lines 74-78 format the full final payment into a string, and update the payment in the royalty entry with the newly calculated payment.
+
+
+\subsubsection{Emailing the User their Login Credentials}
+Lines 165-183 of Module 1, subsection \ref{ssec:LoginDB.py}.
+\begin{tiny}
+\pythonfile[firstline=165, lastline=183]{./Implementation/Database/LoginDB.py}
+\end{tiny}
+This extract of Module 1 uses the SMTP server to create and send an email to the user containing their forgotten password. The sender, recipient of the email are defined in lines 1 and 2 of the extract. The system then logs the email in to the server using the email and password of the customer service email used to send to the user. The contents of the email are defined in lines 9-11 of the extract. In line 12 of the extract, the Email is sent to the user.
 
 \subsection{Self-created Algorithms}
 
+\subsubsection{Calculations upon interaction with the book invoice items}
 I have created the following algorithm to calculate the book invoice item payment when adding/updating a book invoice item.
 Lines 476-498 of Module 2, subsection \ref{ssec:MainMenu.py}.
 \begin{tiny}
@@ -893,6 +943,8 @@ Lines 476-498 of Module 2, subsection \ref{ssec:MainMenu.py}.
 \end{tiny}
 This extract of Module 2 retrieves the entered Quantity, Discount, Shipping Price and ISBN from the window. The function goes on to fetch the price of the book from the database. Using the retrieved values, the calculations are conducted and the Invoice item payment is found.
 
+
+\subsubsection{Calculations upon interaction with the Royalty items}
 I have created the following algorithm to calculate the royalty item payment when adding/updating a royalty item.
 Lines 514-529 of Module 2, subsection \ref{ssec:MainMenu.py}.
 \begin{tiny}
@@ -902,7 +954,7 @@ This extract of Module 2 retrieves the entered Currency, Wholesale price, Quanti
 
 \section{Settings}
 
-In order for my program to function properly, Python 3.4, SQLite3 and PyQt4 must be installed on the machine being used.
+In order to be able to run my program, the system itself must be installed on to the machine being used. Installation of the packages are not required as installing the system creates an executable file which does not require the packages to have been installed beforehand. 
 
 \section{Acknowledgements}
 The following pieces of code used regular expressions which were found on www.regexlib.com.
@@ -911,12 +963,16 @@ The following pieces of code used regular expressions which were found on www.re
 \end{tiny}
 (Used in line 31 of Module 6, subsection \ref{ssec:AddEntryWindow.py})
 
+I used this regular expression to validate the entry of emails. The user would not be able to enter values that did not follow the expression.
+
 \
 
 \begin{tiny}
 \pythonfile[firstline=32, lastline=33]{./Implementation/Database/AddEntryWindow.py}
 \end{tiny}
 (Used in lines 32-33 of Module 6, subsection \ref{ssec:AddEntryWindow.py})
+
+I used this regular expression to validate the entry of phone numbers.
 
 \
 
@@ -925,12 +981,16 @@ The following pieces of code used regular expressions which were found on www.re
 \end{tiny}
 (Used in line 36 of Module 6, subsection \ref{ssec:AddEntryWindow.py})
 
+I used this regular expression to validate the entry of postcodes.
+
 \
 
 \begin{tiny}
 \pythonfile[firstline=17, lastline=18]{./Implementation/Database/ChangeUsername.py} 
 \end{tiny}
 (Used in lines 17-18 of Module 17, subsection \ref{ssec:ChangeUsername.py})
+
+I used this regular expression to validate the entry of emails.
 
 \
 
@@ -939,10 +999,10 @@ The Calendar Widget, (Module 10, on page \ref{ssec:CalendarWidget.py}) was reimp
 \pythonfile[firstline=1]{./Implementation/Database/CalendarWidget.py} 
 \end{tiny}
 
-\section{Code Listing}
 \begin{landscape}
+\section{Code Listing}
 \begin{scriptsize}
-%include as many subsections as you have modules
+
 \subsection{Module 1 - Login Window and Database Creation} \label{ssec:LoginDB.py}
 
 \pythonfile[firstline=1]{./Implementation/Database/LoginDB.py}
@@ -973,7 +1033,7 @@ The Calendar Widget, (Module 10, on page \ref{ssec:CalendarWidget.py}) was reimp
 
 \subsection{Module 8 - Initialising View Menu Layout}
 
-\pythonfile[firstline=1]{./Implementation/Database/ViewWindow.py}
+\pythonfile[firstline=1]{./Implementation/Database/ViewWindow.py} \label{ssec:ViewWindow.py}
 
 \subsection{Module 9 - Initialising Add Entry Window for non-customer entries}
 
@@ -1001,7 +1061,7 @@ The Calendar Widget, (Module 10, on page \ref{ssec:CalendarWidget.py}) was reimp
 
 \subsection{Module 15 - Creating a layout for displaying Search Results in the Main Window}
 
-\pythonfile[firstline=1]{./Implementation/Database/SearchResults.py}
+\pythonfile[firstline=1]{./Implementation/Database/SearchResults.py} \label{ssec:SearchResults.py}
 
 \subsection{Module 16 - Creating a dialog for the User to choose to change Username or Password}
 
