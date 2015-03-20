@@ -316,7 +316,6 @@ class MainWindow(QMainWindow):
             self.ConfirmDialog.Msg = "Are you sure you want to delete this Item?"
             self.ConfirmDialog.ConfirmedMsg = "Item was successfully deleted"
         self.ConfirmDialog.Prevention = True #deletion may be prevented if integrity error occurs
-        
         if self.SelectedRow != -1:
             self.ConfirmDialog.VerifyDlg() #verification
             try:

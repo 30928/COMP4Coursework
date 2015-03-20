@@ -139,9 +139,9 @@ This is needed to be a function because it can be repeatedly called, whenever th
 \subsection{Function - Removing an Item}
 Lines 262-344 of Module 2, subsection \ref{ssec:MainMenu.py}. Removing a selected Item.
 \begin{tiny}
-\pythonfile[firstline=252,lastline=344]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=262,lastline=344]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-This is a function because it needs to be called whenever the user wishes to delete in entry. Dependent on the table that has been selected from, the appropriate ID is retrieved, and is used to delete that entry. The function keeps referential integrity, and the function informs the user what is needed to be deleted in order to delete what they had desired to delete. This can be seen in line 81 of the function.
+This is a function because it needs to be called whenever the user wishes to delete in entry. Dependent on the table that has been selected from, the appropriate ID is retrieved, and is used to delete that entry. The function keeps referential integrity, and the function informs the user what is needed to be deleted in order to delete what they had desired to delete. This can be seen in line 71 of the function.
 
 \subsection{Function - Generating an update window}
 Lines 571-675 of Module 2, subsection \ref{ssec:MainMenu.py}. Generating an update window after having selected an entry.
@@ -230,17 +230,19 @@ The data dictionary can be found in the Design Section \ref{ssec:DesignDataDicti
     self.WholesalePrice & Used to hold the value for the wholesale price & Module 2: Line 518, 523, 527 \\ \hline
     self.NetSales & Used to hold the value for the net sales figure & Module 2: Line 204, 527, 528, 533, 539, 750 \newline Module 12: Line 164, 186 \\ \hline
     self.RoyaltyItem-Payment & Used to hold the calculated payment value for the individual item payment & Module 2: Line 528, 529, 532, 538 \\ \hline
-    \hline     
+    self.Size & Used to hold the value for the size of the book, so that a price could be calculated dependent on the cost of the size. & Module 9: Line 129, 132, 139 \newline Module 12: Line 167, 171, 177 \\  \hline
+    self.Back & Used to hold the value for the back type of the book in order to determine a price using the cost of the back & Module 9: 130, 134, 136, 141, 143 \newline Module 12: 169, 173, 175, 179, 181 \\ \hline
+    self.CoverPrice & Used to hold the value for the cover price, used to calculate the print cost & Module 9: Line 135, 137, 142, 144, 341 \newline Module 12: Line 174, 176, 180, 182, 184 \\ \hline
+    \hline
 \end{tabular}
 \end{center}
 
 \begin{center}
 \begin{tabular}{|p{3cm}|p{4cm}|p{3cm}|}
     \hline
-    self.Size & Used to hold the value for the size of the book, so that a price could be calculated dependent on the cost of the size. & Module 12: Line 167, 171, 177 \\  \hline
-    self.Back & Used to hold the value for the back type of the book in order to determine a price using the cost of the back & Module 12: 169, 173, 175, 179, 181 \\ \hline
-    self.CoverPrice & Used to hold the value for the cover price, used to calculate the print cost & Module 2: Module 12: Line 174, 176, 180, 182, 184 \\ \hline
-    self.PrintCost & Used to hold 
+    self.PagePrice & Used to hold the value for the page price, used to calculate the print cost & Module 9: Line 133, 140, 341, Module 12: Line 174, 176, 180, 182, 184 \\ \hline
+    self.NoOfPages & Used to hold the value for the number of pages in a book & Module 9: Line 128, 133, 140 \newline Module 12: Line 166, 172, 178 \\ \hline
+    self.PrintCost & Used to hold the value for the calculated print cost & Module 2: 521, 526, 529, \newline Module 9: Line 341, 342 \newline Module 12: Line 184, 186 \\ \hline
     \hline     
 \end{tabular}
 \end{center}
@@ -255,7 +257,7 @@ The data dictionary can be found in the Design Section \ref{ssec:DesignDataDicti
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Forgot Password Screen} \label{fig:ForgotPasswordScreen}
+    \caption{Forgot Password Screen - User Enters email to retrieve their password via email, if the email is correct.} \label{fig:ForgotPasswordScreen}
     \includegraphics[width=\textwidth]{./Maintenance/UserInterface/ForgotPasswordScreen.png}
 \end{figure}
 
@@ -285,17 +287,17 @@ The data dictionary can be found in the Design Section \ref{ssec:DesignDataDicti
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Update Customer Entry Success} \label{fig:UpdateEntrySuccess}
+    \caption{Update Customer Entry Success - User is given confirmation that their action has been successfully conducted} \label{fig:UpdateEntrySuccess}
     \includegraphics[width=\textwidth]{./Maintenance/UserInterface/UpdateEntrySuccess.png}
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Delete Customer Entry} \label{fig:DeleteEntry}
+    \caption{Delete Customer Entry - Verification, which warns the user of deleting all the data linked with the selected customer} \label{fig:DeleteEntry}
     \includegraphics[width=\textwidth]{./Maintenance/UserInterface/DeleteEntry.png}
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Delete Entry Success} \label{fig:DeleteEntrySuccess}
+    \caption{Delete Entry Success - User is given confirmation that their action has been successfully conducted} \label{fig:DeleteEntrySuccess}
     \includegraphics[width=\textwidth]{./Maintenance/UserInterface/DeleteEntrySuccess.png}
 \end{figure}
 
@@ -330,12 +332,12 @@ The data dictionary can be found in the Design Section \ref{ssec:DesignDataDicti
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Delete Verification} \label{fig:DeletePubInvoice}
+    \caption{Delete Verification - Verification which grants the user access to delete the entry} \label{fig:DeletePubInvoice}
     \includegraphics[width=\textwidth]{./Maintenance/UserInterface/DeletePubInvoice.png}
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Delete Success} \label{fig:DeletePubInvoiceSuccess}
+    \caption{Delete Success - User is given confirmation that their action has been successfully conducted} \label{fig:DeletePubInvoiceSuccess}
     \includegraphics[width=\textwidth]{./Maintenance/UserInterface/DeletePubInvoiceSuccess.png}
 \end{figure}
 
@@ -425,7 +427,7 @@ The data dictionary can be found in the Design Section \ref{ssec:DesignDataDicti
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Change Username Success} \label{fig:ChangeUsernameSuccess}
+    \caption{Change Username Success - User is given confirmation that their action has been successfully conducted} \label{fig:ChangeUsernameSuccess}
     \includegraphics[width=\textwidth]{./Maintenance/UserInterface/ChangeUsernameSuccess.png}
 \end{figure}
 
@@ -435,7 +437,7 @@ The data dictionary can be found in the Design Section \ref{ssec:DesignDataDicti
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Change Password Success} \label{fig:ChangePasswordSuccess}
+    \caption{Change Password Success - User is given confirmation that their action has been successfully conducted} \label{fig:ChangePasswordSuccess}
     \includegraphics[width=\textwidth]{./Maintenance/UserInterface/ChangePasswordSuccess.png}
 \end{figure}
 
@@ -722,95 +724,97 @@ The following code compiles an SQL string for adding data, depending on which ta
 \pythonfile[firstline=168, lastline=214]{./Implementation/Database/MainMenu.py}
 \end{tiny}
 Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 168-214.
-Line 212 is the base sql string, with the Table and values, and placeholders inserted dependent on the current table.
+Line 44 of the extract is the base sql string, with the Table and values, and placeholders inserted dependent on the current table.
 
 \
 
 Selecting all books' ISBNs belonging to an Author with the matching selected ID:
 \begin{tiny}
-\pythonfile[firstline=240, lastline=240]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=239, lastline=239]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 240.
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 239.
 
 \
 
 Deleting all data linked with an author, in a certain order to maintain referential integrity:
 \begin{tiny}
-\pythonfile[firstline=244, lastline=256]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=243, lastline=255]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 244-256.
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 243-255.
 
 \
 
 Deleting a selected entry:
 \begin{tiny}
-\pythonfile[firstline=327, lastline=327]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=326, lastline=326]{./Implementation/Database/MainMenu.py}
 \end{tiny}
 Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 326.
 
 \
 
 Fetching the price of a selected book:
-\pythonfile[firstline=492, lastline=492]{./Implementation/Database/MainMenu.py}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 492.
+\pythonfile[firstline=491, lastline=491]{./Implementation/Database/MainMenu.py}
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 491.
 
 \
 
 Fetching the existing customer details of the selected customer so that they can be displayed and edited:
-\pythonfile[firstline=557, lastline=558]{./Implementation/Database/MainMenu.py}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 557-558.
+\pythonfile[firstline=556, lastline=557]{./Implementation/Database/MainMenu.py}
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 556-557.
 
 \
 
 Fetching the existing book details of the selected book so that they can be displayed and edited:
 \begin{tiny}
-\pythonfile[firstline=588, lastline=588]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=587, lastline=587]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 588.
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 587.
 
 \
 
 Fetching the existing publishing invoice details of the selected publishing invoice so that they can be displayed and edited:
 \begin{tiny}
-\pythonfile[firstline=601, lastline=601]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=600, lastline=600]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 601.
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 600.
 
 \
 
 Fetching the existing book invoice details of the selected book invoice so that they can be displayed and edited:
 \begin{tiny}
-\pythonfile[firstline=614, lastline=614]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=613, lastline=613]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 614.
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 613.
 
 \
 
 Fetching the existing royalty details of the selected royalty payment so that they can be displayed and edited:
-\pythonfile[firstline=621, lastline=621]{./Implementation/Database/MainMenu.py}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 627.
+\begin{tiny}
+\pythonfile[firstline=626, lastline=626]{./Implementation/Database/MainMenu.py}
+\end{tiny}
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 626.
 
 \
 
 Fetching the existing book invoice items details of the selected book invoice items so that they can be displayed and edited:
 \begin{tiny}
-\pythonfile[firstline=643, lastline=643]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=642, lastline=642]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 643.
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 642.
 
 \
 
 Fetching the existing royalty items details of the selected royalty items so that they can be displayed and edited:
 \begin{tiny}
-\pythonfile[firstline=659, lastline=659]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=658, lastline=658]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 659.
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 658.
 
 \
 
 Updating the ISBN in all other entities if it has been changed by the user.
-\pythonfile[firstline=767, lastline=771]{./Implementation/Database/MainMenu.py}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 767-771.
+\pythonfile[firstline=766, lastline=770]{./Implementation/Database/MainMenu.py}
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 766-770.
 
 \
 
@@ -819,30 +823,30 @@ Updating the the selected table with the inputs the user has given. The string i
 \pythonfile[firstline=758, lastline=761]{./Implementation/Database/MainMenu.py}
 
 The update string:
-\pythonfile[firstline=775, lastline=775]{./Implementation/Database/MainMenu.py}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 758-761, and 775.
+\pythonfile[firstline=775, lastline=774]{./Implementation/Database/MainMenu.py}
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 758-761, and 774.
 
 \
 
 Fetching the Book Title, Firstname and Lastname of the Customer and their book, using the Book invoice ID and Book invoice items ID to find the matching Author ID and ISBNs.
 \begin{scriptsize}
-\pythonfile[firstline=869, lastline=869]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=868, lastline=868]{./Implementation/Database/MainMenu.py}
 \end{scriptsize}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 869
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 868.
 
 \
 
 Fetching the Book Title, Firstname and Lastname of the Customer and their book, using the Royalties ID and Royalty items ID to find the matching Author ID and ISBNs.
 \begin{tiny}
-\pythonfile[firstline=896, lastline=896]{./Implementation/Database/MainMenu.py}
+\pythonfile[firstline=895, lastline=895]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 896
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 895.
 
 \
 
 Fetching all Customers that match the firstname or lastname entered.
-\pythonfile[firstline=923, lastline=923]{./Implementation/Database/MainMenu.py}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 923
+\pythonfile[firstline=922, lastline=922]{./Implementation/Database/MainMenu.py}
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 922
 
 \
 
@@ -981,39 +985,43 @@ In order to be able to run my program, the system itself must be installed on to
 
 \section{Acknowledgements}
 The following pieces of code used regular expressions which were found on www.regexlib.com.
+
+\
+\
+
+I used this regular expression to validate the entry of emails. The user would not be able to enter values that did not follow the expression.
+
 \begin{tiny}
 \pythonfile[firstline=31, lastline=31]{./Implementation/Database/AddEntryWindow.py}
 \end{tiny}
 (Used in line 31 of Module 6, subsection \ref{ssec:AddEntryWindow.py})
 
-I used this regular expression to validate the entry of emails. The user would not be able to enter values that did not follow the expression.
-
 \
+
+I used this regular expression to validate the entry of phone numbers.
 
 \begin{tiny}
 \pythonfile[firstline=32, lastline=33]{./Implementation/Database/AddEntryWindow.py}
 \end{tiny}
 (Used in lines 32-33 of Module 6, subsection \ref{ssec:AddEntryWindow.py})
 
-I used this regular expression to validate the entry of phone numbers.
-
 \
+
+I used this regular expression to validate the entry of postcodes.
 
 \begin{tiny}
 \pythonfile[firstline=36, lastline=36]{./Implementation/Database/AddEntryWindow.py} 
 \end{tiny}
 (Used in line 36 of Module 6, subsection \ref{ssec:AddEntryWindow.py})
 
-I used this regular expression to validate the entry of postcodes.
-
 \
+
+I used this regular expression to validate the entry of emails.
 
 \begin{tiny}
 \pythonfile[firstline=17, lastline=18]{./Implementation/Database/ChangeUsername.py} 
 \end{tiny}
 (Used in lines 17-18 of Module 17, subsection \ref{ssec:ChangeUsername.py})
-
-I used this regular expression to validate the entry of emails.
 
 \
 
@@ -1021,6 +1029,32 @@ The Calendar Widget, (Module 10, on page \ref{ssec:CalendarWidget.py}) was reimp
 \begin{tiny}
 \pythonfile[firstline=1]{./Implementation/Database/CalendarWidget.py} 
 \end{tiny}
+
+\
+
+I used the following icon for the window icon in the login screen.
+
+\begin{figure}[H]
+    \includegraphics[width=5cm]{./Implementation/Database/LoginIcon.png}
+\end{figure}
+
+I found this image on http://dryicons.com/icon/shine-icon-set/lock/.
+
+\
+
+The following images were used from www.perfectpublishers.co.uk, which is the company of the client.
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Implementation/Database/PerfectPublishersLtd.png}
+    \caption{Company Logo}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=5cm]{./Implementation/Database/PPIcon.png}
+    \caption{Company Icon, from Logo}
+\end{figure}
+
+These were used as the splash screen image and the main window icon respectively.
 
 \begin{landscape}
 \section{Code Listing}
@@ -1044,7 +1078,7 @@ The Calendar Widget, (Module 10, on page \ref{ssec:CalendarWidget.py}) was reimp
 
 \subsection{Module 5 - Initialising a Table Widget}
 
-\pythonfile[firstline=1]{./Implementation/Database/TableWidget.py}
+\pythonfile[firstline=1]{./Implementation/Database/TableWidget.py} \label{ssec:TableWidget.py}
 
 \subsection{Module 6 - Initialising Add Customer Entry Window}
 
