@@ -111,86 +111,86 @@
 \contentsline {subsection}{\numberline {4.3.6}Function - Quick Search}{200}{subsection.4.3.6}
 \contentsline {subsection}{\numberline {4.3.7}Modules - View Window and Search Results Window.}{201}{subsection.4.3.7}
 \contentsline {section}{\numberline {4.4}Variable Listing}{202}{section.4.4}
-\contentsline {section}{\numberline {4.5}System Evidence}{205}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}User Interface}{205}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}ER Diagram}{227}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Database Table Views}{228}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Database SQL}{231}{subsection.4.5.4}
-\contentsline {subsection}{\numberline {4.5.5}SQL Queries}{233}{subsection.4.5.5}
-\contentsline {section}{\numberline {4.6}Testing}{242}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Summary of Results}{242}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Known Issues}{243}{subsection.4.6.2}
-\contentsline {section}{\numberline {4.7}Code Explanations}{243}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Difficult Sections}{243}{subsection.4.7.1}
-\contentsline {subsubsection}{Calculating the Full Book Invoice Payment}{243}{section*.13}
-\contentsline {subsubsection}{Calculating the Full Royalty Payment}{244}{section*.14}
-\contentsline {subsubsection}{Emailing the User their Login Credentials}{246}{section*.15}
-\contentsline {subsection}{\numberline {4.7.2}Self-created Algorithms}{246}{subsection.4.7.2}
-\contentsline {subsubsection}{Calculations upon interaction with the book invoice items}{246}{section*.16}
-\contentsline {subsubsection}{Calculations upon interaction with the Royalty items}{247}{section*.17}
-\contentsline {section}{\numberline {4.8}Settings}{247}{section.4.8}
-\contentsline {section}{\numberline {4.9}Acknowledgements}{247}{section.4.9}
-\contentsline {section}{\numberline {4.10}Code Listing}{250}{section.4.10}
-\contentsline {subsection}{\numberline {4.10.1}Module 1 - Login Window and Database Creation}{250}{subsection.4.10.1}
-\contentsline {subsection}{\numberline {4.10.2}Module 2 - Main Window and functionality for majority of system}{258}{subsection.4.10.2}
-\contentsline {subsection}{\numberline {4.10.3}Module 3 - Initialising Main Menu Layout}{285}{subsection.4.10.3}
-\contentsline {subsection}{\numberline {4.10.4}Module 4 - Initialising Menu Bar}{287}{subsection.4.10.4}
-\contentsline {subsection}{\numberline {4.10.5}Module 5 - Initialising a Table Widget}{288}{subsection.4.10.5}
-\contentsline {subsection}{\numberline {4.10.6}Module 6 - Initialising Add Customer Entry Window}{289}{subsection.4.10.6}
-\contentsline {subsection}{\numberline {4.10.7}Module 7 - Initialising Update Customer Entry Window}{291}{subsection.4.10.7}
-\contentsline {subsection}{\numberline {4.10.8}Module 8 - Initialising View Menu Layout}{293}{subsection.4.10.8}
-\contentsline {subsection}{\numberline {4.10.9}Module 9 - Initialising Add Entry Window for non-customer entries}{294}{subsection.4.10.9}
-\contentsline {subsection}{\numberline {4.10.10}Module 10 - Initialising Calendar Widget}{304}{subsection.4.10.10}
-\contentsline {subsection}{\numberline {4.10.11}Module 11 - Initialising a Confirmation Dialog}{306}{subsection.4.10.11}
-\contentsline {subsection}{\numberline {4.10.12}Module 12 - Initialising a dialog for viewing the Items, and creating calculations for the payments.}{309}{subsection.4.10.12}
-\contentsline {subsection}{\numberline {4.10.13}Module 13 - Initialising a dialog for viewing Royalties and Invoices}{314}{subsection.4.10.13}
-\contentsline {subsection}{\numberline {4.10.14}Module 14 - Initialising a Search Window}{316}{subsection.4.10.14}
-\contentsline {subsection}{\numberline {4.10.15}Module 15 - Creating a layout for displaying Search Results in the Main Window}{321}{subsection.4.10.15}
-\contentsline {subsection}{\numberline {4.10.16}Module 16 - Creating a dialog for the User to choose to change Username or Password}{321}{subsection.4.10.16}
-\contentsline {subsection}{\numberline {4.10.17}Module 17 - Initialising a dialog for changing the Username}{322}{subsection.4.10.17}
-\contentsline {subsection}{\numberline {4.10.18}Module 18 - Initialising a dialog for changing the Password}{324}{subsection.4.10.18}
-\contentsline {chapter}{\numberline {5}User Manual}{327}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{327}{section.5.1}
-\contentsline {section}{\numberline {5.2}Installation}{327}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Prerequisite Installation}{327}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}System Installation}{328}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Running the System}{337}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Tutorial}{342}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Introduction}{342}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Assumptions}{342}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Tutorial Questions}{343}{subsection.5.3.3}
-\contentsline {subsubsection}{1 - How do I add a customer?}{344}{section*.18}
-\contentsline {subsubsection}{2 - How do I update customer details?}{345}{section*.19}
-\contentsline {subsubsection}{3 - How do I delete a customer?}{348}{section*.20}
-\contentsline {subsubsection}{4 - How do I view a customer's books?}{349}{section*.21}
-\contentsline {subsubsection}{5 - How do I add a customer's book?}{350}{section*.22}
-\contentsline {subsubsection}{6 - How do I update a customer's book?}{351}{section*.23}
-\contentsline {subsubsection}{7 - How do I delete a customer's book?}{353}{section*.24}
-\contentsline {subsubsection}{8 - How do I view a customers' publishing invoices?}{354}{section*.25}
-\contentsline {subsubsection}{9 - How do I view customers' book invoice items of a book?}{355}{section*.26}
-\contentsline {subsubsection}{10 - How do I view customers' royalty items of a book?}{356}{section*.27}
-\contentsline {subsubsection}{11 - How do I calculate a book invoice payment?}{357}{section*.28}
-\contentsline {subsubsection}{12 - How do I calculate a royalty payment?}{358}{section*.29}
-\contentsline {subsubsection}{13 - How do I search for an author?}{358}{section*.30}
-\contentsline {subsubsection}{14 - How do I search for an author's book?}{360}{section*.31}
-\contentsline {subsubsection}{15 - How do I change my Username/Password?}{363}{section*.32}
-\contentsline {subsection}{\numberline {5.3.4}Saving}{365}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Limitations}{365}{subsection.5.3.5}
-\contentsline {section}{\numberline {5.4}Error Recovery}{366}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Invalid entiries when calculating payments}{366}{subsection.5.4.1}
-\contentsline {section}{\numberline {5.5}System Recovery}{367}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Backing-up Data}{367}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Restoring Data}{369}{subsection.5.5.2}
-\contentsline {chapter}{\numberline {6}Evaluation}{371}{chapter.6}
-\contentsline {section}{\numberline {6.1}Customer Requirements}{371}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Objective Evaluation}{371}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Effectiveness}{372}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{372}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Learnability}{372}{section.6.3}
-\contentsline {section}{\numberline {6.4}Usability}{372}{section.6.4}
-\contentsline {section}{\numberline {6.5}Maintainability}{372}{section.6.5}
-\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{372}{section.6.6}
-\contentsline {section}{\numberline {6.7}End User Evidence}{372}{section.6.7}
-\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{372}{subsection.6.7.1}
-\contentsline {subsection}{\numberline {6.7.2}Graphs}{372}{subsection.6.7.2}
-\contentsline {subsection}{\numberline {6.7.3}Written Statements}{372}{subsection.6.7.3}
+\contentsline {section}{\numberline {4.5}System Evidence}{206}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}User Interface}{206}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}ER Diagram}{228}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Database Table Views}{229}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Database SQL}{232}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}SQL Queries}{234}{subsection.4.5.5}
+\contentsline {section}{\numberline {4.6}Testing}{244}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Summary of Results}{244}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Known Issues}{244}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}Code Explanations}{245}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Difficult Sections}{245}{subsection.4.7.1}
+\contentsline {subsubsection}{Calculating the Full Book Invoice Payment}{245}{section*.13}
+\contentsline {subsubsection}{Calculating the Full Royalty Payment}{246}{section*.14}
+\contentsline {subsubsection}{Emailing the User their Login Credentials}{247}{section*.15}
+\contentsline {subsection}{\numberline {4.7.2}Self-created Algorithms}{248}{subsection.4.7.2}
+\contentsline {subsubsection}{Calculations upon interaction with the book invoice items}{248}{section*.16}
+\contentsline {subsubsection}{Calculations upon interaction with the Royalty items}{248}{section*.17}
+\contentsline {section}{\numberline {4.8}Settings}{249}{section.4.8}
+\contentsline {section}{\numberline {4.9}Acknowledgements}{249}{section.4.9}
+\contentsline {section}{\numberline {4.10}Code Listing}{251}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}Module 1 - Login Window and Database Creation}{251}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}Module 2 - Main Window and functionality for majority of system}{259}{subsection.4.10.2}
+\contentsline {subsection}{\numberline {4.10.3}Module 3 - Initialising Main Menu Layout}{286}{subsection.4.10.3}
+\contentsline {subsection}{\numberline {4.10.4}Module 4 - Initialising Menu Bar}{288}{subsection.4.10.4}
+\contentsline {subsection}{\numberline {4.10.5}Module 5 - Initialising a Table Widget}{289}{subsection.4.10.5}
+\contentsline {subsection}{\numberline {4.10.6}Module 6 - Initialising Add Customer Entry Window}{290}{subsection.4.10.6}
+\contentsline {subsection}{\numberline {4.10.7}Module 7 - Initialising Update Customer Entry Window}{292}{subsection.4.10.7}
+\contentsline {subsection}{\numberline {4.10.8}Module 8 - Initialising View Menu Layout}{294}{subsection.4.10.8}
+\contentsline {subsection}{\numberline {4.10.9}Module 9 - Initialising Add Entry Window for non-customer entries}{295}{subsection.4.10.9}
+\contentsline {subsection}{\numberline {4.10.10}Module 10 - Initialising Calendar Widget}{305}{subsection.4.10.10}
+\contentsline {subsection}{\numberline {4.10.11}Module 11 - Initialising a Confirmation Dialog}{307}{subsection.4.10.11}
+\contentsline {subsection}{\numberline {4.10.12}Module 12 - Initialising a dialog for viewing the Items, and creating calculations for the payments.}{310}{subsection.4.10.12}
+\contentsline {subsection}{\numberline {4.10.13}Module 13 - Initialising a dialog for viewing Royalties and Invoices}{315}{subsection.4.10.13}
+\contentsline {subsection}{\numberline {4.10.14}Module 14 - Initialising a Search Window}{317}{subsection.4.10.14}
+\contentsline {subsection}{\numberline {4.10.15}Module 15 - Creating a layout for displaying Search Results in the Main Window}{322}{subsection.4.10.15}
+\contentsline {subsection}{\numberline {4.10.16}Module 16 - Creating a dialog for the User to choose to change Username or Password}{322}{subsection.4.10.16}
+\contentsline {subsection}{\numberline {4.10.17}Module 17 - Initialising a dialog for changing the Username}{323}{subsection.4.10.17}
+\contentsline {subsection}{\numberline {4.10.18}Module 18 - Initialising a dialog for changing the Password}{325}{subsection.4.10.18}
+\contentsline {chapter}{\numberline {5}User Manual}{328}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{328}{section.5.1}
+\contentsline {section}{\numberline {5.2}Installation}{328}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Prerequisite Installation}{328}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}System Installation}{329}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Running the System}{338}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Tutorial}{343}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Introduction}{343}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Assumptions}{343}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Tutorial Questions}{344}{subsection.5.3.3}
+\contentsline {subsubsection}{1 - How do I add a customer?}{345}{section*.18}
+\contentsline {subsubsection}{2 - How do I update customer details?}{346}{section*.19}
+\contentsline {subsubsection}{3 - How do I delete a customer?}{349}{section*.20}
+\contentsline {subsubsection}{4 - How do I view a customer's books?}{350}{section*.21}
+\contentsline {subsubsection}{5 - How do I add a customer's book?}{351}{section*.22}
+\contentsline {subsubsection}{6 - How do I update a customer's book?}{352}{section*.23}
+\contentsline {subsubsection}{7 - How do I delete a customer's book?}{354}{section*.24}
+\contentsline {subsubsection}{8 - How do I view a customers' publishing invoices?}{355}{section*.25}
+\contentsline {subsubsection}{9 - How do I view customers' book invoice items of a book?}{356}{section*.26}
+\contentsline {subsubsection}{10 - How do I view customers' royalty items of a book?}{357}{section*.27}
+\contentsline {subsubsection}{11 - How do I calculate a book invoice payment?}{358}{section*.28}
+\contentsline {subsubsection}{12 - How do I calculate a royalty payment?}{359}{section*.29}
+\contentsline {subsubsection}{13 - How do I search for an author?}{359}{section*.30}
+\contentsline {subsubsection}{14 - How do I search for an author's book?}{361}{section*.31}
+\contentsline {subsubsection}{15 - How do I change my Username/Password?}{364}{section*.32}
+\contentsline {subsection}{\numberline {5.3.4}Saving}{366}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Limitations}{366}{subsection.5.3.5}
+\contentsline {section}{\numberline {5.4}Error Recovery}{367}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Invalid entiries when calculating payments}{367}{subsection.5.4.1}
+\contentsline {section}{\numberline {5.5}System Recovery}{368}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Backing-up Data}{368}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Restoring Data}{370}{subsection.5.5.2}
+\contentsline {chapter}{\numberline {6}Evaluation}{372}{chapter.6}
+\contentsline {section}{\numberline {6.1}Customer Requirements}{372}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Objective Evaluation}{372}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}Effectiveness}{373}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{373}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Learnability}{373}{section.6.3}
+\contentsline {section}{\numberline {6.4}Usability}{373}{section.6.4}
+\contentsline {section}{\numberline {6.5}Maintainability}{373}{section.6.5}
+\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{373}{section.6.6}
+\contentsline {section}{\numberline {6.7}End User Evidence}{373}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{373}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Graphs}{373}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {6.7.3}Written Statements}{373}{subsection.6.7.3}

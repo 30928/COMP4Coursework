@@ -215,16 +215,33 @@ The data dictionary can be found in the Design Section \ref{ssec:DesignDataDicti
     self.Quantity & Used to hold the value for the book invoice/royalty quantity & Module 2: 479, 484, 495, 519, 524, 527 \newline Module 12: Line 100, 105, 165, 184 \\ \hline
     self.Discount & Used to hold the value for the book invoice discount & Module 2: Line 480, 485, 496, 497 \newline Module 12: Line 101, 106, 107 \\ \hline
     self.ShippingPrice & Used to hold the value for the shipping price & Module 2: Line 475, 486, 498 \newline Module 12: Line 102, 108 \\ \hline
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{4cm}|p{3cm}|}
+    \hline
     self.Price & Used to hold the value for the book price & Module 2: Line 492, 495 \newline Module 12: Line 103, 105 \\ \hline
     self.TempPayment & Used to hold the value for the payment which would accumulate during calculations & Module 12: Line 105, 106, 107, 108, 110, 186, 189, 190 \\ \hline
-    self.BookInvoicePayment & Used to hold the value for the full book invoice payment & Module 12: Line 68, 110, 114, 115, 120, 121, 193 \\ \hline
+    self.BookInvoice-Payment & Used to hold the value for the full book invoice payment & Module 12: Line 68, 110, 114, 115, 120, 121, 193 \\ \hline
     self.RoyaltyPayment & Used to hold the value for the full royalty payment & Module 12: Line 130, 190, 194, 199, 200 \\ \hline
-    \hline
     self.Currency & Used to hold the value for the currency & Module 2: Line 517, 522, 532, 538 \newline Module 12: Line 131, 163, 187 \\ \hline
-    self.WholesalePrice & Used to hold the value for the wholesale price & Module 2: Line 518, 523, 527 \newline 
+    self.WholesalePrice & Used to hold the value for the wholesale price & Module 2: Line 518, 523, 527 \\ \hline
     self.NetSales & Used to hold the value for the net sales figure & Module 2: Line 204, 527, 528, 533, 539, 750 \newline Module 12: Line 164, 186 \\ \hline
-    self.RoyaltyItemPayment & Used to hold the calculated payment value for the individual item payment & Module 2: 528, 529, 532, 538 \\ \hline
-     
+    self.RoyaltyItem-Payment & Used to hold the calculated payment value for the individual item payment & Module 2: Line 528, 529, 532, 538 \\ \hline
+    \hline     
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{4cm}|p{3cm}|}
+    \hline
+    self.Size & Used to hold the value for the size of the book, so that a price could be calculated dependent on the cost of the size. & Module 12: Line 167, 171, 177 \\  \hline
+    self.Back & Used to hold the value for the back type of the book in order to determine a price using the cost of the back & Module 12: 169, 173, 175, 179, 181 \\ \hline
+    self.CoverPrice & Used to hold the value for the cover price, used to calculate the print cost & Module 2: Module 12: Line 174, 176, 180, 182, 184 \\ \hline
+    self.PrintCost & Used to hold 
+    \hline     
 \end{tabular}
 \end{center}
 
@@ -706,8 +723,8 @@ The following code compiles an SQL string for adding data, depending on which ta
 \end{tiny}
 Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 168-214.
 Line 212 is the base sql string, with the Table and values, and placeholders inserted dependent on the current table.
-\
 
+\
 
 Selecting all books' ISBNs belonging to an Author with the matching selected ID:
 \begin{tiny}
@@ -729,7 +746,7 @@ Deleting a selected entry:
 \begin{tiny}
 \pythonfile[firstline=327, lastline=327]{./Implementation/Database/MainMenu.py}
 \end{tiny}
-Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 327.
+Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 326.
 
 \
 
@@ -798,9 +815,9 @@ Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 767-771.
 \
 
 Updating the the selected table with the inputs the user has given. The string is partially made using the iteration in lines 758-761
-\begin{tiny}
+
 \pythonfile[firstline=758, lastline=761]{./Implementation/Database/MainMenu.py}
-\end{tiny}
+
 The update string:
 \pythonfile[firstline=775, lastline=775]{./Implementation/Database/MainMenu.py}
 Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 758-761, and 775.
@@ -808,9 +825,9 @@ Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, lines 758-761, and 775.
 \
 
 Fetching the Book Title, Firstname and Lastname of the Customer and their book, using the Book invoice ID and Book invoice items ID to find the matching Author ID and ISBNs.
-\begin{tiny}
+\begin{scriptsize}
 \pythonfile[firstline=869, lastline=869]{./Implementation/Database/MainMenu.py}
-\end{tiny}
+\end{scriptsize}
 Reference: Module 2,  subsection \ref{ssec:MainMenu.py}, line 869
 
 \
