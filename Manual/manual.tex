@@ -12,20 +12,16 @@ The purpose of the system is to simplify the management of customer and book inf
 
 The following features are included in the program:
 
-\underline{Displaying Customer}
-
 \begin{itemize}
-    \item 
-    \item 
+    \item Displaying customer and book details
+    \item Adding customers, books of the customer and book details, making every entry unique with the use of ID's
+    \item Editing data through the use of the user interface
+    \item Deleting data through the use of the user interface
+    \item Searching for data using the interface
 \end{itemize}
 
-
-\underline{Adding unique customers and books of the customer}
-
-\begin{itemize}
-    \item Fields are clearly presented to the user, for addition to the database
-    \item Authors are made unique when added, through the use of an Author ID
-\end{itemize}
+\subsection{Intended Audience}
+The intended audience for my system was the director of Perfect Publishers Ltd, which is a publishing company. The system is specifically designed for the company, as it uses fixed prices for calculations of book invoice and royalty payments, which were used from the company website.
 
 
 \section{Installation}
@@ -45,6 +41,17 @@ The following is required for the system to reach its full capabilities:
     \item At least 512 megabytes of main memory to carry out processing
 \end{itemize}
 
+The system was originally designed for a laptop with the following specifications:
+
+\begin{itemize}
+    \item 15.6” Display
+    \item AMD Quad-Core A4-5000M APU (1.5GHz, 2MB cache)
+    \item 4 GB DDR3 RAM
+    \item 750 GB HDD, 5400 rpm
+    \item AMD Radeon HD 8330 Graphics Card
+\end{itemize}
+
+As the laptop meets the specifications of the system, the program should not have any problems running on it. The laptop also runs on windows 8, and as the system was developed on windows 7 and windows 8, it is able to run on both operating systems.
 
 \subsection{System Installation}
 
@@ -170,26 +177,26 @@ The following sections will show how to use different parts of the system, step 
 \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|}
         \hline
         \textbf{Section Number} & \textbf{Question} & \textbf{Page Number} \\ \hline
-        1 & "How do I add a customer?" & \\ \hline
-        2 & "How do I update customer details?" & \\ \hline
-        3 & "How do I delete a customer?" & \\ \hline
-        4 & "How do I view a customer's books?" & \\ \hline
-        5 & "How do I add a customer's book?" & \\ \hline
-        6 & "How do I update a customer's book?" & \\ \hline
-        7 & "How do I delete a customer's book?" & \\ \hline
-        8 & "How do I view customers' publishing invoices?" & \\ \hline
-        9 & "How do I view customers' book invoice items of a book?" & \\ \hline
-        10 & "How do I view customers' royalty items of a book?" & \\ \hline
-        11 & "How do I calculate a book invoice payment?" & \\ \hline
-        12 & "How do I calculate a royalty payment?" & \\ \hline
-        13 & "How do I search for an author?" & \\ \hline
-        14 & "How do I search for an author's book?"  \\ \hline
-        15 & "How do I change my Username/Password?" & \\ \hline
+        1 & "How do I add a customer?" & \pageref{sssec:Q1} \\ \hline
+        2 & "How do I update customer details?" & \pageref{sssec:Q2} \\ \hline
+        3 & "How do I delete a customer?" & \pageref{sssec:Q3} \\ \hline
+        4 & "How do I view a customer's books?" & \pageref{sssec:Q4} \\ \hline
+        5 & "How do I add a customer's book?" & \pageref{sssec:Q5} \\ \hline
+        6 & "How do I update a customer's book?" & \pageref{sssec:Q6} \\ \hline
+        7 & "How do I delete a customer's book?" & \pageref{sssec:Q7} \\ \hline
+        8 & "How do I view customers' publishing invoices?" & \pageref{sssec:Q8} \\ \hline
+        9 & "How do I view customers' book invoice items of a book?" & \pageref{sssec:Q9} \\ \hline
+        10 & "How do I view customers' royalty items of a book?" & \pageref{sssec:Q10} \\ \hline
+        11 & "How do I calculate a book invoice payment?" & \pageref{sssec:Q11} \\ \hline
+        12 & "How do I calculate a royalty payment?" & \pageref{sssec:Q12} \\ \hline
+        13 & "How do I search for an author?" & \pageref{sssec:Q13} \\ \hline
+        14 & "How do I search for an author's book?" & \pageref{sssec:Q14} \\ \hline
+        15 & "How do I change my Username/Password?" & \pageref{sssec:Q15} \\ \hline
 \end{tabular}
 \end{center}
 
 %include as many subsubsections as necessary for each question in your list
-\subsubsection{1 - How do I add a customer?}
+\subsubsection{1 - How do I add a customer?} \label{sssec:Q1}
 
 1. On the Main Menu, click on the 'Add Entry' button. A window to add a customer entry is diplayed.
 
@@ -206,7 +213,7 @@ The following sections will show how to use different parts of the system, step 
 
 3. After clicking "Confirm", the data will be validated, then added to the system if valid.
 
-\subsubsection{2 -  How do I update customer details?}
+\subsubsection{2 -  How do I update customer details?} \label{sssec:Q2}
 
 1. On the Main Menu, choose a customer, and click on him/her. Then click "Update Entry".
 
@@ -236,7 +243,7 @@ The following sections will show how to use different parts of the system, step 
     \includegraphics[width=\textwidth]{./Manual/Tutorial/Q2/Verification.png}
 \end{figure}
 
-\subsubsection{3 -  How do I delete a customer?}
+\subsubsection{3 -  How do I delete a customer?} \label{sssec:Q3}
 
 1. On the Main Menu, choose a customer, and click on him/her. Then click "Remove Entry".
 
@@ -254,7 +261,7 @@ The following sections will show how to use different parts of the system, step 
     \includegraphics[width=\textwidth]{./Manual/Tutorial/Q3/Erased.png}
 \end{figure}
 
-\subsubsection{4 -  How do I view a customer's books?}
+\subsubsection{4 -  How do I view a customer's books?} \label{sssec:Q4}
 
 1. On the Main Menu, choose a customer, and click on him/her. Then click "View".
 
@@ -268,7 +275,7 @@ The following sections will show how to use different parts of the system, step 
     \includegraphics[width=\textwidth]{./Manual/Tutorial/Q4/CustomerBooks.png}
 \end{figure}
 
-\subsubsection{5 -  How do I add a customer's book?}
+\subsubsection{5 -  How do I add a customer's book?} \label{sssec:Q5}
 
 1. Follow section 4 to select a customer to add books to.
 
@@ -284,7 +291,7 @@ The following sections will show how to use different parts of the system, step 
     \includegraphics[width=\textwidth]{./Manual/Tutorial/Q5/AddBookWindow.png}
 \end{figure}
 
-\subsubsection{6 -  How do I update a customer's book?}
+\subsubsection{6 -  How do I update a customer's book?} \label{sssec:Q6}
 
 1. Follow section 4 to select a customer to find their books.
 
@@ -306,7 +313,7 @@ The following sections will show how to use different parts of the system, step 
     \includegraphics[width=\textwidth]{./Manual/Tutorial/Q6/Verification.png}
 \end{figure}
 
-\subsubsection{7 -  How do I delete a customer's book?}
+\subsubsection{7 -  How do I delete a customer's book?} \label{sssec:Q7}
 
 1. Follow section 4 to select a customer to find their books.
 
@@ -326,7 +333,7 @@ The following sections will show how to use different parts of the system, step 
     \includegraphics[width=\textwidth]{./Manual/Tutorial/Q7/Deleted.png}
 \end{figure}
 
-\subsubsection{8 -  How do I view a customers' publishing invoices?}
+\subsubsection{8 -  How do I view a customers' publishing invoices?} \label{sssec:Q8}
 
 1. Follow section 4 to select a customer to find their books.
 
@@ -342,7 +349,7 @@ The following sections will show how to use different parts of the system, step 
     \includegraphics[width=\textwidth]{./Manual/Tutorial/Q8/PubInvoices.png}
 \end{figure}
 
-\subsubsection{9 -  How do I view customers' book invoice items of a book?}
+\subsubsection{9 -  How do I view customers' book invoice items of a book?} \label{sssec:Q9}
 
 1. Follow section 4 to select a customer to find their books.
 
@@ -360,7 +367,7 @@ The following sections will show how to use different parts of the system, step 
 
 4. The items of the selected invoice are displayed.
 
-\subsubsection{10 -  How do I view customers' royalty items of a book?}
+\subsubsection{10 -  How do I view customers' royalty items of a book?} \label{sssec:Q10}
 
 1. Follow section 4 to select a customer to find their books.
 
@@ -378,7 +385,7 @@ The following sections will show how to use different parts of the system, step 
 
 4. The items of the selected royalty payment are displayed.
 
-\subsubsection{11 - How do I calculate a book invoice payment?}
+\subsubsection{11 - How do I calculate a book invoice payment?} \label{sssec:Q11}
 
 1. Follow section 9 to navigate to a customer's book invoice items.
 
@@ -390,7 +397,7 @@ The following sections will show how to use different parts of the system, step 
 
 3. Fill in the empty fields, then click "Calculate" in the bottom left corner. Afterwards, click "Confirm". This calculation will be added to the current book invoice payment and can be seen in the book invoice table.
 
-\subsubsection{12 - How do I calculate a royalty payment?}
+\subsubsection{12 - How do I calculate a royalty payment?} \label{sssec:Q12}
 
 1. Follow section 10 to navigate to a customer's royalty items.
 
@@ -402,7 +409,7 @@ The following sections will show how to use different parts of the system, step 
 
 3. Fill in the empty fields, then click "Calculate" in the bottom left corner. Afterwards, click "Confirm". This calculation will be added to the current royalty payment and can be seen in the royalties table.
 
-\subsubsection{13 - How do I search for an author?}
+\subsubsection{13 - How do I search for an author?} \label{sssec:Q13}
 
 There are two ways to search for an author. The first way is recommended.
 
@@ -432,7 +439,7 @@ Second method:
 
 3. The results are displayed in the main window table.
 
-\subsubsection{14 - How do I search for an author's book?}
+\subsubsection{14 - How do I search for an author's book?} \label{sssec:Q14}
 
 1. Click "Search Database" on the Main Menu.
 
@@ -464,7 +471,7 @@ Second method:
 
 5. The results will be displayed in the main window table.
 
-\subsubsection{15 - How do I change my Username/Password?}
+\subsubsection{15 - How do I change my Username/Password?} \label{sssec:Q15}
 
 1. Click "Change Username/Password" on the Main Menu.
 
@@ -564,6 +571,10 @@ In order to restore my program, the user will need to use the hardware used to b
 
 2. Right click on the database file, "PP.db", and click "Copy".
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Manual/CopyBackup.png}
+\end{figure}
+
 3. Navigate to where the executable file of the system is stored.
 
 4. Inside the folder, past the database file. It should be automatically pasted as "PP - Copy.db"
@@ -585,3 +596,5 @@ In order to restore my program, the user will need to use the hardware used to b
 \end{figure}
 
 6. You have successfully restored the database.
+
+\stopcontents[chapters]
