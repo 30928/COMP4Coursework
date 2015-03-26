@@ -186,14 +186,15 @@
 \contentsline {chapter}{\numberline {6}Evaluation}{376}{chapter.6}
 \contentsline {section}{\numberline {6.1}Customer Requirements}{376}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Objective Evaluation}{376}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Effectiveness}{377}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{377}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Learnability}{377}{section.6.3}
-\contentsline {section}{\numberline {6.4}Usability}{377}{section.6.4}
-\contentsline {section}{\numberline {6.5}Maintainability}{377}{section.6.5}
-\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{377}{section.6.6}
-\contentsline {section}{\numberline {6.7}End User Evidence}{377}{section.6.7}
-\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{377}{subsection.6.7.1}
-\contentsline {subsection}{\numberline {6.7.2}Graphs}{377}{subsection.6.7.2}
-\contentsline {subsection}{\numberline {6.7.3}Written Statements}{377}{subsection.6.7.3}
+\contentsline {subsection}{\numberline {6.1.2}Summary}{381}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Effectiveness}{384}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{384}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Learnability}{384}{section.6.3}
+\contentsline {section}{\numberline {6.4}Usability}{384}{section.6.4}
+\contentsline {section}{\numberline {6.5}Maintainability}{384}{section.6.5}
+\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{384}{section.6.6}
+\contentsline {section}{\numberline {6.7}End User Evidence}{384}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{384}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Graphs}{386}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {6.7.3}Written Statements}{386}{subsection.6.7.3}
 \contentsfinish 

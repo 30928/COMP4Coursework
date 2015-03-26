@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  25 MAR 2015 13:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.23)  26 MAR 2015 23:32
 entering extended mode
 **C:/Users/Imran*Rahman/Documents/Year*13/Computing/COMP4Coursework/coursework.
 tex
@@ -771,7 +771,7 @@ Chapter 1.
 [6
 
 
-] <./Analysis/Interview_Questions_1.jpg, id=881, 614.295pt x 844.8363pt>
+] <./Analysis/Interview_Questions_1.jpg, id=886, 614.295pt x 844.8363pt>
 File: ./Analysis/Interview_Questions_1.jpg Graphic file (type jpg)
 
 <use ./Analysis/Interview_Questions_1.jpg>
@@ -779,7 +779,7 @@ Package pdftex.def Info: ./Analysis/Interview_Questions_1.jpg used on input lin
 e 17.
 (pdftex.def)             Requested size: 284.52756pt x 391.31078pt.
  [7]
-<./Analysis/Interview_Questions_2.jpg, id=886, 614.295pt x 844.8363pt>
+<./Analysis/Interview_Questions_2.jpg, id=891, 614.295pt x 844.8363pt>
 File: ./Analysis/Interview_Questions_2.jpg Graphic file (type jpg)
 
 <use ./Analysis/Interview_Questions_2.jpg>
@@ -879,7 +879,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--82
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 94.
  [12]
-<./Analysis/Data_Flow_Diagrams_1.pdf, id=916, 597.23125pt x 845.1575pt>
+<./Analysis/Data_Flow_Diagrams_1.pdf, id=921, 597.23125pt x 845.1575pt>
 File: ./Analysis/Data_Flow_Diagrams_1.pdf Graphic file (type pdf)
 
 <use ./Analysis/Data_Flow_Diagrams_1.pdf>
@@ -898,7 +898,7 @@ Overfull \vbox (3.5658pt too high) has occurred while \output is active []
 l.153 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Analy
 sis/Data_Flow_Diagrams_1.pdf>]
-<./Analysis/Invoice_Example.pdf, id=937, 597.55246pt x 845.07718pt>
+<./Analysis/Invoice_Example.pdf, id=942, 597.55246pt x 845.07718pt>
 File: ./Analysis/Invoice_Example.pdf Graphic file (type pdf)
 
 <use ./Analysis/Invoice_Example.pdf>
@@ -913,7 +913,7 @@ re.1.4}) has been already used, duplicate ignored
 l.181 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Analy
 sis/Invoice_Example.pdf>]
-<./Analysis/Royalty_Statement_Example.pdf, id=1003, 614.295pt x 794.97pt>
+<./Analysis/Royalty_Statement_Example.pdf, id=1008, 614.295pt x 794.97pt>
 File: ./Analysis/Royalty_Statement_Example.pdf Graphic file (type pdf)
 
 <use ./Analysis/Royalty_Statement_Example.pdf>
@@ -992,7 +992,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--242
 \OT1/cmr/m/n/10 State-ment
  []
 
-[19] <./Analysis/Data_Flow_Diagrams_2.pdf, id=1049, 597.23125pt x 845.1575pt>
+[19] <./Analysis/Data_Flow_Diagrams_2.pdf, id=1054, 597.23125pt x 845.1575pt>
 File: ./Analysis/Data_Flow_Diagrams_2.pdf Graphic file (type pdf)
 
 <use ./Analysis/Data_Flow_Diagrams_2.pdf>
@@ -1064,7 +1064,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 309.
  [23]
-<./Analysis/ER_Diagram.pdf, id=1080, 299.1175pt x 421.575pt>
+<./Analysis/ER_Diagram.pdf, id=1085, 299.1175pt x 421.575pt>
 File: ./Analysis/ER_Diagram.pdf Graphic file (type pdf)
 
 <use ./Analysis/ER_Diagram.pdf>
@@ -1082,7 +1082,7 @@ Overfull \vbox (15.74626pt too high) has occurred while \output is active []
 l.381 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Analy
 sis/ER_Diagram.pdf>]
-<./Analysis/Relationship_Diagram.pdf, id=1104, 421.575pt x 597.23125pt>
+<./Analysis/Relationship_Diagram.pdf, id=1109, 421.575pt x 597.23125pt>
 File: ./Analysis/Relationship_Diagram.pdf Graphic file (type pdf)
 
 <use ./Analysis/Relationship_Diagram.pdf>
@@ -1199,7 +1199,7 @@ Chapter 2.
 
 
 ] [37]
-<./Design/Flowcharts/Flowchart_1.pdf, id=1162, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_1.pdf, id=1167, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_1.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_1.pdf>
@@ -1207,7 +1207,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_1.pdf used on input line
  80.
 (pdftex.def)             Requested size: 345.0pt x 488.75769pt.
  [38]
-<./Design/Flowcharts/Flowchart_2.pdf, id=1167, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_2.pdf, id=1172, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_2.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_2.pdf>
@@ -1222,7 +1222,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_2.pdf used on input line
 l.87 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Design
 /Flowcharts/Flowchart_1.pdf>]
-<./Design/Flowcharts/Flowchart_3.pdf, id=1187, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_3.pdf, id=1192, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_3.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_3.pdf>
@@ -1237,7 +1237,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_3.pdf used on input line
 l.92 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Design
 /Flowcharts/Flowchart_2.pdf>]
-<./Design/Flowcharts/Flowchart_4.pdf, id=1207, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_4.pdf, id=1212, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_4.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_4.pdf>
@@ -1252,7 +1252,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_4.pdf used on input line
 l.97 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Design
 /Flowcharts/Flowchart_3.pdf>]
-<./Design/Flowcharts/Flowchart_5.pdf, id=1227, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_5.pdf, id=1232, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_5.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_5.pdf>
@@ -1267,7 +1267,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_5.pdf used on input line
 l.102 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/Flowcharts/Flowchart_4.pdf>]
-<./Design/Flowcharts/Flowchart_6.pdf, id=1248, 421.575pt x 597.23125pt>
+<./Design/Flowcharts/Flowchart_6.pdf, id=1253, 421.575pt x 597.23125pt>
 File: ./Design/Flowcharts/Flowchart_6.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_6.pdf>
@@ -1282,7 +1282,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_6.pdf used on input line
 l.107 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/Flowcharts/Flowchart_5.pdf>]
-<./Design/Flowcharts/Flowchart_7.pdf, id=1268, 597.23125pt x 845.1575pt>
+<./Design/Flowcharts/Flowchart_7.pdf, id=1273, 597.23125pt x 845.1575pt>
 File: ./Design/Flowcharts/Flowchart_7.pdf Graphic file (type pdf)
 
 <use ./Design/Flowcharts/Flowchart_7.pdf>
@@ -1297,7 +1297,7 @@ Package pdftex.def Info: ./Design/Flowcharts/Flowchart_7.pdf used on input line
 l.112 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/Flowcharts/Flowchart_6.pdf>]
-<./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf, id=1288, 421.575p
+<./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf, id=1293, 421.575p
 t x 597.23125pt>
 File: ./Design/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf Graphic file 
 (type pdf)
@@ -1314,7 +1314,7 @@ u.pdf used on input line 118.
 l.120 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/Flowcharts/Flowchart_7.pdf>]
-<./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf, id=1308, 421.575pt x
+<./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf, id=1313, 421.575pt x
  597.23125pt>
 File: ./Design/UserInterfaceDesign/View_Menu_and_Royalties.pdf Graphic file (ty
 pe pdf)
@@ -1332,7 +1332,7 @@ l.125
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/UserInterfaceDesign/Login_Screen_and_Main_Menu.pdf>]
 <./Design/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf, id=
-1325, 455.7025pt x 711.65875pt>
+1330, 455.7025pt x 711.65875pt>
 File: ./Design/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf
  Graphic file (type pdf)
 
@@ -1359,7 +1359,7 @@ Overfull \vbox (8.68109pt too high) has occurred while \output is active []
 l.130 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/UserInterfaceDesign/RoyaltiesItems_and_BookInvoice_and_Items.pdf>]
-<./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf, id=1375, 455.7025pt
+<./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf, id=1380, 455.7025pt
  x 654.445pt>
 File: ./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf Graphic file (t
 ype pdf)
@@ -1368,7 +1368,7 @@ Package pdftex.def Info: ./Design/UserInterfaceDesign/PubInvoice_and_Add_Entry.
 pdf used on input line 133.
 (pdftex.def)             Requested size: 345.0pt x 495.47604pt.
 
-<./Design/UserInterfaceDesign/Search.pdf, id=1376, 483.8075pt x 654.445pt>
+<./Design/UserInterfaceDesign/Search.pdf, id=1381, 483.8075pt x 654.445pt>
 File: ./Design/UserInterfaceDesign/Search.pdf Graphic file (type pdf)
 
 <use ./Design/UserInterfaceDesign/Search.pdf>
@@ -1383,7 +1383,7 @@ line 138.
 l.140 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/UserInterfaceDesign/PubInvoice_and_Add_Entry.pdf>]
-<./Design/UserInterfaceDesign/Editing_Screens.pdf, id=1393, 483.8075pt x 654.44
+<./Design/UserInterfaceDesign/Editing_Screens.pdf, id=1398, 483.8075pt x 654.44
 5pt>
 File: ./Design/UserInterfaceDesign/Editing_Screens.pdf Graphic file (type pdf)
  <use ./Design/UserInterfaceDesign/Editing_Screens.pdf>
@@ -1398,7 +1398,7 @@ on input line 143.
 l.145 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/UserInterfaceDesign/Search.pdf>]
-<./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf, id=1413, 48
+<./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf, id=1418, 48
 3.8075pt x 654.445pt>
 File: ./Design/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf Graphic
  file (type pdf)
@@ -1416,7 +1416,7 @@ assword.pdf used on input line 148.
 l.150 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/UserInterfaceDesign/Editing_Screens.pdf>]
-<./Design/UserInterfaceDesign/Calculations.pdf, id=1430, 483.8075pt x 682.55pt>
+<./Design/UserInterfaceDesign/Calculations.pdf, id=1435, 483.8075pt x 682.55pt>
 File: ./Design/UserInterfaceDesign/Calculations.pdf Graphic file (type pdf)
 <use ./Design/UserInterfaceDesign/Calculations.pdf>
 Package pdftex.def Info: ./Design/UserInterfaceDesign/Calculations.pdf used on 
@@ -1430,7 +1430,7 @@ input line 153.
 l.155 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/UserInterfaceDesign/Remove_Entry_and_Change_Password.pdf>]
-<./Design/UserInterfaceDesign/AddPubInvoice.pdf, id=1445, 483.8075pt x 682.55pt
+<./Design/UserInterfaceDesign/AddPubInvoice.pdf, id=1450, 483.8075pt x 682.55pt
 >
 File: ./Design/UserInterfaceDesign/AddPubInvoice.pdf Graphic file (type pdf)
  <use ./Design/UserInterfaceDesign/AddPubInvoice.pdf>
@@ -1445,7 +1445,7 @@ Package pdftex.def Info: ./Design/UserInterfaceDesign/AddPubInvoice.pdf used on
 l.160 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/UserInterfaceDesign/Calculations.pdf>]
-<./Design/UserInterfaceDesign/AddBook.pdf, id=1460, 421.575pt x 597.23125pt>
+<./Design/UserInterfaceDesign/AddBook.pdf, id=1465, 421.575pt x 597.23125pt>
 File: ./Design/UserInterfaceDesign/AddBook.pdf Graphic file (type pdf)
 
 <use ./Design/UserInterfaceDesign/AddBook.pdf>
@@ -1468,7 +1468,7 @@ ignored
 l.169 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Desig
 n/UserInterfaceDesign/AddBook.pdf>]
-<./Design/Top-down_design_structure_chart.pdf, id=1490, 421.575pt x 597.23125pt
+<./Design/Top-down_design_structure_chart.pdf, id=1495, 421.575pt x 597.23125pt
 >
 File: ./Design/Top-down_design_structure_chart.pdf Graphic file (type pdf)
  <use ./Design/Top-down_design_structure_chart.pdf>
@@ -1490,7 +1490,7 @@ LaTeX Warning: Command \textsterling invalid in math mode on input line 309.
 Overfull \vbox (41.98885pt too high) has occurred while \output is active []
 
 
-[62] <./Design/Object_Diagram.pdf, id=1536, 421.575pt x 597.23125pt>
+[62] <./Design/Object_Diagram.pdf, id=1541, 421.575pt x 597.23125pt>
 File: ./Design/Object_Diagram.pdf Graphic file (type pdf)
 
 <use ./Design/Object_Diagram.pdf>
@@ -1504,14 +1504,14 @@ re.2.19}) has been already used, duplicate ignored
 l.691 \begin{tabular}
                      {|p{2.5cm}|} <C:/Users/Imran Rahman/Documents/Year 13/Comp
 uting/COMP4Coursework/Design/Object_Diagram.pdf>] [65] [66] [67] [68]
-<./Design/Calendar_1.pdf, id=1573, 299.1175pt x 421.575pt>
+<./Design/Calendar_1.pdf, id=1578, 299.1175pt x 421.575pt>
 File: ./Design/Calendar_1.pdf Graphic file (type pdf)
 
 <use ./Design/Calendar_1.pdf>
 Package pdftex.def Info: ./Design/Calendar_1.pdf used on input line 760.
 (pdftex.def)             Requested size: 345.0pt x 486.27412pt.
  [69]
-<./Design/Calendar_2.pdf, id=1578, 299.1175pt x 421.575pt>
+<./Design/Calendar_2.pdf, id=1583, 299.1175pt x 421.575pt>
 File: ./Design/Calendar_2.pdf Graphic file (type pdf)
 
 <use ./Design/Calendar_2.pdf>
@@ -1861,7 +1861,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 898--898
 []|\OT1/cmr/m/n/10 Numbers
  []
 
-[75] [76] <./Design/ER_Diagram.pdf, id=1622, 421.575pt x 597.23125pt>
+[75] [76] <./Design/ER_Diagram.pdf, id=1627, 421.575pt x 597.23125pt>
 File: ./Design/ER_Diagram.pdf Graphic file (type pdf)
 
 <use ./Design/ER_Diagram.pdf>
@@ -10981,7 +10981,7 @@ Overfull \hbox (19.07034pt too wide) in alignment at lines 133--153
 
 [125] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136]
 [137] [138] [139] [140] [141] [142] [143] [144]
-<./Testing/Evidence/LoginTestFail.png, id=2083, 237.88875pt x 172.39406pt>
+<./Testing/Evidence/LoginTestFail.png, id=2088, 237.88875pt x 172.39406pt>
 File: ./Testing/Evidence/LoginTestFail.png Graphic file (type png)
 
 <use ./Testing/Evidence/LoginTestFail.png>
@@ -10989,7 +10989,7 @@ Package pdftex.def Info: ./Testing/Evidence/LoginTestFail.png used on input lin
 e 175.
 (pdftex.def)             Requested size: 345.0pt x 250.0281pt.
  [145]
-<./Testing/Evidence/LoginTestSucceed.png, id=2088, 237.88875pt x 172.39406pt>
+<./Testing/Evidence/LoginTestSucceed.png, id=2093, 237.88875pt x 172.39406pt>
 File: ./Testing/Evidence/LoginTestSucceed.png Graphic file (type png)
 
 <use ./Testing/Evidence/LoginTestSucceed.png>
@@ -11004,7 +11004,7 @@ line 180.
 l.183 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/LoginTestFail.png>]
-<./Testing/Evidence/LoginTestSucceed2.png, id=2093, 565.36218pt x 330.48468pt>
+<./Testing/Evidence/LoginTestSucceed2.png, id=2098, 565.36218pt x 330.48468pt>
 File: ./Testing/Evidence/LoginTestSucceed2.png Graphic file (type png)
 
 <use ./Testing/Evidence/LoginTestSucceed2.png>
@@ -11019,7 +11019,7 @@ Package pdftex.def Info: ./Testing/Evidence/LoginTestSucceed2.png used on input
 l.188 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/LoginTestSucceed.png>]
-<./Testing/Evidence/ViewButtonTest.png, id=2098, 1144.275pt x 329.73187pt>
+<./Testing/Evidence/ViewButtonTest.png, id=2103, 1144.275pt x 329.73187pt>
 File: ./Testing/Evidence/ViewButtonTest.png Graphic file (type png)
 
 <use ./Testing/Evidence/ViewButtonTest.png>
@@ -11034,7 +11034,7 @@ ne 190.
 l.193 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/LoginTestSucceed2.png>]
-<./Testing/Evidence/SearchDatabaseButtonTest.png, id=2103, 566.115pt x 330.4846
+<./Testing/Evidence/SearchDatabaseButtonTest.png, id=2108, 566.115pt x 330.4846
 8pt>
 File: ./Testing/Evidence/SearchDatabaseButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/SearchDatabaseButtonTest.png>
@@ -11049,7 +11049,7 @@ n input line 195.
 l.198 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/ViewButtonTest.png>]
-<./Testing/Evidence/AddEntryButtonTest.png, id=2108, 564.60938pt x 331.2375pt>
+<./Testing/Evidence/AddEntryButtonTest.png, id=2113, 564.60938pt x 331.2375pt>
 File: ./Testing/Evidence/AddEntryButtonTest.png Graphic file (type png)
 
 <use ./Testing/Evidence/AddEntryButtonTest.png>
@@ -11064,7 +11064,7 @@ t line 200.
 l.203 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/SearchDatabaseButtonTest.png>]
-<./Testing/Evidence/UpdateEntryButtonTest.png, id=2114, 565.36218pt x 330.48468
+<./Testing/Evidence/UpdateEntryButtonTest.png, id=2119, 565.36218pt x 330.48468
 pt>
 File: ./Testing/Evidence/UpdateEntryButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/UpdateEntryButtonTest.png>
@@ -11079,7 +11079,7 @@ nput line 205.
 l.208 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/AddEntryButtonTest.png>]
-<./Testing/Evidence/RemoveEntryButtonTest.png, id=2119, 565.36218pt x 330.48468
+<./Testing/Evidence/RemoveEntryButtonTest.png, id=2124, 565.36218pt x 330.48468
 pt>
 File: ./Testing/Evidence/RemoveEntryButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/RemoveEntryButtonTest.png>
@@ -11094,7 +11094,7 @@ nput line 210.
 l.213 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/UpdateEntryButtonTest.png>]
-<./Testing/Evidence/ChangeButtonTest.png, id=2124, 565.36218pt x 331.2375pt>
+<./Testing/Evidence/ChangeButtonTest.png, id=2129, 565.36218pt x 331.2375pt>
 File: ./Testing/Evidence/ChangeButtonTest.png Graphic file (type png)
 
 <use ./Testing/Evidence/ChangeButtonTest.png>
@@ -11109,7 +11109,7 @@ line 215.
 l.218 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/RemoveEntryButtonTest.png>]
-<./Testing/Evidence/QuickSearchButtonTest.png, id=2129, 1163.84813pt x 1020.813
+<./Testing/Evidence/QuickSearchButtonTest.png, id=2134, 1163.84813pt x 1020.813
 75pt>
 File: ./Testing/Evidence/QuickSearchButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/QuickSearchButtonTest.png>
@@ -11124,7 +11124,7 @@ nput line 220.
 l.223 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/ChangeButtonTest.png>]
-<./Testing/Evidence/AddBookButtonTest.png, id=2134, 566.115pt x 331.99031pt>
+<./Testing/Evidence/AddBookButtonTest.png, id=2139, 566.115pt x 331.99031pt>
 File: ./Testing/Evidence/AddBookButtonTest.png Graphic file (type png)
 
 <use ./Testing/Evidence/AddBookButtonTest.png>
@@ -11139,7 +11139,7 @@ Package pdftex.def Info: ./Testing/Evidence/AddBookButtonTest.png used on input
 l.228 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/QuickSearchButtonTest.png>]
-<./Testing/Evidence/ViewPubInvoiceButtonTest.png, id=2139, 565.36218pt x 330.48
+<./Testing/Evidence/ViewPubInvoiceButtonTest.png, id=2144, 565.36218pt x 330.48
 468pt>
 File: ./Testing/Evidence/ViewPubInvoiceButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/ViewPubInvoiceButtonTest.png>
@@ -11154,7 +11154,7 @@ n input line 230.
 l.233 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/AddBookButtonTest.png>]
-<./Testing/Evidence/ViewRoyaltiesButtonTest.png, id=2145, 566.115pt x 330.48468
+<./Testing/Evidence/ViewRoyaltiesButtonTest.png, id=2150, 566.115pt x 330.48468
 pt>
 File: ./Testing/Evidence/ViewRoyaltiesButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/ViewRoyaltiesButtonTest.png>
@@ -11169,7 +11169,7 @@ Package pdftex.def Info: ./Testing/Evidence/ViewRoyaltiesButtonTest.png used on
 l.238 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/ViewPubInvoiceButtonTest.png>]
-<./Testing/Evidence/ViewBookInvoiceButtonTest.png, id=2150, 565.36218pt x 329.7
+<./Testing/Evidence/ViewBookInvoiceButtonTest.png, id=2155, 565.36218pt x 329.7
 3187pt>
 File: ./Testing/Evidence/ViewBookInvoiceButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/ViewBookInvoiceButtonTest.png>
@@ -11184,7 +11184,7 @@ on input line 240.
 l.243 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/ViewRoyaltiesButtonTest.png>]
-<./Testing/Evidence/DeleteBookButtonTest.png, id=2155, 566.115pt x 330.48468pt>
+<./Testing/Evidence/DeleteBookButtonTest.png, id=2160, 566.115pt x 330.48468pt>
 File: ./Testing/Evidence/DeleteBookButtonTest.png Graphic file (type png)
 <use ./Testing/Evidence/DeleteBookButtonTest.png>
 Package pdftex.def Info: ./Testing/Evidence/DeleteBookButtonTest.png used on in
@@ -11198,7 +11198,7 @@ put line 245.
 l.248 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/ViewBookInvoiceButtonTest.png>]
-<./Testing/Evidence/ForgotPasswordLabelTest.png, id=2160, 238.64156pt x 172.394
+<./Testing/Evidence/ForgotPasswordLabelTest.png, id=2165, 238.64156pt x 172.394
 06pt>
 File: ./Testing/Evidence/ForgotPasswordLabelTest.png Graphic file (type png)
  <use ./Testing/Evidence/ForgotPasswordLabelTest.png>
@@ -11213,7 +11213,7 @@ Package pdftex.def Info: ./Testing/Evidence/ForgotPasswordLabelTest.png used on
 l.253 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/DeleteBookButtonTest.png>]
-<./Testing/Evidence/ChangePasswordButtonTest.png, id=2165, 566.115pt x 330.4846
+<./Testing/Evidence/ChangePasswordButtonTest.png, id=2170, 566.115pt x 330.4846
 8pt>
 File: ./Testing/Evidence/ChangePasswordButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/ChangePasswordButtonTest.png>
@@ -11228,7 +11228,7 @@ n input line 255.
 l.258 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/ForgotPasswordLabelTest.png>]
-<./Testing/Evidence/ConfirmPasswordButtonTest.png, id=2170, 1195.46625pt x 1053
+<./Testing/Evidence/ConfirmPasswordButtonTest.png, id=2175, 1195.46625pt x 1053
 .9375pt>
 File: ./Testing/Evidence/ConfirmPasswordButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/ConfirmPasswordButtonTest.png>
@@ -11243,7 +11243,7 @@ on input line 260.
 l.263 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/ChangePasswordButtonTest.png>]
-<./Testing/Evidence/ViewRoyaltyItemsButtonTest.png, id=2176, 1148.79187pt x 331
+<./Testing/Evidence/ViewRoyaltyItemsButtonTest.png, id=2181, 1148.79187pt x 331
 .2375pt>
 File: ./Testing/Evidence/ViewRoyaltyItemsButtonTest.png Graphic file (type png)
 
@@ -11259,7 +11259,7 @@ Package pdftex.def Info: ./Testing/Evidence/ViewRoyaltyItemsButtonTest.png used
 l.268 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/ConfirmPasswordButtonTest.png>]
-<./Testing/Evidence/ViewBookInvoiceItemsButtonTest.png, id=2182, 1147.28625pt x
+<./Testing/Evidence/ViewBookInvoiceItemsButtonTest.png, id=2187, 1147.28625pt x
  328.22626pt>
 File: ./Testing/Evidence/ViewBookInvoiceItemsButtonTest.png Graphic file (type 
 png)
@@ -11268,7 +11268,7 @@ Package pdftex.def Info: ./Testing/Evidence/ViewBookInvoiceItemsButtonTest.png
 used on input line 270.
 (pdftex.def)             Requested size: 345.0pt x 98.699pt.
 
-<./Testing/Evidence/AddEntryMenuTest.png, id=2183, 1157.82562pt x 332.74312pt>
+<./Testing/Evidence/AddEntryMenuTest.png, id=2188, 1157.82562pt x 332.74312pt>
 File: ./Testing/Evidence/AddEntryMenuTest.png Graphic file (type png)
 
 <use ./Testing/Evidence/AddEntryMenuTest.png>
@@ -11291,7 +11291,7 @@ l.278
 ng/Evidence/ViewRoyaltyItemsButtonTest.png> <C:/Users/Imran Rahman/Documents/Ye
 ar 13/Computing/COMP4Coursework/Testing/Evidence/ViewBookInvoiceItemsButtonTest
 .png>]
-<./Testing/Evidence/ConfirmSearchButtonTest.png, id=2190, 1142.76938pt x 331.23
+<./Testing/Evidence/ConfirmSearchButtonTest.png, id=2195, 1142.76938pt x 331.23
 75pt>
 File: ./Testing/Evidence/ConfirmSearchButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/ConfirmSearchButtonTest.png>
@@ -11299,7 +11299,7 @@ Package pdftex.def Info: ./Testing/Evidence/ConfirmSearchButtonTest.png used on
  input line 280.
 (pdftex.def)             Requested size: 345.0pt x 99.99873pt.
 
-<./Testing/Evidence/UpdateBookButtonTest.png, id=2191, 1141.26375pt x 332.74312
+<./Testing/Evidence/UpdateBookButtonTest.png, id=2196, 1141.26375pt x 332.74312
 pt>
 File: ./Testing/Evidence/UpdateBookButtonTest.png Graphic file (type png)
  <use ./Testing/Evidence/UpdateBookButtonTest.png>
@@ -11321,7 +11321,7 @@ l.288
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/AddEntryMenuTest.png> <C:/Users/Imran Rahman/Documents/Year 13/Comp
 uting/COMP4Coursework/Testing/Evidence/ConfirmSearchButtonTest.png>]
-<./Testing/Evidence/Series2/SearchValidation.png, id=2196, 2341.24687pt x 670.0
+<./Testing/Evidence/Series2/SearchValidation.png, id=2201, 2341.24687pt x 670.0
 0313pt>
 File: ./Testing/Evidence/Series2/SearchValidation.png Graphic file (type png)
  <use ./Testing/Evidence/Series2/SearchValidation.png>
@@ -11329,7 +11329,7 @@ Package pdftex.def Info: ./Testing/Evidence/Series2/SearchValidation.png used o
 n input line 290.
 (pdftex.def)             Requested size: 345.0pt x 98.72748pt.
 
-<./Testing/Evidence/Series2/AddEntryValidation.png, id=2197, 509.65407pt x 197.
+<./Testing/Evidence/Series2/AddEntryValidation.png, id=2202, 509.65407pt x 197.
 98969pt>
 File: ./Testing/Evidence/Series2/AddEntryValidation.png Graphic file (type png)
 
@@ -11352,7 +11352,7 @@ l.298
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/UpdateBookButtonTest.png> <C:/Users/Imran Rahman/Documents/Year 13/
 Computing/COMP4Coursework/Testing/Evidence/Series2/SearchValidation.png>]
-<./Testing/Evidence/Series2/InvalidAddress.png, id=2202, 565.36218pt x 329.7318
+<./Testing/Evidence/Series2/InvalidAddress.png, id=2208, 565.36218pt x 329.7318
 7pt>
 File: ./Testing/Evidence/Series2/InvalidAddress.png Graphic file (type png)
  <use ./Testing/Evidence/Series2/InvalidAddress.png>
@@ -11367,7 +11367,7 @@ input line 300.
 l.303 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series2/AddEntryValidation.png>]
-<./Testing/Evidence/Series2/ISBNRejection.png, id=2207, 537.50812pt x 432.11438
+<./Testing/Evidence/Series2/ISBNRejection.png, id=2213, 537.50812pt x 432.11438
 pt>
 File: ./Testing/Evidence/Series2/ISBNRejection.png Graphic file (type png)
  <use ./Testing/Evidence/Series2/ISBNRejection.png>
@@ -11382,7 +11382,7 @@ nput line 305.
 l.308 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series2/InvalidAddress.png>]
-<./Testing/Evidence/Series2/PagesRejection.png, id=2213, 537.50812pt x 181.4278
+<./Testing/Evidence/Series2/PagesRejection.png, id=2219, 537.50812pt x 181.4278
 1pt>
 File: ./Testing/Evidence/Series2/PagesRejection.png Graphic file (type png)
  <use ./Testing/Evidence/Series2/PagesRejection.png>
@@ -11397,7 +11397,7 @@ input line 310.
 l.313 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series2/ISBNRejection.png>]
-<./Testing/Evidence/Series2/BookInvoiceDiscountValidation.png, id=2219, 1174.38
+<./Testing/Evidence/Series2/BookInvoiceDiscountValidation.png, id=2225, 1174.38
 75pt x 761.84625pt>
 File: ./Testing/Evidence/Series2/BookInvoiceDiscountValidation.png Graphic file
  (type png)
@@ -11414,7 +11414,7 @@ on.png used on input line 315.
 l.318 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series2/PagesRejection.png>]
-<./Testing/Evidence/Series2/RoyaltyDiscountValidation.png, id=2224, 813.0375pt 
+<./Testing/Evidence/Series2/RoyaltyDiscountValidation.png, id=2230, 813.0375pt 
 x 734.745pt>
 File: ./Testing/Evidence/Series2/RoyaltyDiscountValidation.png Graphic file (ty
 pe png)
@@ -11431,7 +11431,7 @@ ng used on input line 320.
 l.323 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series2/BookInvoiceDiscountValidation.png>]
-<./Testing/Evidence/Series3/AddBookValidation.png, id=2230, 1198.4775pt x 713.6
+<./Testing/Evidence/Series3/AddBookValidation.png, id=2236, 1198.4775pt x 713.6
 6624pt>
 File: ./Testing/Evidence/Series3/AddBookValidation.png Graphic file (type png)
  <use ./Testing/Evidence/Series3/AddBookValidation.png>
@@ -11446,7 +11446,7 @@ on input line 325.
 l.328 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series2/RoyaltyDiscountValidation.png>]
-<./Testing/Evidence/Series3/AddInvoiceItemTest.png, id=2236, 1416.79312pt x 630
+<./Testing/Evidence/Series3/AddInvoiceItemTest.png, id=2242, 1416.79312pt x 630
 .85687pt>
 File: ./Testing/Evidence/Series3/AddInvoiceItemTest.png Graphic file (type png)
 
@@ -11462,7 +11462,7 @@ Package pdftex.def Info: ./Testing/Evidence/Series3/AddInvoiceItemTest.png used
 l.333 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series3/AddBookValidation.png>]
-<./Testing/Evidence/Series3/AddRoyaltyItemTest.png, id=2241, 1428.83812pt x 728
+<./Testing/Evidence/Series3/AddRoyaltyItemTest.png, id=2247, 1428.83812pt x 728
 .7225pt>
 File: ./Testing/Evidence/Series3/AddRoyaltyItemTest.png Graphic file (type png)
 
@@ -11478,7 +11478,7 @@ Package pdftex.def Info: ./Testing/Evidence/Series3/AddRoyaltyItemTest.png used
 l.338 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series3/AddInvoiceItemTest.png>]
-<./Testing/Evidence/Series3/PrintCostValidation.png, id=2248, 758.835pt x 540.5
+<./Testing/Evidence/Series3/PrintCostValidation.png, id=2254, 758.835pt x 540.5
 1938pt>
 File: ./Testing/Evidence/Series3/PrintCostValidation.png Graphic file (type png
 )
@@ -11494,7 +11494,7 @@ d on input line 340.
 l.343 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series3/AddRoyaltyItemTest.png>]
-<./Testing/Evidence/Series3/RoyaltyPaymentValidation.png, id=2254, 1416.79312pt
+<./Testing/Evidence/Series3/RoyaltyPaymentValidation.png, id=2260, 1416.79312pt
  x 271.76532pt>
 File: ./Testing/Evidence/Series3/RoyaltyPaymentValidation.png Graphic file (typ
 e png)
@@ -11511,7 +11511,7 @@ g used on input line 345.
 l.348 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series3/PrintCostValidation.png>]
-<./Testing/Evidence/Series3/BookInvoicePaymentValidation.png, id=2260, 1411.523
+<./Testing/Evidence/Series3/BookInvoicePaymentValidation.png, id=2266, 1411.523
 44pt x 265.74281pt>
 File: ./Testing/Evidence/Series3/BookInvoicePaymentValidation.png Graphic file 
 (type png)
@@ -11521,7 +11521,7 @@ Package pdftex.def Info: ./Testing/Evidence/Series3/BookInvoicePaymentValidatio
 n.png used on input line 350.
 (pdftex.def)             Requested size: 345.0pt x 64.95143pt.
 
-<./Testing/Evidence/Series4/AddAuthorTest.png, id=2261, 1300.86pt x 329.73187pt
+<./Testing/Evidence/Series4/AddAuthorTest.png, id=2267, 1300.86pt x 329.73187pt
 >
 File: ./Testing/Evidence/Series4/AddAuthorTest.png Graphic file (type png)
  <use ./Testing/Evidence/Series4/AddAuthorTest.png>
@@ -11529,7 +11529,7 @@ Package pdftex.def Info: ./Testing/Evidence/Series4/AddAuthorTest.png used on i
 nput line 355.
 (pdftex.def)             Requested size: 345.0pt x 87.44392pt.
 
-<./Testing/Evidence/Series4/AddBookTest.png, id=2262, 1177.39874pt x 352.31625p
+<./Testing/Evidence/Series4/AddBookTest.png, id=2268, 1177.39874pt x 352.31625p
 t>
 File: ./Testing/Evidence/Series4/AddBookTest.png Graphic file (type png)
  <use ./Testing/Evidence/Series4/AddBookTest.png>
@@ -11559,7 +11559,7 @@ ng/Evidence/Series3/RoyaltyPaymentValidation.png> <C:/Users/Imran Rahman/Docume
 nts/Year 13/Computing/COMP4Coursework/Testing/Evidence/Series3/BookInvoicePayme
 ntValidation.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Cours
 ework/Testing/Evidence/Series4/AddAuthorTest.png>]
-<./Testing/Evidence/Series4/AddPubInvoiceTest.png, id=2267, 1111.15125pt x 340.
+<./Testing/Evidence/Series4/AddPubInvoiceTest.png, id=2273, 1111.15125pt x 340.
 27126pt>
 File: ./Testing/Evidence/Series4/AddPubInvoiceTest.png Graphic file (type png)
  <use ./Testing/Evidence/Series4/AddPubInvoiceTest.png>
@@ -11567,7 +11567,7 @@ Package pdftex.def Info: ./Testing/Evidence/Series4/AddPubInvoiceTest.png used
 on input line 365.
 (pdftex.def)             Requested size: 345.0pt x 105.64914pt.
 
-<./Testing/Evidence/Series4/AddBookInvoiceTest.png, id=2268, 1100.61188pt x 329
+<./Testing/Evidence/Series4/AddBookInvoiceTest.png, id=2274, 1100.61188pt x 329
 .73187pt>
 File: ./Testing/Evidence/Series4/AddBookInvoiceTest.png Graphic file (type png)
 
@@ -11590,7 +11590,7 @@ l.373
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series4/AddBookTest.png> <C:/Users/Imran Rahman/Documents/Year 13/C
 omputing/COMP4Coursework/Testing/Evidence/Series4/AddPubInvoiceTest.png>]
-<./Testing/Evidence/Series4/AddBookInvoiceItemsTest.png, id=2273, 1108.14pt x 3
+<./Testing/Evidence/Series4/AddBookInvoiceItemsTest.png, id=2279, 1108.14pt x 3
 38.76563pt>
 File: ./Testing/Evidence/Series4/AddBookInvoiceItemsTest.png Graphic file (type
  png)
@@ -11599,7 +11599,7 @@ Package pdftex.def Info: ./Testing/Evidence/Series4/AddBookInvoiceItemsTest.png
  used on input line 375.
 (pdftex.def)             Requested size: 345.0pt x 105.46596pt.
 
-<./Testing/Evidence/Series4/AddRoyaltiesTest.png, id=2274, 1136.74687pt x 335.7
+<./Testing/Evidence/Series4/AddRoyaltiesTest.png, id=2280, 1136.74687pt x 335.7
 5438pt>
 File: ./Testing/Evidence/Series4/AddRoyaltiesTest.png Graphic file (type png)
  <use ./Testing/Evidence/Series4/AddRoyaltiesTest.png>
@@ -11622,7 +11622,7 @@ l.383
 ng/Evidence/Series4/AddBookInvoiceTest.png> <C:/Users/Imran Rahman/Documents/Ye
 ar 13/Computing/COMP4Coursework/Testing/Evidence/Series4/AddBookInvoiceItemsTes
 t.png>]
-<./Testing/Evidence/Series4/AddRoyaltyItemsTest.png, id=2279, 1097.60063pt x 33
+<./Testing/Evidence/Series4/AddRoyaltyItemsTest.png, id=2285, 1097.60063pt x 33
 8.76563pt>
 File: ./Testing/Evidence/Series4/AddRoyaltyItemsTest.png Graphic file (type png
 )
@@ -11631,7 +11631,7 @@ Package pdftex.def Info: ./Testing/Evidence/Series4/AddRoyaltyItemsTest.png use
 d on input line 385.
 (pdftex.def)             Requested size: 345.0pt x 106.47911pt.
 
-<./Testing/Evidence/Series4/UpdateAuthorTest.png, id=2280, 1192.455pt x 1053.93
+<./Testing/Evidence/Series4/UpdateAuthorTest.png, id=2286, 1192.455pt x 1053.93
 75pt>
 File: ./Testing/Evidence/Series4/UpdateAuthorTest.png Graphic file (type png)
  <use ./Testing/Evidence/Series4/UpdateAuthorTest.png>
@@ -11654,7 +11654,7 @@ l.393
 ng/Evidence/Series4/AddRoyaltiesTest.png> <C:/Users/Imran Rahman/Documents/Year
  13/Computing/COMP4Coursework/Testing/Evidence/Series4/AddRoyaltyItemsTest.png>
 ]
-<./Testing/Evidence/Series4/UpdateBookTest.png, id=2286, 1093.08376pt x 704.632
+<./Testing/Evidence/Series4/UpdateBookTest.png, id=2292, 1093.08376pt x 704.632
 5pt>
 File: ./Testing/Evidence/Series4/UpdateBookTest.png Graphic file (type png)
  <use ./Testing/Evidence/Series4/UpdateBookTest.png>
@@ -11669,7 +11669,7 @@ input line 395.
 l.398 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series4/UpdateAuthorTest.png>]
-<./Testing/Evidence/Series4/UpdateBookInvoiceTest.png, id=2291, 1076.52188pt x 
+<./Testing/Evidence/Series4/UpdateBookInvoiceTest.png, id=2297, 1076.52188pt x 
 585.68813pt>
 File: ./Testing/Evidence/Series4/UpdateBookInvoiceTest.png Graphic file (type p
 ng)
@@ -11686,7 +11686,7 @@ sed on input line 400.
 l.403 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series4/UpdateBookTest.png>]
-<./Testing/Evidence/Series4/UpdateBookInvoiceItemsTest.png, id=2296, 1075.01625
+<./Testing/Evidence/Series4/UpdateBookInvoiceItemsTest.png, id=2302, 1075.01625
 pt x 566.115pt>
 File: ./Testing/Evidence/Series4/UpdateBookInvoiceItemsTest.png Graphic file (t
 ype png)
@@ -11703,7 +11703,7 @@ png used on input line 405.
 l.408 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series4/UpdateBookInvoiceTest.png>]
-<./Testing/Evidence/Series4/DeleteRoyaltyItemsDataTest.png, id=2301, 1135.24126
+<./Testing/Evidence/Series4/DeleteRoyaltyItemsDataTest.png, id=2307, 1135.24126
 pt x 566.115pt>
 File: ./Testing/Evidence/Series4/DeleteRoyaltyItemsDataTest.png Graphic file (t
 ype png)
@@ -11720,7 +11720,7 @@ png used on input line 410.
 l.413 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series4/UpdateBookInvoiceItemsTest.png>]
-<./Testing/Evidence/Series4/DeleteRoyaltiesDataTest.png, id=2306, 1087.06125pt 
+<./Testing/Evidence/Series4/DeleteRoyaltiesDataTest.png, id=2312, 1087.06125pt 
 x 567.62062pt>
 File: ./Testing/Evidence/Series4/DeleteRoyaltiesDataTest.png Graphic file (type
  png)
@@ -11737,7 +11737,7 @@ Package pdftex.def Info: ./Testing/Evidence/Series4/DeleteRoyaltiesDataTest.png
 l.418 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Testi
 ng/Evidence/Series4/DeleteRoyaltyItemsDataTest.png>]
-<./Testing/Evidence/Series4/DeleteAuthorDataTest.png, id=2311, 852.18375pt x 72
+<./Testing/Evidence/Series4/DeleteAuthorDataTest.png, id=2317, 852.18375pt x 72
 5.71124pt>
 File: ./Testing/Evidence/Series4/DeleteAuthorDataTest.png Graphic file (type pn
 g)
@@ -12080,7 +12080,7 @@ Underfull \hbox (badness 1755) in paragraph at lines 245--245
  []
 
 [205]
-<./Maintenance/UserInterface/LoginScreen.png, id=2858, 237.88875pt x 172.39406p
+<./Maintenance/UserInterface/LoginScreen.png, id=2863, 237.88875pt x 172.39406p
 t>
 File: ./Maintenance/UserInterface/LoginScreen.png Graphic file (type png)
  <use ./Maintenance/UserInterface/LoginScreen.png>
@@ -12088,7 +12088,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/LoginScreen.png used on in
 put line 256.
 (pdftex.def)             Requested size: 345.0pt x 250.0281pt.
 
-<./Maintenance/UserInterface/ForgotPasswordScreen.png, id=2859, 237.13594pt x 1
+<./Maintenance/UserInterface/ForgotPasswordScreen.png, id=2864, 237.13594pt x 1
 72.39406pt>
 File: ./Maintenance/UserInterface/ForgotPasswordScreen.png Graphic file (type p
 ng)
@@ -12104,7 +12104,7 @@ sed on input line 261.
 l.263 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/LoginScreen.png>]
-<./Maintenance/UserInterface/MainMenu.png, id=2865, 565.36218pt x 330.48468pt>
+<./Maintenance/UserInterface/MainMenu.png, id=2870, 565.36218pt x 330.48468pt>
 File: ./Maintenance/UserInterface/MainMenu.png Graphic file (type png)
 
 <use ./Maintenance/UserInterface/MainMenu.png>
@@ -12112,7 +12112,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/MainMenu.png used on input
  line 266.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/AddEntry.png, id=2866, 565.36218pt x 330.48468pt>
+<./Maintenance/UserInterface/AddEntry.png, id=2871, 565.36218pt x 330.48468pt>
 File: ./Maintenance/UserInterface/AddEntry.png Graphic file (type png)
 
 <use ./Maintenance/UserInterface/AddEntry.png>
@@ -12134,7 +12134,7 @@ l.273
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/ForgotPasswordScreen.png> <C:/Users/Imran Rahman/Documents
 /Year 13/Computing/COMP4Coursework/Maintenance/UserInterface/MainMenu.png>]
-<./Maintenance/UserInterface/UpdateEntry.png, id=2873, 565.36218pt x 330.48468p
+<./Maintenance/UserInterface/UpdateEntry.png, id=2878, 565.36218pt x 330.48468p
 t>
 File: ./Maintenance/UserInterface/UpdateEntry.png Graphic file (type png)
  <use ./Maintenance/UserInterface/UpdateEntry.png>
@@ -12142,7 +12142,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/UpdateEntry.png used on in
 put line 276.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/EditingEntry.png, id=2874, 565.36218pt x 330.48468
+<./Maintenance/UserInterface/EditingEntry.png, id=2879, 565.36218pt x 330.48468
 pt>
 File: ./Maintenance/UserInterface/EditingEntry.png Graphic file (type png)
  <use ./Maintenance/UserInterface/EditingEntry.png>
@@ -12164,7 +12164,7 @@ l.283
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/AddEntry.png> <C:/Users/Imran Rahman/Documents/Year 13/Com
 puting/COMP4Coursework/Maintenance/UserInterface/UpdateEntry.png>]
-<./Maintenance/UserInterface/UpdateEntryVerify.png, id=2883, 565.36218pt x 330.
+<./Maintenance/UserInterface/UpdateEntryVerify.png, id=2888, 565.36218pt x 330.
 48468pt>
 File: ./Maintenance/UserInterface/UpdateEntryVerify.png Graphic file (type png)
 
@@ -12173,7 +12173,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/UpdateEntryVerify.png used
  on input line 286.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/UpdateEntrySuccess.png, id=2884, 565.36218pt x 330
+<./Maintenance/UserInterface/UpdateEntrySuccess.png, id=2889, 565.36218pt x 330
 .48468pt>
 File: ./Maintenance/UserInterface/UpdateEntrySuccess.png Graphic file (type png
 )
@@ -12196,7 +12196,7 @@ l.293
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/EditingEntry.png> <C:/Users/Imran Rahman/Documents/Year 13
 /Computing/COMP4Coursework/Maintenance/UserInterface/UpdateEntryVerify.png>]
-<./Maintenance/UserInterface/DeleteEntry.png, id=2893, 565.36218pt x 330.48468p
+<./Maintenance/UserInterface/DeleteEntry.png, id=2898, 565.36218pt x 330.48468p
 t>
 File: ./Maintenance/UserInterface/DeleteEntry.png Graphic file (type png)
  <use ./Maintenance/UserInterface/DeleteEntry.png>
@@ -12204,7 +12204,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/DeleteEntry.png used on in
 put line 296.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/DeleteEntrySuccess.png, id=2894, 565.36218pt x 330
+<./Maintenance/UserInterface/DeleteEntrySuccess.png, id=2899, 565.36218pt x 330
 .48468pt>
 File: ./Maintenance/UserInterface/DeleteEntrySuccess.png Graphic file (type png
 )
@@ -12227,7 +12227,7 @@ l.303
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/UpdateEntrySuccess.png> <C:/Users/Imran Rahman/Documents/Y
 ear 13/Computing/COMP4Coursework/Maintenance/UserInterface/DeleteEntry.png>]
-<./Maintenance/UserInterface/ViewMenu.png, id=2904, 565.36218pt x 330.48468pt>
+<./Maintenance/UserInterface/ViewMenu.png, id=2909, 565.36218pt x 330.48468pt>
 File: ./Maintenance/UserInterface/ViewMenu.png Graphic file (type png)
 
 <use ./Maintenance/UserInterface/ViewMenu.png>
@@ -12235,7 +12235,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/ViewMenu.png used on input
  line 306.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/ViewPubInvoices.png, id=2905, 565.36218pt x 329.73
+<./Maintenance/UserInterface/ViewPubInvoices.png, id=2910, 565.36218pt x 329.73
 187pt>
 File: ./Maintenance/UserInterface/ViewPubInvoices.png Graphic file (type png)
  <use ./Maintenance/UserInterface/ViewPubInvoices.png>
@@ -12257,7 +12257,7 @@ l.313
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/DeleteEntrySuccess.png> <C:/Users/Imran Rahman/Documents/Y
 ear 13/Computing/COMP4Coursework/Maintenance/UserInterface/ViewMenu.png>]
-<./Maintenance/UserInterface/AddPubInvoice.png, id=2913, 565.36218pt x 331.2375
+<./Maintenance/UserInterface/AddPubInvoice.png, id=2918, 565.36218pt x 331.2375
 pt>
 File: ./Maintenance/UserInterface/AddPubInvoice.png Graphic file (type png)
  <use ./Maintenance/UserInterface/AddPubInvoice.png>
@@ -12265,7 +12265,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/AddPubInvoice.png used on
 input line 316.
 (pdftex.def)             Requested size: 345.0pt x 202.13544pt.
 
-<./Maintenance/UserInterface/UpdatePubInvoice.png, id=2914, 565.36218pt x 330.4
+<./Maintenance/UserInterface/UpdatePubInvoice.png, id=2919, 565.36218pt x 330.4
 8468pt>
 File: ./Maintenance/UserInterface/UpdatePubInvoice.png Graphic file (type png)
  <use ./Maintenance/UserInterface/UpdatePubInvoice.png>
@@ -12287,7 +12287,7 @@ l.323
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/ViewPubInvoices.png> <C:/Users/Imran Rahman/Documents/Year
  13/Computing/COMP4Coursework/Maintenance/UserInterface/AddPubInvoice.png>]
-<./Maintenance/UserInterface/UpdatePubInvoiceVerify.png, id=2922, 565.36218pt x
+<./Maintenance/UserInterface/UpdatePubInvoiceVerify.png, id=2927, 565.36218pt x
  330.48468pt>
 File: ./Maintenance/UserInterface/UpdatePubInvoiceVerify.png Graphic file (type
  png)
@@ -12296,7 +12296,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/UpdatePubInvoiceVerify.png
  used on input line 326.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/UpdatePubInvoiceSuccess.png, id=2923, 565.36218pt 
+<./Maintenance/UserInterface/UpdatePubInvoiceSuccess.png, id=2928, 565.36218pt 
 x 330.48468pt>
 File: ./Maintenance/UserInterface/UpdatePubInvoiceSuccess.png Graphic file (typ
 e png)
@@ -12321,7 +12321,7 @@ l.333
 enance/UserInterface/UpdatePubInvoice.png> <C:/Users/Imran Rahman/Documents/Yea
 r 13/Computing/COMP4Coursework/Maintenance/UserInterface/UpdatePubInvoiceVerify
 .png>]
-<./Maintenance/UserInterface/DeletePubInvoice.png, id=2932, 565.36218pt x 330.4
+<./Maintenance/UserInterface/DeletePubInvoice.png, id=2937, 565.36218pt x 330.4
 8468pt>
 File: ./Maintenance/UserInterface/DeletePubInvoice.png Graphic file (type png)
  <use ./Maintenance/UserInterface/DeletePubInvoice.png>
@@ -12329,7 +12329,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/DeletePubInvoice.png used
 on input line 336.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/DeletePubInvoiceSuccess.png, id=2933, 565.36218pt 
+<./Maintenance/UserInterface/DeletePubInvoiceSuccess.png, id=2938, 565.36218pt 
 x 330.48468pt>
 File: ./Maintenance/UserInterface/DeletePubInvoiceSuccess.png Graphic file (typ
 e png)
@@ -12354,7 +12354,7 @@ l.343
 enance/UserInterface/UpdatePubInvoiceSuccess.png> <C:/Users/Imran Rahman/Docume
 nts/Year 13/Computing/COMP4Coursework/Maintenance/UserInterface/DeletePubInvoic
 e.png>]
-<./Maintenance/UserInterface/ViewBookInvoices.png, id=2942, 565.36218pt x 330.4
+<./Maintenance/UserInterface/ViewBookInvoices.png, id=2947, 565.36218pt x 330.4
 8468pt>
 File: ./Maintenance/UserInterface/ViewBookInvoices.png Graphic file (type png)
  <use ./Maintenance/UserInterface/ViewBookInvoices.png>
@@ -12362,7 +12362,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/ViewBookInvoices.png used
 on input line 346.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/AddBookInvoice.png, id=2943, 565.36218pt x 330.484
+<./Maintenance/UserInterface/AddBookInvoice.png, id=2948, 565.36218pt x 330.484
 68pt>
 File: ./Maintenance/UserInterface/AddBookInvoice.png Graphic file (type png)
  <use ./Maintenance/UserInterface/AddBookInvoice.png>
@@ -12385,7 +12385,7 @@ l.353
 enance/UserInterface/DeletePubInvoiceSuccess.png> <C:/Users/Imran Rahman/Docume
 nts/Year 13/Computing/COMP4Coursework/Maintenance/UserInterface/ViewBookInvoice
 s.png>]
-<./Maintenance/UserInterface/UpdateBookInvoice.png, id=2952, 565.36218pt x 330.
+<./Maintenance/UserInterface/UpdateBookInvoice.png, id=2957, 565.36218pt x 330.
 48468pt>
 File: ./Maintenance/UserInterface/UpdateBookInvoice.png Graphic file (type png)
 
@@ -12394,7 +12394,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/UpdateBookInvoice.png used
  on input line 356.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/ViewBookInvoiceItems.png, id=2953, 565.36218pt x 3
+<./Maintenance/UserInterface/ViewBookInvoiceItems.png, id=2958, 565.36218pt x 3
 30.48468pt>
 File: ./Maintenance/UserInterface/ViewBookInvoiceItems.png Graphic file (type p
 ng)
@@ -12417,7 +12417,7 @@ l.363
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/AddBookInvoice.png> <C:/Users/Imran Rahman/Documents/Year 
 13/Computing/COMP4Coursework/Maintenance/UserInterface/UpdateBookInvoice.png>]
-<./Maintenance/UserInterface/AddBookInvoiceItems.png, id=2963, 565.36218pt x 33
+<./Maintenance/UserInterface/AddBookInvoiceItems.png, id=2968, 565.36218pt x 33
 0.48468pt>
 File: ./Maintenance/UserInterface/AddBookInvoiceItems.png Graphic file (type pn
 g)
@@ -12426,7 +12426,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/AddBookInvoiceItems.png us
 ed on input line 366.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/UpdateBookInvoiceItems.png, id=2964, 565.36218pt x
+<./Maintenance/UserInterface/UpdateBookInvoiceItems.png, id=2969, 565.36218pt x
  330.48468pt>
 File: ./Maintenance/UserInterface/UpdateBookInvoiceItems.png Graphic file (type
  png)
@@ -12457,7 +12457,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/ViewBookInvoices.png used
 on input line 376.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/AddRoyalties.png, id=2973, 565.36218pt x 330.48468
+<./Maintenance/UserInterface/AddRoyalties.png, id=2978, 565.36218pt x 330.48468
 pt>
 File: ./Maintenance/UserInterface/AddRoyalties.png Graphic file (type png)
  <use ./Maintenance/UserInterface/AddRoyalties.png>
@@ -12478,7 +12478,7 @@ l.383
 l.383 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/UpdateBookInvoiceItems.png>]
-<./Maintenance/UserInterface/UpdateRoyalties.png, id=2980, 565.36218pt x 330.48
+<./Maintenance/UserInterface/UpdateRoyalties.png, id=2986, 565.36218pt x 330.48
 468pt>
 File: ./Maintenance/UserInterface/UpdateRoyalties.png Graphic file (type png)
  <use ./Maintenance/UserInterface/UpdateRoyalties.png>
@@ -12486,7 +12486,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/UpdateRoyalties.png used o
 n input line 386.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/ViewRoyaltyItems.png, id=2981, 565.36218pt x 330.4
+<./Maintenance/UserInterface/ViewRoyaltyItems.png, id=2987, 565.36218pt x 330.4
 8468pt>
 File: ./Maintenance/UserInterface/ViewRoyaltyItems.png Graphic file (type png)
  <use ./Maintenance/UserInterface/ViewRoyaltyItems.png>
@@ -12508,7 +12508,7 @@ l.393
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/AddRoyalties.png> <C:/Users/Imran Rahman/Documents/Year 13
 /Computing/COMP4Coursework/Maintenance/UserInterface/UpdateRoyalties.png>]
-<./Maintenance/UserInterface/AddRoyaltyItems.png, id=2990, 565.36218pt x 330.48
+<./Maintenance/UserInterface/AddRoyaltyItems.png, id=2996, 565.36218pt x 330.48
 468pt>
 File: ./Maintenance/UserInterface/AddRoyaltyItems.png Graphic file (type png)
  <use ./Maintenance/UserInterface/AddRoyaltyItems.png>
@@ -12516,7 +12516,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/AddRoyaltyItems.png used o
 n input line 396.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/UpdateRoyaltyItems.png, id=2991, 565.36218pt x 330
+<./Maintenance/UserInterface/UpdateRoyaltyItems.png, id=2997, 565.36218pt x 330
 .48468pt>
 File: ./Maintenance/UserInterface/UpdateRoyaltyItems.png Graphic file (type png
 )
@@ -12539,7 +12539,7 @@ l.403
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/ViewRoyaltyItems.png> <C:/Users/Imran Rahman/Documents/Yea
 r 13/Computing/COMP4Coursework/Maintenance/UserInterface/AddRoyaltyItems.png>]
-<./Maintenance/UserInterface/AddBook.png, id=3000, 565.36218pt x 330.48468pt>
+<./Maintenance/UserInterface/AddBook.png, id=3006, 565.36218pt x 330.48468pt>
 File: ./Maintenance/UserInterface/AddBook.png Graphic file (type png)
 
 <use ./Maintenance/UserInterface/AddBook.png>
@@ -12547,7 +12547,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/AddBook.png used on input
 line 406.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/UpdateBook.png, id=3001, 565.36218pt x 330.48468pt
+<./Maintenance/UserInterface/UpdateBook.png, id=3007, 565.36218pt x 330.48468pt
 >
 File: ./Maintenance/UserInterface/UpdateBook.png Graphic file (type png)
  <use ./Maintenance/UserInterface/UpdateBook.png>
@@ -12569,7 +12569,7 @@ l.413
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/UpdateRoyaltyItems.png> <C:/Users/Imran Rahman/Documents/Y
 ear 13/Computing/COMP4Coursework/Maintenance/UserInterface/AddBook.png>]
-<./Maintenance/UserInterface/QuickSearch.png, id=3010, 565.36218pt x 330.48468p
+<./Maintenance/UserInterface/QuickSearch.png, id=3016, 565.36218pt x 330.48468p
 t>
 File: ./Maintenance/UserInterface/QuickSearch.png Graphic file (type png)
  <use ./Maintenance/UserInterface/QuickSearch.png>
@@ -12577,7 +12577,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/QuickSearch.png used on in
 put line 416.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/ChangeSelection.png, id=3011, 565.36218pt x 330.48
+<./Maintenance/UserInterface/ChangeSelection.png, id=3017, 565.36218pt x 330.48
 468pt>
 File: ./Maintenance/UserInterface/ChangeSelection.png Graphic file (type png)
  <use ./Maintenance/UserInterface/ChangeSelection.png>
@@ -12599,7 +12599,7 @@ l.423
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/UpdateBook.png> <C:/Users/Imran Rahman/Documents/Year 13/C
 omputing/COMP4Coursework/Maintenance/UserInterface/QuickSearch.png>]
-<./Maintenance/UserInterface/ChangeUsername.png, id=3021, 565.36218pt x 330.484
+<./Maintenance/UserInterface/ChangeUsername.png, id=3027, 565.36218pt x 330.484
 68pt>
 File: ./Maintenance/UserInterface/ChangeUsername.png Graphic file (type png)
  <use ./Maintenance/UserInterface/ChangeUsername.png>
@@ -12607,7 +12607,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/ChangeUsername.png used on
  input line 426.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/ChangeUsernameSuccess.png, id=3022, 565.36218pt x 
+<./Maintenance/UserInterface/ChangeUsernameSuccess.png, id=3028, 565.36218pt x 
 330.48468pt>
 File: ./Maintenance/UserInterface/ChangeUsernameSuccess.png Graphic file (type 
 png)
@@ -12631,7 +12631,7 @@ l.433
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/ChangeSelection.png> <C:/Users/Imran Rahman/Documents/Year
  13/Computing/COMP4Coursework/Maintenance/UserInterface/ChangeUsername.png>]
-<./Maintenance/UserInterface/ChangePassword.png, id=3031, 565.36218pt x 330.484
+<./Maintenance/UserInterface/ChangePassword.png, id=3037, 565.36218pt x 330.484
 68pt>
 File: ./Maintenance/UserInterface/ChangePassword.png Graphic file (type png)
  <use ./Maintenance/UserInterface/ChangePassword.png>
@@ -12639,7 +12639,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/ChangePassword.png used on
  input line 436.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/ChangePasswordSuccess.png, id=3032, 565.36218pt x 
+<./Maintenance/UserInterface/ChangePasswordSuccess.png, id=3038, 565.36218pt x 
 330.48468pt>
 File: ./Maintenance/UserInterface/ChangePasswordSuccess.png Graphic file (type 
 png)
@@ -12664,7 +12664,7 @@ l.443
 enance/UserInterface/ChangeUsernameSuccess.png> <C:/Users/Imran Rahman/Document
 s/Year 13/Computing/COMP4Coursework/Maintenance/UserInterface/ChangePassword.pn
 g>]
-<./Maintenance/UserInterface/Search.png, id=3041, 565.36218pt x 330.48468pt>
+<./Maintenance/UserInterface/Search.png, id=3047, 565.36218pt x 330.48468pt>
 File: ./Maintenance/UserInterface/Search.png Graphic file (type png)
 
 <use ./Maintenance/UserInterface/Search.png>
@@ -12672,7 +12672,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/Search.png used on input l
 ine 446.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/SearchSelectionChosen.png, id=3042, 565.36218pt x 
+<./Maintenance/UserInterface/SearchSelectionChosen.png, id=3048, 565.36218pt x 
 330.48468pt>
 File: ./Maintenance/UserInterface/SearchSelectionChosen.png Graphic file (type 
 png)
@@ -12696,7 +12696,7 @@ l.453
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/ChangePasswordSuccess.png> <C:/Users/Imran Rahman/Document
 s/Year 13/Computing/COMP4Coursework/Maintenance/UserInterface/Search.png>]
-<./Maintenance/UserInterface/NoMatchSearch.png, id=3051, 565.36218pt x 330.4846
+<./Maintenance/UserInterface/NoMatchSearch.png, id=3057, 565.36218pt x 330.4846
 8pt>
 File: ./Maintenance/UserInterface/NoMatchSearch.png Graphic file (type png)
  <use ./Maintenance/UserInterface/NoMatchSearch.png>
@@ -12704,7 +12704,7 @@ Package pdftex.def Info: ./Maintenance/UserInterface/NoMatchSearch.png used on
 input line 456.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Maintenance/UserInterface/SearchExample.png, id=3052, 1151.80313pt x 329.731
+<./Maintenance/UserInterface/SearchExample.png, id=3058, 1151.80313pt x 329.731
 87pt>
 File: ./Maintenance/UserInterface/SearchExample.png Graphic file (type png)
  <use ./Maintenance/UserInterface/SearchExample.png>
@@ -12739,7 +12739,7 @@ Package pdftex.def Info: ./Design/ER_Diagram.pdf used on input line 468.
 l.470 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/UserInterface/SearchExample.png>]
-<./Maintenance/DatabaseTables/Customer.png, id=3067, 1026.08344pt x 524.71031pt
+<./Maintenance/DatabaseTables/Customer.png, id=3073, 1026.08344pt x 524.71031pt
 >
 File: ./Maintenance/DatabaseTables/Customer.png Graphic file (type png)
  <use ./Maintenance/DatabaseTables/Customer.png>
@@ -12753,7 +12753,7 @@ t line 475.
                                                   \fi \fi 
 l.477 
       ]
-<./Maintenance/DatabaseTables/Book.png, id=3074, 1026.08344pt x 524.71031pt>
+<./Maintenance/DatabaseTables/Book.png, id=3080, 1026.08344pt x 524.71031pt>
 File: ./Maintenance/DatabaseTables/Book.png Graphic file (type png)
 
 <use ./Maintenance/DatabaseTables/Book.png>
@@ -12761,7 +12761,7 @@ Package pdftex.def Info: ./Maintenance/DatabaseTables/Book.png used on input li
 ne 480.
 (pdftex.def)             Requested size: 345.0pt x 176.42155pt.
 
-<./Maintenance/DatabaseTables/PubInvoice.png, id=3075, 1026.08344pt x 524.71031
+<./Maintenance/DatabaseTables/PubInvoice.png, id=3081, 1026.08344pt x 524.71031
 pt>
 File: ./Maintenance/DatabaseTables/PubInvoice.png Graphic file (type png)
  <use ./Maintenance/DatabaseTables/PubInvoice.png>
@@ -12783,7 +12783,7 @@ l.487
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/DatabaseTables/Customer.png> <C:/Users/Imran Rahman/Documents/Year 13/Co
 mputing/COMP4Coursework/Maintenance/DatabaseTables/Book.png>]
-<./Maintenance/DatabaseTables/BookInvoice.png, id=3084, 1026.08344pt x 524.7103
+<./Maintenance/DatabaseTables/BookInvoice.png, id=3090, 1026.08344pt x 524.7103
 1pt>
 File: ./Maintenance/DatabaseTables/BookInvoice.png Graphic file (type png)
  <use ./Maintenance/DatabaseTables/BookInvoice.png>
@@ -12791,7 +12791,7 @@ Package pdftex.def Info: ./Maintenance/DatabaseTables/BookInvoice.png used on i
 nput line 490.
 (pdftex.def)             Requested size: 345.0pt x 176.42155pt.
 
-<./Maintenance/DatabaseTables/BookInvoiceItems.png, id=3085, 1026.08344pt x 524
+<./Maintenance/DatabaseTables/BookInvoiceItems.png, id=3091, 1026.08344pt x 524
 .71031pt>
 File: ./Maintenance/DatabaseTables/BookInvoiceItems.png Graphic file (type png)
 
@@ -12814,7 +12814,7 @@ l.497
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Maint
 enance/DatabaseTables/PubInvoice.png> <C:/Users/Imran Rahman/Documents/Year 13/
 Computing/COMP4Coursework/Maintenance/DatabaseTables/BookInvoice.png>]
-<./Maintenance/DatabaseTables/Royalties.png, id=3094, 1026.08344pt x 524.71031p
+<./Maintenance/DatabaseTables/Royalties.png, id=3100, 1026.08344pt x 524.71031p
 t>
 File: ./Maintenance/DatabaseTables/Royalties.png Graphic file (type png)
  <use ./Maintenance/DatabaseTables/Royalties.png>
@@ -12822,7 +12822,7 @@ Package pdftex.def Info: ./Maintenance/DatabaseTables/Royalties.png used on inp
 ut line 500.
 (pdftex.def)             Requested size: 345.0pt x 176.42155pt.
 
-<./Maintenance/DatabaseTables/RoyaltyItems.png, id=3095, 1026.08344pt x 524.710
+<./Maintenance/DatabaseTables/RoyaltyItems.png, id=3101, 1026.08344pt x 524.710
 31pt>
 File: ./Maintenance/DatabaseTables/RoyaltyItems.png Graphic file (type png)
  <use ./Maintenance/DatabaseTables/RoyaltyItems.png>
@@ -13148,7 +13148,7 @@ File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\COMP4Coursework\Implementat
 ion\Database\CalendarWidget.py")
-<./Implementation/Database/LoginIcon.png, id=3715, 256.96pt x 256.96pt>
+<./Implementation/Database/LoginIcon.png, id=3721, 256.96pt x 256.96pt>
 File: ./Implementation/Database/LoginIcon.png Graphic file (type png)
 
 <use ./Implementation/Database/LoginIcon.png>
@@ -13156,7 +13156,7 @@ Package pdftex.def Info: ./Implementation/Database/LoginIcon.png used on input
 line 1038.
 (pdftex.def)             Requested size: 142.26378pt x 142.26552pt.
  [250]
-<./Implementation/Database/PerfectPublishersLtd.png, id=3787, 402.00188pt x 164
+<./Implementation/Database/PerfectPublishersLtd.png, id=3793, 402.00188pt x 164
 .86594pt>
 File: ./Implementation/Database/PerfectPublishersLtd.png Graphic file (type png
 )
@@ -13165,7 +13165,7 @@ Package pdftex.def Info: ./Implementation/Database/PerfectPublishersLtd.png use
 d on input line 1048.
 (pdftex.def)             Requested size: 345.0pt x 141.48758pt.
 
-<./Implementation/Database/PPIcon.png, id=3788, 1423.3175pt x 1604.99625pt>
+<./Implementation/Database/PPIcon.png, id=3794, 1423.3175pt x 1604.99625pt>
 File: ./Implementation/Database/PPIcon.png Graphic file (type png)
 
 <use ./Implementation/Database/PPIcon.png>
@@ -13305,7 +13305,7 @@ toc")
 ptc") [331
 
 ] [332]
-<./Manual/Installation/MyComputer.png, id=7166, 55.70813pt x 73.77562pt>
+<./Manual/Installation/MyComputer.png, id=7172, 55.70813pt x 73.77562pt>
 File: ./Manual/Installation/MyComputer.png Graphic file (type png)
 
 <use ./Manual/Installation/MyComputer.png>
@@ -13313,7 +13313,7 @@ Package pdftex.def Info: ./Manual/Installation/MyComputer.png used on input lin
 e 64.
 (pdftex.def)             Requested size: 345.0pt x 457.05952pt.
  [333]
-<./Manual/Installation/OpenCDR.png, id=7171, 590.205pt x 444.91219pt>
+<./Manual/Installation/OpenCDR.png, id=7177, 590.205pt x 444.91219pt>
 File: ./Manual/Installation/OpenCDR.png Graphic file (type png)
 
 <use ./Manual/Installation/OpenCDR.png>
@@ -13328,7 +13328,7 @@ Package pdftex.def Info: ./Manual/Installation/OpenCDR.png used on input line 7
 l.74 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Installation/MyComputer.png>]
-<./Manual/Installation/Install.png, id=7177, 517.18219pt x 446.41782pt>
+<./Manual/Installation/Install.png, id=7183, 517.18219pt x 446.41782pt>
 File: ./Manual/Installation/Install.png Graphic file (type png)
 
 <use ./Manual/Installation/Install.png>
@@ -13343,7 +13343,7 @@ Package pdftex.def Info: ./Manual/Installation/Install.png used on input line 7
 l.81 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Installation/OpenCDR.png>]
-<./Manual/Installation/PrepareInstall.png, id=7184, 307.1475pt x 121.20282pt>
+<./Manual/Installation/PrepareInstall.png, id=7190, 307.1475pt x 121.20282pt>
 File: ./Manual/Installation/PrepareInstall.png Graphic file (type png)
 
 <use ./Manual/Installation/PrepareInstall.png>
@@ -13358,7 +13358,7 @@ Package pdftex.def Info: ./Manual/Installation/PrepareInstall.png used on input
 l.88 
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Installation/Install.png>]
-<./Manual/Installation/Setup.png, id=7192, 383.18156pt x 330.48468pt>
+<./Manual/Installation/Setup.png, id=7198, 383.18156pt x 330.48468pt>
 File: ./Manual/Installation/Setup.png Graphic file (type png)
 
 <use ./Manual/Installation/Setup.png>
@@ -13366,7 +13366,7 @@ Package pdftex.def Info: ./Manual/Installation/Setup.png used on input line 90.
 
 (pdftex.def)             Requested size: 345.0pt x 297.56961pt.
 
-<./Manual/Installation/Setup2.png, id=7193, 383.18156pt x 330.48468pt>
+<./Manual/Installation/Setup2.png, id=7199, 383.18156pt x 330.48468pt>
 File: ./Manual/Installation/Setup2.png Graphic file (type png)
 
 <use ./Manual/Installation/Setup2.png>
@@ -13388,7 +13388,7 @@ l.98
       <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Installation/PrepareInstall.png> <C:/Users/Imran Rahman/Documents/Year 13/Comp
 uting/COMP4Coursework/Manual/Installation/Setup.png>]
-<./Manual/Installation/PleaseWaitScreen.png, id=7201, 383.18156pt x 330.48468pt
+<./Manual/Installation/PleaseWaitScreen.png, id=7207, 383.18156pt x 330.48468pt
 >
 File: ./Manual/Installation/PleaseWaitScreen.png Graphic file (type png)
  <use ./Manual/Installation/PleaseWaitScreen.png>
@@ -13403,7 +13403,7 @@ ut line 102.
 l.105 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manua
 l/Installation/Setup2.png>]
-<./Manual/Installation/Permission.png, id=7207, 45.16875pt x 30.1125pt>
+<./Manual/Installation/Permission.png, id=7213, 45.16875pt x 30.1125pt>
 File: ./Manual/Installation/Permission.png Graphic file (type png)
 
 <use ./Manual/Installation/Permission.png>
@@ -13418,7 +13418,7 @@ e 109.
 l.112 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manua
 l/Installation/PleaseWaitScreen.png>]
-<./Manual/Installation/Installing.png, id=7213, 383.18156pt x 330.48468pt>
+<./Manual/Installation/Installing.png, id=7219, 383.18156pt x 330.48468pt>
 File: ./Manual/Installation/Installing.png Graphic file (type png)
 
 <use ./Manual/Installation/Installing.png>
@@ -13433,7 +13433,7 @@ e 116.
 l.119 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manua
 l/Installation/Permission.png>]
-<./Manual/Installation/Installed.png, id=7219, 383.18156pt x 330.48468pt>
+<./Manual/Installation/Installed.png, id=7225, 383.18156pt x 330.48468pt>
 File: ./Manual/Installation/Installed.png Graphic file (type png)
 
 <use ./Manual/Installation/Installed.png>
@@ -13448,7 +13448,7 @@ Package pdftex.def Info: ./Manual/Installation/Installed.png used on input line
 l.124 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manua
 l/Installation/Installing.png>]
-<./Manual/Installation/Shortcut.png, id=7225, 393.72093pt x 264.23718pt>
+<./Manual/Installation/Shortcut.png, id=7231, 393.72093pt x 264.23718pt>
 File: ./Manual/Installation/Shortcut.png Graphic file (type png)
 
 <use ./Manual/Installation/Shortcut.png>
@@ -13463,7 +13463,7 @@ Package pdftex.def Info: ./Manual/Installation/Shortcut.png used on input line
 l.136 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manua
 l/Installation/Installed.png>]
-<./Manual/Installation/CreateShortcut.png, id=7232, 472.76625pt x 350.81062pt>
+<./Manual/Installation/CreateShortcut.png, id=7238, 472.76625pt x 350.81062pt>
 File: ./Manual/Installation/CreateShortcut.png Graphic file (type png)
 
 <use ./Manual/Installation/CreateShortcut.png>
@@ -13478,7 +13478,7 @@ Package pdftex.def Info: ./Manual/Installation/CreateShortcut.png used on input
 l.141 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manua
 l/Installation/Shortcut.png>]
-<./Manual/Installation/BrowseFile.png, id=7239, 251.43938pt x 246.1697pt>
+<./Manual/Installation/BrowseFile.png, id=7245, 251.43938pt x 246.1697pt>
 File: ./Manual/Installation/BrowseFile.png Graphic file (type png)
 
 <use ./Manual/Installation/BrowseFile.png>
@@ -13493,7 +13493,7 @@ e 145.
 l.148 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manua
 l/Installation/CreateShortcut.png>]
-<./Manual/Installation/FileSelected.png, id=7246, 472.76625pt x 350.81062pt>
+<./Manual/Installation/FileSelected.png, id=7252, 472.76625pt x 350.81062pt>
 File: ./Manual/Installation/FileSelected.png Graphic file (type png)
 
 <use ./Manual/Installation/FileSelected.png>
@@ -13508,7 +13508,7 @@ ine 150.
 l.153 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manua
 l/Installation/BrowseFile.png>]
-<./Manual/Installation/NameShortcut.png, id=7251, 472.76625pt x 350.81062pt>
+<./Manual/Installation/NameShortcut.png, id=7257, 472.76625pt x 350.81062pt>
 File: ./Manual/Installation/NameShortcut.png Graphic file (type png)
 
 <use ./Manual/Installation/NameShortcut.png>
@@ -13571,7 +13571,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--194
  []
 
 [348]
-<./Manual/Tutorial/Q1/AddEntryHighlighted.png, id=7282, 565.36218pt x 330.48468
+<./Manual/Tutorial/Q1/AddEntryHighlighted.png, id=7288, 565.36218pt x 330.48468
 pt>
 File: ./Manual/Tutorial/Q1/AddEntryHighlighted.png Graphic file (type png)
  <use ./Manual/Tutorial/Q1/AddEntryHighlighted.png>
@@ -13579,7 +13579,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q1/AddEntryHighlighted.png used on i
 nput line 204.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
  [349]
-<./Manual/Tutorial/Q1/AddingEntry.png, id=7302, 493.845pt x 115.93312pt>
+<./Manual/Tutorial/Q1/AddingEntry.png, id=7308, 493.845pt x 115.93312pt>
 File: ./Manual/Tutorial/Q1/AddingEntry.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q1/AddingEntry.png>
@@ -13587,7 +13587,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q1/AddingEntry.png used on input lin
 e 211.
 (pdftex.def)             Requested size: 345.0pt x 80.98987pt.
 
-<./Manual/Tutorial/Q2/SelectingEntry.png, id=7303, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q2/SelectingEntry.png, id=7309, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q2/SelectingEntry.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q2/SelectingEntry.png>
@@ -13597,7 +13597,7 @@ line 221.
  [350 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q1/AddEntryHighlighted.png> <C:/Users/Imran Rahman/Documents/Year 13/
 Computing/COMP4Coursework/Manual/Tutorial/Q1/AddingEntry.png>]
-<./Manual/Tutorial/Q2/EditField.png, id=7308, 493.845pt x 115.93312pt>
+<./Manual/Tutorial/Q2/EditField.png, id=7314, 493.845pt x 115.93312pt>
 File: ./Manual/Tutorial/Q2/EditField.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q2/EditField.png>
@@ -13605,7 +13605,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q2/EditField.png used on input line
 227.
 (pdftex.def)             Requested size: 345.0pt x 80.98987pt.
 
-<./Manual/Tutorial/Q2/InputText.png, id=7309, 170.13562pt x 119.69719pt>
+<./Manual/Tutorial/Q2/InputText.png, id=7315, 170.13562pt x 119.69719pt>
 File: ./Manual/Tutorial/Q2/InputText.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q2/InputText.png>
@@ -13615,7 +13615,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q2/InputText.png used on input line
  [351 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q2/SelectingEntry.png> <C:/Users/Imran Rahman/Documents/Year 13/Compu
 ting/COMP4Coursework/Manual/Tutorial/Q2/EditField.png>]
-<./Manual/Tutorial/Q2/Confirm.png, id=7314, 493.845pt x 115.93312pt>
+<./Manual/Tutorial/Q2/Confirm.png, id=7320, 493.845pt x 115.93312pt>
 File: ./Manual/Tutorial/Q2/Confirm.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q2/Confirm.png>
@@ -13623,7 +13623,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q2/Confirm.png used on input line 23
 7.
 (pdftex.def)             Requested size: 345.0pt x 80.98987pt.
 
-<./Manual/Tutorial/Q2/Verification.png, id=7315, 219.06844pt x 142.28156pt>
+<./Manual/Tutorial/Q2/Verification.png, id=7321, 219.06844pt x 142.28156pt>
 File: ./Manual/Tutorial/Q2/Verification.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q2/Verification.png>
@@ -13633,7 +13633,7 @@ ne 243.
  [352 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q2/InputText.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing/
 COMP4Coursework/Manual/Tutorial/Q2/Confirm.png>]
-<./Manual/Tutorial/Q3/SelectingCustomer.png, id=7320, 565.36218pt x 330.48468pt
+<./Manual/Tutorial/Q3/SelectingCustomer.png, id=7326, 565.36218pt x 330.48468pt
 >
 File: ./Manual/Tutorial/Q3/SelectingCustomer.png Graphic file (type png)
  <use ./Manual/Tutorial/Q3/SelectingCustomer.png>
@@ -13641,7 +13641,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q3/SelectingCustomer.png used on inp
 ut line 251.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Manual/Tutorial/Q3/Verification.png, id=7321, 219.06844pt x 142.28156pt>
+<./Manual/Tutorial/Q3/Verification.png, id=7327, 219.06844pt x 142.28156pt>
 File: ./Manual/Tutorial/Q3/Verification.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q3/Verification.png>
@@ -13651,7 +13651,7 @@ ne 257.
  [353 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q2/Verification.png> <C:/Users/Imran Rahman/Documents/Year 13/Computi
 ng/COMP4Coursework/Manual/Tutorial/Q3/SelectingCustomer.png>]
-<./Manual/Tutorial/Q3/Erased.png, id=7326, 219.06844pt x 110.66344pt>
+<./Manual/Tutorial/Q3/Erased.png, id=7332, 219.06844pt x 110.66344pt>
 File: ./Manual/Tutorial/Q3/Erased.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q3/Erased.png>
@@ -13659,7 +13659,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q3/Erased.png used on input line 261
 .
 (pdftex.def)             Requested size: 345.0pt x 174.28229pt.
 
-<./Manual/Tutorial/Q4/View.png, id=7327, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q4/View.png, id=7333, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q4/View.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q4/View.png>
@@ -13668,7 +13668,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q4/View.png used on input line 269.
  [354 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q3/Verification.png> <C:/Users/Imran Rahman/Documents/Year 13/Computi
 ng/COMP4Coursework/Manual/Tutorial/Q3/Erased.png>]
-<./Manual/Tutorial/Q4/CustomerBooks.png, id=7333, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q4/CustomerBooks.png, id=7339, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q4/CustomerBooks.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q4/CustomerBooks.png>
@@ -13676,7 +13676,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q4/CustomerBooks.png used on input l
 ine 275.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Manual/Tutorial/Q5/AddBook.png, id=7334, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q5/AddBook.png, id=7340, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q5/AddBook.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q5/AddBook.png>
@@ -13686,7 +13686,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q5/AddBook.png used on input line 28
  [355 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q4/View.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4
 Coursework/Manual/Tutorial/Q4/CustomerBooks.png>]
-<./Manual/Tutorial/Q5/AddBookWindow.png, id=7339, 283.0575pt x 179.92218pt>
+<./Manual/Tutorial/Q5/AddBookWindow.png, id=7345, 283.0575pt x 179.92218pt>
 File: ./Manual/Tutorial/Q5/AddBookWindow.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q5/AddBookWindow.png>
@@ -13694,7 +13694,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q5/AddBookWindow.png used on input l
 ine 291.
 (pdftex.def)             Requested size: 345.0pt x 219.31256pt.
 
-<./Manual/Tutorial/Q6/UpdateBook.png, id=7340, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q6/UpdateBook.png, id=7346, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q6/UpdateBook.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q6/UpdateBook.png>
@@ -13704,7 +13704,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q6/UpdateBook.png used on input line
  [356 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q5/AddBook.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing/CO
 MP4Coursework/Manual/Tutorial/Q5/AddBookWindow.png>]
-<./Manual/Tutorial/Q6/EditBook.png, id=7345, 283.0575pt x 179.92218pt>
+<./Manual/Tutorial/Q6/EditBook.png, id=7351, 283.0575pt x 179.92218pt>
 File: ./Manual/Tutorial/Q6/EditBook.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q6/EditBook.png>
@@ -13714,7 +13714,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q6/EditBook.png used on input line 3
  [357 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q6/UpdateBook.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing
 /COMP4Coursework/Manual/Tutorial/Q6/EditBook.png>]
-<./Manual/Tutorial/Q6/Verification.png, id=7350, 219.06844pt x 142.28156pt>
+<./Manual/Tutorial/Q6/Verification.png, id=7356, 219.06844pt x 142.28156pt>
 File: ./Manual/Tutorial/Q6/Verification.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q6/Verification.png>
@@ -13722,7 +13722,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q6/Verification.png used on input li
 ne 313.
 (pdftex.def)             Requested size: 345.0pt x 224.07726pt.
 
-<./Manual/Tutorial/Q7/DeleteBook.png, id=7351, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q7/DeleteBook.png, id=7357, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q7/DeleteBook.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q7/DeleteBook.png>
@@ -13732,7 +13732,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q7/DeleteBook.png used on input line
  [358 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q6/Verification.png> <C:/Users/Imran Rahman/Documents/Year 13/Computi
 ng/COMP4Coursework/Manual/Tutorial/Q7/DeleteBook.png>]
-<./Manual/Tutorial/Q7/Verification.png, id=7356, 219.06844pt x 142.28156pt>
+<./Manual/Tutorial/Q7/Verification.png, id=7362, 219.06844pt x 142.28156pt>
 File: ./Manual/Tutorial/Q7/Verification.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q7/Verification.png>
@@ -13740,7 +13740,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q7/Verification.png used on input li
 ne 329.
 (pdftex.def)             Requested size: 345.0pt x 224.07726pt.
 
-<./Manual/Tutorial/Q7/Deleted.png, id=7357, 219.06844pt x 110.66344pt>
+<./Manual/Tutorial/Q7/Deleted.png, id=7363, 219.06844pt x 110.66344pt>
 File: ./Manual/Tutorial/Q7/Deleted.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q7/Deleted.png>
@@ -13748,7 +13748,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q7/Deleted.png used on input line 33
 3.
 (pdftex.def)             Requested size: 345.0pt x 174.28229pt.
 
-<./Manual/Tutorial/Q8/ViewPubInvoice.png, id=7358, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q8/ViewPubInvoice.png, id=7364, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q8/ViewPubInvoice.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q8/ViewPubInvoice.png>
@@ -13758,7 +13758,7 @@ line 343.
  [359 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q7/Verification.png> <C:/Users/Imran Rahman/Documents/Year 13/Computi
 ng/COMP4Coursework/Manual/Tutorial/Q7/Deleted.png>]
-<./Manual/Tutorial/Q8/PubInvoices.png, id=7363, 493.845pt x 194.97844pt>
+<./Manual/Tutorial/Q8/PubInvoices.png, id=7369, 493.845pt x 194.97844pt>
 File: ./Manual/Tutorial/Q8/PubInvoices.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q8/PubInvoices.png>
@@ -13766,7 +13766,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q8/PubInvoices.png used on input lin
 e 349.
 (pdftex.def)             Requested size: 345.0pt x 136.21025pt.
 
-<./Manual/Tutorial/Q9/ViewBookInvoices.png, id=7364, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q9/ViewBookInvoices.png, id=7370, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q9/ViewBookInvoices.png Graphic file (type png)
 <use ./Manual/Tutorial/Q9/ViewBookInvoices.png>
 Package pdftex.def Info: ./Manual/Tutorial/Q9/ViewBookInvoices.png used on inpu
@@ -13775,7 +13775,7 @@ t line 359.
  [360 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q8/ViewPubInvoice.png> <C:/Users/Imran Rahman/Documents/Year 13/Compu
 ting/COMP4Coursework/Manual/Tutorial/Q8/PubInvoices.png>]
-<./Manual/Tutorial/Q9/ViewBookInvoiceItems.png, id=7370, 493.845pt x 194.97844p
+<./Manual/Tutorial/Q9/ViewBookInvoiceItems.png, id=7376, 493.845pt x 194.97844p
 t>
 File: ./Manual/Tutorial/Q9/ViewBookInvoiceItems.png Graphic file (type png)
  <use ./Manual/Tutorial/Q9/ViewBookInvoiceItems.png>
@@ -13783,7 +13783,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q9/ViewBookInvoiceItems.png used on
 input line 365.
 (pdftex.def)             Requested size: 345.0pt x 136.21025pt.
 
-<./Manual/Tutorial/Q10/ViewRoyalties.png, id=7371, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q10/ViewRoyalties.png, id=7377, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q10/ViewRoyalties.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q10/ViewRoyalties.png>
@@ -13793,7 +13793,7 @@ line 377.
  [361 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q9/ViewBookInvoices.png> <C:/Users/Imran Rahman/Documents/Year 13/Com
 puting/COMP4Coursework/Manual/Tutorial/Q9/ViewBookInvoiceItems.png>]
-<./Manual/Tutorial/Q10/ViewRoyaltyItems.png, id=7376, 493.845pt x 194.97844pt>
+<./Manual/Tutorial/Q10/ViewRoyaltyItems.png, id=7382, 493.845pt x 194.97844pt>
 File: ./Manual/Tutorial/Q10/ViewRoyaltyItems.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q10/ViewRoyaltyItems.png>
@@ -13801,7 +13801,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q10/ViewRoyaltyItems.png used on inp
 ut line 383.
 (pdftex.def)             Requested size: 345.0pt x 136.21025pt.
 
-<./Manual/Tutorial/Q11/CalculatePayment.png, id=7377, 493.845pt x 194.97844pt>
+<./Manual/Tutorial/Q11/CalculatePayment.png, id=7383, 493.845pt x 194.97844pt>
 File: ./Manual/Tutorial/Q11/CalculatePayment.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q11/CalculatePayment.png>
@@ -13811,7 +13811,7 @@ ut line 395.
  [362 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q10/ViewRoyalties.png> <C:/Users/Imran Rahman/Documents/Year 13/Compu
 ting/COMP4Coursework/Manual/Tutorial/Q10/ViewRoyaltyItems.png>]
-<./Manual/Tutorial/Q12/CalculatePayment.png, id=7382, 493.845pt x 194.97844pt>
+<./Manual/Tutorial/Q12/CalculatePayment.png, id=7388, 493.845pt x 194.97844pt>
 File: ./Manual/Tutorial/Q12/CalculatePayment.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q12/CalculatePayment.png>
@@ -13821,7 +13821,7 @@ ut line 407.
  [363 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q11/CalculatePayment.png> <C:/Users/Imran Rahman/Documents/Year 13/Co
 mputing/COMP4Coursework/Manual/Tutorial/Q12/CalculatePayment.png>]
-<./Manual/Tutorial/Q13/QuickSearch.png, id=7387, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q13/QuickSearch.png, id=7393, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q13/QuickSearch.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q13/QuickSearch.png>
@@ -13829,7 +13829,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q13/QuickSearch.png used on input li
 ne 421.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Manual/Tutorial/Q13/SearchDatabase.png, id=7388, 565.36218pt x 330.48468pt>
+<./Manual/Tutorial/Q13/SearchDatabase.png, id=7394, 565.36218pt x 330.48468pt>
 File: ./Manual/Tutorial/Q13/SearchDatabase.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q13/SearchDatabase.png>
@@ -13839,7 +13839,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q13/SearchDatabase.png used on input
  [364 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q13/QuickSearch.png> <C:/Users/Imran Rahman/Documents/Year 13/Computi
 ng/COMP4Coursework/Manual/Tutorial/Q13/SearchDatabase.png>]
-<./Manual/Tutorial/Q13/SearchDatabaseWindow.png, id=7393, 313.17pt x 179.92218p
+<./Manual/Tutorial/Q13/SearchDatabaseWindow.png, id=7399, 313.17pt x 179.92218p
 t>
 File: ./Manual/Tutorial/Q13/SearchDatabaseWindow.png Graphic file (type png)
  <use ./Manual/Tutorial/Q13/SearchDatabaseWindow.png>
@@ -13853,7 +13853,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q13/SearchDatabase.png used on input
  line 447.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Manual/Tutorial/Q14/BookComboBox.png, id=7394, 313.17pt x 179.92218pt>
+<./Manual/Tutorial/Q14/BookComboBox.png, id=7400, 313.17pt x 179.92218pt>
 File: ./Manual/Tutorial/Q14/BookComboBox.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q14/BookComboBox.png>
@@ -13862,7 +13862,7 @@ ine 453.
 (pdftex.def)             Requested size: 345.0pt x 198.217pt.
  [365 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q13/SearchDatabaseWindow.png>] <./Manual/Tutorial/Q14/DateSearch.png,
- id=7399, 313.17pt x 179.92218pt>
+ id=7405, 313.17pt x 179.92218pt>
 File: ./Manual/Tutorial/Q14/DateSearch.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q14/DateSearch.png>
@@ -13870,7 +13870,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q14/DateSearch.png used on input lin
 e 459.
 (pdftex.def)             Requested size: 345.0pt x 198.217pt.
 
-<./Manual/Tutorial/Q14/SelectDate.png, id=7400, 211.54031pt x 236.38312pt>
+<./Manual/Tutorial/Q14/SelectDate.png, id=7406, 211.54031pt x 236.38312pt>
 File: ./Manual/Tutorial/Q14/SelectDate.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q14/SelectDate.png>
@@ -13880,7 +13880,7 @@ e 463.
  [366 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q14/BookComboBox.png> <C:/Users/Imran Rahman/Documents/Year 13/Comput
 ing/COMP4Coursework/Manual/Tutorial/Q14/DateSearch.png>]
-<./Manual/Tutorial/Q14/Search.png, id=7406, 313.17pt x 179.92218pt>
+<./Manual/Tutorial/Q14/Search.png, id=7412, 313.17pt x 179.92218pt>
 File: ./Manual/Tutorial/Q14/Search.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q14/Search.png>
@@ -13889,7 +13889,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q14/Search.png used on input line 46
 (pdftex.def)             Requested size: 345.0pt x 198.217pt.
  [367 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q14/SelectDate.png>]
-<./Manual/Tutorial/Q15/ChangeUsernameOrPassword.png, id=7411, 565.36218pt x 330
+<./Manual/Tutorial/Q15/ChangeUsernameOrPassword.png, id=7417, 565.36218pt x 330
 .48468pt>
 File: ./Manual/Tutorial/Q15/ChangeUsernameOrPassword.png Graphic file (type png
 )
@@ -13898,7 +13898,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q15/ChangeUsernameOrPassword.png use
 d on input line 479.
 (pdftex.def)             Requested size: 345.0pt x 201.67604pt.
 
-<./Manual/Tutorial/Q15/Selection.png, id=7412, 313.17pt x 67.0003pt>
+<./Manual/Tutorial/Q15/Selection.png, id=7418, 313.17pt x 67.0003pt>
 File: ./Manual/Tutorial/Q15/Selection.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q15/Selection.png>
@@ -13908,7 +13908,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q15/Selection.png used on input line
  [368 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q14/Search.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing/CO
 MP4Coursework/Manual/Tutorial/Q15/ChangeUsernameOrPassword.png>]
-<./Manual/Tutorial/Q15/ChangeUsername.png, id=7417, 341.02406pt x 121.95563pt>
+<./Manual/Tutorial/Q15/ChangeUsername.png, id=7423, 341.02406pt x 121.95563pt>
 File: ./Manual/Tutorial/Q15/ChangeUsername.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q15/ChangeUsername.png>
@@ -13916,7 +13916,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q15/ChangeUsername.png used on input
  line 491.
 (pdftex.def)             Requested size: 345.0pt x 123.38446pt.
 
-<./Manual/Tutorial/Q15/UsernameChanged.png, id=7418, 189.70876pt x 90.3375pt>
+<./Manual/Tutorial/Q15/UsernameChanged.png, id=7424, 189.70876pt x 90.3375pt>
 File: ./Manual/Tutorial/Q15/UsernameChanged.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q15/UsernameChanged.png>
@@ -13924,7 +13924,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q15/UsernameChanged.png used on inpu
 t line 497.
 (pdftex.def)             Requested size: 345.0pt x 164.30283pt.
 
-<./Manual/Tutorial/Q15/ChangePassword.png, id=7419, 339.51843pt x 121.95563pt>
+<./Manual/Tutorial/Q15/ChangePassword.png, id=7425, 339.51843pt x 121.95563pt>
 File: ./Manual/Tutorial/Q15/ChangePassword.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q15/ChangePassword.png>
@@ -13936,7 +13936,7 @@ Package pdftex.def Info: ./Manual/Tutorial/Q15/ChangePassword.png used on input
 /COMP4Coursework/Manual/Tutorial/Q15/ChangeUsername.png> <C:/Users/Imran Rahman
 /Documents/Year 13/Computing/COMP4Coursework/Manual/Tutorial/Q15/UsernameChange
 d.png>]
-<./Manual/Tutorial/Q15/PasswordChanged.png, id=7424, 187.45032pt x 90.3375pt>
+<./Manual/Tutorial/Q15/PasswordChanged.png, id=7430, 187.45032pt x 90.3375pt>
 File: ./Manual/Tutorial/Q15/PasswordChanged.png Graphic file (type png)
 
 <use ./Manual/Tutorial/Q15/PasswordChanged.png>
@@ -13946,14 +13946,14 @@ t line 509.
  [370 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /Tutorial/Q15/ChangePassword.png> <C:/Users/Imran Rahman/Documents/Year 13/Comp
 uting/COMP4Coursework/Manual/Tutorial/Q15/PasswordChanged.png>]
-<./Manual/InvalidEntries.png, id=7429, 350.81062pt x 217.5628pt>
+<./Manual/InvalidEntries.png, id=7435, 350.81062pt x 217.5628pt>
 File: ./Manual/InvalidEntries.png Graphic file (type png)
 
 <use ./Manual/InvalidEntries.png>
 Package pdftex.def Info: ./Manual/InvalidEntries.png used on input line 528.
 (pdftex.def)             Requested size: 345.0pt x 213.97363pt.
 
-<./Manual/InvalidEntries2.png, id=7430, 350.81062pt x 142.28156pt>
+<./Manual/InvalidEntries2.png, id=7436, 350.81062pt x 142.28156pt>
 File: ./Manual/InvalidEntries2.png Graphic file (type png)
 
 <use ./Manual/InvalidEntries2.png>
@@ -13966,7 +13966,7 @@ Package pdftex.def Info: ./Manual/InvalidEntries2.png used on input line 533.
                                                   \fi \fi 
 l.536 
        <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manua
-l/InvalidEntries.png>] <./Manual/Prompt.png, id=7436, 194.97844pt x 90.3375pt>
+l/InvalidEntries.png>] <./Manual/Prompt.png, id=7442, 194.97844pt x 90.3375pt>
 File: ./Manual/Prompt.png Graphic file (type png)
 
 <use ./Manual/Prompt.png>
@@ -13989,7 +13989,7 @@ l.551 1
  <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual/Inva
 lidEntries2.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Course
 work/Manual/Prompt.png>]
-<./Manual/CopyDB.png, id=7445, 362.10281pt x 402.00188pt>
+<./Manual/CopyDB.png, id=7451, 362.10281pt x 402.00188pt>
 File: ./Manual/CopyDB.png Graphic file (type png)
 
 <use ./Manual/CopyDB.png>
@@ -14003,21 +14003,21 @@ Package pdftex.def Info: ./Manual/CopyDB.png used on input line 556.
 l.564 5
        . You have successfully backed up the database <C:/Users/Imran Rahman/Do
 cuments/Year 13/Computing/COMP4Coursework/Manual/CopyDB.png>]
-<./Manual/CopyBackup.png, id=7451, 317.68687pt x 243.91125pt>
+<./Manual/CopyBackup.png, id=7457, 317.68687pt x 243.91125pt>
 File: ./Manual/CopyBackup.png Graphic file (type png)
 
 <use ./Manual/CopyBackup.png>
 Package pdftex.def Info: ./Manual/CopyBackup.png used on input line 575.
 (pdftex.def)             Requested size: 345.0pt x 264.9052pt.
 
-<./Manual/CopiedFile.png, id=7452, 438.13687pt x 34.62938pt>
+<./Manual/CopiedFile.png, id=7458, 438.13687pt x 34.62938pt>
 File: ./Manual/CopiedFile.png Graphic file (type png)
 
 <use ./Manual/CopiedFile.png>
 Package pdftex.def Info: ./Manual/CopiedFile.png used on input line 583.
 (pdftex.def)             Requested size: 345.0pt x 27.26865pt.
 
-<./Manual/DeleteOriginal.png, id=7453, 297.36093pt x 86.57344pt>
+<./Manual/DeleteOriginal.png, id=7459, 297.36093pt x 86.57344pt>
 File: ./Manual/DeleteOriginal.png Graphic file (type png)
 
 <use ./Manual/DeleteOriginal.png>
@@ -14026,7 +14026,7 @@ Package pdftex.def Info: ./Manual/DeleteOriginal.png used on input line 589.
  [374 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Manual
 /CopyBackup.png> <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Course
 work/Manual/CopiedFile.png>]
-<./Manual/Rename.png, id=7459, 136.25906pt x 81.30376pt>
+<./Manual/Rename.png, id=7465, 136.25906pt x 81.30376pt>
 File: ./Manual/Rename.png Graphic file (type png)
 
 <use ./Manual/Rename.png>
@@ -14050,11 +14050,147 @@ Year 13/Computing/COMP4Coursework/Manual/Rename.png>]
 ("C:\Users\Imran Rahman\Documents\Year 13\Computing\COMP4Coursework\Evaluation\
 evaluation.tex"
 Chapter 6.
-) [376
+<./Evaluation/Evidence/Clarity.png, id=7472, 678.28406pt x 395.97937pt>
+File: ./Evaluation/Evidence/Clarity.png Graphic file (type png)
+
+<use ./Evaluation/Evidence/Clarity.png>
+Package pdftex.def Info: ./Evaluation/Evidence/Clarity.png used on input line 2
+8.
+(pdftex.def)             Requested size: 345.0pt x 201.40906pt.
+ [376
 
 
 
-] [377]
+]
+Overfull \hbox (19.80623pt too wide) in paragraph at lines 42--43
+[]$[]$ 
+ []
+
+[377pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.45 
+      <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Evalua
+tion/Evidence/Clarity.png>]
+<./Evaluation/Evidence/AddingInterface.png, id=7485, 293.59688pt x 241.65282pt>
+File: ./Evaluation/Evidence/AddingInterface.png Graphic file (type png)
+<use ./Evaluation/Evidence/AddingInterface.png>
+Package pdftex.def Info: ./Evaluation/Evidence/AddingInterface.png used on inpu
+t line 47.
+(pdftex.def)             Requested size: 345.0pt x 283.96053pt.
+
+<./Evaluation/Evidence/QuickSearch.png, id=7486, 1162.3425pt x 331.2375pt>
+File: ./Evaluation/Evidence/QuickSearch.png Graphic file (type png)
+
+<use ./Evaluation/Evidence/QuickSearch.png>
+Package pdftex.def Info: ./Evaluation/Evidence/QuickSearch.png used on input li
+ne 60.
+(pdftex.def)             Requested size: 345.0pt x 98.31566pt.
+ [378pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.63 
+      <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Evalua
+tion/Evidence/AddingInterface.png>]
+<./Evaluation/Evidence/Search.png, id=7493, 1150.2975pt x 683.55376pt>
+File: ./Evaluation/Evidence/Search.png Graphic file (type png)
+
+<use ./Evaluation/Evidence/Search.png>
+Package pdftex.def Info: ./Evaluation/Evidence/Search.png used on input line 65
+.
+(pdftex.def)             Requested size: 345.0pt x 205.00513pt.
+ [379pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.76 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.76 
+      <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Evalua
+tion/Evidence/QuickSearch.png> <C:/Users/Imran Rahman/Documents/Year 13/Computi
+ng/COMP4Coursework/Evaluation/Evidence/Search.png>]
+<./Evaluation/Evidence/EditData.png, id=7502, 1067.48813pt x 704.6325pt>
+File: ./Evaluation/Evidence/EditData.png Graphic file (type png)
+
+<use ./Evaluation/Evidence/EditData.png>
+Package pdftex.def Info: ./Evaluation/Evidence/EditData.png used on input line 
+78.
+(pdftex.def)             Requested size: 345.0pt x 227.72339pt.
+
+<./Evaluation/Evidence/CalculateRoyalties.png, id=7503, 1424.32124pt x 469.755p
+t>
+File: ./Evaluation/Evidence/CalculateRoyalties.png Graphic file (type png)
+ <use ./Evaluation/Evidence/CalculateRoyalties.png>
+Package pdftex.def Info: ./Evaluation/Evidence/CalculateRoyalties.png used on i
+nput line 91.
+(pdftex.def)             Requested size: 345.0pt x 113.78284pt.
+ [380pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.94 
+      <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Evalua
+tion/Evidence/EditData.png>]
+<./Evaluation/ClientFeedback.png, id=7510, 377.91188pt x 235.63031pt>
+File: ./Evaluation/ClientFeedback.png Graphic file (type png)
+
+<use ./Evaluation/ClientFeedback.png>
+Package pdftex.def Info: ./Evaluation/ClientFeedback.png used on input line 102
+.
+(pdftex.def)             Requested size: 345.0pt x 215.11064pt.
+ [381pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.105 
+       <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Evalu
+ation/Evidence/CalculateRoyalties.png>]
+<./Evaluation/Questionnaire1.png, id=7517, 614.295pt x 844.8363pt>
+File: ./Evaluation/Questionnaire1.png Graphic file (type png)
+
+<use ./Evaluation/Questionnaire1.png>
+Package pdftex.def Info: ./Evaluation/Questionnaire1.png used on input line 128
+.
+(pdftex.def)             Requested size: 345.0pt x 474.48447pt.
+ [382 <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Evalua
+tion/ClientFeedback.png>] [383]
+Overfull \vbox (216.09538pt too high) has occurred while \output is active []
+
+
+[384pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.131 
+       <C:/Users/Imran Rahman/Documents/Year 13/Computing/COMP4Coursework/Evalu
+ation/Questionnaire1.png>]
+<./Evaluation/Questionnaire2.png, id=7531, 614.295pt x 844.8363pt>
+File: ./Evaluation/Questionnaire2.png Graphic file (type png)
+
+<use ./Evaluation/Questionnaire2.png>
+Package pdftex.def Info: ./Evaluation/Questionnaire2.png used on input line 133
+.
+(pdftex.def)             Requested size: 345.0pt x 474.48447pt.
+) [385pdfTeX warning (ext4): destination with the same identifier (name{figure.
+6.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.16 \include{./Evaluation/evaluation}
+                                       <C:/Users/Imran Rahman/Documents/Year 13
+/Computing/COMP4Coursework/Evaluation/Questionnaire2.png>] [386]
 \tf@ptc=\write8
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 17.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 17.
@@ -14076,7 +14212,7 @@ evaluation.aux"))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 17.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 17.
 Package rerunfilecheck Info: File `coursework.out' has not changed.
-(rerunfilecheck)             Checksum: 713E8B8CB0AF7FAE138A2512C032A7EC;12670.
+(rerunfilecheck)             Checksum: 17147FFA089C41DC07C6B1ED774852A2;12733.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -14084,10 +14220,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 17.
  ) 
 Here is how much of TeX's memory you used:
- 18308 strings out of 493921
- 314694 string characters out of 3144855
- 413532 words of memory out of 3000000
- 16153 multiletter control sequences out of 15000+200000
+ 18380 strings out of 493921
+ 316651 string characters out of 3144855
+ 414975 words of memory out of 3000000
+ 16199 multiletter control sequences out of 15000+200000
  12483 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  40i,12n,45p,1577b,2522s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -14119,9 +14255,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX
 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmu10.pfb>
-Output written on coursework.pdf (378 pages, 6250105 bytes).
+Output written on coursework.pdf (387 pages, 7278981 bytes).
 PDF statistics:
- 8486 PDF objects out of 8907 (max. 8388607)
- 4725 named destinations out of 5155 (max. 500000)
- 2312 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 8556 PDF objects out of 8907 (max. 8388607)
+ 4743 named destinations out of 5155 (max. 500000)
+ 2365 words of extra memory for PDF output out of 10000 (max. 10000000)
 
