@@ -8,7 +8,7 @@ In this section I will evaluate whether I have fulfilled each objective which we
 \subsection{Objective Evaluation}
 
 %from analysis
-The general objectives are:
+The objectives are:
 \begin{itemize}
     \item Organised layout for the database.
     \item Prevention of unnecessary duplication of data.
@@ -20,7 +20,7 @@ The general objectives are:
 
 \
 
-\underline{Objective: Organised layout for the database}
+\subsubsection{Objective: Organised layout for the database}
 
 This objective has been fulfilled by clearly labelling each window and giving clear table headings for each table. For example, the customer table clearly shows the following headings: "Author ID", "Firstname", "Lastname", "Email", "Phonenumber", "Address" and "Postcode". This can be seen in the image below.
 
@@ -33,13 +33,13 @@ Also, in question 1 of the questionnaire in page \pageref{fig:QuestionnairePage1
 
 \
 
-\underline{Objective: Preventing Duplication}
+\subsubsection{Objective: Preventing Duplication}
 
 This objective has not been fulfilled, as the system does not run checks to see whether the data is already existent in the database. The answer to question 12 of the questionnaire, on page \pageref{fig:QuestionnairePage2} shows that the user disagrees with whether the system prevents unneccessary duplication efficiently. The client has said that the system does not warn the user of the duplication, which proves that the system does not run any of these checks. However, the use of ID's still make each author unique, and the client has said the searches can be easily conducted to check whether the data is existent or not. 
 
 \
 
-\underline{Objective: Simple interface for entering data, meaning it can be conducted quickly.}
+\subsubsection{Objective: Simple interface for entering data, meaning it can be conducted quickly.}
 
 This objective has been fulfilled, as entry boxes are clearly labelled, and there are only as many boxes as required for each entry. The entry boxes are all in line with each other, making it look tidy instead of looking cluttered. This can be seen in the image below.
 
@@ -52,7 +52,7 @@ The client has also strongly agreed with questions 2 and 3, which show that they
 
 \
 
-\underline{Objective: Search Function to find a specific customer in the database}
+\subsubsection{Objective: Search Function to find a specific customer in the database}
 
 This objective has been fulfilled, as there are search functions in the system which can search for customers. In the images below, it is evident that the system has working search functions.
 
@@ -70,7 +70,7 @@ Furthermore, the client has agreed to the statement in question 4 of the questio
 
 \
 
-\underline{Objective: Ability to edit existing data easily and quickly}
+\subsubsection{Objective: Ability to edit existing data easily and quickly}
 
 This objective has been met, as all the user needs to do in the system is navigate to the data, click on it, click edit, make their changes and confirm them. This can be seen in the image below, where it is evident that the system is capable of editing data efficiently.
 
@@ -83,7 +83,7 @@ The client also strongly agreed with the statement in question 5, showing that t
 
 \
 
-\underline{Objective: Ability to calculate royalties using given data}
+\subsubsection{Objective: Ability to calculate royalties using given data}
 
 This objective has been met, as the system calculates the price of a given set of items, then it sums up the prices of all the items into one royalty payment. This can be seen in the image below, where the calculations for a single set of items are displayed, and the full payment is also displayed on the royalties screen.
 
@@ -105,12 +105,75 @@ The system has fulfilled half of the objectives required which were set in the s
 
 The main reason why half of these objectives were not completely fulfilled is that I did not have enough time to finish the development of my system, which caused the validation check for duplicates in the system and the interactions with search results to be left out. However, the reason why the objective for calculations of royalty payments was not fully fulfilled is that the client was not in agreement with whether the royaly/book invoice items organisation was clear or not. This was because of how the user had to remember what book they had selected instead of it being there in front of them. The system needed to be clear on this, which it seemingly was not.
 
-To summarise, I have concluded that the system only just meets the requirements specified by my client, because it only failed to meet 1 objective out of 6, and the objectives that were partially met were more inclined to being fully completed. Also, the client has accepted the system as it is a major improvement on the current system that they use.
+To summarise, I have concluded that the system only just meets the requirements specified by my client, because it only failed to meet 1 objective out of 6, and the objectives that were partially met were more inclined to being fully completed. Also, the client has accepted the system as they have determined that it is a major improvement on the current system that they use.
 
 \section{Effectiveness}
 
 %include as many subsections as necessary for your objectives
 \subsection{Objective Evaluation}
+
+\subsubsection{Objective: Organised layout for the database}
+
+\underline{Evaluation Criteria:}
+
+\begin{itemize}
+    \item Be able to sort data in tables by date, size or alphabetical order (ascending and descending)
+    \item Clear tables and fields for each entity and attribute
+\end{itemize}
+
+
+\underline{Verdict}
+
+The system's organisation and clarity of layout is quite effective, as each table can be sorted by the details in the criteria above, and windows are clearly and relevantly titled. Also, headers for tables are presented in a clear manner to the user, as the table shows the headings along the top as seen in the image below.
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Evaluation/Effectiveness/OrganisedLayout.png}
+    \label{fig:OrganisedLayout}
+\end{figure}
+
+Moreover, the client has said that the navigation through interfaces has been made clear with large buttons, which are relevantly labellled. This shows that the organisation of the system interfaces is effective, as it has made navigation through the system easier, which is what the objective was meant for.
+
+
+\subsubsection{Objective: Simple interface for entering data}
+
+\underline{Evaluation Criteria:}
+
+\begin{itemize}
+    \item As little amount of boxes as possible
+    \item Clearly label entry boxes
+\end{itemize}
+
+\underline{Verdict}
+
+The system's interfaces for adding data to an entity is very effective, as the interfaces only have boxes where needed, and each entry box is clearly labelled with the type of data which is required to be entered in it. This has made the user able to identify the boxes easily so that they are able to enter data without making many mistakes. This can be seen in the image below.
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Evaluation/Effectiveness/SimpleInterface.png}
+    \label{fig:SimpleInterface}
+\end{figure}
+
+Furthermore, the client strongly agreed with whether the system had an effective method of adding customer data to the database. This proves that they had no problem with adding data at all, meaning that the simplicity of the interfaces have made adding data as easy it possibly could.
+
+
+\subsubsection{Objective: Search function to find a specific customer in the database}
+
+\underline{Evaluation Criteria}
+
+\begin{itemize}
+    \item Data can be found using the Author Name, or Book Title
+    \item Can be edited upon finding the desired data
+\end{itemize}
+
+\underline{Verdict}
+
+The system has partially met this objective, as the user is able to search for customers, books and book details using the search feature in the system. This has met half of the objective criteria with the addition of being able to search for data in all entities, as opposed to just a specific customer. Below is an image of an example of using the search feature to find data.
+
+%    \item Search function to find a specific customer in the database.
+%    \item Ability to edit existing data easily and quickly.
+%    \item Ability to calculate royalties using given data
+%\end{itemize}
+
+
 
 \section{Learnability}
 
